@@ -55,7 +55,13 @@ HEADING_PATTERNS = [
 
 # 直喩の目印。キーは分類名、値はその形を拾う正規表現。
 SIMILE_MARKERS = {
-    "ようだ": re.compile(r"(のよう[なにだでがも]|ような|ように)"),
+    # 「Xのように」の形に限る。「ように思われる」「ようになった」「ように言った」など、
+    # 推量・様態・目的の用法は直喩ではないので除く。ただし文末の「のようだ」は
+    # 「顔を見ると金時のようだ」のように直喩なので残す。
+    "ようだ": re.compile(
+        r"[のただ]よう(?!に(思|見え|見受|感じ|なっ|なり|なる|し|せ|言|云|申|願|祈|命|頼|聞|覚え|考え)"
+        r"|な(気|感じ|口調|顔|声|様子|風|ふう|具合)|です|であ|でご)"
+        r"[なにだ]"),
     "みたい": re.compile(r"みたい[なにだでな]"),
     "ごとし": re.compile(r"(のごとく|のごとき|ごとし|如く|如き)"),
     "まるで": re.compile(r"まるで"),
@@ -237,6 +243,17 @@ def tension_curve(sentences: list[str]) -> list[dict]:
 
 # --------------------------------------------------------------------------- 技法
 
+def peak_segment(curve: list[dict], key: str) -> int | None:
+    """指標が最大になる区間番号。全区間ゼロなら None を返す。
+
+    max() に任せると同順位の先頭が返り、感嘆符を一切使わない作品が
+    「冒頭がピーク」に数えられてしまう。
+    """
+    if not curve or max(c[key] for c in curve) <= 0:
+        return None
+    return max(curve, key=lambda c: c[key])["segment"]
+
+
 def extract_similes(sentences: list[str], limit: int = 60) -> list[dict]:
     """直喩の目印を含む文を抜き出す。位置は作品全体を 0〜1 に正規化した値。"""
     total = sum(len(s) for s in sentences) or 1
@@ -326,6 +343,8 @@ def analyze_work(work_dir: Path) -> dict:
         "stats": basic_stats(text, paragraphs, sentences),
         "headings": headings,
         "tension_curve": tension_curve(sentences),
+        "exclaim_peak_segment": peak_segment(tension_curve(sentences), "exclaim_question_per_1000"),
+        "dialogue_peak_segment": peak_segment(tension_curve(sentences), "dialogue_ratio"),
         "similes": extract_similes(sentences),
         "reduplications": extract_reduplications(text),
         **extract_openings_closings(sentences),

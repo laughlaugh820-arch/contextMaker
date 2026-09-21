@@ -141,21 +141,9 @@
       "dash_ellipsis_per_1000": 0.0
     }
   ],
+  "exclaim_peak_segment": 8,
+  "dialogue_peak_segment": 8,
   "similes": [
-    {
-      "markers": [
-        "ようだ"
-      ],
-      "position": 0.158,
-      "text": "しばらくすると、兵十は、はりきり網の一ばんうしろの、袋のようになったところを、水の中からもちあげました。"
-    },
-    {
-      "markers": [
-        "ようだ"
-      ],
-      "position": 0.122,
-      "text": "ごんは、見つからないように、そうっと草の深いところへ歩きよって、そこからじっとのぞいてみました。"
-    },
     {
       "markers": [
         "みたい"

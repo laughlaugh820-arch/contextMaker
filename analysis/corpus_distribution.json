@@ -1,0 +1,139 @@
+{
+  "n": 2000,
+  "sentence_length_mean": {
+    "p10": 25.029,
+    "p25": 29.411,
+    "median": 36.41,
+    "p75": 46.82,
+    "p90": 57.449
+  },
+  "sentence_length_max": {
+    "p10": 101,
+    "p25": 127,
+    "median": 161,
+    "p75": 212,
+    "p90": 293
+  },
+  "sentence_length_cv": {
+    "p10": 0.524,
+    "p25": 0.59,
+    "median": 0.676,
+    "p75": 0.774,
+    "p90": 0.859
+  },
+  "comma_per_sentence": {
+    "p10": 0.71,
+    "p25": 1.02,
+    "median": 1.46,
+    "p75": 1.95,
+    "p90": 2.44
+  },
+  "first_sentence_length": {
+    "p10": 5,
+    "p25": 13,
+    "median": 28,
+    "p75": 48,
+    "p90": 74
+  },
+  "first_sentence_percentile_mean": 0.433,
+  "last_sentence_length": {
+    "p10": 9,
+    "p25": 18,
+    "median": 34,
+    "p75": 56,
+    "p90": 76
+  },
+  "last_sentence_percentile_mean": 0.515,
+  "paragraph_length_mean": {
+    "p10": 53.1,
+    "p25": 74.818,
+    "median": 123.265,
+    "p75": 198.795,
+    "p90": 303.029
+  },
+  "dialogue_ratio": {
+    "p10": 0.006,
+    "p25": 0.027,
+    "median": 0.119,
+    "p75": 0.251,
+    "p90": 0.375
+  },
+  "dialogue_later_half_share_when_present": 0.586,
+  "exclaim_question_per_1000": {
+    "p10": 0.0,
+    "p25": 0.0,
+    "median": 0.21,
+    "p75": 1.06,
+    "p90": 2.89
+  },
+  "exclaim_question_zero_share": 0.4,
+  "exclaim_peak_segment_share": {
+    "1": 0.062,
+    "2": 0.077,
+    "3": 0.107,
+    "4": 0.107,
+    "5": 0.114,
+    "6": 0.112,
+    "7": 0.104,
+    "8": 0.102,
+    "9": 0.1,
+    "10": 0.116
+  },
+  "dash_per_1000": {
+    "p10": 0.0,
+    "p25": 0.0,
+    "median": 0.26,
+    "p75": 1.29,
+    "p90": 3.31
+  },
+  "dash_zero_share": 0.359,
+  "ellipsis_per_1000": {
+    "p10": 0.0,
+    "p25": 0.0,
+    "median": 0.17,
+    "p75": 1.07,
+    "p90": 2.66
+  },
+  "ellipsis_zero_share": 0.41,
+  "dash_and_ellipsis_heavy_share": 0.126,
+  "dash_and_ellipsis_heavy_expected_if_independent": 0.075,
+  "kanji_ratio": {
+    "p10": 0.202,
+    "p25": 0.25,
+    "median": 0.285,
+    "p75": 0.321,
+    "p90": 0.363
+  },
+  "simile_per_1000": {
+    "p10": 0.472,
+    "p25": 0.778,
+    "median": 1.126,
+    "p75": 1.557,
+    "p90": 2.078
+  },
+  "simile_marker_share": {
+    "ようだ": 0.69,
+    "ごとし": 0.136,
+    "まるで": 0.075,
+    "みたい": 0.042,
+    "似る": 0.03,
+    "あたかも": 0.019,
+    "さながら": 0.007,
+    "見紛う": 0.0
+  },
+  "reduplication_per_1000": {
+    "p10": 0.0,
+    "p25": 0.136,
+    "median": 0.334,
+    "p75": 0.688,
+    "p90": 1.159
+  },
+  "scanned": 4771,
+  "filters": {
+    "min_chars": 3000,
+    "max_chars": 300000,
+    "min_sentences": 40,
+    "max_mean_length": 120,
+    "orthography": "新字新仮名"
+  }
+}

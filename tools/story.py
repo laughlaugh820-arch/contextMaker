@@ -140,18 +140,26 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
     if guide:
         parts += ["### 作法", "", guide, ""]
 
-    parts += [
-        "# 守ること",
-        "",
-        "1. **オリジナルであること**。参照資料に出てくる固有名詞（人名・地名・作品名）を使わない。"
+    rules = [
+        "**オリジナルであること**。参照資料に出てくる固有名詞（人名・地名・作品名）を使わない。"
         "既存作品の筋をなぞらない。借りるのは文の長さの設計、比喩の作り方、"
-        "視点の移し方、緊張の配置という抽象的な層だけ。",
-        "2. **表記は新字新仮名**。歴史的仮名遣いや旧字体は使わない。",
-        "3. **書き出しは短く切る**。1文目は25字前後。世界設定の説明から始めない。",
-        "4. **結びは説明しない**。最終文は平均より短く、解決を書ききらずに事実を一つ置いて終える。",
-        "5. **比喩は「ようだ」に頼りすぎない**。喩える先は手で触れられる具体物にする。",
-        "6. ダッシュ `――` と三点リーダ `……` は、どちらか一方に絞る。",
-        "",
+        "視点の移し方、会話の配分という抽象的な層だけ。",
+        "**表記は新字新仮名**。歴史的仮名遣いや旧字体は使わない。",
+        f"**長さを守る**。{args.length:,}字前後で、{int(args.length * 0.9):,}字を下回らない。",
+        "**書き出しの型を決める**。断定・情景・関係宣言のいずれかで入り、世界設定の説明から始めない。",
+        "**結びは説明で閉じない**。事実を一つ置く、動作で示す、物や風景に視点を預ける、のいずれか。",
+        "**比喩は形式ではなく喩える先で決める**。「〜のように」で構わない。"
+        "喩える先は手で触れられる具体物にし、密度は千字に1〜2つ、多くても3つまで。",
+        "**緊張は記号ではなく出来事で作る**。感嘆符・疑問符・ダッシュ・三点リーダは使わなくてよい。"
+        "使うなら密度を決めて一貫させる。",
+    ]
+    if args.avoid:
+        rules.append("**次の題材・仕掛けは使わない**: " + "、".join(args.avoid) + "。"
+                     "これらは同じテーマでモデルが最初に思いつく定型なので、別の核を探すこと。")
+    parts += ["# 守ること", ""]
+    parts += [f"{i}. {rule}" for i, rule in enumerate(rules, 1)]
+    parts.append("")
+    parts += [
         "# 出力の形式",
         "",
         "1行目にタイトルのみを書き、空行を1つ置いて本文を始める。",
@@ -303,6 +311,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "theme": args.theme,
         "author_reference": args.author,
         "structure_reference": args.structure,
+        "avoid": args.avoid,
         "length_target": args.length,
         "effort": args.effort,
         "seed": args.seed,
@@ -322,6 +331,8 @@ def add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--length", type=int, default=4000, help="目標の長さ（字、既定 4000）")
     parser.add_argument("--similes", type=int, default=20, help="渡す比喩の実例数（既定 20）")
     parser.add_argument("--seed", type=int, default=0, help="実例を選ぶ乱数の種")
+    parser.add_argument("--avoid", nargs="*", default=[],
+                        help="使わせない題材・仕掛け（例: --avoid 髪の毛 祖父の遺品）")
 
 
 def main(argv: list[str] | None = None) -> int:

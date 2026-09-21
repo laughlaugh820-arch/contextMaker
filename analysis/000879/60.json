@@ -211,6 +211,8 @@
       "dash_ellipsis_per_1000": 3.9
     }
   ],
+  "exclaim_peak_segment": 4,
+  "dialogue_peak_segment": 8,
   "similes": [
     {
       "markers": [
