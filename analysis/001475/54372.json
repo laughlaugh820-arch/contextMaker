@@ -1,0 +1,266 @@
+{
+  "work_id": "54372",
+  "person_id": "001475",
+  "title": "赤い蝋燭と人魚",
+  "author": "小川未明",
+  "card": "https://www.aozora.gr.jp/cards/001475/card54372.html",
+  "path": "library/001475/54372_赤い蝋燭と人魚",
+  "stats": {
+    "characters": 6661,
+    "paragraphs": 82,
+    "sentences": 177,
+    "sentence_length_mean": 36.8,
+    "sentence_length_median": 31,
+    "sentence_length_stdev": 22.1,
+    "sentence_length_max": 139,
+    "dialogue_ratio": 0.141,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 46.9,
+    "dialogue_paragraph_ratio": 0.244,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.2425,
+    "hiragana_ratio": 0.6493,
+    "katakana_ratio": 0.0006,
+    "comma_per_sentence": 2.0,
+    "dash_per_1000": 0.3,
+    "ellipsis_per_1000": 0.15,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 0.15
+  },
+  "headings": [
+    {
+      "index": 0,
+      "label": "一",
+      "characters": 1285
+    },
+    {
+      "index": 13,
+      "label": "二",
+      "characters": 1310
+    },
+    {
+      "index": 30,
+      "label": "三",
+      "characters": 1299
+    },
+    {
+      "index": 46,
+      "label": "四",
+      "characters": 1321
+    },
+    {
+      "index": 64,
+      "label": "五",
+      "characters": 1350
+    }
+  ],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 19,
+      "sentence_length_mean": 37.3,
+      "dialogue_ratio": 0.154,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 14,
+      "sentence_length_mean": 44.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 3.19
+    },
+    {
+      "segment": 3,
+      "sentences": 22,
+      "sentence_length_mean": 28.8,
+      "dialogue_ratio": 0.318,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 18,
+      "sentence_length_mean": 36.2,
+      "dialogue_ratio": 0.285,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 1.53
+    },
+    {
+      "segment": 5,
+      "sentences": 14,
+      "sentence_length_mean": 48.9,
+      "dialogue_ratio": 0.168,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 15,
+      "sentence_length_mean": 42.8,
+      "dialogue_ratio": 0.086,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 16,
+      "sentence_length_mean": 39.8,
+      "dialogue_ratio": 0.142,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 21,
+      "sentence_length_mean": 30.3,
+      "dialogue_ratio": 0.019,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 23,
+      "sentence_length_mean": 29.0,
+      "dialogue_ratio": 0.043,
+      "exclaim_question_per_1000": 1.5,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 15,
+      "sentence_length_mean": 41.7,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.44,
+      "text": "娘は、赤い絵具で、白い蝋燭に、魚や、貝や、また海草のようなものを産れつき誰にも習ったのでないが上手に描きました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.452,
+      "text": "誰でも、その絵を見ると、蝋燭がほしくなるように、その絵には、不思議な力と美しさとが籠っていたのであります。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.696,
+      "text": "しかし、もはや、鬼のような心持になってしまった年より夫婦は何といっても娘の言うことを聞き入れませんでした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.572,
+      "text": "神様の評判はこのように高くなりましたけれど、誰も、蝋燭に一心を籠めて絵を描いている娘のことを思う者はなかったのです。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.231,
+      "text": "そして、毎晩のように、そのお宮にあがった蝋燭の火影がちらちらと揺めいていますのが、遠い海の上から望まれたのであります。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.757,
+      "text": "このやさしい人魚も、やはり海の中の獣物だというので、虎や、獅子と同じように取扱おうとするのであります。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.721,
+      "text": "波の音を聞いていると、何となく遠くの方で、自分を呼んでいるものがあるような気がしましたので、窓から、外を覗いて見ました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.402,
+      "text": "けれど一目その娘を見た人は、みんなびっくりするような美しい器量でありましたから、中にはどうかしてその娘を見ようと思って、蝋燭を買いに来た者もありました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.281,
+      "text": "月のいい晩で、昼間のように外は明るかったのであります。"
+    },
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.137,
+      "text": "幸い、私達は、みんなよく顔が人間に似ているばかりでなく、胴から上は全部人間そのままなのであるから――魚や獣物の世界でさえ、暮らされるところを見れば――その世界で暮らされないことはない。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.482,
+      "text": "この絵を描いた蝋燭を山の上のお宮にあげてその燃えさしを身に付けて、海に出ると、どんな大暴風雨の日でも決して船が顛覆したり溺れて死ぬような災難がないということが、いつからともなくみんなの口々に噂となって上りました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.606,
+      "text": "香具師は、何処から聞き込んで来ましたか、または、いつ娘の姿を見て、ほんとうの人間ではない、実に世にも珍らしい人魚であることを見抜きましたか、ある日のことこっそりと年より夫婦の処へやって来て、娘には分らないように、大金を出すから、その人魚を売ってはくれないかと申したのであります。"
+    }
+  ],
+  "reduplications": {
+    "とぼとぼ": 1,
+    "わざわざ": 1,
+    "ふるふる": 1,
+    "ちらちら": 1
+  },
+  "opening": [
+    "一",
+    "人魚は、南の方の海にばかり棲んでいるのではありません。",
+    "北の海にも棲んでいたのであります。"
+  ],
+  "closing": [
+    "月が雲間から洩れて波の面を照らした時は、まことに気味悪うございました。",
+    "真暗な、星も見えない、雨の降る晩に、波の上から、蝋燭の光りが、漂って、だんだん高く登って、山の上のお宮をさして、ちらちらと動いて行くのを見た者があります。",
+    "幾年も経たずして、その下の町は亡びて、失なってしまいました。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "蝋燭": 35,
+    "人魚": 15,
+    "人間": 14,
+    "神様": 14,
+    "子供": 11,
+    "夫婦": 9,
+    "香具師": 8,
+    "自分": 6,
+    "可哀": 5,
+    "獣物": 4,
+    "私達": 4,
+    "不思議": 4,
+    "景色": 3,
+    "物凄": 3,
+    "何処": 3,
+    "世界": 3,
+    "出来": 3,
+    "燈火": 3,
+    "大事": 3,
+    "大暴風雨": 3,
+    "災難": 3,
+    "蝋燭屋": 3
+  }
+}

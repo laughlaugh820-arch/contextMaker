@@ -1,0 +1,170 @@
+{
+  "work_id": "623",
+  "person_id": "000119",
+  "title": "山月記",
+  "author": "中島敦",
+  "card": "https://www.aozora.gr.jp/cards/000119/card623.html",
+  "path": "library/000119/623_山月記",
+  "stats": {
+    "characters": 5772,
+    "paragraphs": 25,
+    "sentences": 183,
+    "sentence_length_mean": 31.3,
+    "sentence_length_median": 28,
+    "sentence_length_stdev": 17.8,
+    "sentence_length_max": 98,
+    "dialogue_ratio": 0.008,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 15.7,
+    "dialogue_paragraph_ratio": 0.0,
+    "orthography": "旧字旧仮名",
+    "kanji_ratio": 0.3498,
+    "hiragana_ratio": 0.5509,
+    "katakana_ratio": 0.0,
+    "comma_per_sentence": 1.69,
+    "dash_per_1000": 0.0,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.17,
+    "question_per_1000": 0.52
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 14,
+      "sentence_length_mean": 41.9,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 19,
+      "sentence_length_mean": 29.4,
+      "dialogue_ratio": 0.084,
+      "exclaim_question_per_1000": 1.79,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 16,
+      "sentence_length_mean": 36.6,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 20,
+      "sentence_length_mean": 28.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 18,
+      "sentence_length_mean": 30.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 3.6,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 19,
+      "sentence_length_mean": 30.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 24,
+      "sentence_length_mean": 24.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 13,
+      "sentence_length_mean": 43.6,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 24,
+      "sentence_length_mean": 24.1,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 1.73,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 16,
+      "sentence_length_mean": 35.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.738,
+      "text": "之が己を損ひ、妻子を苦しめ、友人を傷つけ、果ては、己の外形を斯くの如く、内心にふさはしいものに變へて了つたのだ。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.582,
+      "text": "舊詩を吐き終つた李徴の聲は、突然調子を變へ、自らを嘲るが如くに言つた。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.969,
+      "text": "叢の中からは、又、堪へ得ざるが如き悲泣の聲が洩れた。"
+    }
+  ],
+  "reduplications": {},
+  "opening": [
+    "隴西の李徴は博學才穎、天寶の末年、若くして名を虎榜に連ね、ついで江南尉に補せられたが、性、狷介、自ら恃む所頗る厚く、賤吏に甘んずるを潔しとしなかつた。",
+    "いくばくもなく官を退いた後は、故山、略に歸臥し、人と交を絶つて、ひたすら詩作に耽つた。",
+    "下吏となつて長く膝を俗惡な大官の前に屈するよりは、詩家としての名を死後百年に遺さうとしたのである。"
+  ],
+  "closing": [
+    "一行が丘の上についた時、彼等は、言はれた通りに振返つて、先程の林間の草地を眺めた。",
+    "忽ち、一匹の虎が草の茂みから道の上に躍り出たのを彼等は見た。",
+    "虎は、既に白く光を失つた月を仰いで、二聲三聲咆哮したかと思ふと、又、元の叢に躍り入つて、再び其の姿を見なかつた。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "自分": 23,
+    "人間": 17,
+    "李徴": 16,
+    "自尊心": 5,
+    "一匹": 5,
+    "彼等": 5,
+    "妻子": 4,
+    "故人": 4,
+    "運命": 4,
+    "次第": 4,
+    "何處": 3,
+    "出發": 3,
+    "何事": 3,
+    "出來": 3,
+    "氣持": 3,
+    "叢中": 3,
+    "尊大": 3,
+    "羞恥心": 3,
+    "臆病": 3,
+    "才能": 3
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "work_id": "179",
+  "person_id": "000879",
+  "title": "藪の中",
+  "author": "芥川龍之介",
+  "card": "https://www.aozora.gr.jp/cards/000879/card179.html",
+  "path": "library/000879/179_藪の中",
+  "stats": {
+    "characters": 8546,
+    "paragraphs": 46,
+    "sentences": 287,
+    "sentence_length_mean": 29.3,
+    "sentence_length_median": 27,
+    "sentence_length_stdev": 15.4,
+    "sentence_length_max": 126,
+    "dialogue_ratio": 0.035,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 33.4,
+    "dialogue_paragraph_ratio": 0.043,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.2415,
+    "hiragana_ratio": 0.647,
+    "katakana_ratio": 0.0,
+    "comma_per_sentence": 1.38,
+    "dash_per_1000": 5.15,
+    "ellipsis_per_1000": 0.23,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 2.93
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 34,
+      "sentence_length_mean": 25.4,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 5.8,
+      "dash_ellipsis_per_1000": 5.8
+    },
+    {
+      "segment": 2,
+      "sentences": 28,
+      "sentence_length_mean": 29.7,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 3.61,
+      "dash_ellipsis_per_1000": 2.4
+    },
+    {
+      "segment": 3,
+      "sentences": 27,
+      "sentence_length_mean": 32.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 2.31,
+      "dash_ellipsis_per_1000": 3.47
+    },
+    {
+      "segment": 4,
+      "sentences": 23,
+      "sentence_length_mean": 36.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 1.21,
+      "dash_ellipsis_per_1000": 4.84
+    },
+    {
+      "segment": 5,
+      "sentences": 23,
+      "sentence_length_mean": 36.3,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 1.2,
+      "dash_ellipsis_per_1000": 3.6
+    },
+    {
+      "segment": 6,
+      "sentences": 26,
+      "sentence_length_mean": 32.4,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 1.19,
+      "dash_ellipsis_per_1000": 5.93
+    },
+    {
+      "segment": 7,
+      "sentences": 30,
+      "sentence_length_mean": 28.5,
+      "dialogue_ratio": 0.139,
+      "exclaim_question_per_1000": 1.17,
+      "dash_ellipsis_per_1000": 7.02
+    },
+    {
+      "segment": 8,
+      "sentences": 28,
+      "sentence_length_mean": 29.6,
+      "dialogue_ratio": 0.04,
+      "exclaim_question_per_1000": 2.42,
+      "dash_ellipsis_per_1000": 4.83
+    },
+    {
+      "segment": 9,
+      "sentences": 30,
+      "sentence_length_mean": 28.5,
+      "dialogue_ratio": 0.104,
+      "exclaim_question_per_1000": 5.85,
+      "dash_ellipsis_per_1000": 8.19
+    },
+    {
+      "segment": 10,
+      "sentences": 38,
+      "sentence_length_mean": 21.6,
+      "dialogue_ratio": 0.071,
+      "exclaim_question_per_1000": 4.88,
+      "dash_ellipsis_per_1000": 8.54
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.656,
+      "text": "わたしは男に蹴られたよりも、その眼の色に打たれたように、我知らず何か叫んだぎり、とうとう気を失ってしまいました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.107,
+      "text": "あの男がかようになろうとは、夢にも思わずに居りましたが、真に人間の命なぞは、如露亦如電に違いございません。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.779,
+      "text": "（寂しき微笑）わたしのように腑甲斐ないものは、大慈大悲の観世音菩薩も、お見放しなすったものかも知れません。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.613,
+      "text": "――その紺の水干を着た男は、わたしを手ごめにしてしまうと、縛られた夫を眺めながら、嘲るように笑いました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.467,
+      "text": "所が泣き伏した女を後に、藪の外へ逃げようとすると、女は突然わたしの腕へ、気違いのように縋りつきました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.86,
+      "text": "しかし妻は夢のように、盗人に手をとられながら、藪の外へ行こうとすると、たちまち顔色を失ったなり、杉の根のおれを指さした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.036,
+      "text": "おまけにそこには、馬蠅が一匹、わたしの足音も聞えないように、べったり食いついて居りましたっけ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.877,
+      "text": "――この言葉は嵐のように、今でも遠い闇の底へ、まっ逆様におれを吹き落そうとする。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.278,
+      "text": "何、男を殺すなぞは、あなた方の思っているように、大した事ではありません。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.265,
+      "text": "ちらりと、――見えたと思う瞬間には、もう見えなくなったのですが、一つにはそのためもあったのでしょう、わたしにはあの女の顔が、女菩薩のように見えたのです。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.815,
+      "text": "それがどうも盗人の言葉に、聞き入っているように見えるではないか？"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.51,
+      "text": "これはあなた方の思うように、卑しい色欲ではありません。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.089,
+      "text": "馬は月毛の、――確か法師髪の馬のようでございました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.498,
+      "text": "殊にその一瞬間の、燃えるような瞳を見ないからです。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.626,
+      "text": "わたしは思わず夫の側へ、転ぶように走り寄りました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.873,
+      "text": "――妻は気が狂ったように、何度もこう叫び立てた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.929,
+      "text": "おれはただ幻のように、そう云う景色を眺めていた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.321,
+      "text": "わたしはあの夫婦と途づれになると、向うの山には古塚がある、この古塚を発いて見たら、鏡や太刀が沢山出た、わたしは誰も知らないように、山の陰の藪の中へ、そう云う物を埋めてある、もし望み手があるならば、どれでも安い値に売り渡したい、――と云う話をしたのです。"
+    }
+  ],
+  "reduplications": {
+    "とうとう": 2,
+    "そうそう": 1,
+    "やれやれ": 1,
+    "うんうん": 1,
+    "ひしひし": 1
+  },
+  "opening": [
+    "検非違使に問われたる木樵りの物語",
+    "さようでございます。",
+    "あの死骸を見つけたのは、わたしに違いございません。"
+  ],
+  "closing": [
+    "おれはそれぎり永久に、中有の闇へ沈んでしまった。",
+    "………",
+    "（大正十年十二月）"
+  ],
+  "repetitions": [
+    {
+      "head": "一度でも",
+      "count": 3,
+      "sample": [
+        "一度でもこのくらい呪わしい言葉が、人間の耳に触れた事があろうか？",
+        "一度でもこのくらい、――（突然迸るごとき嘲笑）その言葉を聞いた時は、盗人さえ色を失ってしまった。"
+      ]
+    }
+  ],
+  "vocabulary": {
+    "盗人": 21,
+    "太刀": 16,
+    "言葉": 10,
+    "死骸": 9,
+    "落葉": 8,
+    "小刀": 8,
+    "多襄丸": 6,
+    "一度": 6,
+    "物語": 5,
+    "水干": 5,
+    "検非違使": 4,
+    "弓矢": 4,
+    "人間": 4,
+    "夫婦": 4,
+    "出来": 4,
+    "返事": 4,
+    "山科": 3,
+    "月毛": 3,
+    "一人": 3,
+    "武弘": 3,
+    "咄嗟": 3,
+    "微笑": 3,
+    "今度": 3,
+    "蹴倒": 3,
+    "太刀打": 3,
+    "沈黙": 3
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "work_id": "424",
+  "person_id": "000074",
+  "title": "檸檬",
+  "author": "梶井基次郎",
+  "card": "https://www.aozora.gr.jp/cards/000074/card424.html",
+  "path": "library/000074/424_檸檬",
+  "stats": {
+    "characters": 4988,
+    "paragraphs": 30,
+    "sentences": 140,
+    "sentence_length_mean": 35.2,
+    "sentence_length_median": 28.0,
+    "sentence_length_stdev": 24.7,
+    "sentence_length_max": 110,
+    "dialogue_ratio": 0.022,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 14.0,
+    "dialogue_paragraph_ratio": 0.067,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.2717,
+    "hiragana_ratio": 0.6431,
+    "katakana_ratio": 0.0156,
+    "comma_per_sentence": 0.61,
+    "dash_per_1000": 4.81,
+    "ellipsis_per_1000": 0.4,
+    "exclaim_per_1000": 0.2,
+    "question_per_1000": 0.0
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 14,
+      "sentence_length_mean": 38.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 3.68
+    },
+    {
+      "segment": 2,
+      "sentences": 15,
+      "sentence_length_mean": 29.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 6.71
+    },
+    {
+      "segment": 3,
+      "sentences": 15,
+      "sentence_length_mean": 34.5,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 5.8
+    },
+    {
+      "segment": 4,
+      "sentences": 10,
+      "sentence_length_mean": 51.1,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 5.87
+    },
+    {
+      "segment": 5,
+      "sentences": 10,
+      "sentence_length_mean": 47.3,
+      "dialogue_ratio": 0.053,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 8.46
+    },
+    {
+      "segment": 6,
+      "sentences": 13,
+      "sentence_length_mean": 36.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.18
+    },
+    {
+      "segment": 7,
+      "sentences": 11,
+      "sentence_length_mean": 44.3,
+      "dialogue_ratio": 0.027,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.11
+    },
+    {
+      "segment": 8,
+      "sentences": 15,
+      "sentence_length_mean": 33.5,
+      "dialogue_ratio": 0.03,
+      "exclaim_question_per_1000": 1.99,
+      "dash_ellipsis_per_1000": 5.96
+    },
+    {
+      "segment": 9,
+      "sentences": 19,
+      "sentence_length_mean": 25.5,
+      "dialogue_ratio": 0.031,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.13
+    },
+    {
+      "segment": 10,
+      "sentences": 18,
+      "sentence_length_mean": 27.0,
+      "dialogue_ratio": 0.091,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.12
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.552,
+      "text": "レモンエロウの絵具をチューブから搾り出して固めたようなあの単純な色も、それからあの丈の詰まった紡錘形の恰好も。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.005,
+      "text": "焦躁と言おうか、嫌悪と言おうか――酒を飲んだあとに宿酔があるように、酒を毎日飲んでいると宿酔に相当した時期がやって来る。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.381,
+      "text": "果物はかなり勾配の急な台の上に並べてあって、その台というのも古びた黒い漆塗りの板だったように思える。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.622,
+      "text": "その熱い故だったのだろう、握っている掌から身内に浸み透ってゆくようなその冷たさは快いものだった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.127,
+      "text": "私は、できることなら京都から逃げ出して誰一人知らないような市へ行ってしまいたかった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.927,
+      "text": "私は埃っぽい丸善の中の空気が、その檸檬の周囲だけ変に緊張しているような気がした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.312,
+      "text": "書籍、学生、勘定台、これらはみな借金取りの亡霊のように私には見えるのだった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.744,
+      "text": "平常あんなに避けていた丸善がその時の私にはやすやすと入れるように思えた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.489,
+      "text": "そう周囲が真暗なため、店頭に点けられた幾つもの電燈が驟雨のように浴びせかける絢爛は、周囲の何者にも奪われることなく、ほしいままにも美しい眺めが照らし出されているのだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.11,
+      "text": "時どき私はそんな路を歩きながら、ふと、そこが京都ではなくて京都から何百里も離れた仙台とか長崎とか――そのような市へ今自分が来ているのだ――という錯覚を起こそうと努める。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.027,
+      "text": "また背を焼くような借金などがいけないのではない。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.244,
+      "text": "察しはつくだろうが私にはまるで金がなかった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.345,
+      "text": "そして街から街へ、先に言ったような裏通りを歩いたり、駄菓子屋の前で立ち留まったり、乾物屋の乾蝦や棒鱈や湯葉を眺めたり、とうとう私は二条の方へ寺町を下り、そこの果物屋で足を留めた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.468,
+      "text": "もう一つはその家の打ち出した廂なのだが、その廂が眼深に冠った帽子の廂のように――これは形容というよりも、「おや、あそこの店は帽子の廂をやけに下げているぞ」と思わせるほどなので、廂の上はこれも真暗なのだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.223,
+      "text": "私は幼い時よくそれを口に入れては父母に叱られたものだが、その幼時のあまい記憶が大きくなって落ち魄れた私に蘇えってくる故だろうか、まったくあの味には幽かな爽やかななんとなく詩美と言ったような味覚が漂って来る。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.089,
+      "text": "雨や風が蝕んでやがて土に帰ってしまう、と言ったような趣きのある街で、土塀が崩れていたり家並が傾きかかっていたり――勢いのいいのは植物だけで、時とするとびっくりさせるような向日葵があったりカンナが咲いていたりする。"
+    }
+  ],
+  "reduplications": {
+    "とうとう": 2,
+    "バラバラ": 1,
+    "そうだそうだ": 1
+  },
+  "opening": [
+    "えたいの知れない不吉な塊が私の心を始終圧えつけていた。",
+    "焦躁と言おうか、嫌悪と言おうか――酒を飲んだあとに宿酔があるように、酒を毎日飲んでいると宿酔に相当した時期がやって来る。",
+    "それが来たのだ。"
+  ],
+  "closing": [
+    "私はこの想像を熱心に追求した。",
+    "「そうしたらあの気詰まりな丸善も粉葉みじんだろう」",
+    "そして私は活動写真の看板画が奇体な趣きで街を彩っている京極を下って行った。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "檸檬": 9,
+    "丸善": 7,
+    "周囲": 5,
+    "気持": 5,
+    "友達": 4,
+    "不吉": 3,
+    "頃私": 3,
+    "京都": 3,
+    "錯覚": 3,
+    "想像": 3,
+    "絵具": 3,
+    "花火": 3,
+    "贅沢": 3,
+    "空気": 3,
+    "果物屋": 3,
+    "色彩": 3,
+    "幸福": 3,
+    "憂鬱": 3,
+    "身体": 3,
+    "以前": 3
+  }
+}

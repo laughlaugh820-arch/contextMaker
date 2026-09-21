@@ -1,0 +1,16 @@
+{
+  "work_id": "473",
+  "person_id": "000081",
+  "title": "よだかの星",
+  "subtitle": "",
+  "author": "宮沢賢治",
+  "path": "cards/000081/files/473_ruby/473_ruby.txt",
+  "source": "https://raw.githubusercontent.com/aozorahack/aozorabunko_text/HEAD/cards/000081/files/473_ruby/473_ruby.txt",
+  "card": "https://www.aozora.gr.jp/cards/000081/card473.html",
+  "mirror": "https://github.com/aozorahack/aozorabunko_text",
+  "encoding_original": "Shift_JIS (cp932)",
+  "ruby": "除去",
+  "colophon": "底本：新潮文庫『新編　銀河鉄道の夜』\n　　　1989（平成元）年6月15日第1刷発行\n　　　1991（平成3）年3月10日4刷\n親本：『新修　宮沢賢治全集』筑摩書房\n入力：佐々木美香\n校正：野口英司\n1998年8月20日公開\n1999年7月23日修正\n青空文庫作成ファイル：\nこのファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp）で作られました。入力、校正、制作にあたったのは、ボランティアの皆さんです",
+  "characters": 5263,
+  "fetched_on": "2026-09-21"
+}

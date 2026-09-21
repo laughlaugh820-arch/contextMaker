@@ -1,0 +1,243 @@
+{
+  "work_id": "270",
+  "person_id": "000035",
+  "title": "富嶽百景",
+  "author": "太宰治",
+  "card": "https://www.aozora.gr.jp/cards/000035/card270.html",
+  "path": "library/000035/270_富嶽百景",
+  "stats": {
+    "characters": 15150,
+    "paragraphs": 120,
+    "sentences": 469,
+    "sentence_length_mean": 31.9,
+    "sentence_length_median": 19,
+    "sentence_length_stdev": 36.5,
+    "sentence_length_max": 309,
+    "dialogue_ratio": 0.133,
+    "quoted_narration_ratio": 0.024,
+    "quote_span_mean": 35.5,
+    "dialogue_paragraph_ratio": 0.458,
+    "orthography": "旧字旧仮名",
+    "kanji_ratio": 0.2479,
+    "hiragana_ratio": 0.6091,
+    "katakana_ratio": 0.0146,
+    "comma_per_sentence": 2.44,
+    "dash_per_1000": 0.26,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.26,
+    "question_per_1000": 0.79
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 42,
+      "sentence_length_mean": 36.6,
+      "dialogue_ratio": 0.014,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 36,
+      "sentence_length_mean": 41.3,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 54,
+      "sentence_length_mean": 27.4,
+      "dialogue_ratio": 0.247,
+      "exclaim_question_per_1000": 0.68,
+      "dash_ellipsis_per_1000": 0.68
+    },
+    {
+      "segment": 4,
+      "sentences": 72,
+      "sentence_length_mean": 20.6,
+      "dialogue_ratio": 0.263,
+      "exclaim_question_per_1000": 2.7,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 73,
+      "sentence_length_mean": 21.6,
+      "dialogue_ratio": 0.081,
+      "exclaim_question_per_1000": 2.54,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 35,
+      "sentence_length_mean": 43.6,
+      "dialogue_ratio": 0.101,
+      "exclaim_question_per_1000": 1.97,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 26,
+      "sentence_length_mean": 56.9,
+      "dialogue_ratio": 0.004,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.68
+    },
+    {
+      "segment": 8,
+      "sentences": 53,
+      "sentence_length_mean": 26.9,
+      "dialogue_ratio": 0.317,
+      "exclaim_question_per_1000": 1.4,
+      "dash_ellipsis_per_1000": 0.7
+    },
+    {
+      "segment": 9,
+      "sentences": 42,
+      "sentence_length_mean": 35.2,
+      "dialogue_ratio": 0.198,
+      "exclaim_question_per_1000": 1.35,
+      "dash_ellipsis_per_1000": 0.68
+    },
+    {
+      "segment": 10,
+      "sentences": 36,
+      "sentence_length_mean": 41.4,
+      "dialogue_ratio": 0.085,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.065,
+      "text": "しかも左のはうに、肩が傾いて心細く、船尾のはうからだんだん沈没しかけてゆく軍艦の姿に似てゐる。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.908,
+      "text": "結婚式も、ほんの身内の二、三のひとにだけ立ち会つてもらつて、まづしくとも厳粛に、その先輩の宅で、していただけるやうになつて、私は人の情に、少年の如く感奮してゐた。"
+    },
+    {
+      "markers": [
+        "みたい"
+      ],
+      "position": 0.596,
+      "text": "月の在る夜は富士が青白く、水の精みたいな姿で立つてゐる。"
+    },
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.509,
+      "text": "それでもときどき、思ひ出したやうに、甚だ散文的な口調で、あれが三ツ峠、向ふが河口湖、わかさぎといふ魚がゐます、など、物憂さうな、呟きに似た説明をして聞かせることもある。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.127,
+      "text": "これは、まるで、風呂屋のペンキ画だ。"
+    },
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.21,
+      "text": "まつしろい睡蓮の花に似てゐた。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.73,
+      "text": "母堂は、品よく笑ひながら、「私たちも、ごらんのとほりお金持ではございませぬし、ことごとしい式などは、かへつて当惑するやうなもので、ただ、あなたおひとり、愛情と、職業に対する熱意さへ、お持ちならば、それで私たち、結構でございます。」"
+    },
+    {
+      "markers": [
+        "みたい"
+      ],
+      "position": 0.95,
+      "text": "私は機械のことには、あまり明るくないのだし、写真の趣味は皆無であり、しかも、どてらを二枚もかさねて着てゐて、茶店の人たちさへ、山賊みたいだ、といつて笑つてゐるやうな、そんなむさくるしい姿でもあり、多分は東京の、そんな華やかな娘さんから、はいからの用事を頼まれて、内心ひどく狼狽したのである。"
+    }
+  ],
+  "reduplications": {
+    "どんどん": 2,
+    "げらげら": 1,
+    "がぶがぶ": 1,
+    "じめじめ": 1,
+    "ばかばか": 1,
+    "おのおの": 1,
+    "ぶらぶら": 1,
+    "にやにや": 1,
+    "しぶしぶ": 1,
+    "くすくす": 1,
+    "とげとげ": 1,
+    "みるみる": 1,
+    "のしのし": 1,
+    "ひそひそ": 1,
+    "にこにこ": 1,
+    "ひよろひよろ": 1,
+    "ぢやぶぢやぶ": 1
+  },
+  "opening": [
+    "富士の頂角、広重の富士は八十五度、文晁の富士も八十四度くらゐ、けれども、陸軍の実測図によつて東西及南北に断面図を作つてみると、東西縦断は頂角、百二十四度となり、南北は百十七度である。",
+    "広重、文晁に限らず、たいていの絵の富士は、鋭角である。",
+    "いただきが、細く、高く、華奢である。"
+  ],
+  "closing": [
+    "まづ、甲府の安宿に一泊して、そのあくる朝、安宿の廊下の汚い欄干によりかかり、富士を見ると、甲府の富士は、山々のうしろから、三分の一ほど顔を出してゐる。",
+    "酸漿に似てゐた。",
+    "（昭和十四年二月―三月）"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "富士": 79,
+    "茶店": 24,
+    "二階": 14,
+    "井伏氏": 14,
+    "甲府": 12,
+    "仕事": 11,
+    "茶屋": 9,
+    "吉田": 9,
+    "花嫁": 9,
+    "御坂": 8,
+    "青年": 8,
+    "月見草": 8,
+    "御坂峠": 7,
+    "老婆": 7,
+    "新田": 7,
+    "自分": 7,
+    "富士山": 6,
+    "頂上": 5,
+    "二人": 5,
+    "郵便物": 5,
+    "着物": 5,
+    "財布": 5,
+    "遊女": 5,
+    "トンネル": 5,
+    "多少": 4,
+    "恋人": 4,
+    "芝居": 4,
+    "煙草": 4,
+    "写真": 4,
+    "母堂": 4,
+    "背後": 4,
+    "廊下": 4,
+    "部屋": 4,
+    "小説": 4,
+    "貴公子": 4,
+    "意味": 4,
+    "気持": 4,
+    "天気": 4,
+    "口調": 4,
+    "自動車": 4
+  }
+}

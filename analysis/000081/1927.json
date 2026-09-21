@@ -1,0 +1,162 @@
+{
+  "work_id": "1927",
+  "person_id": "000081",
+  "title": "注文の多い料理店",
+  "author": "宮沢賢治",
+  "card": "https://www.aozora.gr.jp/cards/000081/card1927.html",
+  "path": "library/000081/1927_注文の多い料理店",
+  "stats": {
+    "characters": 5638,
+    "paragraphs": 153,
+    "sentences": 241,
+    "sentence_length_mean": 22.4,
+    "sentence_length_median": 18,
+    "sentence_length_stdev": 14.7,
+    "sentence_length_max": 99,
+    "dialogue_ratio": 0.485,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 35.1,
+    "dialogue_paragraph_ratio": 0.51,
+    "orthography": "旧字旧仮名",
+    "kanji_ratio": 0.1595,
+    "hiragana_ratio": 0.6701,
+    "katakana_ratio": 0.0193,
+    "comma_per_sentence": 0.85,
+    "dash_per_1000": 0.0,
+    "ellipsis_per_1000": 0.53,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 0.0
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 15,
+      "sentence_length_mean": 36.7,
+      "dialogue_ratio": 0.391,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 33,
+      "sentence_length_mean": 16.5,
+      "dialogue_ratio": 0.56,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 24,
+      "sentence_length_mean": 21.9,
+      "dialogue_ratio": 0.598,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 25,
+      "sentence_length_mean": 21.8,
+      "dialogue_ratio": 0.525,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 27,
+      "sentence_length_mean": 19.8,
+      "dialogue_ratio": 0.532,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 21,
+      "sentence_length_mean": 26.8,
+      "dialogue_ratio": 0.521,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 24,
+      "sentence_length_mean": 22.1,
+      "dialogue_ratio": 0.461,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 28,
+      "sentence_length_mean": 19.8,
+      "dialogue_ratio": 0.476,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 5.42
+    },
+    {
+      "segment": 9,
+      "sentences": 25,
+      "sentence_length_mean": 22.2,
+      "dialogue_ratio": 0.612,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 19,
+      "sentence_length_mean": 25.7,
+      "dialogue_ratio": 0.104,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.843,
+      "text": "二人はあんまり心を痛めたために、顔がまるでくしやくしやの紙屑のやうになり、お互にその顔を見合せ、ぶるぶるふるへ、声もなく泣きました。"
+    }
+  ],
+  "reduplications": {
+    "がたがた": 5,
+    "ざわざわ": 1,
+    "ずんずん": 1,
+    "さうさう": 1,
+    "わざわざ": 1,
+    "さあさあ": 1,
+    "こそこそ": 1,
+    "ぶるぶる": 1,
+    "ごろごろ": 1
+  },
+  "opening": [
+    "二人の若い紳士が、すつかりイギリスの兵隊のかたちをして、ぴか／＼する鉄砲をかついで、白熊のやうな犬を二疋つれて、だいぶ山奥の、木の葉のかさ／＼したとこを、こんなことを云ひながら、あるいてをりました。",
+    "「ぜんたい、こゝらの山は怪しからんね。",
+    "鳥も獣も一疋も居やがらん。"
+  ],
+  "closing": [
+    "そこで二人はやつと安心しました。",
+    "そして猟師のもつてきた団子をたべ、途中で十円だけ山鳥を買つて東京に帰りました。",
+    "しかし、さつき一ぺん紙くづのやうになつた二人の顔だけは、東京に帰つても、お湯にはひつても、もうもとのとほりになほりませんでした。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "二人": 25,
+    "クリーム": 8,
+    "紳士": 7,
+    "注文": 7,
+    "裏側": 5,
+    "香水": 5,
+    "鉄砲": 4,
+    "立派": 4,
+    "玄関": 4,
+    "西洋料理": 4,
+    "白熊": 3,
+    "二疋": 3,
+    "山奥": 3,
+    "廊下": 3,
+    "大歓迎": 3,
+    "東京": 3
+  }
+}

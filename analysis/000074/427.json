@@ -1,0 +1,247 @@
+{
+  "work_id": "427",
+  "person_id": "000074",
+  "title": "桜の樹の下には",
+  "author": "梶井基次郎",
+  "card": "https://www.aozora.gr.jp/cards/000074/card427.html",
+  "path": "library/000074/427_桜の樹の下には",
+  "stats": {
+    "characters": 1764,
+    "paragraphs": 16,
+    "sentences": 52,
+    "sentence_length_mean": 33.3,
+    "sentence_length_median": 28.0,
+    "sentence_length_stdev": 23.5,
+    "sentence_length_max": 147,
+    "dialogue_ratio": 0.0,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 0.0,
+    "dialogue_paragraph_ratio": 0.0,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.2511,
+    "hiragana_ratio": 0.6548,
+    "katakana_ratio": 0.004,
+    "comma_per_sentence": 1.21,
+    "dash_per_1000": 2.83,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 1.13,
+    "question_per_1000": 0.0
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 8,
+      "sentence_length_mean": 36.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 3.45,
+      "dash_ellipsis_per_1000": 10.34
+    },
+    {
+      "segment": 2,
+      "sentences": 1,
+      "sentence_length_mean": 60.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 4,
+      "sentence_length_mean": 42.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 5,
+      "sentence_length_mean": 34.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 4,
+      "sentence_length_mean": 46.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 5.41
+    },
+    {
+      "segment": 6,
+      "sentences": 5,
+      "sentence_length_mean": 34.4,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 6,
+      "sentence_length_mean": 27.3,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 6,
+      "sentence_length_mean": 33.5,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 9,
+      "sentence_length_mean": 17.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 6.25
+    },
+    {
+      "segment": 10,
+      "sentences": 4,
+      "sentence_length_mean": 39.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 6.41,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.414,
+      "text": "桜の根は貪婪な蛸のように、それを抱きかかえ、いそぎんちゃくの食糸のような毛根を聚めて、その液体を吸っている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.371,
+      "text": "馬のような屍体、犬猫のような屍体、そして人間のような屍体、屍体はみな腐爛して蛆が湧き、堪らなく臭い。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.701,
+      "text": "隙間なく水の面を被っている、彼らのかさなりあった翅が、光にちぢれて油のような光彩を流しているのだ。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.931,
+      "text": "いったいどこから浮かんで来た空想かさっぱり見当のつかない屍体が、いまはまるで桜の樹と一つになって、どんなに頭を振っても離れてゆこうとはしない。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.565,
+      "text": "水のしぶきのなかからは、あちらからもこちらからも、薄羽かげろうがアフロディットのように生まれて来て、溪の空をめがけて舞い上がってゆくのが見えた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.202,
+      "text": "それは、よく廻った独楽が完全な静止に澄むように、また、音楽の上手な演奏がきまってなにかの幻覚を伴うように、灼熱した生殖の幻覚させる後光のようなものだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.756,
+      "text": "墓場を発いて屍体を嗜む変質者のような残忍なよろこびを俺は味わった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.514,
+      "text": "俺はいまようやく瞳を据えて桜の花が見られるようになったのだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.658,
+      "text": "思いがけない石油を流したような光彩が、一面に浮いているのだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.284,
+      "text": "俺にはその美しさがなにか信じられないもののような気がした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.446,
+      "text": "何があんな花弁を作り、何があんな蕊を作っているのか、俺は毛根の吸いあげる水晶のような液が、静かな行列を作って、維管束のなかを夢のようにあがってゆくのが見えるようだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.4,
+      "text": "それでいて水晶のような液をたらたらとたらしている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.742,
+      "text": "俺はそれを見たとき、胸が衝かれるような気がした。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.897,
+      "text": "べたべたとまるで精液のようだと思ってごらん。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.84,
+      "text": "俺の心は悪鬼のように憂鬱に渇いている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.083,
+      "text": "どうして俺が毎晩家へ帰って来る道で、俺の部屋の数ある道具のうちの、選りに選ってちっぽけな薄っぺらいもの、安全剃刀の刃なんぞが、千里眼のように思い浮かんで来るのか――おまえはそれがわからないと言ったが――そして俺にもやはりそれがわからないのだが――それもこれもやっぱり同じようなことにちがいない。"
+    }
+  ],
+  "reduplications": {
+    "べたべた": 1
+  },
+  "opening": [
+    "桜の樹の下には屍体が埋まっている！",
+    "これは信じていいことなんだよ。",
+    "何故って、桜の花があんなにも見事に咲くなんて信じられないことじゃないか。"
+  ],
+  "closing": [
+    "ああ、桜の樹の下には屍体が埋まっている！",
+    "いったいどこから浮かんで来た空想かさっぱり見当のつかない屍体が、いまはまるで桜の樹と一つになって、どんなに頭を振っても離れてゆこうとはしない。",
+    "今こそ俺は、あの桜の樹の下で酒宴をひらいている村人たちと同じ権利で、花見の酒が呑めそうな気がする。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "屍体": 11,
+    "憂鬱": 4,
+    "不安": 3
+  }
+}

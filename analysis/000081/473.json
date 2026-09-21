@@ -1,0 +1,303 @@
+{
+  "work_id": "473",
+  "person_id": "000081",
+  "title": "よだかの星",
+  "author": "宮沢賢治",
+  "card": "https://www.aozora.gr.jp/cards/000081/card473.html",
+  "path": "library/000081/473_よだかの星",
+  "stats": {
+    "characters": 5263,
+    "paragraphs": 66,
+    "sentences": 207,
+    "sentence_length_mean": 24.9,
+    "sentence_length_median": 22,
+    "sentence_length_stdev": 16.9,
+    "sentence_length_max": 109,
+    "dialogue_ratio": 0.304,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 61.6,
+    "dialogue_paragraph_ratio": 0.394,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.1469,
+    "hiragana_ratio": 0.7405,
+    "katakana_ratio": 0.0055,
+    "comma_per_sentence": 0.95,
+    "dash_per_1000": 0.0,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 0.0
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 16,
+      "sentence_length_mean": 32.3,
+      "dialogue_ratio": 0.157,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 18,
+      "sentence_length_mean": 28.9,
+      "dialogue_ratio": 0.296,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 28,
+      "sentence_length_mean": 18.8,
+      "dialogue_ratio": 0.907,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 17,
+      "sentence_length_mean": 29.5,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 19,
+      "sentence_length_mean": 27.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 28,
+      "sentence_length_mean": 18.0,
+      "dialogue_ratio": 0.571,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 22,
+      "sentence_length_mean": 25.1,
+      "dialogue_ratio": 0.116,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 24,
+      "sentence_length_mean": 22.2,
+      "dialogue_ratio": 0.538,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 16,
+      "sentence_length_mean": 30.3,
+      "dialogue_ratio": 0.21,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 19,
+      "sentence_length_mean": 25.9,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.864,
+      "text": "そらのなかほどへ来て、よだかはまるで鷲が熊を襲うときするように、ぶるっとからだをゆすって毛をさかだてました。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.365,
+      "text": "それからにわかによだかは口を大きくひらいて、はねをまっすぐに張って、まるで矢のようにそらをよこぎりました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.53,
+      "text": "そしてお前もね、どうしてもとらなければならない時のほかはいたずらにお魚を取ったりしないようにして呉れ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.854,
+      "text": "そしてもう一尺で地面にその弱い足がつくというとき、よだかは俄かにのろしのようにそらへとびあがりました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.003,
+      "text": "顔は、ところどころ、味噌をつけたようにまだらで、くちばしは、ひらたくて、耳までさけています。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.973,
+      "text": "そして自分のからだがいま燐の火のような青い美しい光になって、しずかに燃えているのを見ました。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.33,
+      "text": "そしたらめじろは、赤ん坊をまるでぬす人からでもとりかえすように僕からひきはなしたんだなあ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.092,
+      "text": "かえって、よだかは、あの美しいかわせみや、鳥の中の宝石のような蜂すずめの兄さんでした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.406,
+      "text": "よだかはすぐそれを呑みこみましたが、その時何だかせなかがぞっとしたように思いました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.59,
+      "text": "夜だかはぐらぐらするほどまぶしいのをこらえて、矢のように、そっちへ飛んで行きました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.48,
+      "text": "山焼けの火は、だんだん水のように流れてひろがり、雲も赤く燃えているようです。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.393,
+      "text": "夜だかが思い切って飛ぶときは、そらがまるで二つに切れたように思われます。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.607,
+      "text": "私のようなみにくいからだでも灼けるときには小さなひかりを出すでしょう。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.359,
+      "text": "夜だかはまるで雲とすれすれになって、音なく空を飛びまわりました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.421,
+      "text": "よだかはむねがつかえたように思いながら、又そらへのぼりました。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.432,
+      "text": "そしてまるでよだかの咽喉をひっかいてばたばたしました。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.928,
+      "text": "寒さや霜がまるで剣のようによだかを刺しました。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.012,
+      "text": "足は、まるでよぼよぼで、一間とも歩けません。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.649,
+      "text": "そしてまるで夢を見ているようでした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.925,
+      "text": "つくいきはふいごのようです。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.879,
+      "text": "その声はまるで鷹でした。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで",
+        "似る"
+      ],
+      "position": 0.12,
+      "text": "それなら、たかという名のついたことは不思議なようですが、これは、一つはよだかのはねが無暗に強くて、風を切って翔けるときなどは、まるで鷹のように見えたことと、も一つはなきごえがするどくて、やはりどこか鷹に似ていた為です。"
+    }
+  ],
+  "reduplications": {
+    "よろよろ": 3,
+    "ぶるぶる": 2,
+    "さもさも": 1,
+    "とうとう": 1,
+    "とてもとても": 1
+  },
+  "opening": [
+    "よだかは、実にみにくい鳥です。",
+    "顔は、ところどころ、味噌をつけたようにまだらで、くちばしは、ひらたくて、耳までさけています。",
+    "足は、まるでよぼよぼで、一間とも歩けません。"
+  ],
+  "closing": [
+    "そしてよだかの星は燃えつづけました。",
+    "いつまでもいつまでも燃えつづけました。",
+    "今でもまだ燃えています。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "名前": 6,
+    "無理": 5,
+    "市蔵": 5,
+    "羽虫": 3,
+    "自分": 3,
+    "咽喉": 3,
+    "山焼": 3
+  }
+}

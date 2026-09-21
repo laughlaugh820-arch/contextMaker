@@ -1,0 +1,177 @@
+{
+  "work_id": "691",
+  "person_id": "000129",
+  "title": "高瀬舟",
+  "author": "森鴎外",
+  "card": "https://www.aozora.gr.jp/cards/000129/card691.html",
+  "path": "library/000129/691_高瀬舟",
+  "stats": {
+    "characters": 8461,
+    "paragraphs": 40,
+    "sentences": 215,
+    "sentence_length_mean": 38.9,
+    "sentence_length_median": 34,
+    "sentence_length_stdev": 22.8,
+    "sentence_length_max": 119,
+    "dialogue_ratio": 0.074,
+    "quoted_narration_ratio": 0.111,
+    "quote_span_mean": 77.8,
+    "dialogue_paragraph_ratio": 0.05,
+    "orthography": "旧字旧仮名",
+    "kanji_ratio": 0.288,
+    "hiragana_ratio": 0.624,
+    "katakana_ratio": 0.0007,
+    "comma_per_sentence": 1.45,
+    "dash_per_1000": 2.84,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 0.0
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 16,
+      "sentence_length_mean": 52.3,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 21,
+      "sentence_length_mean": 41.8,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 9.12
+    },
+    {
+      "segment": 3,
+      "sentences": 30,
+      "sentence_length_mean": 27.1,
+      "dialogue_ratio": 0.268,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 9.84
+    },
+    {
+      "segment": 4,
+      "sentences": 21,
+      "sentence_length_mean": 39.5,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 21,
+      "sentence_length_mean": 39.5,
+      "dialogue_ratio": 0.011,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 24,
+      "sentence_length_mean": 35.5,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 20,
+      "sentence_length_mean": 41.4,
+      "dialogue_ratio": 0.11,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 9.67
+    },
+    {
+      "segment": 8,
+      "sentences": 23,
+      "sentence_length_mean": 37.0,
+      "dialogue_ratio": 0.319,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 18,
+      "sentence_length_mean": 45.9,
+      "dialogue_ratio": 0.031,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 21,
+      "sentence_length_mean": 39.1,
+      "dialogue_ratio": 0.007,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.586,
+      "text": "此の如くに先から先へと考へて見れば、人はどこまで往つて踏み止まることが出來るものやら分からない。"
+    }
+  ],
+  "reduplications": {
+    "やうやう": 2,
+    "いやいや": 1,
+    "いつもいつも": 1,
+    "どれもどれも": 1
+  },
+  "opening": [
+    "高瀬舟は京都の高瀬川を上下する小舟である。",
+    "徳川時代に京都の罪人が遠島を申し渡されると、本人の親類が牢屋敷へ呼び出されて、そこで暇乞をすることを許された。",
+    "それから罪人は高瀬舟に載せられて、大阪へ廻されることであつた。"
+  ],
+  "closing": [
+    "さうは思つても、庄兵衞はまだどこやらに腑に落ちぬものが殘つてゐるので、なんだかお奉行樣に聞いて見たくてならなかつた。",
+    "次第に更けて行く朧夜に、沈默の人二人を載せた高瀬舟は、黒い水の面をすべつて行つた。",
+    "（大正五年一月「中央公論」第三十一年第一號）"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "喜助": 29,
+    "庄兵衞": 26,
+    "出來": 15,
+    "罪人": 14,
+    "自分": 11,
+    "爲事": 8,
+    "高瀬舟": 7,
+    "同心": 6,
+    "樣子": 6,
+    "不思議": 6,
+    "剃刀": 6,
+    "京都": 4,
+    "親類": 4,
+    "護送": 4,
+    "役人": 4,
+    "心持": 4,
+    "這入": 4,
+    "滿足": 4,
+    "牢屋敷": 3,
+    "境遇": 3,
+    "氣色": 3,
+    "役目": 3,
+    "注意": 3,
+    "難有": 3,
+    "病氣": 3,
+    "二百文": 3,
+    "見附": 3,
+    "次第": 3,
+    "人手": 3,
+    "此二百文": 3,
+    "女房": 3,
+    "子供": 3,
+    "扶持米": 3,
+    "里方": 3,
+    "創口": 3,
+    "判斷": 3
+  }
+}

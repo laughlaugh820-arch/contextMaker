@@ -1,0 +1,16 @@
+{
+  "work_id": "789",
+  "person_id": "000148",
+  "title": "吾輩は猫である",
+  "subtitle": "",
+  "author": "夏目漱石",
+  "path": "cards/000148/files/789_ruby_5639/789_ruby_5639.txt",
+  "source": "https://raw.githubusercontent.com/aozorahack/aozorabunko_text/HEAD/cards/000148/files/789_ruby_5639/789_ruby_5639.txt",
+  "card": "https://www.aozora.gr.jp/cards/000148/card789.html",
+  "mirror": "https://github.com/aozorahack/aozorabunko_text",
+  "encoding_original": "Shift_JIS (cp932)",
+  "ruby": "除去",
+  "colophon": "底本：「夏目漱石全集1」ちくま文庫、筑摩書房\n　　　1987（昭和62）年9月29日第1刷発行\n底本の親本：「筑摩全集類聚版　夏目漱石全集　1」筑摩書房\n　　　1971（昭和46）年4月5日初版\n初出：「ホトトギス」\n　　　1905（明治38）年1月、2月、4月、6月、7月、10月\n　　　1906（明治39）年1月、3月、4月、8月\n※誤植を疑った箇所を、底本の親本の表記にそって、あらためました。\n入力：柴田卓治\n校正：渡部峰子（一）、おのしげひこ（二、五）、田尻幹二（三）、高橋真也（四、七、八、十、十一）、しず（六）、瀬戸さえ子（九）\n1999年9月17日公開\n2018年2月5日修正\n青空文庫作成ファイル：\nこのファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp/）で作られました。入力、校正、制作にあたったのは、ボランティアの皆さんです。",
+  "characters": 321105,
+  "fetched_on": "2026-09-21"
+}

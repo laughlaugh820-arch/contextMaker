@@ -1,0 +1,16 @@
+{
+  "work_id": "69",
+  "person_id": "000879",
+  "title": "河童",
+  "subtitle": "どうか Kappa と発音してください。",
+  "author": "芥川龍之介",
+  "path": "cards/000879/files/69_ruby_1321/69_ruby_1321.txt",
+  "source": "https://raw.githubusercontent.com/aozorahack/aozorabunko_text/HEAD/cards/000879/files/69_ruby_1321/69_ruby_1321.txt",
+  "card": "https://www.aozora.gr.jp/cards/000879/card69.html",
+  "mirror": "https://github.com/aozorahack/aozorabunko_text",
+  "encoding_original": "Shift_JIS (cp932)",
+  "ruby": "除去",
+  "colophon": "底本：「河童・或る阿呆の一生」旺文社文庫、旺文社\n　　　1966（昭和41）年10月20日初版発行\n　　　1984（昭和59）年重版発行\n初出：「改造」\n　　　1927（昭和2）年3月1日\n※底本は、物を数える際や地名などに用いる「ヶ」（区点番号5-86）を、大振りにつくっています。\n入力：もりみつじゅんじ\n校正：かとうかおり\n1999年1月24日公開\n2012年3月20日修正\n青空文庫作成ファイル：\nこのファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp/）で作られました。入力、校正、制作にあたったのは、ボランティアの皆さんです。",
+  "characters": 38043,
+  "fetched_on": "2026-09-21"
+}

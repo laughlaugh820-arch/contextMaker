@@ -1,0 +1,233 @@
+{
+  "work_id": "43016",
+  "person_id": "000879",
+  "title": "トロッコ",
+  "author": "芥川龍之介",
+  "card": "https://www.aozora.gr.jp/cards/000879/card43016.html",
+  "path": "library/000879/43016_トロッコ",
+  "stats": {
+    "characters": 4396,
+    "paragraphs": 42,
+    "sentences": 140,
+    "sentence_length_mean": 30.9,
+    "sentence_length_median": 29.0,
+    "sentence_length_stdev": 14.1,
+    "sentence_length_max": 87,
+    "dialogue_ratio": 0.071,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 14.1,
+    "dialogue_paragraph_ratio": 0.262,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.3089,
+    "hiragana_ratio": 0.5446,
+    "katakana_ratio": 0.0355,
+    "comma_per_sentence": 1.3,
+    "dash_per_1000": 5.23,
+    "ellipsis_per_1000": 0.91,
+    "exclaim_per_1000": 0.45,
+    "question_per_1000": 1.14
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 13,
+      "sentence_length_mean": 35.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 8.75
+    },
+    {
+      "segment": 2,
+      "sentences": 15,
+      "sentence_length_mean": 28.1,
+      "dialogue_ratio": 0.021,
+      "exclaim_question_per_1000": 2.38,
+      "dash_ellipsis_per_1000": 2.38
+    },
+    {
+      "segment": 3,
+      "sentences": 14,
+      "sentence_length_mean": 33.4,
+      "dialogue_ratio": 0.071,
+      "exclaim_question_per_1000": 4.27,
+      "dash_ellipsis_per_1000": 8.55
+    },
+    {
+      "segment": 4,
+      "sentences": 14,
+      "sentence_length_mean": 27.6,
+      "dialogue_ratio": 0.168,
+      "exclaim_question_per_1000": 2.58,
+      "dash_ellipsis_per_1000": 10.34
+    },
+    {
+      "segment": 5,
+      "sentences": 16,
+      "sentence_length_mean": 26.9,
+      "dialogue_ratio": 0.237,
+      "exclaim_question_per_1000": 2.33,
+      "dash_ellipsis_per_1000": 6.98
+    },
+    {
+      "segment": 6,
+      "sentences": 14,
+      "sentence_length_mean": 33.9,
+      "dialogue_ratio": 0.027,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 2.11
+    },
+    {
+      "segment": 7,
+      "sentences": 12,
+      "sentence_length_mean": 32.4,
+      "dialogue_ratio": 0.036,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 5.14
+    },
+    {
+      "segment": 8,
+      "sentences": 15,
+      "sentence_length_mean": 28.9,
+      "dialogue_ratio": 0.12,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.61
+    },
+    {
+      "segment": 9,
+      "sentences": 13,
+      "sentence_length_mean": 33.3,
+      "dialogue_ratio": 0.048,
+      "exclaim_question_per_1000": 2.31,
+      "dash_ellipsis_per_1000": 2.31
+    },
+    {
+      "segment": 10,
+      "sentences": 14,
+      "sentence_length_mean": 30.6,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 2.33,
+      "dash_ellipsis_per_1000": 11.66
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.432,
+      "text": "「登り路の方が好い、何時までも押させてくれるから」――良平はそんな事を考えながら、全身でトロッコを押すようにした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.987,
+      "text": "――塵労に疲れた彼の前には今でもやはりその時のように、薄暗い藪や坂のある路が、細細と一すじ断続している。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.746,
+      "text": "彼は若い二人の土工に、取って附けたような御時宜をすると、どんどん線路伝いに走り出した。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.193,
+      "text": "その途端につき当りの風景は、忽ち両側へ分かれるように、ずんずん目の前へ展開して来る。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.036,
+      "text": "煽るように車台が動いたり、土工の袢天の裾がひらついたり、細い線路がしなったり――良平はそんなけしきを眺めながら、土工になりたいと思う事がある。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.62,
+      "text": "彼はその冷淡さを取り繕うように、包み菓子の一つを口へ入れた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.538,
+      "text": "しかし良平はさっきのように、面白い気もちにはなれなかった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.329,
+      "text": "良平は彼等を見た時から、何だか親しみ易いような気がした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.916,
+      "text": "殊に母は何とか云いながら、良平の体を抱えるようにした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.645,
+      "text": "その坂を向うへ下り切ると、又同じような茶店があった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.495,
+      "text": "三人は又前のように、重いトロッコを押し始めた。"
+    }
+  ],
+  "reduplications": {
+    "そろそろ": 1,
+    "ずんずん": 1,
+    "どんどん": 1,
+    "とうとう": 1
+  },
+  "opening": [
+    "小田原熱海間に、軽便鉄道敷設の工事が始まったのは、良平の八つの年だった。",
+    "良平は毎日村外れへ、その工事を見物に行った。",
+    "工事を――といったところが、唯トロッコで土を運搬する――それが面白さに見に行ったのである。"
+  ],
+  "closing": [
+    "全然何の理由もないのに？",
+    "――塵労に疲れた彼の前には今でもやはりその時のように、薄暗い藪や坂のある路が、細細と一すじ断続している。",
+    "…………"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "良平": 42,
+    "トロッコ": 37,
+    "土工": 13,
+    "線路": 12,
+    "二人": 10,
+    "三人": 8,
+    "一人": 5,
+    "其処": 4,
+    "同時": 4,
+    "車輪": 4,
+    "蜜柑畑": 4,
+    "工事": 3,
+    "村外": 3,
+    "今度": 3,
+    "年下": 3,
+    "彼等": 3,
+    "両側": 3,
+    "工事場": 3,
+    "何時": 3,
+    "竹藪": 3,
+    "茶店": 3,
+    "冷淡": 3
+  }
+}

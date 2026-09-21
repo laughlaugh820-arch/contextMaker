@@ -1,0 +1,339 @@
+{
+  "work_id": "682",
+  "person_id": "000129",
+  "title": "舞姫",
+  "author": "森鴎外",
+  "card": "https://www.aozora.gr.jp/cards/000129/card682.html",
+  "path": "library/000129/682_舞姫",
+  "stats": {
+    "characters": 15533,
+    "paragraphs": 75,
+    "sentences": 356,
+    "sentence_length_mean": 43.2,
+    "sentence_length_median": 32.5,
+    "sentence_length_stdev": 36.8,
+    "sentence_length_max": 245,
+    "dialogue_ratio": 0.062,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 19.7,
+    "dialogue_paragraph_ratio": 0.08,
+    "orthography": "旧字旧仮名",
+    "kanji_ratio": 0.3308,
+    "hiragana_ratio": 0.5578,
+    "katakana_ratio": 0.0247,
+    "comma_per_sentence": 1.98,
+    "dash_per_1000": 0.0,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 0.0
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 21,
+      "sentence_length_mean": 79.8,
+      "dialogue_ratio": 0.01,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 24,
+      "sentence_length_mean": 59.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 43,
+      "sentence_length_mean": 36.7,
+      "dialogue_ratio": 0.126,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 46,
+      "sentence_length_mean": 32.4,
+      "dialogue_ratio": 0.048,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 25,
+      "sentence_length_mean": 62.2,
+      "dialogue_ratio": 0.015,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 44,
+      "sentence_length_mean": 34.8,
+      "dialogue_ratio": 0.194,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 37,
+      "sentence_length_mean": 41.1,
+      "dialogue_ratio": 0.051,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 42,
+      "sentence_length_mean": 37.4,
+      "dialogue_ratio": 0.011,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 41,
+      "sentence_length_mean": 37.8,
+      "dialogue_ratio": 0.13,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 33,
+      "sentence_length_mean": 45.3,
+      "dialogue_ratio": 0.043,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.286,
+      "text": "彼は物語するうちに、覺えず我肩に倚りしが、この時ふと頭を擡げ、又始てわれを見たるが如く、恥ぢて我側を飛びのきつ。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.899,
+      "text": "倒るゝ如くに路の邊の榻に倚りて、灼くが如く熱し、椎にて打たるゝ如く響く頭を榻背に持たせ、死したる如きさまにて幾時をか過しけん。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.974,
+      "text": "これよりは騷ぐことはなけれど、精神の作用は殆全く廢して、その痴なること赤兒の如くなり。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.658,
+      "text": "大洋に舵を失ひしふな人が、遙なる山を望む如きは、相澤が余に示したる前途の方鍼なり。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.784,
+      "text": "書きおくり玉ひし如く、大臣の君に重く用ゐられ玉はゞ、我路用の金は兎も角もなりなん。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.407,
+      "text": "されど詩人ハツクレンデルが當世の奴隷といひし如く、はかなきは舞姫の身の上なり。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.928,
+      "text": "戸口に入りしより疲を覺えて、身の節の痛み堪へ難ければ、這ふ如くに梯を登りつ。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.088,
+      "text": "菩提樹下と譯するときは、幽靜なる境なるべく思はるれど、この大道髮の如きウンテル、デン、リンデンに來て兩邊なる石だゝみの人道を行く隊々の士女を見よ。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.304,
+      "text": "エリスの余に會釋して入るを、かれは待ち兼ねし如く、戸を劇しくたて切りつ。"
+    },
+    {
+      "markers": [
+        "あたかも"
+      ],
+      "position": 0.823,
+      "text": "余が大臣の一行と倶にベルリンに歸りしは、恰も是れ新年の旦なりき。"
+    },
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.192,
+      "text": "わが心はかの合歡といふ木の葉に似て、物觸れば縮みて避けんとす。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.848,
+      "text": "と鑼の如く叫びし馭丁は、いち早く登りて梯の上に立てり。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.758,
+      "text": "又程經てのふみは頗る思ひせまりて書きたる如くなりき。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.995,
+      "text": "嗚呼、相澤謙吉が如き良友は世にまた得がたかるべし。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.333,
+      "text": "乳の如き色の顏は燈火に映じて微紅を潮したり。"
+    },
+    {
+      "markers": [
+        "ごとし",
+        "似る"
+      ],
+      "position": 0.922,
+      "text": "四階の屋根裏には、エリスはまだ寢ねずと覺ぼしく、烱然たる一星の火、暗き空にすかせば、明かに見ゆるが、降りしきる鷺の如き雪片に、乍ち掩はれ、乍ちまた顯れて、風に弄ばるゝに似たり。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.132,
+      "text": "大學のかたにては、穉き心に思ひ計りしが如く、政治家になるべき特科のあるべうもあらず、此か彼かと心迷ひながらも、二三の法家の講筵に列ることにおもひ定めて、謝金を收め、往きて聽きつ。"
+    },
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.861,
+      "text": "産れん子は君に似て黒き瞳子をや持ちたらん。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.593,
+      "text": "我病は母の宣ふ如くならずとも。」"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.273,
+      "text": "彼の如く酷くはあらじ。"
+    },
+    {
+      "markers": [
+        "似る"
+      ],
+      "position": 0.194,
+      "text": "我心は處女に似たり。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.163,
+      "text": "今までは瑣々たる問題にも、極めて丁寧にいらへしつる余が、この頃より官長に寄する書には連りに法制の細目にふべきにあらぬを論じて、一たび法の精神をだに得たらんには、紛々たる萬事は破竹の如くなるべしなどゝ廣言しつ。"
+    },
+    {
+      "markers": [
+        "ごとし",
+        "さながら"
+      ],
+      "position": 0.957,
+      "text": "後に聞けば彼は相澤に逢ひしとき、余が相澤に與へし約束を聞き、またかの夕べ大臣に聞え上げし一諾を知り、俄に座より躍り上がり、面色さながら土の如く、「我豐太郎ぬし、かくまでに我をば欺き玉ひしか」と叫び、その場に僵れぬ。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.804,
+      "text": "先に友の勸めしときは、大臣の信用は屋上の禽の如くなりしが、今は稍これを得たるかと思はるゝに、相澤がこの頃の言葉の端に、本國に歸りて後も倶にかくてあらば云々といひしは、大臣のかく宣ひしを、友ながらも公事なれば明には告げざりし歟。"
+    }
+  ],
+  "reduplications": {},
+  "opening": [
+    "石炭をば早や積み果てつ。",
+    "中等室の卓のほとりはいと靜にて、熾熱燈の光の晴れがましきも徒なり。",
+    "今宵は夜毎にこゝに集ひ來る骨牌仲間も「ホテル」に宿りて、舟に殘れるは余一人のみなれば。"
+  ],
+  "closing": [
+    "嗚呼、相澤謙吉が如き良友は世にまた得がたかるべし。",
+    "されど我腦裡に一點の彼を憎むこゝろ今日までも殘れりけり。",
+    "（明治二十三年一月「國民之友」第六卷六十九號附録）"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "エリス": 31,
+    "大臣": 16,
+    "相澤": 14,
+    "嗚呼": 12,
+    "少女": 12,
+    "我心": 10,
+    "大學": 7,
+    "官長": 7,
+    "我身": 7,
+    "幾度": 6,
+    "言葉": 6,
+    "勇氣": 5,
+    "馭丁": 5,
+    "當時": 4,
+    "新聞": 4,
+    "獨逸": 4,
+    "一種": 4,
+    "學問": 4,
+    "故郷": 4,
+    "何等": 4,
+    "關係": 4,
+    "彼人": 4,
+    "クロステル": 4,
+    "老媼": 4,
+    "外套": 4,
+    "飜譯": 4,
+    "ホテル": 3,
+    "名譽": 3,
+    "ベルリン": 3,
+    "中央": 3,
+    "ウンテル": 3,
+    "リンデン": 3,
+    "普魯西": 3,
+    "講筵": 3,
+    "辭書": 3,
+    "燈火": 3,
+    "何故": 3,
+    "物語": 3,
+    "屋根裏": 3,
+    "書状": 3
+  }
+}

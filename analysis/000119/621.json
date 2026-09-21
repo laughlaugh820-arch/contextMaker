@@ -1,0 +1,270 @@
+{
+  "work_id": "621",
+  "person_id": "000119",
+  "title": "名人伝",
+  "author": "中島敦",
+  "card": "https://www.aozora.gr.jp/cards/000119/card621.html",
+  "path": "library/000119/621_名人伝",
+  "stats": {
+    "characters": 5769,
+    "paragraphs": 28,
+    "sentences": 162,
+    "sentence_length_mean": 35.2,
+    "sentence_length_median": 32.5,
+    "sentence_length_stdev": 19.0,
+    "sentence_length_max": 101,
+    "dialogue_ratio": 0.021,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 29.8,
+    "dialogue_paragraph_ratio": 0.036,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.3481,
+    "hiragana_ratio": 0.5687,
+    "katakana_ratio": 0.0043,
+    "comma_per_sentence": 1.29,
+    "dash_per_1000": 0.17,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.35,
+    "question_per_1000": 0.69
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 17,
+      "sentence_length_mean": 35.6,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 19,
+      "sentence_length_mean": 28.4,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 15,
+      "sentence_length_mean": 39.8,
+      "dialogue_ratio": 0.02,
+      "exclaim_question_per_1000": 1.68,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 12,
+      "sentence_length_mean": 46.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 16,
+      "sentence_length_mean": 36.0,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 14,
+      "sentence_length_mean": 41.2,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 23,
+      "sentence_length_mean": 25.1,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 5.19,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 17,
+      "sentence_length_mean": 34.9,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 13,
+      "sentence_length_mean": 42.2,
+      "dialogue_ratio": 0.093,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 16,
+      "sentence_length_mean": 33.9,
+      "dialogue_ratio": 0.101,
+      "exclaim_question_per_1000": 3.69,
+      "dash_ellipsis_per_1000": 1.85
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.114,
+      "text": "視ることに熟して、さて、小を視ること大のごとく、微を見ること著のごとくなったならば、来って我に告げるがよいと。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.705,
+      "text": "以前の負けず嫌いな精悍な面魂はどこかに影をひそめ、なんの表情も無い、木偶のごとく愚者のごとき容貌に変っている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.905,
+      "text": "実際、老後の彼についてはただ無為にして化したとばかりで、次のような妙な話の外には何一つ伝わっていないのだから。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.281,
+      "text": "瞬く中に、百本の矢は一本のごとくに相連なり、的から一直線に続いたその最後の括はなお弦を銜むがごとくに見える。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.146,
+      "text": "ところが、十日余り過ぎると、気のせいか、どうやらそれがほんの少しながら大きく見えて来たように思われる。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.851,
+      "text": "木偶のごとき顔は更に表情を失い、語ることも稀となり、ついには呼吸の有無さえ疑われるに至った。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.488,
+      "text": "その人の前に出ては我々の技のごとき児戯にひとしいと言った師の言葉が、彼の自尊心にこたえた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.52,
+      "text": "気負い立つ紀昌を迎えたのは、羊のような柔和な目をした、しかし酷くよぼよぼの爺さんである。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "ごとし"
+      ],
+      "position": 0.585,
+      "text": "脚下は文字通りの屏風のごとき壁立千仭、遥か真下に糸のような細さに見える渓流をちょっと覗いただけでたちまち眩暈を感ずるほどの高さである。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.872,
+      "text": "甘蠅師の許を辞してから四十年の後、紀昌は静かに、誠に煙のごとく静かに世を去った。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.441,
+      "text": "涙にくれて相擁しながらも、再び弟子がかかる企みを抱くようなことがあっては甚だ危いと思った飛衛は、紀昌に新たな目標を与えてその気を転ずるにしくはないと考えた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.189,
+      "text": "ある日ふと気が付くと、窓の虱が馬のような大きさに見えていた。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.476,
+      "text": "老師の技に比べれば、我々の射のごときはほとんど児戯に類する。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.863,
+      "text": "眼は耳のごとく、耳は鼻のごとく、鼻は口のごとく思われる。」"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.725,
+      "text": "我儕のごとき、足下にも及ぶものでないと。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.438,
+      "text": "すべてそのような時代の話である。）"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.202,
+      "text": "豚は丘のごとく、は城楼と見える。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.668,
+      "text": "その胡麻粒ほどに小さく見える姿をしばらく見上げていた甘蠅が、やがて、見えざる矢を無形の弓につがえ、満月のごとくに引絞ってひょうと放てば、見よ、鳶は羽ばたきもせず中空から石のごとくに落ちて来るではないか。"
+    }
+  ],
+  "reduplications": {
+    "たまたま": 2,
+    "まだまだ": 1
+  },
+  "opening": [
+    "趙の邯鄲の都に住む紀昌という男が、天下第一の弓の名人になろうと志を立てた。",
+    "己の師と頼むべき人物を物色するに、当今弓矢をとっては、名手・飛衛に及ぶ者があろうとは思われぬ。",
+    "百歩を隔てて柳葉を射るに百発百中するという達人だそうである。"
+  ],
+  "closing": [
+    "ああ、弓という名も、その使い途も！」",
+    "その後当分の間、邯鄲の都では、画家は絵筆を隠し、楽人は瑟の絃を断ち、工匠は規矩を手にするのを恥じたということである。",
+    "（昭和十七年十二月）"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "紀昌": 40,
+    "飛衛": 17,
+    "名人": 10,
+    "老人": 7,
+    "相手": 5,
+    "邯鄲": 4,
+    "天下第一": 3,
+    "見詰": 3,
+    "睫毛": 3,
+    "児戯": 3,
+    "主人": 3
+  }
+}

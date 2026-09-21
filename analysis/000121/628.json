@@ -1,0 +1,216 @@
+{
+  "work_id": "628",
+  "person_id": "000121",
+  "title": "ごん狐",
+  "author": "新美南吉",
+  "card": "https://www.aozora.gr.jp/cards/000121/card628.html",
+  "path": "library/000121/628_ごん狐",
+  "stats": {
+    "characters": 4935,
+    "paragraphs": 82,
+    "sentences": 174,
+    "sentence_length_mean": 27.6,
+    "sentence_length_median": 25.0,
+    "sentence_length_stdev": 16.2,
+    "sentence_length_max": 88,
+    "dialogue_ratio": 0.174,
+    "quoted_narration_ratio": 0.0,
+    "quote_span_mean": 25.2,
+    "dialogue_paragraph_ratio": 0.39,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.1483,
+    "hiragana_ratio": 0.7145,
+    "katakana_ratio": 0.0077,
+    "comma_per_sentence": 1.64,
+    "dash_per_1000": 0.0,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 0.0,
+    "question_per_1000": 1.01
+  },
+  "headings": [
+    {
+      "index": 0,
+      "label": "一",
+      "characters": 1535
+    },
+    {
+      "index": 16,
+      "label": "二",
+      "characters": 929
+    },
+    {
+      "index": 30,
+      "label": "三",
+      "characters": 908
+    },
+    {
+      "index": 45,
+      "label": "四",
+      "characters": 665
+    },
+    {
+      "index": 62,
+      "label": "五",
+      "characters": 390
+    },
+    {
+      "index": 72,
+      "label": "六",
+      "characters": 409
+    }
+  ],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 15,
+      "sentence_length_mean": 35.7,
+      "dialogue_ratio": 0.009,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 11,
+      "sentence_length_mean": 39.1,
+      "dialogue_ratio": 0.014,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 3,
+      "sentences": 14,
+      "sentence_length_mean": 36.3,
+      "dialogue_ratio": 0.03,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 16,
+      "sentence_length_mean": 28.2,
+      "dialogue_ratio": 0.199,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 20,
+      "sentence_length_mean": 24.9,
+      "dialogue_ratio": 0.036,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 17,
+      "sentence_length_mean": 28.1,
+      "dialogue_ratio": 0.107,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 15,
+      "sentence_length_mean": 31.6,
+      "dialogue_ratio": 0.148,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 25,
+      "sentence_length_mean": 19.4,
+      "dialogue_ratio": 0.41,
+      "exclaim_question_per_1000": 8.25,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 9,
+      "sentences": 21,
+      "sentence_length_mean": 22.5,
+      "dialogue_ratio": 0.367,
+      "exclaim_question_per_1000": 2.12,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 20,
+      "sentence_length_mean": 23.4,
+      "dialogue_ratio": 0.071,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.158,
+      "text": "しばらくすると、兵十は、はりきり網の一ばんうしろの、袋のようになったところを、水の中からもちあげました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.122,
+      "text": "ごんは、見つからないように、そうっと草の深いところへ歩きよって、そこからじっとのぞいてみました。"
+    },
+    {
+      "markers": [
+        "みたい"
+      ],
+      "position": 0.148,
+      "text": "はちまきをした顔の横っちょうに、まるい萩の葉が一まい、大きな黒子みたいにへばりついていました。"
+    },
+    {
+      "markers": [
+        "みたい"
+      ],
+      "position": 0.449,
+      "text": "いつもは、赤いさつま芋みたいな元気のいい顔が、きょうは何だかしおれていました。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.407,
+      "text": "墓地には、ひがん花が、赤い布のようにさきつづいていました。"
+    }
+  ],
+  "reduplications": {
+    "んだんだ": 2,
+    "ぽんぽん": 1,
+    "ぴかぴか": 1,
+    "ぶつぶつ": 1,
+    "ぶらぶら": 1,
+    "そうそう": 1,
+    "ポンポン": 1,
+    "ごちゃごちゃ": 1
+  },
+  "opening": [
+    "一",
+    "これは、私が小さいときに、村の茂平というおじいさんからきいたお話です。",
+    "むかしは、私たちの村のちかくの、中山というところに小さなお城があって、中山さまというおとのさまが、おられたそうです。"
+  ],
+  "closing": [
+    "ごんは、ぐったりと目をつぶったまま、うなずきました。",
+    "兵十は火縄銃をばたりと、とり落しました。",
+    "青い煙が、まだ筒口から細く出ていました。"
+  ],
+  "repetitions": [],
+  "vocabulary": {
+    "兵十": 38,
+    "加助": 7,
+    "井戸": 5,
+    "中山": 4,
+    "一人": 4,
+    "弥助": 4,
+    "二人": 4,
+    "物置": 4,
+    "百姓": 3,
+    "墓地": 3,
+    "話声": 3,
+    "裏口": 3
+  }
+}

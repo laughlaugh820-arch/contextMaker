@@ -1,0 +1,315 @@
+{
+  "work_id": "1567",
+  "person_id": "000035",
+  "title": "走れメロス",
+  "author": "太宰治",
+  "card": "https://www.aozora.gr.jp/cards/000035/card1567.html",
+  "path": "library/000035/1567_走れメロス",
+  "stats": {
+    "characters": 9915,
+    "paragraphs": 75,
+    "sentences": 478,
+    "sentence_length_mean": 20.5,
+    "sentence_length_median": 16.0,
+    "sentence_length_stdev": 14.2,
+    "sentence_length_max": 105,
+    "dialogue_ratio": 0.263,
+    "quoted_narration_ratio": 0.023,
+    "quote_span_mean": 45.7,
+    "dialogue_paragraph_ratio": 0.64,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.2523,
+    "hiragana_ratio": 0.5768,
+    "katakana_ratio": 0.0415,
+    "comma_per_sentence": 1.16,
+    "dash_per_1000": 0.2,
+    "ellipsis_per_1000": 0.0,
+    "exclaim_per_1000": 1.21,
+    "question_per_1000": 0.2
+  },
+  "headings": [],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 45,
+      "sentence_length_mean": 21.8,
+      "dialogue_ratio": 0.176,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 2,
+      "sentences": 56,
+      "sentence_length_mean": 17.7,
+      "dialogue_ratio": 0.568,
+      "exclaim_question_per_1000": 3.02,
+      "dash_ellipsis_per_1000": 1.01
+    },
+    {
+      "segment": 3,
+      "sentences": 48,
+      "sentence_length_mean": 20.2,
+      "dialogue_ratio": 0.266,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 4,
+      "sentences": 37,
+      "sentence_length_mean": 26.5,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 5,
+      "sentences": 41,
+      "sentence_length_mean": 24.9,
+      "dialogue_ratio": 0.092,
+      "exclaim_question_per_1000": 0.98,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 6,
+      "sentences": 35,
+      "sentence_length_mean": 26.8,
+      "dialogue_ratio": 0.175,
+      "exclaim_question_per_1000": 2.13,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 7,
+      "sentences": 55,
+      "sentence_length_mean": 17.9,
+      "dialogue_ratio": 0.0,
+      "exclaim_question_per_1000": 1.01,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 8,
+      "sentences": 56,
+      "sentence_length_mean": 17.7,
+      "dialogue_ratio": 0.023,
+      "exclaim_question_per_1000": 3.03,
+      "dash_ellipsis_per_1000": 1.01
+    },
+    {
+      "segment": 9,
+      "sentences": 59,
+      "sentence_length_mean": 16.3,
+      "dialogue_ratio": 0.558,
+      "exclaim_question_per_1000": 2.07,
+      "dash_ellipsis_per_1000": 0.0
+    },
+    {
+      "segment": 10,
+      "sentences": 46,
+      "sentence_length_mean": 21.3,
+      "dialogue_ratio": 0.42,
+      "exclaim_question_per_1000": 2.04,
+      "dash_ellipsis_per_1000": 0.0
+    }
+  ],
+  "similes": [
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.89,
+      "text": "陽は、ゆらゆら地平線に没し、まさに最後の一片の残光も、消えようとした時、メロスは疾風の如く刑場に突入した。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.323,
+      "text": "新郎新婦の、神々への宣誓が済んだころ、黒雲が空を覆い、ぽつりぽつり雨が降り出し、やがて車軸を流すような大雨となった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.517,
+      "text": "メロスは、ざんぶと流れに飛び込み、百匹の大蛇のようにのた打ち荒れ狂う浪を相手に、必死の闘争を開始した。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.405,
+      "text": "メロスは笑って村人たちにも会釈して、宴席から立ち去り、羊小屋にもぐり込んで、死んだように深く眠った。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.565,
+      "text": "メロスはひょいと、からだを折り曲げ、飛鳥の如く身近かの一人に襲いかかり、その棍棒を奪い取って、"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.911,
+      "text": "メロスはそれを目撃して最後の勇、先刻、濁流を泳いだように群衆を掻きわけ、掻きわけ、"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.428,
+      "text": "さて、メロスは、ぶるんと両腕を大きく振って、雨中、矢の如く走り出た。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.535,
+      "text": "メロスは馬のように大きな胴震いを一つして、すぐにまた先きを急いだ。"
+    },
+    {
+      "markers": [
+        "ごとし"
+      ],
+      "position": 0.504,
+      "text": "濁流は、メロスの叫びをせせら笑う如く、ますます激しく躍り狂う。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.786,
+      "text": "路行く人を押しのけ、跳ねとばし、メロスは黒い風のように走った。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.121,
+      "text": "その王の顔は蒼白で、眉間の皺は、刻み込まれたように深かった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.707,
+      "text": "妹夫婦は、まさか私を村から追い出すような事はしないだろう。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.489,
+      "text": "流れはいよいよ、ふくれ上り、海のようになっている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.738,
+      "text": "ほうと長い溜息が出て、夢から覚めたような気がした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.734,
+      "text": "その泉に吸い込まれるようにメロスは身をかがめた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.775,
+      "text": "再び立って走れるようになったではないか。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.822,
+      "text": "うめくような声が、風と共に聞えた。"
+    }
+  ],
+  "reduplications": {
+    "よろよろ": 3,
+    "そろそろ": 2,
+    "のそのそ": 1,
+    "めいめい": 1,
+    "むんむん": 1,
+    "まだまだ": 1,
+    "ぶらぶら": 1,
+    "どうどう": 1,
+    "ぜいぜい": 1,
+    "よくよく": 1,
+    "ばかばか": 1,
+    "うとうと": 1,
+    "ずんずん": 1,
+    "ゆらゆら": 1,
+    "まじまじ": 1,
+    "ぽつりぽつり": 1
+  },
+  "opening": [
+    "メロスは激怒した。",
+    "必ず、かの邪智暴虐の王を除かなければならぬと決意した。",
+    "メロスには政治がわからぬ。"
+  ],
+  "closing": [
+    "この可愛い娘さんは、メロスの裸体を、皆に見られるのが、たまらなく口惜しいのだ。」",
+    "勇者は、ひどく赤面した。",
+    "（古伝説と、シルレルの詩から。）"
+  ],
+  "repetitions": [
+    {
+      "head": "それから",
+      "count": 5,
+      "sample": [
+        "それから、妹さまを。",
+        "それから、妹さまの御子さまを。",
+        "それから、皇后さまを。"
+      ]
+    }
+  ],
+  "vocabulary": {
+    "メロス": 76,
+    "セリヌンティウス": 15,
+    "出来": 12,
+    "群衆": 7,
+    "結婚式": 6,
+    "暴君": 6,
+    "自分": 6,
+    "約束": 6,
+    "身代": 6,
+    "出発": 5,
+    "王城": 5,
+    "信実": 5,
+    "濁流": 5,
+    "花婿": 4,
+    "祝宴": 4,
+    "様子": 4,
+    "質問": 4,
+    "老爺": 4,
+    "山賊": 4,
+    "勇者": 4,
+    "牧人": 3,
+    "シラクス": 3,
+    "花嫁": 3,
+    "石工": 3,
+    "王様": 3,
+    "人質": 3,
+    "ディオニス": 3,
+    "平和": 3,
+    "一人": 3,
+    "亭主": 3,
+    "三日目": 3,
+    "日没": 3,
+    "大事": 3,
+    "首肯": 3,
+    "村人": 3,
+    "呼吸": 3,
+    "太陽": 3,
+    "正義": 3,
+    "希望": 3,
+    "問題": 3
+  }
+}

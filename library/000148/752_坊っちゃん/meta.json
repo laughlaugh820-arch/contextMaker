@@ -1,0 +1,16 @@
+{
+  "work_id": "752",
+  "person_id": "000148",
+  "title": "坊っちゃん",
+  "subtitle": "",
+  "author": "夏目漱石",
+  "path": "cards/000148/files/752_ruby_2438/752_ruby_2438.txt",
+  "source": "https://raw.githubusercontent.com/aozorahack/aozorabunko_text/HEAD/cards/000148/files/752_ruby_2438/752_ruby_2438.txt",
+  "card": "https://www.aozora.gr.jp/cards/000148/card752.html",
+  "mirror": "https://github.com/aozorahack/aozorabunko_text",
+  "encoding_original": "Shift_JIS (cp932)",
+  "ruby": "除去",
+  "colophon": "底本：「ちくま日本文学全集　夏目漱石」筑摩書房\n　　　1992（平成4）年1月20日第1刷発行\n底本の親本：「夏目漱石全集2」ちくま文庫、筑摩書房\n　　　1987（昭和62）年10月27日第1刷発行\n※底本の注にれば、本作品の原稿には、「そのうち学校もいやになった。」の後に、漱石自身による２字あけの指定があるという。このファイルでは、その情報にもとづいて、当該の箇所を２字あけとした。\n※底本は、物を数える際や地名などに用いる「ヶ」（区点番号5-86）を、大振りにつくっています。\n入力：真先芳秋\n校正：柳沢成雄\n1999年9月13日公開\n2011年5月20日修正\n青空文庫作成ファイル：\nこのファイルは、インターネットの図書館、青空文庫（http://www.aozora.gr.jp/）で作られました。入力、校正、制作にあたったのは、ボランティアの皆さんです。",
+  "characters": 88998,
+  "fetched_on": "2026-09-21"
+}
