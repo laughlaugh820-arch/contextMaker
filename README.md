@@ -107,11 +107,24 @@ $ python3 tools/build_context.py
 $ python3 tools/story.py compose "古い時計店に持ち込まれた、動かない懐中時計" \
     --author 梶井基次郎 --structure 127 --length 3000
 
-# Claude に書かせて stories/ に保存する
+# Claude Code 経由で書かせる（APIキー不要）
+$ python3 tools/story.py generate "冬の停留所で待つ人" --author 芥川龍之介 --backend cli
+
+# Claude API を直接呼ぶ（従量課金）
 $ pip install anthropic
 $ export ANTHROPIC_API_KEY=...
-$ python3 tools/story.py generate "冬の停留所で待つ人" --author 芥川龍之介 --length 4000
+$ python3 tools/story.py generate "冬の停留所で待つ人" --author 芥川龍之介 --backend api
 ```
+
+実行経路は2つある。`--backend auto`（既定）はキーがあれば API、なければ CLI を選ぶ。
+
+| `--backend` | 動作 | 必要なもの |
+| --- | --- | --- |
+| `cli` | `claude -p` に投げる | Claude Code（`claude` コマンド） |
+| `api` | Claude API を直接呼ぶ | `anthropic` パッケージと `ANTHROPIC_API_KEY` |
+| `auto` | キーがあれば api、なければ cli | どちらか |
+
+APIキーをリポジトリや環境に置かずに済むので、通常は `cli` でよい。
 
 | オプション | 効果 |
 | --- | --- |
@@ -121,9 +134,12 @@ $ python3 tools/story.py generate "冬の停留所で待つ人" --author 芥川�
 | `--similes` | 渡す比喩の実例数（既定 20） |
 | `--effort` | 思考の深さ `low`〜`max`（既定 `high`、generate のみ） |
 
-`generate` は `claude-opus-5` を streaming で呼び、`stories/<日付>_<タイトル>/` に
-本文・使ったプロンプト・メタ情報（モデル、トークン数、種）を保存する。
-安全性の判定で拒否されたとき別モデルに引き継ぐ `fallbacks` を既定で有効にしてある。
+`generate` は `stories/<日付>_<タイトル>/` に本文・使ったプロンプト・メタ情報を保存する。
+`api` 経路は `claude-opus-5` を streaming で呼び、安全性の判定で拒否されたとき
+別モデルに引き継ぐ `fallbacks` を既定で有効にしてある。
+
+なお `generate` は両経路とも通しの実行確認ができていない。
+`compose`、および `claude -p` が応答を返すことまでは確認済み。
 
 コーパスから借りるのは文の設計・比喩の作り方・緊張の配置という抽象的な層だけで、
 固有名詞や筋は渡さない。プロンプトでも流用を明示的に禁じている。

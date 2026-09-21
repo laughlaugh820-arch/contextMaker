@@ -15,6 +15,8 @@ import argparse
 import json
 import os
 import random
+import shutil
+import subprocess
 import statistics
 import sys
 from datetime import date
@@ -27,6 +29,11 @@ STORIES = REPO_ROOT / "stories"
 
 MODEL = "claude-opus-5"
 FALLBACK_BETA = "server-side-fallback-2026-07-01"
+
+# Claude Code CLI 経由で書かせるときの追記。CLI は道具を使えるエージェントなので、
+# ファイルを作りにいかず標準出力に本文を出すよう明示する。
+CLI_SYSTEM_SUFFIX = ("\n\nファイルの作成や編集は一切せず、"
+                     "作品の本文だけをそのまま出力すること。")
 
 
 def load_works() -> list[dict]:
@@ -156,6 +163,53 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
 
 # --------------------------------------------------------------------------- 生成
 
+def resolve_backend(choice: str) -> str:
+    """どの経路で書かせるかを決める。
+
+    api: ANTHROPIC_API_KEY を使って Claude API を直接呼ぶ（従量課金）
+    cli: Claude Code の CLI に投げる（APIキー不要。Claude Code の契約を使う）
+    """
+    has_key = bool(os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN"))
+    has_cli = shutil.which("claude") is not None
+
+    if choice == "api":
+        if not has_key:
+            sys.exit("ANTHROPIC_API_KEY が設定されていない。"
+                     "--backend cli なら Claude Code 経由でキー無しに実行できる。")
+        return "api"
+    if choice == "cli":
+        if not has_cli:
+            sys.exit("claude コマンドが見つからない。Claude Code を入れるか、"
+                     "ANTHROPIC_API_KEY を設定して --backend api を使うこと。")
+        return "cli"
+
+    if has_key:
+        return "api"
+    if has_cli:
+        return "cli"
+    sys.exit("実行経路がない。ANTHROPIC_API_KEY を設定するか、Claude Code を入れること。\n"
+             "プロンプトだけ欲しい場合は compose を使う。")
+
+
+def call_claude_cli(prompt: str, model: str, timeout: int) -> tuple[str, dict]:
+    """Claude Code の CLI に投げる。APIキーを持たない環境向けの経路。"""
+    command = ["claude", "-p", "--model", model,
+               "--system-prompt", SYSTEM_PROMPT + CLI_SYSTEM_SUFFIX]
+    try:
+        done = subprocess.run(command, input=prompt, capture_output=True,
+                              text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        sys.exit(f"claude コマンドが {timeout} 秒で終わらなかった。")
+    if done.returncode != 0:
+        sys.exit(f"claude コマンドが失敗した（終了コード {done.returncode}）:\n"
+                 f"{done.stderr.strip()[:500]}")
+    text = done.stdout.strip()
+    if not text:
+        sys.exit("claude コマンドが何も返さなかった。")
+    print(text)
+    return text, {"backend": "claude-cli", "model": model}
+
+
 def call_claude(prompt: str, effort: str, max_tokens: int) -> tuple[str, dict]:
     try:
         import anthropic
@@ -201,6 +255,7 @@ def call_claude(prompt: str, effort: str, max_tokens: int) -> tuple[str, dict]:
 
     text = "".join(b.text for b in message.content if b.type == "text")
     usage = {
+        "backend": "api",
         "model": message.model,
         "stop_reason": message.stop_reason,
         "input_tokens": message.usage.input_tokens,
@@ -229,10 +284,15 @@ def cmd_compose(args: argparse.Namespace) -> int:
 
 
 def cmd_generate(args: argparse.Namespace) -> int:
+    backend = resolve_backend(args.backend)
     prompt = build_prompt(args, load_works())
-    print(f"[{MODEL} / effort={args.effort} / プロンプト {len(prompt):,}字]\n", file=sys.stderr)
+    label = MODEL if backend == "api" else args.cli_model
+    print(f"[{backend} / {label} / プロンプト {len(prompt):,}字]\n", file=sys.stderr)
 
-    text, usage = call_claude(prompt, args.effort, args.max_tokens)
+    if backend == "cli":
+        text, usage = call_claude_cli(prompt, args.cli_model, args.cli_timeout)
+    else:
+        text, usage = call_claude(prompt, args.effort, args.max_tokens)
     title = text.strip().split("\n", 1)[0].strip() if text.strip() else "無題"
 
     dest = STORIES / f"{date.today().isoformat()}_{slugify(title)}"
@@ -280,6 +340,12 @@ def main(argv: list[str] | None = None) -> int:
                        choices=["low", "medium", "high", "xhigh", "max"],
                        help="思考の深さ（既定 high）")
     p_gen.add_argument("--max-tokens", type=int, default=64000)
+    p_gen.add_argument("--backend", default="auto", choices=["auto", "api", "cli"],
+                       help="api=Claude API（要 ANTHROPIC_API_KEY）／"
+                            "cli=Claude Code 経由（キー不要）／auto=使える方（既定）")
+    p_gen.add_argument("--cli-model", default="opus", help="cli のときのモデル（既定 opus）")
+    p_gen.add_argument("--cli-timeout", type=int, default=900,
+                       help="cli の待ち時間（秒、既定 900）")
     p_gen.set_defaults(func=cmd_generate)
 
     args = parser.parse_args(argv)
