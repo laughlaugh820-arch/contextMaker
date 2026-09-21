@@ -93,9 +93,12 @@ $ python3 tools/build_context.py
 - `context/works/` — 作品カード（統計、章構成、緊張曲線、書き出し・結び、比喩例）
 - `context/authors/` — 作家プロファイル（コーパス全体との差、緊張曲線の一覧）
 - `context/techniques/` — 比喩・書き出し・結び・畳語・構成のカタログ
-- `context/guide/story_craft.md` — **手で書いた創作ガイド**。生成物ではない
+- `context/guide/story_craft.md` — **文体の作法**。手で書いたもの
+- `context/guide/story_structure.md` — **展開の作法**（発端・承・転・結の置き方）。手で書いたもの
 
 生成されるのは上3つで、`guide/` はスクリプトが触らない。
+展開の作法は、コーパスの短編19本を読んで構造を注釈し、転換点の位置を本文のオフセットから
+測ったもの（`analysis/plot_annotations.json`）。
 
 ガイドの数値は、名作コーパスではなくミラーからの無作為 2,000 作品の分布に基づく。
 名作43本だけで書いた初版は `docs/GUIDE_REVIEW.md` で検証し、9規則のうち3つが誤り、
@@ -140,6 +143,7 @@ APIキーをリポジトリや環境に置かずに済むので、通常は `cli
 | `--structure <作品ID>` | その作品の緊張の配置（会話率・感嘆疑問密度の推移）だけを表で渡す。筋や題材は渡さない |
 | `--length` | 目標の文字数（既定 4000） |
 | `--similes` | 渡す比喩の実例数（既定 20） |
+| `--plot` | 展開の型。`一撃`／`反復`／`露見`／`枠`／`心境`。`context/guide/story_structure.md` の型に対応 |
 | `--avoid` | 使わせない題材・仕掛け。同じテーマでモデルが最初に思いつく定型を外すため（例: `--avoid 髪の毛 祖父の遺品`） |
 | `--effort` | 思考の深さ `low`〜`max`（既定 `high`、api 経路のみ） |
 

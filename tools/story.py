@@ -24,7 +24,26 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ANALYSIS = REPO_ROOT / "analysis"
-GUIDE = REPO_ROOT / "context" / "guide" / "story_craft.md"
+GUIDE_DIR = REPO_ROOT / "context" / "guide"
+# 渡す順。文体の作法 → 展開の作法
+GUIDE_FILES = ["story_craft.md", "story_structure.md"]
+
+# --plot で選ぶ展開の型。詳細は context/guide/story_structure.md
+PLOT_TYPES = {
+    "一撃": "発端で状況を置き、承でその状況を掘り下げ、本文の8〜9割の位置で一度だけ決定的な転換"
+            "（逆転・露見・事故・気づき・選択のいずれか）を起こし、転から末尾までは1割以内で閉じる。",
+    "反復": "同じ種類の出来事を三度、少しずつ形を変えて繰り返す（外側→内側、物理→人→内面、"
+            "軽い→重い）。三度目のあとに転換が来て、反復が積んだものが一気に意味を変える。"
+            "転換は8〜9割の位置。",
+    "露見": "語り手または視点人物が知らないことを、相手の語り（告白・手紙・証言）を通じて少しずつ知る。"
+            "核心が明かされるのは6〜8割の位置で、そのあと語り手の受け止めを短く置いて閉じる。"
+            "読者は視点人物と同じ速度で知る。",
+    "枠": "外側の語り手が、内側の語り手の話を聞く二重構造。外枠は最初と最後に短く置き"
+          "（合わせて2割以内）、内側の話が本体。内側の話の終わりが外枠に何かを残して閉じる。",
+    "心境": "出来事はほとんど起こさない。語り手の感覚と気分の推移だけで進み、ただ一つの小さな行為"
+            "（何かを置く、見る、買う）を本文の7〜9割の位置に置いて、それを転換として扱う。"
+            "結は行為のあとの数文で閉じる。",
+}
 STORIES = REPO_ROOT / "stories"
 
 MODEL = "claude-opus-5"
@@ -116,7 +135,8 @@ SYSTEM_PROMPT = """あなたは日本語で短編小説を書く。
 
 def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
     rng = random.Random(args.seed)
-    guide = GUIDE.read_text(encoding="utf-8") if GUIDE.exists() else ""
+    guides = [(GUIDE_DIR / name) for name in GUIDE_FILES]
+    guide = "\n\n---\n\n".join(g.read_text(encoding="utf-8") for g in guides if g.exists())
 
     parts = [
         "# 依頼",
@@ -136,6 +156,10 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         parts.append(author_summary(args.author, works))
     parts.append(simile_examples(works, args.author, args.similes, rng))
     parts.append(structure_reference(works, args.structure))
+
+    if args.plot:
+        parts += ["### 展開の型", "",
+                  f"**{args.plot}型**で書く。{PLOT_TYPES[args.plot]}", ""]
 
     if guide:
         parts += ["### 作法", "", guide, ""]
@@ -312,6 +336,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "author_reference": args.author,
         "structure_reference": args.structure,
         "avoid": args.avoid,
+        "plot": args.plot,
         "length_target": args.length,
         "effort": args.effort,
         "seed": args.seed,
@@ -331,6 +356,8 @@ def add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--length", type=int, default=4000, help="目標の長さ（字、既定 4000）")
     parser.add_argument("--similes", type=int, default=20, help="渡す比喩の実例数（既定 20）")
     parser.add_argument("--seed", type=int, default=0, help="実例を選ぶ乱数の種")
+    parser.add_argument("--plot", choices=sorted(PLOT_TYPES),
+                        help="展開の型（一撃／反復／露見／枠／心境）。context/guide/story_structure.md 参照")
     parser.add_argument("--avoid", nargs="*", default=[],
                         help="使わせない題材・仕掛け（例: --avoid 髪の毛 祖父の遺品）")
 
