@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000119/card621.html",
   "path": "library/000119/621_名人伝",
   "stats": {
-    "characters": 5769,
+    "characters": 5766,
     "paragraphs": 28,
     "sentences": 162,
     "sentence_length_mean": 35.2,
@@ -18,8 +18,8 @@
     "quote_span_mean": 29.8,
     "dialogue_paragraph_ratio": 0.036,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.3481,
-    "hiragana_ratio": 0.5687,
+    "kanji_ratio": 0.3482,
+    "hiragana_ratio": 0.569,
     "katakana_ratio": 0.0043,
     "comma_per_sentence": 1.29,
     "dash_per_1000": 0.17,
@@ -249,9 +249,9 @@
     "百歩を隔てて柳葉を射るに百発百中するという達人だそうである。"
   ],
   "closing": [
+    "「ああ、夫子が、――古今無双の射の名人たる夫子が、弓を忘れ果てられたとや？",
     "ああ、弓という名も、その使い途も！」",
-    "その後当分の間、邯鄲の都では、画家は絵筆を隠し、楽人は瑟の絃を断ち、工匠は規矩を手にするのを恥じたということである。",
-    "（昭和十七年十二月）"
+    "その後当分の間、邯鄲の都では、画家は絵筆を隠し、楽人は瑟の絃を断ち、工匠は規矩を手にするのを恥じたということである。"
   ],
   "repetitions": [],
   "vocabulary": {

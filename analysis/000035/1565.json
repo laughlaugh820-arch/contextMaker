@@ -6,20 +6,20 @@
   "card": "https://www.aozora.gr.jp/cards/000035/card1565.html",
   "path": "library/000035/1565_斜陽",
   "stats": {
-    "characters": 91299,
-    "paragraphs": 1429,
-    "sentences": 2786,
-    "sentence_length_mean": 31.9,
+    "characters": 91234,
+    "paragraphs": 1421,
+    "sentences": 2778,
+    "sentence_length_mean": 32.0,
     "sentence_length_median": 20.0,
     "sentence_length_stdev": 38.0,
     "sentence_length_max": 753,
-    "dialogue_ratio": 0.173,
+    "dialogue_ratio": 0.174,
     "quoted_narration_ratio": 0.047,
     "quote_span_mean": 35.0,
-    "dialogue_paragraph_ratio": 0.387,
+    "dialogue_paragraph_ratio": 0.389,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2147,
-    "hiragana_ratio": 0.6373,
+    "kanji_ratio": 0.2148,
+    "hiragana_ratio": 0.6377,
     "katakana_ratio": 0.0205,
     "comma_per_sentence": 2.06,
     "dash_per_1000": 0.01,
@@ -72,16 +72,16 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 233,
-      "sentence_length_mean": 38.2,
+      "sentences": 232,
+      "sentence_length_mean": 38.4,
       "dialogue_ratio": 0.119,
       "exclaim_question_per_1000": 2.58,
       "dash_ellipsis_per_1000": 0.11
     },
     {
       "segment": 2,
-      "sentences": 244,
-      "sentence_length_mean": 36.4,
+      "sentences": 243,
+      "sentence_length_mean": 36.5,
       "dialogue_ratio": 0.148,
       "exclaim_question_per_1000": 1.58,
       "dash_ellipsis_per_1000": 0.34
@@ -96,24 +96,24 @@
     },
     {
       "segment": 4,
-      "sentences": 308,
-      "sentence_length_mean": 28.7,
+      "sentences": 307,
+      "sentence_length_mean": 28.8,
       "dialogue_ratio": 0.125,
       "exclaim_question_per_1000": 4.63,
       "dash_ellipsis_per_1000": 0.34
     },
     {
       "segment": 5,
-      "sentences": 228,
-      "sentence_length_mean": 39.1,
+      "sentences": 227,
+      "sentence_length_mean": 39.2,
       "dialogue_ratio": 0.142,
       "exclaim_question_per_1000": 1.68,
       "dash_ellipsis_per_1000": 0.22
     },
     {
       "segment": 6,
-      "sentences": 272,
-      "sentence_length_mean": 32.7,
+      "sentences": 271,
+      "sentence_length_mean": 32.8,
       "dialogue_ratio": 0.142,
       "exclaim_question_per_1000": 1.24,
       "dash_ellipsis_per_1000": 0.11
@@ -128,24 +128,24 @@
     },
     {
       "segment": 8,
-      "sentences": 274,
-      "sentence_length_mean": 32.5,
+      "sentences": 273,
+      "sentence_length_mean": 32.6,
       "dialogue_ratio": 0.176,
       "exclaim_question_per_1000": 2.36,
       "dash_ellipsis_per_1000": 0.45
     },
     {
       "segment": 9,
-      "sentences": 405,
-      "sentence_length_mean": 21.9,
+      "sentences": 404,
+      "sentence_length_mean": 22.0,
       "dialogue_ratio": 0.374,
       "exclaim_question_per_1000": 3.27,
       "dash_ellipsis_per_1000": 0.68
     },
     {
       "segment": 10,
-      "sentences": 216,
-      "sentence_length_mean": 41.1,
+      "sentences": 215,
+      "sentence_length_mean": 41.3,
       "dialogue_ratio": 0.031,
       "exclaim_question_per_1000": 0.56,
       "dash_ellipsis_per_1000": 0.23
@@ -575,13 +575,11 @@
   ],
   "reduplications": {
     "シュルシュル": 11,
-    "とうとう": 4,
     "うとうと": 3,
     "いちいち": 3,
     "はらはら": 2,
     "のろのろ": 2,
     "するする": 2,
-    "いていて": 2,
     "こつこつ": 2,
     "ばかばか": 2,
     "つぎつぎ": 2,
@@ -613,12 +611,14 @@
     "どしどし": 1,
     "だらだら": 1,
     "おどおど": 1,
-    "ぐらぐら": 1
+    "ぐらぐら": 1,
+    "わいわい": 1,
+    "がらがら": 1
   },
   "opening": [
-    "一",
     "朝、食堂でスウプを一さじ、すっと吸ってお母さまが、",
-    "「あ」"
+    "「あ」",
+    "と幽かな叫び声をお挙げになった。"
   ],
   "closing": [
     "これが捨てられ、忘れかけられた女の唯一の幽かないやがらせと思召し、ぜひお聞きいれのほど願います。",

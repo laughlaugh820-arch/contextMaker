@@ -6,22 +6,22 @@
   "card": "https://www.aozora.gr.jp/cards/000035/card2253.html",
   "path": "library/000035/2253_ヴィヨンの妻",
   "stats": {
-    "characters": 20648,
-    "paragraphs": 233,
-    "sentences": 475,
-    "sentence_length_mean": 42.7,
-    "sentence_length_median": 21,
-    "sentence_length_stdev": 69.7,
+    "characters": 20636,
+    "paragraphs": 230,
+    "sentences": 472,
+    "sentence_length_mean": 43.0,
+    "sentence_length_median": 21.0,
+    "sentence_length_stdev": 69.9,
     "sentence_length_max": 693,
     "dialogue_ratio": 0.213,
     "quoted_narration_ratio": 0.339,
     "quote_span_mean": 85.1,
-    "dialogue_paragraph_ratio": 0.519,
+    "dialogue_paragraph_ratio": 0.526,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2083,
-    "hiragana_ratio": 0.671,
+    "hiragana_ratio": 0.6714,
     "katakana_ratio": 0.0115,
-    "comma_per_sentence": 2.68,
+    "comma_per_sentence": 2.7,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.05,
     "exclaim_per_1000": 0.58,
@@ -47,9 +47,9 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 70,
-      "sentence_length_mean": 29.4,
-      "dialogue_ratio": 0.29,
+      "sentences": 69,
+      "sentence_length_mean": 29.8,
+      "dialogue_ratio": 0.291,
       "exclaim_question_per_1000": 3.89,
       "dash_ellipsis_per_1000": 0.0
     },
@@ -87,8 +87,8 @@
     },
     {
       "segment": 6,
-      "sentences": 28,
-      "sentence_length_mean": 70.5,
+      "sentences": 27,
+      "sentence_length_mean": 73.1,
       "dialogue_ratio": 0.065,
       "exclaim_question_per_1000": 1.52,
       "dash_ellipsis_per_1000": 0.0
@@ -103,10 +103,10 @@
     },
     {
       "segment": 8,
-      "sentences": 64,
-      "sentence_length_mean": 31.4,
+      "sentences": 63,
+      "sentence_length_mean": 31.8,
       "dialogue_ratio": 0.234,
-      "exclaim_question_per_1000": 4.48,
+      "exclaim_question_per_1000": 4.49,
       "dash_ellipsis_per_1000": 0.0
     },
     {
@@ -180,7 +180,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.163,
+      "position": 0.162,
       "text": "「私も、さきほどから」と女のひとは、男のひとの脊中の蔭から顔を出すようにして、「感心しておりました。"
     },
     {
@@ -398,9 +398,9 @@
     "ぽつりぽつり": 1
   },
   "opening": [
-    "一",
     "あわただしく、玄関をあける音が聞えて、私はその音で、眼をさましましたが、それは泥酔の夫の、深夜の帰宅にきまっているのでございますから、そのまま黙って寝ていました。",
-    "夫は、隣の部屋に電気をつけ、はあっはあっ、とすさまじく荒い呼吸をしながら、机の引出しや本箱の引出しをあけて掻きまわし、何やら捜している様子でしたが、やがて、どたりと畳に腰をおろして坐ったような物音が聞えまして、あとはただ、はあっはあっという荒い呼吸ばかりで、何をしている事やら、私が寝たまま、"
+    "夫は、隣の部屋に電気をつけ、はあっはあっ、とすさまじく荒い呼吸をしながら、机の引出しや本箱の引出しをあけて掻きまわし、何やら捜している様子でしたが、やがて、どたりと畳に腰をおろして坐ったような物音が聞えまして、あとはただ、はあっはあっという荒い呼吸ばかりで、何をしている事やら、私が寝たまま、",
+    "「おかえりなさいまし。"
   ],
   "closing": [
     "「人非人でもいいじゃないの。",

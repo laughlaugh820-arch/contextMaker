@@ -6,26 +6,26 @@
   "card": "https://www.aozora.gr.jp/cards/000168/card2302.html",
   "path": "library/000168/2302_蠅",
   "stats": {
-    "characters": 3714,
-    "paragraphs": 86,
-    "sentences": 174,
-    "sentence_length_mean": 20.1,
-    "sentence_length_median": 15.0,
-    "sentence_length_stdev": 17.4,
+    "characters": 3604,
+    "paragraphs": 76,
+    "sentences": 164,
+    "sentence_length_mean": 21.3,
+    "sentence_length_median": 15.5,
+    "sentence_length_stdev": 17.2,
     "sentence_length_max": 116,
-    "dialogue_ratio": 0.239,
+    "dialogue_ratio": 0.246,
     "quoted_narration_ratio": 0.0,
     "quote_span_mean": 20.6,
-    "dialogue_paragraph_ratio": 0.465,
+    "dialogue_paragraph_ratio": 0.526,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.3094,
-    "hiragana_ratio": 0.525,
-    "katakana_ratio": 0.0065,
-    "comma_per_sentence": 0.7,
+    "kanji_ratio": 0.316,
+    "hiragana_ratio": 0.5411,
+    "katakana_ratio": 0.0067,
+    "comma_per_sentence": 0.74,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.0,
     "exclaim_per_1000": 0.0,
-    "question_per_1000": 2.96
+    "question_per_1000": 3.05
   },
   "headings": [
     {
@@ -82,10 +82,10 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 18,
-      "sentence_length_mean": 20.3,
-      "dialogue_ratio": 0.082,
-      "exclaim_question_per_1000": 5.48,
+      "sentences": 15,
+      "sentence_length_mean": 24.1,
+      "dialogue_ratio": 0.083,
+      "exclaim_question_per_1000": 5.52,
       "dash_ellipsis_per_1000": 0.0
     },
     {
@@ -98,25 +98,25 @@
     },
     {
       "segment": 3,
-      "sentences": 26,
-      "sentence_length_mean": 14.0,
-      "dialogue_ratio": 0.512,
-      "exclaim_question_per_1000": 2.74,
+      "sentences": 25,
+      "sentence_length_mean": 14.6,
+      "dialogue_ratio": 0.514,
+      "exclaim_question_per_1000": 2.75,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 4,
-      "sentences": 19,
-      "sentence_length_mean": 19.1,
+      "sentences": 18,
+      "sentence_length_mean": 20.1,
       "dialogue_ratio": 0.204,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 5,
-      "sentences": 17,
-      "sentence_length_mean": 20.0,
-      "dialogue_ratio": 0.521,
+      "sentences": 16,
+      "sentence_length_mean": 21.2,
+      "dialogue_ratio": 0.522,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
@@ -130,16 +130,16 @@
     },
     {
       "segment": 7,
-      "sentences": 15,
-      "sentence_length_mean": 22.1,
+      "sentences": 13,
+      "sentence_length_mean": 25.4,
       "dialogue_ratio": 0.048,
-      "exclaim_question_per_1000": 3.01,
+      "exclaim_question_per_1000": 3.03,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 8,
-      "sentences": 15,
-      "sentence_length_mean": 25.0,
+      "sentences": 13,
+      "sentence_length_mean": 28.7,
       "dialogue_ratio": 0.027,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -166,14 +166,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.726,
+      "position": 0.725,
       "text": "猫背の馭者は、饅頭屋の簀の子の上で、綿のように脹らんでいる饅頭を腹掛けの中へ押し込むと馭者台の上にその背を曲げた。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.062,
+      "position": 0.061,
       "text": "すると、廂を脱れた日の光は、彼の腰から、円い荷物のような猫背の上へ乗りかかって来た。"
     },
     {
@@ -195,9 +195,9 @@
     "まアまア": 1
   },
   "opening": [
-    "一",
     "真夏の宿場は空虚であった。",
-    "ただ眼の大きな一疋の蠅だけは、薄暗い厩の隅の蜘蛛の巣にひっかかると、後肢で網を跳ねつつ暫くぶらぶらと揺れていた。"
+    "ただ眼の大きな一疋の蠅だけは、薄暗い厩の隅の蜘蛛の巣にひっかかると、後肢で網を跳ねつつ暫くぶらぶらと揺れていた。",
+    "と、豆のようにぼたりと落ちた。"
   ],
   "closing": [
     "と、車体と一緒に崖の下へ墜落して行く放埒な馬の腹が眼についた。",

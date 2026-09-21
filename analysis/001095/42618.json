@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/001095/card42618.html",
   "path": "library/001095/42618_桜の森の満開の下",
   "stats": {
-    "characters": 16960,
+    "characters": 16953,
     "paragraphs": 218,
     "sentences": 637,
     "sentence_length_mean": 26.1,
@@ -18,8 +18,8 @@
     "quote_span_mean": 28.2,
     "dialogue_paragraph_ratio": 0.523,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2255,
-    "hiragana_ratio": 0.6664,
+    "kanji_ratio": 0.2256,
+    "hiragana_ratio": 0.6667,
     "katakana_ratio": 0.0165,
     "comma_per_sentence": 0.67,
     "dash_per_1000": 0.0,
@@ -451,7 +451,6 @@
   ],
   "reduplications": {
     "よしよし": 2,
-    "わざわざ": 1,
     "ハッハッ": 1,
     "ペロペロ": 1,
     "ヨボヨボ": 1,

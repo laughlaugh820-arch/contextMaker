@@ -6,22 +6,22 @@
   "card": "https://www.aozora.gr.jp/cards/000050/card521.html",
   "path": "library/000050/521_高野聖",
   "stats": {
-    "characters": 36645,
-    "paragraphs": 566,
-    "sentences": 746,
-    "sentence_length_mean": 47.8,
-    "sentence_length_median": 38.0,
-    "sentence_length_stdev": 40.5,
+    "characters": 36515,
+    "paragraphs": 540,
+    "sentences": 720,
+    "sentence_length_mean": 49.5,
+    "sentence_length_median": 39.0,
+    "sentence_length_stdev": 40.2,
     "sentence_length_max": 303,
     "dialogue_ratio": 0.005,
-    "quoted_narration_ratio": 0.914,
-    "quote_span_mean": 1051.9,
-    "dialogue_paragraph_ratio": 0.057,
+    "quoted_narration_ratio": 0.917,
+    "quote_span_mean": 1051.6,
+    "dialogue_paragraph_ratio": 0.059,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2726,
-    "hiragana_ratio": 0.6178,
+    "kanji_ratio": 0.2723,
+    "hiragana_ratio": 0.62,
     "katakana_ratio": 0.0025,
-    "comma_per_sentence": 2.49,
+    "comma_per_sentence": 2.58,
     "dash_per_1000": 0.03,
     "ellipsis_per_1000": 0.0,
     "exclaim_per_1000": 0.22,
@@ -162,74 +162,74 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 61,
-      "sentence_length_mean": 60.1,
+      "sentences": 58,
+      "sentence_length_mean": 63.1,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 2,
-      "sentences": 70,
-      "sentence_length_mean": 49.9,
+      "sentences": 67,
+      "sentence_length_mean": 52.1,
       "dialogue_ratio": 0.007,
       "exclaim_question_per_1000": 0.29,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 3,
-      "sentences": 54,
-      "sentence_length_mean": 66.6,
+      "sentences": 51,
+      "sentence_length_mean": 70.5,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.56,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 4,
-      "sentences": 81,
-      "sentence_length_mean": 43.9,
+      "sentences": 78,
+      "sentence_length_mean": 45.6,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 5,
-      "sentences": 86,
-      "sentence_length_mean": 41.4,
+      "sentences": 84,
+      "sentence_length_mean": 42.4,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.56,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 6,
-      "sentences": 97,
-      "sentence_length_mean": 36.6,
+      "sentences": 94,
+      "sentence_length_mean": 37.7,
       "dialogue_ratio": 0.016,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 7,
-      "sentences": 103,
-      "sentence_length_mean": 34.8,
+      "sentences": 99,
+      "sentence_length_mean": 35.9,
       "dialogue_ratio": 0.0,
-      "exclaim_question_per_1000": 1.12,
+      "exclaim_question_per_1000": 1.13,
       "dash_ellipsis_per_1000": 0.28
     },
     {
       "segment": 8,
-      "sentences": 85,
-      "sentence_length_mean": 41.7,
+      "sentences": 83,
+      "sentence_length_mean": 43.0,
       "dialogue_ratio": 0.023,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 9,
-      "sentences": 65,
-      "sentence_length_mean": 57.7,
+      "sentences": 62,
+      "sentence_length_mean": 60.4,
       "dialogue_ratio": 0.002,
-      "exclaim_question_per_1000": 1.33,
+      "exclaim_question_per_1000": 1.34,
       "dash_ellipsis_per_1000": 0.0
     },
     {
@@ -465,7 +465,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.248,
+      "position": 0.249,
       "text": "時々爪尖に絡まるのは葉の雫の落溜った糸のような流で、これは枝を打って高い処を走るので。"
     },
     {
@@ -486,7 +486,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.442,
+      "position": 0.443,
       "text": "（はい、ただいまあの爺様が、さよう申しましたように存じますが、夫人でございますか。）"
     },
     {
@@ -508,7 +508,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.95,
+      "position": 0.949,
       "text": "いよいよ明日が手術という夜は、皆寐静まってから、しくしく蚊のように泣いているのを、手水に起きた娘が見つけてあまり不便さに抱いて寝てやった。"
     },
     {
@@ -529,7 +529,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.53,
+      "position": 0.531,
       "text": "と澄して言う、婦人もいつの間にか衣服を脱いで全身を練絹のように露していたのじゃ。"
     },
     {
@@ -557,7 +557,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.562,
+      "position": 0.563,
       "text": "枝から枝を伝うと見えて、見上げるように高い木の、やがて梢まで、かさかさがさり。"
     },
     {
@@ -686,7 +686,6 @@
     "おいおい": 1,
     "ああああ": 1,
     "じりじり": 1,
-    "いていて": 1,
     "ぶくぶく": 1,
     "じろじろ": 1,
     "すべすべ": 1,
@@ -707,17 +706,18 @@
     "ふッふッ": 1,
     "いそいそ": 1,
     "はらはら": 1,
-    "おやおや": 1
+    "おやおや": 1,
+    "まじまじ": 1
   },
   "opening": [
-    "一",
     "「参謀本部編纂の地図をまた繰開いて見るでもなかろう、と思ったけれども、余りの道じゃから、手を触るさえ暑くるしい、旅の法衣の袖をかかげて、表紙を附けた折本になってるのを引張り出した。",
-    "飛騨から信州へ越える深山の間道で、ちょうど立休らおうという一本の樹立も無い、右も左も山ばかりじゃ、手を伸ばすと達きそうな峰があると、その峰へ峰が乗り、巓が被さって、飛ぶ鳥も見えず、雲の形も見えぬ。"
+    "飛騨から信州へ越える深山の間道で、ちょうど立休らおうという一本の樹立も無い、右も左も山ばかりじゃ、手を伸ばすと達きそうな峰があると、その峰へ峰が乗り、巓が被さって、飛ぶ鳥も見えず、雲の形も見えぬ。",
+    "道と空との間にただ一人我ばかり、およそ正午と覚しい極熱の太陽の色も白いほどに冴え返った光線を、深々と戴いた一重の檜笠に凌いで、こう図面を見た。」"
   ],
   "closing": [
+    "見送ると小さくなって、一座の大山の背後へかくれたと思うと、油旱の焼けるような空に、その山の巓から、すくすくと雲が出た、滝の音も静まるばかり殷々として雷の響。",
     "藻抜けのように立っていた、私が魂は身に戻った、そなたを拝むと斉しく、杖をかい込み、小笠を傾け、踵を返すと慌しく一散に駈け下りたが、里に着いた時分に山は驟雨、親仁が婦人に齎らした鯉もこのために活きて孤家に着いたろうと思う大雨であった。」",
-    "高野聖はこのことについて、あえて別に註して教を与えはしなかったが、翌朝袂を分って、雪中山越にかかるのを、名残惜しく見送ると、ちらちらと雪の降るなかを次第に高く坂道を上る聖の姿、あたかも雲に駕して行くように見えたのである。",
-    "（明治三十三年）"
+    "高野聖はこのことについて、あえて別に註して教を与えはしなかったが、翌朝袂を分って、雪中山越にかかるのを、名残惜しく見送ると、ちらちらと雪の降るなかを次第に高く坂道を上る聖の姿、あたかも雲に駕して行くように見えたのである。"
   ],
   "repetitions": [],
   "vocabulary": {

@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000879/card42.html",
   "path": "library/000879/42_鼻",
   "stats": {
-    "characters": 5823,
+    "characters": 5822,
     "paragraphs": 45,
     "sentences": 162,
     "sentence_length_mean": 35.4,
@@ -18,8 +18,8 @@
     "quote_span_mean": 23.7,
     "dialogue_paragraph_ratio": 0.0,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2916,
-    "hiragana_ratio": 0.6117,
+    "kanji_ratio": 0.2917,
+    "hiragana_ratio": 0.6118,
     "katakana_ratio": 0.0009,
     "comma_per_sentence": 1.63,
     "dash_per_1000": 2.92,
@@ -346,11 +346,8 @@
   ],
   "reduplications": {
     "くなくな": 1,
-    "わざわざ": 1,
     "のびのび": 1,
-    "じろじろ": 1,
-    "とうとう": 1,
-    "いていて": 1
+    "じろじろ": 1
   },
   "opening": [
     "禅智内供の鼻と云えば、池の尾で知らない者はない。",
@@ -358,9 +355,9 @@
     "形は元も先も同じように太い。"
   ],
   "closing": [
+    "――こうなれば、もう誰も哂うものはないにちがいない。",
     "内供は心の中でこう自分に囁いた。",
-    "長い鼻をあけ方の秋風にぶらつかせながら。",
-    "（大正五年一月）"
+    "長い鼻をあけ方の秋風にぶらつかせながら。"
   ],
   "repetitions": [],
   "vocabulary": {

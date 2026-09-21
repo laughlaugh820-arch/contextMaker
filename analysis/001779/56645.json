@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/001779/card56645.html",
   "path": "library/001779/56645_押絵と旅する男",
   "stats": {
-    "characters": 17520,
+    "characters": 17519,
     "paragraphs": 104,
     "sentences": 323,
     "sentence_length_mean": 53.7,
@@ -19,7 +19,7 @@
     "dialogue_paragraph_ratio": 0.212,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2901,
-    "hiragana_ratio": 0.5939,
+    "hiragana_ratio": 0.594,
     "katakana_ratio": 0.0215,
     "comma_per_sentence": 3.2,
     "dash_per_1000": 0.11,
@@ -246,7 +246,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 3,
     "むしむし": 2,
     "ギラギラ": 2,
     "フワフワ": 1,

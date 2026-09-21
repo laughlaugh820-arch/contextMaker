@@ -6,20 +6,20 @@
   "card": "https://www.aozora.gr.jp/cards/000148/card776.html",
   "path": "library/000148/776_草枕",
   "stats": {
-    "characters": 85548,
-    "paragraphs": 1106,
-    "sentences": 3236,
-    "sentence_length_mean": 26.0,
-    "sentence_length_median": 21.0,
-    "sentence_length_stdev": 18.7,
+    "characters": 85463,
+    "paragraphs": 1093,
+    "sentences": 3223,
+    "sentence_length_mean": 26.1,
+    "sentence_length_median": 21,
+    "sentence_length_stdev": 18.6,
     "sentence_length_max": 157,
     "dialogue_ratio": 0.222,
     "quoted_narration_ratio": 0.008,
     "quote_span_mean": 26.5,
-    "dialogue_paragraph_ratio": 0.654,
+    "dialogue_paragraph_ratio": 0.661,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2947,
-    "hiragana_ratio": 0.5887,
+    "kanji_ratio": 0.2948,
+    "hiragana_ratio": 0.5892,
     "katakana_ratio": 0.0051,
     "comma_per_sentence": 1.02,
     "dash_per_1000": 1.03,
@@ -97,63 +97,63 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 287,
-      "sentence_length_mean": 29.3,
+      "sentences": 285,
+      "sentence_length_mean": 29.5,
       "dialogue_ratio": 0.05,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.95
     },
     {
       "segment": 2,
-      "sentences": 273,
-      "sentence_length_mean": 30.8,
+      "sentences": 272,
+      "sentence_length_mean": 30.9,
       "dialogue_ratio": 0.198,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 2.14
     },
     {
       "segment": 3,
-      "sentences": 301,
-      "sentence_length_mean": 27.9,
+      "sentences": 300,
+      "sentence_length_mean": 28.0,
       "dialogue_ratio": 0.092,
       "exclaim_question_per_1000": 0.12,
-      "dash_ellipsis_per_1000": 0.59
+      "dash_ellipsis_per_1000": 0.6
     },
     {
       "segment": 4,
-      "sentences": 360,
-      "sentence_length_mean": 23.3,
-      "dialogue_ratio": 0.564,
+      "sentences": 359,
+      "sentence_length_mean": 23.4,
+      "dialogue_ratio": 0.565,
       "exclaim_question_per_1000": 1.07,
       "dash_ellipsis_per_1000": 3.69
     },
     {
       "segment": 5,
-      "sentences": 242,
-      "sentence_length_mean": 34.9,
+      "sentences": 240,
+      "sentence_length_mean": 35.2,
       "dialogue_ratio": 0.027,
       "exclaim_question_per_1000": 0.12,
       "dash_ellipsis_per_1000": 0.36
     },
     {
       "segment": 6,
-      "sentences": 276,
+      "sentences": 274,
       "sentence_length_mean": 30.5,
-      "dialogue_ratio": 0.18,
+      "dialogue_ratio": 0.181,
       "exclaim_question_per_1000": 0.12,
-      "dash_ellipsis_per_1000": 1.55
+      "dash_ellipsis_per_1000": 1.56
     },
     {
       "segment": 7,
-      "sentences": 380,
-      "sentence_length_mean": 22.3,
-      "dialogue_ratio": 0.488,
+      "sentences": 379,
+      "sentence_length_mean": 22.4,
+      "dialogue_ratio": 0.485,
       "exclaim_question_per_1000": 1.06,
-      "dash_ellipsis_per_1000": 2.72
+      "dash_ellipsis_per_1000": 2.7
     },
     {
       "segment": 8,
-      "sentences": 368,
+      "sentences": 367,
       "sentence_length_mean": 22.6,
       "dialogue_ratio": 0.166,
       "exclaim_question_per_1000": 0.96,
@@ -161,15 +161,15 @@
     },
     {
       "segment": 9,
-      "sentences": 356,
-      "sentence_length_mean": 23.6,
+      "sentences": 355,
+      "sentence_length_mean": 23.7,
       "dialogue_ratio": 0.226,
       "exclaim_question_per_1000": 0.12,
       "dash_ellipsis_per_1000": 0.71
     },
     {
       "segment": 10,
-      "sentences": 393,
+      "sentences": 392,
       "sentence_length_mean": 21.4,
       "dialogue_ratio": 0.262,
       "exclaim_question_per_1000": 0.95,
@@ -461,7 +461,7 @@
       "markers": [
         "あたかも"
       ],
-      "position": 0.612,
+      "position": 0.613,
       "text": "しかもその九個が整然と同距離に按排されて、あたかも人造のねりものと見違えらるるに至ってはもとより天下の逸品をもって許さざるを得ない。"
     },
     {
@@ -559,7 +559,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.488,
+      "position": 0.489,
       "text": "しかし夢のように、三尺の幅を、すうと抜ける影を見るや否や、何だか口が聴けなくなる。"
     },
     {
@@ -600,10 +600,8 @@
   ],
   "reduplications": {
     "ハハハハ": 10,
-    "とうとう": 9,
     "ホホホホ": 8,
     "はははは": 6,
-    "わざわざ": 3,
     "ほほほほ": 3,
     "ぶらぶら": 2,
     "すたすた": 2,
@@ -638,12 +636,14 @@
     "いらいら": 1,
     "しんしん": 1,
     "すらすら": 1,
-    "まあまあ": 1
+    "まあまあ": 1,
+    "ちょくちょく": 1,
+    "おおいおおい": 1
   },
   "opening": [
-    "一",
     "山路を登りながら、こう考えた。",
-    "智に働けば角が立つ。"
+    "智に働けば角が立つ。",
+    "情に棹させば流される。"
   ],
   "closing": [
     "それだ！",

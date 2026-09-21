@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000879/card127.html",
   "path": "library/000879/127_羅生門",
   "stats": {
-    "characters": 5747,
+    "characters": 5746,
     "paragraphs": 37,
     "sentences": 153,
     "sentence_length_mean": 37.1,
@@ -18,8 +18,8 @@
     "quote_span_mean": 46.3,
     "dialogue_paragraph_ratio": 0.189,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2784,
-    "hiragana_ratio": 0.6059,
+    "kanji_ratio": 0.2785,
+    "hiragana_ratio": 0.606,
     "katakana_ratio": 0.0,
     "comma_per_sentence": 2.52,
     "dash_per_1000": 0.7,
@@ -289,7 +289,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 1,
     "ごろごろ": 1
   },
   "opening": [
@@ -298,9 +297,9 @@
     "広い門の下には、この男のほかに誰もいない。"
   ],
   "closing": [
+    "そうして、そこから、短い白髪を倒にして、門の下を覗きこんだ。",
     "外には、ただ、黒洞々たる夜があるばかりである。",
-    "下人の行方は、誰も知らない。",
-    "（大正四年九月）"
+    "下人の行方は、誰も知らない。"
   ],
   "repetitions": [],
   "vocabulary": {

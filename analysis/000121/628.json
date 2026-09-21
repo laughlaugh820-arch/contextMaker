@@ -6,26 +6,26 @@
   "card": "https://www.aozora.gr.jp/cards/000121/card628.html",
   "path": "library/000121/628_ごん狐",
   "stats": {
-    "characters": 4935,
-    "paragraphs": 82,
-    "sentences": 174,
-    "sentence_length_mean": 27.6,
-    "sentence_length_median": 25.0,
-    "sentence_length_stdev": 16.2,
+    "characters": 4911,
+    "paragraphs": 76,
+    "sentences": 168,
+    "sentence_length_mean": 28.5,
+    "sentence_length_median": 26.0,
+    "sentence_length_stdev": 15.7,
     "sentence_length_max": 88,
-    "dialogue_ratio": 0.174,
+    "dialogue_ratio": 0.175,
     "quoted_narration_ratio": 0.0,
     "quote_span_mean": 25.2,
-    "dialogue_paragraph_ratio": 0.39,
+    "dialogue_paragraph_ratio": 0.421,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.1483,
-    "hiragana_ratio": 0.7145,
+    "kanji_ratio": 0.1478,
+    "hiragana_ratio": 0.718,
     "katakana_ratio": 0.0077,
-    "comma_per_sentence": 1.64,
+    "comma_per_sentence": 1.7,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.0,
     "exclaim_per_1000": 0.0,
-    "question_per_1000": 1.01
+    "question_per_1000": 1.02
   },
   "headings": [
     {
@@ -62,8 +62,8 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 15,
-      "sentence_length_mean": 35.7,
+      "sentences": 14,
+      "sentence_length_mean": 38.1,
       "dialogue_ratio": 0.009,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -86,9 +86,9 @@
     },
     {
       "segment": 4,
-      "sentences": 16,
-      "sentence_length_mean": 28.2,
-      "dialogue_ratio": 0.199,
+      "sentences": 15,
+      "sentence_length_mean": 30.1,
+      "dialogue_ratio": 0.2,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
@@ -102,16 +102,16 @@
     },
     {
       "segment": 6,
-      "sentences": 17,
-      "sentence_length_mean": 28.1,
+      "sentences": 16,
+      "sentence_length_mean": 29.8,
       "dialogue_ratio": 0.107,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 7,
-      "sentences": 15,
-      "sentence_length_mean": 31.6,
+      "sentences": 14,
+      "sentence_length_mean": 33.8,
       "dialogue_ratio": 0.148,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -126,16 +126,16 @@
     },
     {
       "segment": 9,
-      "sentences": 21,
-      "sentence_length_mean": 22.5,
+      "sentences": 20,
+      "sentence_length_mean": 23.6,
       "dialogue_ratio": 0.367,
       "exclaim_question_per_1000": 2.12,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 10,
-      "sentences": 20,
-      "sentence_length_mean": 23.4,
+      "sentences": 19,
+      "sentence_length_mean": 24.5,
       "dialogue_ratio": 0.071,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -184,14 +184,13 @@
     "ぴかぴか": 1,
     "ぶつぶつ": 1,
     "ぶらぶら": 1,
-    "そうそう": 1,
     "ポンポン": 1,
     "ごちゃごちゃ": 1
   },
   "opening": [
-    "一",
     "これは、私が小さいときに、村の茂平というおじいさんからきいたお話です。",
-    "むかしは、私たちの村のちかくの、中山というところに小さなお城があって、中山さまというおとのさまが、おられたそうです。"
+    "むかしは、私たちの村のちかくの、中山というところに小さなお城があって、中山さまというおとのさまが、おられたそうです。",
+    "その中山から、少しはなれた山の中に、「ごん狐」という狐がいました。"
   ],
   "closing": [
     "ごんは、ぐったりと目をつぶったまま、うなずきました。",

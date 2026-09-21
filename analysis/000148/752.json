@@ -6,21 +6,21 @@
   "card": "https://www.aozora.gr.jp/cards/000148/card752.html",
   "path": "library/000148/752_坊っちゃん",
   "stats": {
-    "characters": 88998,
-    "paragraphs": 482,
-    "sentences": 2729,
-    "sentence_length_mean": 32.3,
-    "sentence_length_median": 27,
+    "characters": 88949,
+    "paragraphs": 471,
+    "sentences": 2718,
+    "sentence_length_mean": 32.5,
+    "sentence_length_median": 27.0,
     "sentence_length_stdev": 21.6,
     "sentence_length_max": 163,
     "dialogue_ratio": 0.143,
     "quoted_narration_ratio": 0.025,
     "quote_span_mean": 44.0,
-    "dialogue_paragraph_ratio": 0.556,
+    "dialogue_paragraph_ratio": 0.569,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.28,
-    "hiragana_ratio": 0.629,
-    "katakana_ratio": 0.0122,
+    "hiragana_ratio": 0.6293,
+    "katakana_ratio": 0.0123,
     "comma_per_sentence": 1.04,
     "dash_per_1000": 0.75,
     "ellipsis_per_1000": 0.42,
@@ -87,32 +87,32 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 306,
-      "sentence_length_mean": 28.9,
+      "sentences": 304,
+      "sentence_length_mean": 29.1,
       "dialogue_ratio": 0.018,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.34
     },
     {
       "segment": 2,
-      "sentences": 287,
-      "sentence_length_mean": 30.9,
+      "sentences": 286,
+      "sentence_length_mean": 31.0,
       "dialogue_ratio": 0.027,
       "exclaim_question_per_1000": 0.23,
       "dash_ellipsis_per_1000": 0.45
     },
     {
       "segment": 3,
-      "sentences": 281,
-      "sentence_length_mean": 31.2,
+      "sentences": 280,
+      "sentence_length_mean": 31.3,
       "dialogue_ratio": 0.078,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.34
     },
     {
       "segment": 4,
-      "sentences": 288,
-      "sentence_length_mean": 30.7,
+      "sentences": 286,
+      "sentence_length_mean": 30.9,
       "dialogue_ratio": 0.179,
       "exclaim_question_per_1000": 0.23,
       "dash_ellipsis_per_1000": 2.04
@@ -127,24 +127,24 @@
     },
     {
       "segment": 6,
-      "sentences": 255,
-      "sentence_length_mean": 34.5,
-      "dialogue_ratio": 0.207,
+      "sentences": 254,
+      "sentence_length_mean": 34.6,
+      "dialogue_ratio": 0.208,
       "exclaim_question_per_1000": 0.11,
       "dash_ellipsis_per_1000": 2.39
     },
     {
       "segment": 7,
-      "sentences": 271,
-      "sentence_length_mean": 32.5,
+      "sentences": 270,
+      "sentence_length_mean": 32.6,
       "dialogue_ratio": 0.299,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 2.27
     },
     {
       "segment": 8,
-      "sentences": 245,
-      "sentence_length_mean": 36.2,
+      "sentences": 243,
+      "sentence_length_mean": 36.5,
       "dialogue_ratio": 0.09,
       "exclaim_question_per_1000": 0.45,
       "dash_ellipsis_per_1000": 1.8
@@ -152,16 +152,16 @@
     {
       "segment": 9,
       "sentences": 248,
-      "sentence_length_mean": 35.4,
+      "sentence_length_mean": 35.6,
       "dialogue_ratio": 0.083,
       "exclaim_question_per_1000": 0.11,
-      "dash_ellipsis_per_1000": 0.46
+      "dash_ellipsis_per_1000": 0.45
     },
     {
       "segment": 10,
-      "sentences": 295,
+      "sentences": 294,
       "sentence_length_mean": 29.9,
-      "dialogue_ratio": 0.316,
+      "dialogue_ratio": 0.318,
       "exclaim_question_per_1000": 0.23,
       "dash_ellipsis_per_1000": 0.91
     }
@@ -590,8 +590,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 7,
-    "わざわざ": 7,
     "のそのそ": 2,
     "ゆるゆる": 2,
     "すたすた": 2,
@@ -603,7 +601,6 @@
     "くさくさ": 1,
     "ざらざら": 1,
     "ぼりぼり": 1,
-    "そうそう": 1,
     "ハハハハ": 1,
     "そろそろ": 1,
     "ぶらぶら": 1,
@@ -626,14 +623,14 @@
     "からんからん": 1
   },
   "opening": [
-    "一",
     "親譲りの無鉄砲で小供の時から損ばかりしている。",
-    "小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。"
+    "小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。",
+    "なぜそんな無闇をしたと聞く人があるかも知れぬ。"
   ],
   "closing": [
+    "死ぬ前日おれを呼んで坊っちゃん後生だから清が死んだら、坊っちゃんのお寺へ埋めて下さい。",
     "お墓のなかで坊っちゃんの来るのを楽しみに待っておりますと云った。",
-    "だから清の墓は小日向の養源寺にある。",
-    "（明治三十九年四月）"
+    "だから清の墓は小日向の養源寺にある。"
   ],
   "repetitions": [],
   "vocabulary": {

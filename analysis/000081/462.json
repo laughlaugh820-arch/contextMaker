@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000081/card462.html",
   "path": "library/000081/462_風の又三郎",
   "stats": {
-    "characters": 30904,
+    "characters": 30895,
     "paragraphs": 555,
     "sentences": 1163,
     "sentence_length_mean": 25.8,
@@ -18,8 +18,8 @@
     "quote_span_mean": 24.4,
     "dialogue_paragraph_ratio": 0.486,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.1808,
-    "hiragana_ratio": 0.7034,
+    "kanji_ratio": 0.1809,
+    "hiragana_ratio": 0.7036,
     "katakana_ratio": 0.0076,
     "comma_per_sentence": 0.67,
     "dash_per_1000": 0.0,
@@ -541,7 +541,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 6,
     "どんどん": 4,
     "そろそろ": 2,
     "ぐるぐる": 2,

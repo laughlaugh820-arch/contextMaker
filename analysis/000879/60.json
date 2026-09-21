@@ -6,22 +6,22 @@
   "card": "https://www.aozora.gr.jp/cards/000879/card60.html",
   "path": "library/000879/60_地獄変",
   "stats": {
-    "characters": 26525,
-    "paragraphs": 164,
-    "sentences": 529,
-    "sentence_length_mean": 49.6,
-    "sentence_length_median": 46,
-    "sentence_length_stdev": 32.2,
+    "characters": 26435,
+    "paragraphs": 144,
+    "sentences": 509,
+    "sentence_length_mean": 51.5,
+    "sentence_length_median": 47,
+    "sentence_length_stdev": 31.4,
     "sentence_length_max": 186,
-    "dialogue_ratio": 0.082,
+    "dialogue_ratio": 0.083,
     "quoted_narration_ratio": 0.008,
     "quote_span_mean": 38.0,
-    "dialogue_paragraph_ratio": 0.28,
+    "dialogue_paragraph_ratio": 0.319,
     "orthography": "旧字旧仮名",
-    "kanji_ratio": 0.2907,
-    "hiragana_ratio": 0.6173,
+    "kanji_ratio": 0.2906,
+    "hiragana_ratio": 0.6194,
     "katakana_ratio": 0.0,
-    "comma_per_sentence": 2.44,
+    "comma_per_sentence": 2.53,
     "dash_per_1000": 1.85,
     "ellipsis_per_1000": 0.11,
     "exclaim_per_1000": 0.0,
@@ -132,80 +132,80 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 48,
-      "sentence_length_mean": 54.7,
+      "sentences": 46,
+      "sentence_length_mean": 57.0,
       "dialogue_ratio": 0.045,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 1.14
     },
     {
       "segment": 2,
-      "sentences": 46,
-      "sentence_length_mean": 58.2,
+      "sentences": 44,
+      "sentence_length_mean": 60.8,
       "dialogue_ratio": 0.038,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.75
     },
     {
       "segment": 3,
-      "sentences": 50,
-      "sentence_length_mean": 52.9,
+      "sentences": 48,
+      "sentence_length_mean": 55.0,
       "dialogue_ratio": 0.046,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 1.14
     },
     {
       "segment": 4,
-      "sentences": 63,
-      "sentence_length_mean": 42.4,
+      "sentences": 61,
+      "sentence_length_mean": 43.8,
       "dialogue_ratio": 0.119,
       "exclaim_question_per_1000": 0.75,
       "dash_ellipsis_per_1000": 4.49
     },
     {
       "segment": 5,
-      "sentences": 47,
-      "sentence_length_mean": 54.1,
+      "sentences": 45,
+      "sentence_length_mean": 56.4,
       "dialogue_ratio": 0.065,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.79
     },
     {
       "segment": 6,
-      "sentences": 49,
-      "sentence_length_mean": 53.5,
+      "sentences": 47,
+      "sentence_length_mean": 55.7,
       "dialogue_ratio": 0.052,
       "exclaim_question_per_1000": 0.38,
-      "dash_ellipsis_per_1000": 1.14
+      "dash_ellipsis_per_1000": 1.15
     },
     {
       "segment": 7,
-      "sentences": 54,
-      "sentence_length_mean": 47.9,
+      "sentences": 52,
+      "sentence_length_mean": 49.6,
       "dialogue_ratio": 0.055,
       "exclaim_question_per_1000": 0.39,
       "dash_ellipsis_per_1000": 1.55
     },
     {
       "segment": 8,
-      "sentences": 70,
-      "sentence_length_mean": 37.6,
+      "sentences": 68,
+      "sentence_length_mean": 38.6,
       "dialogue_ratio": 0.274,
       "exclaim_question_per_1000": 0.38,
       "dash_ellipsis_per_1000": 2.66
     },
     {
       "segment": 9,
-      "sentences": 56,
-      "sentence_length_mean": 47.4,
+      "sentences": 54,
+      "sentence_length_mean": 49.1,
       "dialogue_ratio": 0.116,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 2.26
     },
     {
       "segment": 10,
-      "sentences": 46,
-      "sentence_length_mean": 55.8,
+      "sentences": 44,
+      "sentence_length_mean": 58.2,
       "dialogue_ratio": 0.018,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 3.9
@@ -223,14 +223,14 @@
       "markers": [
         "まるで"
       ],
-      "position": 0.326,
+      "position": 0.327,
       "text": "先刻申し上げました弟子の話では、何でもあの男は仕事にとりかゝりますと、まるで狐でも憑いたやうになるらしうございます。"
     },
     {
       "markers": [
         "まるで"
       ],
-      "position": 0.45,
+      "position": 0.451,
       "text": "暫く致しますと、部屋の隅にある壺の蔭から、まるで黒い油のやうなものが、一すぢ細くうねりながら、流れ出して参りました。"
     },
     {
@@ -300,7 +300,7 @@
       "markers": [
         "まるで"
       ],
-      "position": 0.95,
+      "position": 0.951,
       "text": "まして私たちは仕丁までも、皆息をひそめながら、身の内も震へるばかり、異様な随喜の心に充ち満ちて、まるで開眼の仏でも見るやうに、眼も離さず、良秀を見つめました。"
     },
     {
@@ -391,21 +391,20 @@
       "markers": [
         "まるで"
       ],
-      "position": 0.497,
+      "position": 0.498,
       "text": "そこで弟子は、机の上のその異様な鳥も、やはり地獄変の屏風を描くのに入用なのに違ひないと、かう独り考へながら、師匠の前へ畏まつて、「何か御用でございますか」と、恭々しく申しますと、良秀はまるでそれが聞えないやうに、あの赤い唇へ舌なめずりをして、"
     }
   ],
   "reduplications": {
-    "わざわざ": 2,
     "ありあり": 1,
     "きりきり": 1,
     "しかしか": 1,
     "ちらちら": 1
   },
   "opening": [
-    "一",
     "堀川の大殿様のやうな方は、これまでは固より、後の世には恐らく二人とはいらつしやいますまい。",
-    "噂に聞きますと、あの方の御誕生になる前には、大威徳明王の御姿が御母君の夢枕にお立ちになつたとか申す事でございますが、兎に角御生れつきから、並々の人間とは御違ひになつてゐたやうでございます。"
+    "噂に聞きますと、あの方の御誕生になる前には、大威徳明王の御姿が御母君の夢枕にお立ちになつたとか申す事でございますが、兎に角御生れつきから、並々の人間とは御違ひになつてゐたやうでございます。",
+    "でございますから、あの方の為さいました事には、一つとして私どもの意表に出てゐないものはございません。"
   ],
   "closing": [
     "屍骸は今でもあの男の家の跡に埋まつて居ります。",

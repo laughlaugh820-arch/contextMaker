@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/001030/card4803.html",
   "path": "library/001030/4803_風立ちぬ",
   "stats": {
-    "characters": 55348,
+    "characters": 55206,
     "paragraphs": 487,
     "sentences": 1238,
     "sentence_length_mean": 44.0,
@@ -18,8 +18,8 @@
     "quote_span_mean": 38.5,
     "dialogue_paragraph_ratio": 0.366,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.24,
-    "hiragana_ratio": 0.6597,
+    "kanji_ratio": 0.2406,
+    "hiragana_ratio": 0.6614,
     "katakana_ratio": 0.0117,
     "comma_per_sentence": 1.5,
     "dash_per_1000": 0.89,
@@ -538,7 +538,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 6,
     "もっともっと": 3,
     "おずおず": 1,
     "もじもじ": 1,

@@ -6,9 +6,9 @@
   "card": "https://www.aozora.gr.jp/cards/000148/card794.html",
   "path": "library/000148/794_三四郎",
   "stats": {
-    "characters": 171889,
-    "paragraphs": 2083,
-    "sentences": 6996,
+    "characters": 171836,
+    "paragraphs": 2071,
+    "sentences": 6984,
     "sentence_length_mean": 24.2,
     "sentence_length_median": 20.0,
     "sentence_length_stdev": 16.1,
@@ -16,10 +16,10 @@
     "dialogue_ratio": 0.207,
     "quoted_narration_ratio": 0.052,
     "quote_span_mean": 30.6,
-    "dialogue_paragraph_ratio": 0.631,
+    "dialogue_paragraph_ratio": 0.634,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2579,
-    "hiragana_ratio": 0.6319,
+    "hiragana_ratio": 0.6321,
     "katakana_ratio": 0.0091,
     "comma_per_sentence": 0.65,
     "dash_per_1000": 0.91,
@@ -92,15 +92,15 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 645,
-      "sentence_length_mean": 26.2,
+      "sentences": 643,
+      "sentence_length_mean": 26.3,
       "dialogue_ratio": 0.084,
       "exclaim_question_per_1000": 0.12,
       "dash_ellipsis_per_1000": 1.48
     },
     {
       "segment": 2,
-      "sentences": 603,
+      "sentences": 602,
       "sentence_length_mean": 28.1,
       "dialogue_ratio": 0.123,
       "exclaim_question_per_1000": 0.0,
@@ -108,15 +108,15 @@
     },
     {
       "segment": 3,
-      "sentences": 682,
-      "sentence_length_mean": 24.8,
+      "sentences": 681,
+      "sentence_length_mean": 24.9,
       "dialogue_ratio": 0.204,
       "exclaim_question_per_1000": 0.06,
       "dash_ellipsis_per_1000": 1.95
     },
     {
       "segment": 4,
-      "sentences": 772,
+      "sentences": 771,
       "sentence_length_mean": 21.9,
       "dialogue_ratio": 0.313,
       "exclaim_question_per_1000": 0.41,
@@ -124,24 +124,24 @@
     },
     {
       "segment": 5,
-      "sentences": 736,
-      "sentence_length_mean": 22.9,
+      "sentences": 735,
+      "sentence_length_mean": 23.0,
       "dialogue_ratio": 0.251,
       "exclaim_question_per_1000": 0.18,
       "dash_ellipsis_per_1000": 1.36
     },
     {
       "segment": 6,
-      "sentences": 690,
-      "sentence_length_mean": 24.5,
+      "sentences": 689,
+      "sentence_length_mean": 24.6,
       "dialogue_ratio": 0.217,
       "exclaim_question_per_1000": 0.35,
       "dash_ellipsis_per_1000": 1.54
     },
     {
       "segment": 7,
-      "sentences": 762,
-      "sentence_length_mean": 22.1,
+      "sentences": 760,
+      "sentence_length_mean": 22.2,
       "dialogue_ratio": 0.223,
       "exclaim_question_per_1000": 0.65,
       "dash_ellipsis_per_1000": 1.13
@@ -156,19 +156,19 @@
     },
     {
       "segment": 9,
-      "sentences": 689,
+      "sentences": 687,
       "sentence_length_mean": 24.6,
-      "dialogue_ratio": 0.189,
+      "dialogue_ratio": 0.184,
       "exclaim_question_per_1000": 0.18,
       "dash_ellipsis_per_1000": 1.42
     },
     {
       "segment": 10,
-      "sentences": 781,
-      "sentence_length_mean": 21.6,
-      "dialogue_ratio": 0.274,
+      "sentences": 780,
+      "sentence_length_mean": 21.7,
+      "dialogue_ratio": 0.273,
       "exclaim_question_per_1000": 0.3,
-      "dash_ellipsis_per_1000": 1.19
+      "dash_ellipsis_per_1000": 1.18
     }
   ],
   "similes": [
@@ -597,11 +597,8 @@
     }
   ],
   "reduplications": {
-    "とうとう": 19,
-    "わざわざ": 5,
     "にやにや": 4,
     "そろそろ": 4,
-    "そうそう": 3,
     "うとうと": 2,
     "ぶらぶら": 2,
     "たまたま": 2,
@@ -609,7 +606,6 @@
     "ああああ": 2,
     "よくよく": 2,
     "めいめい": 2,
-    "いていて": 2,
     "のものも": 1,
     "そこそこ": 1,
     "だらだら": 1,
@@ -636,9 +632,9 @@
     "いかんいかん": 1
   },
   "opening": [
-    "一",
     "うとうととして目がさめると女はいつのまにか、隣のじいさんと話を始めている。",
-    "このじいさんはたしかに前の前の駅から乗ったいなか者である。"
+    "このじいさんはたしかに前の前の駅から乗ったいなか者である。",
+    "発車まぎわに頓狂な声を出して駆け込んで来て、いきなり肌をぬいだと思ったら背中にお灸のあとがいっぱいあったので、三四郎の記憶に残っている。"
   ],
   "closing": [
     "「じゃ、なんとすればよいんだ」",

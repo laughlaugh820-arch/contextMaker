@@ -6,22 +6,22 @@
   "card": "https://www.aozora.gr.jp/cards/001475/card54372.html",
   "path": "library/001475/54372_赤い蝋燭と人魚",
   "stats": {
-    "characters": 6661,
-    "paragraphs": 82,
-    "sentences": 177,
-    "sentence_length_mean": 36.8,
-    "sentence_length_median": 31,
-    "sentence_length_stdev": 22.1,
+    "characters": 6641,
+    "paragraphs": 77,
+    "sentences": 172,
+    "sentence_length_mean": 37.8,
+    "sentence_length_median": 32.0,
+    "sentence_length_stdev": 21.6,
     "sentence_length_max": 139,
     "dialogue_ratio": 0.141,
     "quoted_narration_ratio": 0.0,
     "quote_span_mean": 46.9,
-    "dialogue_paragraph_ratio": 0.244,
+    "dialogue_paragraph_ratio": 0.26,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2425,
-    "hiragana_ratio": 0.6493,
+    "kanji_ratio": 0.2424,
+    "hiragana_ratio": 0.6513,
     "katakana_ratio": 0.0006,
-    "comma_per_sentence": 2.0,
+    "comma_per_sentence": 2.06,
     "dash_per_1000": 0.3,
     "ellipsis_per_1000": 0.15,
     "exclaim_per_1000": 0.0,
@@ -57,16 +57,16 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 19,
-      "sentence_length_mean": 37.3,
+      "sentences": 18,
+      "sentence_length_mean": 39.3,
       "dialogue_ratio": 0.154,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 2,
-      "sentences": 14,
-      "sentence_length_mean": 44.8,
+      "sentences": 13,
+      "sentence_length_mean": 48.2,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 3.19
@@ -81,11 +81,11 @@
     },
     {
       "segment": 4,
-      "sentences": 18,
-      "sentence_length_mean": 36.2,
-      "dialogue_ratio": 0.285,
+      "sentences": 17,
+      "sentence_length_mean": 38.3,
+      "dialogue_ratio": 0.286,
       "exclaim_question_per_1000": 0.0,
-      "dash_ellipsis_per_1000": 1.53
+      "dash_ellipsis_per_1000": 1.54
     },
     {
       "segment": 5,
@@ -97,8 +97,8 @@
     },
     {
       "segment": 6,
-      "sentences": 15,
-      "sentence_length_mean": 42.8,
+      "sentences": 14,
+      "sentence_length_mean": 45.8,
       "dialogue_ratio": 0.086,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -113,8 +113,8 @@
     },
     {
       "segment": 8,
-      "sentences": 21,
-      "sentence_length_mean": 30.3,
+      "sentences": 20,
+      "sentence_length_mean": 31.8,
       "dialogue_ratio": 0.019,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -155,7 +155,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.696,
+      "position": 0.695,
       "text": "しかし、もはや、鬼のような心持になってしまった年より夫婦は何といっても娘の言うことを聞き入れませんでした。"
     },
     {
@@ -224,14 +224,13 @@
   ],
   "reduplications": {
     "とぼとぼ": 1,
-    "わざわざ": 1,
     "ふるふる": 1,
     "ちらちら": 1
   },
   "opening": [
-    "一",
     "人魚は、南の方の海にばかり棲んでいるのではありません。",
-    "北の海にも棲んでいたのであります。"
+    "北の海にも棲んでいたのであります。",
+    "北方の海の色は、青うございました。"
   ],
   "closing": [
     "月が雲間から洩れて波の面を照らした時は、まことに気味悪うございました。",

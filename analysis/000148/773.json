@@ -6,28 +6,33 @@
   "card": "https://www.aozora.gr.jp/cards/000148/card773.html",
   "path": "library/000148/773_こころ",
   "stats": {
-    "characters": 162468,
-    "paragraphs": 1331,
-    "sentences": 5180,
-    "sentence_length_mean": 30.9,
-    "sentence_length_median": 28.0,
-    "sentence_length_stdev": 17.2,
+    "characters": 161875,
+    "paragraphs": 1218,
+    "sentences": 5067,
+    "sentence_length_mean": 31.6,
+    "sentence_length_median": 28,
+    "sentence_length_stdev": 16.8,
     "sentence_length_max": 148,
-    "dialogue_ratio": 0.127,
+    "dialogue_ratio": 0.128,
     "quoted_narration_ratio": 0.018,
     "quote_span_mean": 36.0,
-    "dialogue_paragraph_ratio": 0.406,
+    "dialogue_paragraph_ratio": 0.443,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2735,
-    "hiragana_ratio": 0.6476,
+    "kanji_ratio": 0.273,
+    "hiragana_ratio": 0.65,
     "katakana_ratio": 0.0011,
-    "comma_per_sentence": 0.7,
+    "comma_per_sentence": 0.72,
     "dash_per_1000": 0.2,
     "ellipsis_per_1000": 0.14,
     "exclaim_per_1000": 0.0,
     "question_per_1000": 0.08
   },
   "headings": [
+    {
+      "index": 0,
+      "label": "上　先生と私",
+      "characters": 0
+    },
     {
       "index": 1,
       "label": "一",
@@ -206,7 +211,12 @@
     {
       "index": 658,
       "label": "三十六",
-      "characters": 1465
+      "characters": 1459
+    },
+    {
+      "index": 667,
+      "label": "中　両親と私",
+      "characters": 0
     },
     {
       "index": 668,
@@ -296,7 +306,12 @@
     {
       "index": 964,
       "label": "十八",
-      "characters": 1441
+      "characters": 1434
+    },
+    {
+      "index": 973,
+      "label": "下　先生と遺書",
+      "characters": 0
     },
     {
       "index": 974,
@@ -582,81 +597,81 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 564,
-      "sentence_length_mean": 28.4,
+      "sentences": 551,
+      "sentence_length_mean": 29.1,
       "dialogue_ratio": 0.172,
       "exclaim_question_per_1000": 0.06,
       "dash_ellipsis_per_1000": 0.69
     },
     {
       "segment": 2,
-      "sentences": 591,
-      "sentence_length_mean": 27.2,
+      "sentences": 579,
+      "sentence_length_mean": 27.7,
       "dialogue_ratio": 0.352,
       "exclaim_question_per_1000": 0.25,
       "dash_ellipsis_per_1000": 0.5
     },
     {
       "segment": 3,
-      "sentences": 628,
-      "sentence_length_mean": 25.5,
-      "dialogue_ratio": 0.33,
+      "sentences": 616,
+      "sentence_length_mean": 26.0,
+      "dialogue_ratio": 0.331,
       "exclaim_question_per_1000": 0.25,
       "dash_ellipsis_per_1000": 0.75
     },
     {
       "segment": 4,
-      "sentences": 559,
-      "sentence_length_mean": 28.6,
+      "sentences": 547,
+      "sentence_length_mean": 29.2,
       "dialogue_ratio": 0.235,
       "exclaim_question_per_1000": 0.06,
       "dash_ellipsis_per_1000": 0.25
     },
     {
       "segment": 5,
-      "sentences": 510,
-      "sentence_length_mean": 31.4,
-      "dialogue_ratio": 0.128,
+      "sentences": 498,
+      "sentence_length_mean": 32.2,
+      "dialogue_ratio": 0.129,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.5
     },
     {
       "segment": 6,
-      "sentences": 443,
-      "sentence_length_mean": 36.2,
+      "sentences": 431,
+      "sentence_length_mean": 37.1,
       "dialogue_ratio": 0.006,
       "exclaim_question_per_1000": 0.06,
       "dash_ellipsis_per_1000": 0.06
     },
     {
       "segment": 7,
-      "sentences": 465,
-      "sentence_length_mean": 34.5,
+      "sentences": 455,
+      "sentence_length_mean": 35.2,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
-      "dash_ellipsis_per_1000": 0.12
+      "dash_ellipsis_per_1000": 0.13
     },
     {
       "segment": 8,
-      "sentences": 458,
-      "sentence_length_mean": 34.9,
+      "sentences": 448,
+      "sentence_length_mean": 35.7,
       "dialogue_ratio": 0.001,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.25
     },
     {
       "segment": 9,
-      "sentences": 484,
-      "sentence_length_mean": 33.1,
+      "sentences": 473,
+      "sentence_length_mean": 33.8,
       "dialogue_ratio": 0.032,
-      "exclaim_question_per_1000": 0.12,
+      "exclaim_question_per_1000": 0.13,
       "dash_ellipsis_per_1000": 0.06
     },
     {
       "segment": 10,
-      "sentences": 478,
-      "sentence_length_mean": 33.5,
-      "dialogue_ratio": 0.021,
+      "sentences": 469,
+      "sentence_length_mean": 34.1,
+      "dialogue_ratio": 0.022,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.19
     }
@@ -822,7 +837,7 @@
       "markers": [
         "まるで"
       ],
-      "position": 0.299,
+      "position": 0.298,
       "text": "私は電車の中で汗を拭きながら、他の時間と手数に気の毒という観念をまるでもっていない田舎者を憎らしく思った。"
     },
     {
@@ -907,7 +922,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.336,
+      "position": 0.335,
       "text": "原稿紙へ細字で三枚ばかり国へ帰ってから以後の自分というようなものを題目にして書き綴ったのを送る事にした。"
     },
     {
@@ -1087,8 +1102,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 9,
-    "わざわざ": 8,
     "のものも": 4,
     "ぶらぶら": 2,
     "ゆらゆら": 2,
@@ -1112,7 +1125,6 @@
     "がさがさ": 1,
     "ちらちら": 1,
     "いらいら": 1,
-    "いていて": 1,
     "がらがら": 1,
     "どろどろ": 1,
     "ごちゃごちゃ": 1,
@@ -1120,9 +1132,9 @@
     "ぽつりぽつり": 1
   },
   "opening": [
-    "上　先生と私",
-    "一",
-    "私はその人を常に先生と呼んでいた。"
+    "私はその人を常に先生と呼んでいた。",
+    "だからここでもただ先生と書くだけで本名は打ち明けない。",
+    "これは世間を憚かる遠慮というよりも、その方が私にとって自然だからである。"
   ],
   "closing": [
     "しかし妻だけはたった一人の例外だと承知して下さい。",
@@ -1131,7 +1143,7 @@
   ],
   "repetitions": [],
   "vocabulary": {
-    "先生": 559,
+    "先生": 557,
     "自分": 250,
     "言葉": 125,
     "二人": 103,

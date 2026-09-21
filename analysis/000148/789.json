@@ -6,20 +6,20 @@
   "card": "https://www.aozora.gr.jp/cards/000148/card789.html",
   "path": "library/000148/789_吾輩は猫である",
   "stats": {
-    "characters": 321105,
-    "paragraphs": 2256,
-    "sentences": 9165,
-    "sentence_length_mean": 34.7,
-    "sentence_length_median": 28,
+    "characters": 321000,
+    "paragraphs": 2245,
+    "sentences": 9154,
+    "sentence_length_mean": 34.8,
+    "sentence_length_median": 28.0,
     "sentence_length_stdev": 26.9,
     "sentence_length_max": 411,
-    "dialogue_ratio": 0.35,
+    "dialogue_ratio": 0.351,
     "quoted_narration_ratio": 0.104,
     "quote_span_mean": 45.1,
-    "dialogue_paragraph_ratio": 0.832,
+    "dialogue_paragraph_ratio": 0.836,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.3055,
-    "hiragana_ratio": 0.6044,
+    "kanji_ratio": 0.3056,
+    "hiragana_ratio": 0.6046,
     "katakana_ratio": 0.011,
     "comma_per_sentence": 0.74,
     "dash_per_1000": 1.04,
@@ -87,15 +87,15 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 830,
-      "sentence_length_mean": 38.4,
+      "sentences": 828,
+      "sentence_length_mean": 38.5,
       "dialogue_ratio": 0.251,
       "exclaim_question_per_1000": 0.25,
       "dash_ellipsis_per_1000": 0.5
     },
     {
       "segment": 2,
-      "sentences": 744,
+      "sentences": 743,
       "sentence_length_mean": 42.8,
       "dialogue_ratio": 0.432,
       "exclaim_question_per_1000": 0.28,
@@ -103,39 +103,39 @@
     },
     {
       "segment": 3,
-      "sentences": 712,
-      "sentence_length_mean": 44.7,
+      "sentences": 711,
+      "sentence_length_mean": 44.8,
       "dialogue_ratio": 0.449,
       "exclaim_question_per_1000": 0.57,
       "dash_ellipsis_per_1000": 3.52
     },
     {
       "segment": 4,
-      "sentences": 961,
-      "sentence_length_mean": 33.1,
+      "sentences": 960,
+      "sentence_length_mean": 33.2,
       "dialogue_ratio": 0.388,
       "exclaim_question_per_1000": 0.44,
       "dash_ellipsis_per_1000": 2.23
     },
     {
       "segment": 5,
-      "sentences": 721,
-      "sentence_length_mean": 44.1,
+      "sentences": 719,
+      "sentence_length_mean": 44.3,
       "dialogue_ratio": 0.373,
       "exclaim_question_per_1000": 0.31,
       "dash_ellipsis_per_1000": 1.29
     },
     {
       "segment": 6,
-      "sentences": 927,
-      "sentence_length_mean": 34.3,
+      "sentences": 926,
+      "sentence_length_mean": 34.4,
       "dialogue_ratio": 0.085,
       "exclaim_question_per_1000": 0.19,
       "dash_ellipsis_per_1000": 0.91
     },
     {
       "segment": 7,
-      "sentences": 953,
+      "sentences": 952,
       "sentence_length_mean": 33.5,
       "dialogue_ratio": 0.152,
       "exclaim_question_per_1000": 0.09,
@@ -143,15 +143,15 @@
     },
     {
       "segment": 8,
-      "sentences": 995,
-      "sentence_length_mean": 31.9,
+      "sentences": 994,
+      "sentence_length_mean": 32.0,
       "dialogue_ratio": 0.33,
       "exclaim_question_per_1000": 0.69,
       "dash_ellipsis_per_1000": 1.35
     },
     {
       "segment": 9,
-      "sentences": 1181,
+      "sentences": 1180,
       "sentence_length_mean": 27.0,
       "dialogue_ratio": 0.599,
       "exclaim_question_per_1000": 1.66,
@@ -593,11 +593,8 @@
     }
   ],
   "reduplications": {
-    "とうとう": 25,
     "ハハハハ": 17,
     "のそのそ": 10,
-    "そうそう": 7,
-    "わざわざ": 6,
     "ホホホホ": 6,
     "ダムダム": 5,
     "にやにや": 4,
@@ -632,12 +629,15 @@
     "うんうん": 1,
     "くなくな": 1,
     "ずかずか": 1,
-    "ずんずん": 1
+    "ずんずん": 1,
+    "べらべら": 1,
+    "ぷかぷか": 1,
+    "のものも": 1
   },
   "opening": [
-    "一",
     "吾輩は猫である。",
-    "名前はまだ無い。"
+    "名前はまだ無い。",
+    "どこで生れたかとんと見当がつかぬ。"
   ],
   "closing": [
     "太平は死ななければ得られぬ。",

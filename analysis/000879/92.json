@@ -6,12 +6,12 @@
   "card": "https://www.aozora.gr.jp/cards/000879/card92.html",
   "path": "library/000879/92_蜘蛛の糸",
   "stats": {
-    "characters": 2888,
-    "paragraphs": 18,
-    "sentences": 65,
-    "sentence_length_mean": 43.9,
-    "sentence_length_median": 47,
-    "sentence_length_stdev": 26.9,
+    "characters": 2876,
+    "paragraphs": 15,
+    "sentences": 62,
+    "sentence_length_mean": 45.9,
+    "sentence_length_median": 49.0,
+    "sentence_length_stdev": 25.8,
     "sentence_length_max": 112,
     "dialogue_ratio": 0.041,
     "quoted_narration_ratio": 0.0,
@@ -19,9 +19,9 @@
     "dialogue_paragraph_ratio": 0.0,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2576,
-    "hiragana_ratio": 0.6586,
+    "hiragana_ratio": 0.6613,
     "katakana_ratio": 0.0,
-    "comma_per_sentence": 2.09,
+    "comma_per_sentence": 2.19,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.0,
     "exclaim_per_1000": 0.0,
@@ -47,8 +47,8 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 8,
-      "sentence_length_mean": 41.1,
+      "sentences": 7,
+      "sentence_length_mean": 46.9,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -63,8 +63,8 @@
     },
     {
       "segment": 3,
-      "sentences": 7,
-      "sentence_length_mean": 51.3,
+      "sentences": 6,
+      "sentence_length_mean": 59.7,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -111,8 +111,8 @@
     },
     {
       "segment": 9,
-      "sentences": 11,
-      "sentence_length_mean": 29.6,
+      "sentences": 10,
+      "sentence_length_mean": 32.5,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -131,14 +131,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.239,
+      "position": 0.238,
       "text": "幸い、側を見ますと、翡翠のような色をした蓮の葉の上に、極楽の蜘蛛が一匹、美しい銀色の糸をかけて居ります。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.329,
+      "position": 0.328,
       "text": "その上あたりは墓の中のようにしんと静まり返って、たまに聞えるものと云っては、ただ罪人がつく微な嘆息ばかりでございます。"
     },
     {
@@ -188,7 +188,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.069,
+      "position": 0.068,
       "text": "この極楽の蓮池の下は、丁度地獄の底に当って居りますから、水晶のような水を透き徹して、三途の河や針の山の景色が、丁度覗き眼鏡を見るように、はっきりと見えるのでございます。"
     },
     {
@@ -211,26 +211,25 @@
         "ようだ",
         "まるで"
       ],
-      "position": 0.398,
+      "position": 0.397,
       "text": "何気なく陀多が頭を挙げて、血の池の空を眺めますと、そのひっそりとした暗の中を、遠い遠い天上から、銀色の蜘蛛の糸が、まるで人目にかかるのを恐れるように、一すじ細く光りながら、するすると自分の上へ垂れて参るのではございませんか。"
     }
   ],
   "reduplications": {
-    "とうとう": 2,
     "するする": 1,
     "うようよ": 1,
     "きらきら": 1,
     "ゆらゆら": 1
   },
   "opening": [
-    "一",
     "ある日の事でございます。",
-    "御釈迦様は極楽の蓮池のふちを、独りでぶらぶら御歩きになっていらっしゃいました。"
+    "御釈迦様は極楽の蓮池のふちを、独りでぶらぶら御歩きになっていらっしゃいました。",
+    "池の中に咲いている蓮の花は、みんな玉のようにまっ白で、そのまん中にある金色の蕊からは、何とも云えない好い匂が、絶間なくあたりへ溢れて居ります。"
   ],
   "closing": [
+    "しかし極楽の蓮池の蓮は、少しもそんな事には頓着致しません。",
     "その玉のような白い花は、御釈迦様の御足のまわりに、ゆらゆら萼を動かして、そのまん中にある金色の蕊からは、何とも云えない好い匂が、絶間なくあたりへ溢れて居ります。",
-    "極楽ももう午に近くなったのでございましょう。",
-    "（大正七年四月十六日）"
+    "極楽ももう午に近くなったのでございましょう。"
   ],
   "repetitions": [],
   "vocabulary": {

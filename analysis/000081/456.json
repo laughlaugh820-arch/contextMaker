@@ -6,21 +6,21 @@
   "card": "https://www.aozora.gr.jp/cards/000081/card456.html",
   "path": "library/000081/456_銀河鉄道の夜",
   "stats": {
-    "characters": 38916,
-    "paragraphs": 458,
-    "sentences": 1159,
-    "sentence_length_mean": 33.0,
-    "sentence_length_median": 24,
-    "sentence_length_stdev": 27.5,
+    "characters": 38813,
+    "paragraphs": 449,
+    "sentences": 1150,
+    "sentence_length_mean": 33.2,
+    "sentence_length_median": 24.0,
+    "sentence_length_stdev": 27.6,
     "sentence_length_max": 223,
-    "dialogue_ratio": 0.223,
+    "dialogue_ratio": 0.224,
     "quoted_narration_ratio": 0.086,
     "quote_span_mean": 41.2,
-    "dialogue_paragraph_ratio": 0.629,
+    "dialogue_paragraph_ratio": 0.641,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.1686,
-    "hiragana_ratio": 0.6896,
-    "katakana_ratio": 0.0551,
+    "kanji_ratio": 0.1681,
+    "hiragana_ratio": 0.6913,
+    "katakana_ratio": 0.0547,
     "comma_per_sentence": 0.85,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.08,
@@ -77,73 +77,73 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 112,
-      "sentence_length_mean": 34.3,
-      "dialogue_ratio": 0.182,
+      "sentences": 109,
+      "sentence_length_mean": 35.1,
+      "dialogue_ratio": 0.183,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 2,
-      "sentences": 114,
-      "sentence_length_mean": 33.5,
-      "dialogue_ratio": 0.215,
+      "sentences": 113,
+      "sentence_length_mean": 34.2,
+      "dialogue_ratio": 0.212,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 3,
-      "sentences": 100,
-      "sentence_length_mean": 38.5,
+      "sentences": 98,
+      "sentence_length_mean": 39.3,
       "dialogue_ratio": 0.171,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 4,
-      "sentences": 107,
-      "sentence_length_mean": 35.8,
-      "dialogue_ratio": 0.153,
+      "sentences": 106,
+      "sentence_length_mean": 35.5,
+      "dialogue_ratio": 0.156,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 5,
-      "sentences": 128,
-      "sentence_length_mean": 30.2,
-      "dialogue_ratio": 0.306,
+      "sentences": 126,
+      "sentence_length_mean": 30.4,
+      "dialogue_ratio": 0.309,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 6,
-      "sentences": 103,
-      "sentence_length_mean": 36.6,
-      "dialogue_ratio": 0.263,
-      "exclaim_question_per_1000": 0.27,
-      "dash_ellipsis_per_1000": 0.27
+      "sentences": 104,
+      "sentence_length_mean": 36.8,
+      "dialogue_ratio": 0.259,
+      "exclaim_question_per_1000": 0.26,
+      "dash_ellipsis_per_1000": 0.26
     },
     {
       "segment": 7,
-      "sentences": 112,
-      "sentence_length_mean": 34.5,
-      "dialogue_ratio": 0.178,
+      "sentences": 111,
+      "sentence_length_mean": 34.2,
+      "dialogue_ratio": 0.181,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 8,
-      "sentences": 112,
-      "sentence_length_mean": 33.9,
-      "dialogue_ratio": 0.166,
+      "sentences": 113,
+      "sentence_length_mean": 33.8,
+      "dialogue_ratio": 0.165,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 9,
-      "sentences": 144,
+      "sentences": 143,
       "sentence_length_mean": 26.7,
-      "dialogue_ratio": 0.352,
+      "dialogue_ratio": 0.355,
       "exclaim_question_per_1000": 0.26,
       "dash_ellipsis_per_1000": 0.26
     },
@@ -161,7 +161,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.279,
+      "position": 0.278,
       "text": "線路のへりになったみじかい芝草の中に、月長石ででも刻まれたような、すばらしい紫のりんどうの花が咲いていました。"
     },
     {
@@ -175,42 +175,42 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.232,
+      "position": 0.231,
       "text": "すぐ前の席に、ぬれたようにまっ黒な上着を着た、せいの高い子供が、窓から頭を出して外を見ているのに気が付きました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.337,
+      "position": 0.336,
       "text": "カムパネルラは、そのきれいな砂を一つまみ、掌にひろげ、指できしきしさせながら、夢のように云っているのでした。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.354,
+      "position": 0.353,
       "text": "カムパネルラが、不思議そうに立ちどまって、岩から黒い細長いさきの尖ったくるみの実のようなものをひろいました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.675,
+      "position": 0.674,
       "text": "カムパネルラがまた何気なく叱るように叫びましたので、ジョバンニはまた思わず笑い、女の子はきまり悪そうにしました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.753,
+      "position": 0.752,
       "text": "すきとおった硝子のような笛が鳴って汽車はしずかに動き出し、カムパネルラもさびしそうに星めぐりの口笛を吹きました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.166,
+      "position": 0.165,
       "text": "するとしばらくたってから、年老った女の人が、どこか工合が悪いようにそろそろと出て来て何か用かと口の中で云いました。"
     },
     {
@@ -224,7 +224,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.243,
+      "position": 0.242,
       "text": "するとジョバンニも、なんだかどこかに、何か忘れたものがあるというような、おかしな気持ちがしてだまってしまいました。"
     },
     {
@@ -245,7 +245,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.733,
+      "position": 0.732,
       "text": "その葉はぐるぐるに縮れ葉の下にはもう美しい緑いろの大きな苞が赤い毛を吐いて真珠のような実もちらっと見えたのでした。"
     },
     {
@@ -259,7 +259,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.212,
+      "position": 0.211,
       "text": "それどころでなく、見れば見るほど、そこは小さな林や牧場やらある野原のように考えられて仕方なかったのです。"
     },
     {
@@ -280,7 +280,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.745,
+      "position": 0.744,
       "text": "そしてまったくその振子の音のたえまを遠くの遠くの野原のはてから、かすかなかすかな旋律が糸のように流れて来るのでした。"
     },
     {
@@ -308,14 +308,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.413,
+      "position": 0.412,
       "text": "ごとごと鳴る汽車のひびきと、すすきの風との間から、ころんころんと水の湧くような音が聞えて来るのでした。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.502,
+      "position": 0.501,
       "text": "銀河の、かたちもなく音もない水にかこまれて、ほんとうにその黒い測候所が、睡っているように、しずかによこたわったのです。"
     },
     {
@@ -336,7 +336,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.882,
+      "position": 0.881,
       "text": "そしてだんだん十字架は窓の正面になりあの苹果の肉のような青じろい環の雲もゆるやかにゆるやかに繞っているのが見えました。"
     },
     {
@@ -351,7 +351,7 @@
         "ようだ",
         "まるで"
       ],
-      "position": 0.347,
+      "position": 0.346,
       "text": "川上の方を見ると、すすきのいっぱいに生えている崖の下に、白い岩が、まるで運動場のように平らに川に沿って出ているのでした。"
     },
     {
@@ -359,7 +359,7 @@
         "ようだ",
         "まるで"
       ],
-      "position": 0.729,
+      "position": 0.728,
       "text": "ジョバンニの眼はまた泪でいっぱいになり天の川もまるで遠くへ行ったようにぼんやり白く見えるだけでした。"
     },
     {
@@ -373,28 +373,28 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.219,
+      "position": 0.218,
       "text": "それはだんだんはっきりして、とうとうりんとうごかないようになり、濃い鋼青のそらの野原にたちました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.359,
+      "position": 0.358,
       "text": "左手の渚には、波がやさしい稲妻のように燃えて寄せ、右手の崖には、いちめん銀や貝殻でこさえたようなすすきの穂がゆれたのです。"
     },
     {
       "markers": [
         "まるで"
       ],
-      "position": 0.75,
+      "position": 0.749,
       "text": "けれどもカムパネルラなんかあんまりひどい、僕といっしょに汽車に乗っていながらまるであんな女の子とばかり談しているんだもの。"
     },
     {
       "markers": [
         "似る"
       ],
-      "position": 0.318,
+      "position": 0.317,
       "text": "旅人たちはしずかに席に戻り、二人も胸いっぱいのかなしみに似た新らしい気持ちを、何気なくちがった語で、そっと談し合ったのです。"
     },
     {
@@ -408,21 +408,21 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.82,
+      "position": 0.819,
       "text": "ルビーよりも赤くすきとおりリチウムよりもうつくしく酔ったようになってその火は燃えているのでした。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.93,
+      "position": 0.929,
       "text": "そして誰にも聞えないように窓の外へからだを乗り出して力いっぱいはげしく胸をうって叫びそれからもう咽喉いっぱい泣きだしました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.103,
+      "position": 0.102,
       "text": "「あの人はうちのお父さんとはちょうどおまえたちのように小さいときからのお友達だったそうだよ。」"
     },
     {
@@ -443,14 +443,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.107,
+      "position": 0.106,
       "text": "レールを七つ組み合せると円くなってそれに電柱や信号標もついていて信号標のあかりは汽車が通るときだけ青くなるようになっていたんだ。"
     },
     {
       "markers": [
         "まるで"
       ],
-      "position": 0.16,
+      "position": 0.159,
       "text": "けれどもジョバンニは、いつかまた深く首を垂れて、そこらのにぎやかさとはまるでちがったことを考えながら、牛乳屋の方へ急ぐのでした。"
     },
     {
@@ -465,21 +465,21 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.22,
+      "position": 0.219,
       "text": "いま新らしく灼いたばかりの青い鋼の板のような、そらの野原に、まっすぐにすきっと立ったのです。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.459,
+      "position": 0.458,
       "text": "やっぱりおなじことを考えていたとみえて、カムパネルラが、思い切ったというように、尋ねました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.708,
+      "position": 0.707,
       "text": "するとぴたっと鳥の群は通らなくなりそれと同時にぴしゃぁんという潰れたような音が川下の方で起ってそれからしばらくしいんとしました。"
     },
     {
@@ -507,28 +507,28 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.287,
+      "position": 0.286,
       "text": "いきなり、カムパネルラが、思い切ったというように、少しどもりながら、急きこんで云いました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.404,
+      "position": 0.403,
       "text": "カムパネルラが、いきなり、喧嘩のようにたずねましたので、ジョバンニは、思わずわらいました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.707,
+      "position": 0.706,
       "text": "そのときあのやぐらの上のゆるい服の男は俄かに赤い旗をあげて狂気のようにふりうごかしました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.786,
+      "position": 0.785,
       "text": "室中のひとたちは半分うしろの方へ倒れるようになりながら腰掛にしっかりしがみついていました。"
     },
     {
@@ -549,7 +549,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.271,
+      "position": 0.27,
       "text": "するとほんとうに、そのきれいな野原中の青や橙や、いろいろかがやく三角標も、てんでに息をつくように、ちらちらゆれたり顫えたりしました。"
     },
     {
@@ -584,10 +584,8 @@
   ],
   "reduplications": {
     "どんどん": 5,
-    "とうとう": 5,
     "ちらちら": 4,
     "ごとごと": 4,
-    "そうそう": 3,
     "おいおい": 2,
     "めいめい": 1,
     "ぴかぴか": 1,
@@ -607,9 +605,9 @@
     "ぎゃあぎゃあ": 1
   },
   "opening": [
-    "一、午后の授業",
     "「ではみなさんは、そういうふうに川だと云われたり、乳の流れたあとだと云われたりしていたこのぼんやりと白いものがほんとうは何かご承知ですか。」",
-    "先生は、黒板に吊した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指しながら、みんなに問をかけました。"
+    "先生は、黒板に吊した大きな黒い星座の図の、上から下へ白くけぶった銀河帯のようなところを指しながら、みんなに問をかけました。",
+    "カムパネルラが手をあげました。"
   ],
   "closing": [
     "あした放課後みなさんとうちへ遊びに来てくださいね。」",
@@ -618,14 +616,14 @@
   ],
   "repetitions": [],
   "vocabulary": {
-    "ジョバンニ": 189,
+    "ジョバンニ": 188,
     "カムパネルラ": 101,
     "汽車": 37,
     "二人": 31,
     "青年": 28,
     "野原": 23,
-    "銀河": 22,
     "鳥捕": 22,
+    "銀河": 21,
     "ザネリ": 15,
     "苹果": 15,
     "口笛": 13,

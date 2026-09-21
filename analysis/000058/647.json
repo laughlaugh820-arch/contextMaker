@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000058/card647.html",
   "path": "library/000058/647_野菊の墓",
   "stats": {
-    "characters": 33826,
+    "characters": 33815,
     "paragraphs": 277,
     "sentences": 979,
     "sentence_length_mean": 34.1,
@@ -18,8 +18,8 @@
     "quote_span_mean": 83.0,
     "dialogue_paragraph_ratio": 0.466,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2819,
-    "hiragana_ratio": 0.6319,
+    "kanji_ratio": 0.282,
+    "hiragana_ratio": 0.6321,
     "katakana_ratio": 0.006,
     "comma_per_sentence": 0.99,
     "dash_per_1000": 0.0,
@@ -253,7 +253,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 5,
     "にこにこ": 2,
     "ふらふら": 1,
     "ひそひそ": 1,

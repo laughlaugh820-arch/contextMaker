@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000035/card275.html",
   "path": "library/000035/275_女生徒",
   "stats": {
-    "characters": 31261,
+    "characters": 31260,
     "paragraphs": 95,
     "sentences": 945,
     "sentence_length_mean": 32.9,
@@ -19,7 +19,7 @@
     "dialogue_paragraph_ratio": 0.232,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2033,
-    "hiragana_ratio": 0.6666,
+    "hiragana_ratio": 0.6667,
     "katakana_ratio": 0.0206,
     "comma_per_sentence": 2.33,
     "dash_per_1000": 0.03,
@@ -536,9 +536,7 @@
     }
   ],
   "reduplications": {
-    "とうとう": 4,
     "くたくた": 2,
-    "いていて": 2,
     "ばかばか": 2,
     "にやにや": 2,
     "まだまだ": 2,
@@ -558,7 +556,6 @@
     "いちいち": 1,
     "おどおど": 1,
     "いやいや": 1,
-    "わざわざ": 1,
     "くるくる": 1,
     "はいはい": 1,
     "よくよく": 1,
@@ -575,7 +572,10 @@
     "いつもいつも": 1,
     "ひょろひょろ": 1,
     "ドロンドロン": 1,
-    "もじゃもじゃ": 1
+    "もじゃもじゃ": 1,
+    "かえろかえろ": 1,
+    "しゅっしゅっ": 1,
+    "ひとつひとつ": 1
   },
   "opening": [
     "あさ、眼をさますときの気持は、面白い。",

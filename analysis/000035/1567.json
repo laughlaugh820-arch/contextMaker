@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000035/card1567.html",
   "path": "library/000035/1567_走れメロス",
   "stats": {
-    "characters": 9915,
+    "characters": 9914,
     "paragraphs": 75,
     "sentences": 478,
     "sentence_length_mean": 20.5,
@@ -18,8 +18,8 @@
     "quote_span_mean": 45.7,
     "dialogue_paragraph_ratio": 0.64,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2523,
-    "hiragana_ratio": 0.5768,
+    "kanji_ratio": 0.2524,
+    "hiragana_ratio": 0.5769,
     "katakana_ratio": 0.0415,
     "comma_per_sentence": 1.16,
     "dash_per_1000": 0.2,
@@ -255,9 +255,9 @@
     "メロスには政治がわからぬ。"
   ],
   "closing": [
+    "早くそのマントを着るがいい。",
     "この可愛い娘さんは、メロスの裸体を、皆に見られるのが、たまらなく口惜しいのだ。」",
-    "勇者は、ひどく赤面した。",
-    "（古伝説と、シルレルの詩から。）"
+    "勇者は、ひどく赤面した。"
   ],
   "repetitions": [
     {

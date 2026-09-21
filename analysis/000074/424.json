@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000074/card424.html",
   "path": "library/000074/424_檸檬",
   "stats": {
-    "characters": 4988,
+    "characters": 4987,
     "paragraphs": 30,
     "sentences": 140,
     "sentence_length_mean": 35.2,
@@ -19,7 +19,7 @@
     "dialogue_paragraph_ratio": 0.067,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2717,
-    "hiragana_ratio": 0.6431,
+    "hiragana_ratio": 0.6433,
     "katakana_ratio": 0.0156,
     "comma_per_sentence": 0.61,
     "dash_per_1000": 4.81,
@@ -225,7 +225,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 2,
     "バラバラ": 1,
     "そうだそうだ": 1
   },

@@ -6,24 +6,24 @@
   "card": "https://www.aozora.gr.jp/cards/000038/card329.html",
   "path": "library/000038/329_武蔵野",
   "stats": {
-    "characters": 15714,
-    "paragraphs": 100,
-    "sentences": 379,
-    "sentence_length_mean": 40.8,
-    "sentence_length_median": 32,
-    "sentence_length_stdev": 32.9,
+    "characters": 15620,
+    "paragraphs": 91,
+    "sentences": 370,
+    "sentence_length_mean": 41.8,
+    "sentence_length_median": 33.0,
+    "sentence_length_stdev": 32.7,
     "sentence_length_max": 245,
     "dialogue_ratio": 0.09,
     "quoted_narration_ratio": 0.04,
     "quote_span_mean": 55.1,
-    "dialogue_paragraph_ratio": 0.03,
+    "dialogue_paragraph_ratio": 0.033,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.3117,
-    "hiragana_ratio": 0.5969,
+    "kanji_ratio": 0.313,
+    "hiragana_ratio": 0.6004,
     "katakana_ratio": 0.0055,
-    "comma_per_sentence": 1.36,
-    "dash_per_1000": 1.78,
-    "ellipsis_per_1000": 0.25,
+    "comma_per_sentence": 1.39,
+    "dash_per_1000": 1.79,
+    "ellipsis_per_1000": 0.26,
     "exclaim_per_1000": 0.19,
     "question_per_1000": 0.06
   },
@@ -77,17 +77,17 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 37,
-      "sentence_length_mean": 42.1,
+      "sentences": 35,
+      "sentence_length_mean": 44.4,
       "dialogue_ratio": 0.28,
       "exclaim_question_per_1000": 0.0,
-      "dash_ellipsis_per_1000": 6.43
+      "dash_ellipsis_per_1000": 6.44
     },
     {
       "segment": 2,
-      "sentences": 59,
-      "sentence_length_mean": 26.3,
-      "dialogue_ratio": 0.43,
+      "sentences": 58,
+      "sentence_length_mean": 26.7,
+      "dialogue_ratio": 0.431,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 8.38
     },
@@ -101,17 +101,17 @@
     },
     {
       "segment": 4,
-      "sentences": 29,
-      "sentence_length_mean": 51.9,
+      "sentences": 28,
+      "sentence_length_mean": 53.7,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.66,
       "dash_ellipsis_per_1000": 1.99
     },
     {
       "segment": 5,
-      "sentences": 29,
-      "sentence_length_mean": 53.4,
-      "dialogue_ratio": 0.095,
+      "sentences": 28,
+      "sentence_length_mean": 55.3,
+      "dialogue_ratio": 0.096,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
@@ -125,32 +125,32 @@
     },
     {
       "segment": 7,
-      "sentences": 34,
-      "sentence_length_mean": 45.8,
+      "sentences": 33,
+      "sentence_length_mean": 47.2,
       "dialogue_ratio": 0.031,
-      "exclaim_question_per_1000": 1.28,
+      "exclaim_question_per_1000": 1.29,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 8,
-      "sentences": 33,
-      "sentence_length_mean": 46.1,
+      "sentences": 32,
+      "sentence_length_mean": 47.5,
       "dialogue_ratio": 0.004,
       "exclaim_question_per_1000": 0.66,
       "dash_ellipsis_per_1000": 1.97
     },
     {
       "segment": 9,
-      "sentences": 40,
-      "sentence_length_mean": 39.5,
-      "dialogue_ratio": 0.009,
+      "sentences": 39,
+      "sentence_length_mean": 40.5,
+      "dialogue_ratio": 0.01,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 1.27
     },
     {
       "segment": 10,
-      "sentences": 37,
-      "sentence_length_mean": 40.7,
+      "sentences": 36,
+      "sentence_length_mean": 41.8,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -281,7 +281,7 @@
       "markers": [
         "ごとし"
       ],
-      "position": 0.08,
+      "position": 0.079,
       "text": "九月十九日――「朝、空曇り風死す、冷霧寒露、虫声しげし、天地の心なお目さめぬがごとし」"
     },
     {
@@ -530,9 +530,9 @@
     "うつらうつら": 1
   },
   "opening": [
-    "一",
     "「武蔵野の俤は今わずかに入間郡に残れり」と自分は文政年間にできた地図で見たことがある。",
-    "そしてその地図に入間郡「小手指原久米川は古戦場なり太平記元弘三年五月十一日源平小手指原にて戦うこと一日がうちに三十余たび日暮れは平家三里退きて久米川に陣を取る明れば源氏久米川の陣へ押寄せると載せたるはこのあたりなるべし」と書きこんであるのを読んだことがある。"
+    "そしてその地図に入間郡「小手指原久米川は古戦場なり太平記元弘三年五月十一日源平小手指原にて戦うこと一日がうちに三十余たび日暮れは平家三里退きて久米川に陣を取る明れば源氏久米川の陣へ押寄せると載せたるはこのあたりなるべし」と書きこんであるのを読んだことがある。",
+    "自分は武蔵野の跡のわずかに残っている処とは定めてこの古戦場あたりではあるまいかと思って、一度行ってみるつもりでいてまだ行かないが実際は今もやはりそのとおりであろうかと危ぶんでいる。"
   ],
   "closing": [
     "砂埃が馬の蹄、車の轍に煽られて虚空に舞い上がる。",

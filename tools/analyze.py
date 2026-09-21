@@ -45,8 +45,11 @@ HEADING_PATTERNS = [
     re.compile(r"^[一二三四五六七八九十百千]+[、．.　 ]"),
     re.compile(r"^[０-９0-9]+$"),
     re.compile(r"^[０-９0-9]+[、．.　 ]"),
-    re.compile(r"^第[一二三四五六七八九十百千０-９0-9]+[章節話部編幕]"),
-    re.compile(r"^[上中下]$"),
+    # 「第一夜」「第三信」など、単位語は作品ごとに違うので数字のあとは緩く取る
+    re.compile(r"^第[一二三四五六七八九十百千０-９0-9]+[^。、]{0,8}$"),
+    re.compile(r"^[上中下]([　\s].{0,18})?$"),
+    re.compile(r"^(序|跋|序章|終章|序詞|序文|前編|中編|後編|前篇|中篇|後篇|"
+               r"はしがき|まえがき|あとがき|附記|付記|結語|結び)([　\s].{0,18})?$"),
     re.compile(r"^その[一二三四五六七八九十百０-９0-9]+"),
 ]
 
@@ -67,7 +70,11 @@ REDUPLICATION_STOPWORDS = {
     "なかなか", "いよいよ", "ますます", "だんだん", "たびたび", "ときどき",
     "もともと", "それぞれ", "われわれ", "いろいろ", "しばしば", "まちまち",
     "ほとほと", "とにかく", "かえすがえす", "みすみす", "つれづれ",
+    "とうとう", "わざわざ", "そうそう", "いていて",
 }
+
+# 本文の末尾に付く「（大正四年九月）」のような発表年月の注記。結びの抽出から外す。
+TRAILING_NOTE = re.compile(r"^[（(].{0,60}[）)]$")
 
 SENTENCE_END = "。！？!?"
 CLOSERS = "」』）)〉》】］\"'、"
@@ -260,9 +267,13 @@ def extract_reduplications(text: str) -> dict:
 
 
 def extract_openings_closings(sentences: list[str], count: int = 3) -> dict:
+    # 「（大正四年九月）」のような発表年月の注記は本文の結びではないので落とす
+    body = list(sentences)
+    while body and TRAILING_NOTE.match(body[-1]):
+        body.pop()
     return {
-        "opening": sentences[:count],
-        "closing": sentences[-count:] if len(sentences) >= count else sentences,
+        "opening": body[:count],
+        "closing": body[-count:] if len(body) >= count else body,
     }
 
 
@@ -294,8 +305,15 @@ def extract_vocabulary(text: str, limit: int = 40) -> dict:
 
 def analyze_work(work_dir: Path) -> dict:
     meta = json.loads((work_dir / "meta.json").read_text(encoding="utf-8"))
-    text = (work_dir / "plain.txt").read_text(encoding="utf-8")
-    paragraphs = split_paragraphs(text)
+    raw_text = (work_dir / "plain.txt").read_text(encoding="utf-8")
+    all_paragraphs = split_paragraphs(raw_text)
+    headings = detect_headings(all_paragraphs)
+
+    # 章見出しは1字の「文」として統計を歪めるので、本文の集計からは外す。
+    # 『こころ』のように見出しが110個ある作品では、書き出しの抽出まで狂う。
+    heading_rows = {h["index"] for h in headings}
+    paragraphs = [p for i, p in enumerate(all_paragraphs) if i not in heading_rows]
+    text = "\n".join(paragraphs)
     sentences = sentences_of(text)
 
     return {
@@ -306,7 +324,7 @@ def analyze_work(work_dir: Path) -> dict:
         "card": meta.get("card", ""),
         "path": str(work_dir.relative_to(REPO_ROOT)),
         "stats": basic_stats(text, paragraphs, sentences),
-        "headings": detect_headings(paragraphs),
+        "headings": headings,
         "tension_curve": tension_curve(sentences),
         "similes": extract_similes(sentences),
         "reduplications": extract_reduplications(text),

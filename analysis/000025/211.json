@@ -6,22 +6,22 @@
   "card": "https://www.aozora.gr.jp/cards/000025/card211.html",
   "path": "library/000025/211_一房の葡萄",
   "stats": {
-    "characters": 6379,
-    "paragraphs": 37,
-    "sentences": 167,
-    "sentence_length_mean": 37.8,
-    "sentence_length_median": 32,
-    "sentence_length_stdev": 22.6,
+    "characters": 6367,
+    "paragraphs": 34,
+    "sentences": 164,
+    "sentence_length_mean": 38.5,
+    "sentence_length_median": 32.0,
+    "sentence_length_stdev": 22.2,
     "sentence_length_max": 134,
     "dialogue_ratio": 0.104,
     "quoted_narration_ratio": 0.0,
     "quote_span_mean": 34.9,
-    "dialogue_paragraph_ratio": 0.27,
+    "dialogue_paragraph_ratio": 0.294,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2364,
-    "hiragana_ratio": 0.6869,
-    "katakana_ratio": 0.0147,
-    "comma_per_sentence": 0.71,
+    "hiragana_ratio": 0.6882,
+    "katakana_ratio": 0.0148,
+    "comma_per_sentence": 0.72,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.16,
     "exclaim_per_1000": 0.0,
@@ -47,8 +47,8 @@
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 14,
-      "sentence_length_mean": 45.9,
+      "sentences": 13,
+      "sentence_length_mean": 49.4,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -63,8 +63,8 @@
     },
     {
       "segment": 3,
-      "sentences": 18,
-      "sentence_length_mean": 35.7,
+      "sentences": 17,
+      "sentence_length_mean": 37.7,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 1.56
@@ -103,8 +103,8 @@
     },
     {
       "segment": 8,
-      "sentences": 16,
-      "sentence_length_mean": 33.4,
+      "sentences": 15,
+      "sentence_length_mean": 35.6,
       "dialogue_ratio": 0.202,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -180,7 +180,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.263,
+      "position": 0.262,
       "text": "そしてその箱の中には小さい墨のような形をした藍や洋紅の絵具が……僕は顔が赤くなったような気がして、思わずそっぽを向いてしまうのです。"
     },
     {
@@ -229,14 +229,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.527,
+      "position": 0.526,
       "text": "とよく出来る大きな子が馬鹿にするような憎みきったような声で言って、動くまいとする僕をみんなで寄ってたかって二階に引張って行こうとしました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.045,
+      "position": 0.044,
       "text": "けれどもあの透きとおるような海の藍色と、白い帆前船などの水際近くに塗ってある洋紅色とは、僕の持っている絵具ではどうしてもうまく出せませんでした。"
     },
     {
@@ -327,7 +327,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.201,
+      "position": 0.2,
       "text": "といっているようにも思えるのです。"
     }
   ],
@@ -339,9 +339,9 @@
     "ぶらぶら": 1
   },
   "opening": [
-    "一",
     "僕は小さい時に絵を描くことが好きでした。",
-    "僕の通っていた学校は横浜の山の手という所にありましたが、そこいらは西洋人ばかり住んでいる町で、僕の学校も教師は西洋人ばかりでした。"
+    "僕の通っていた学校は横浜の山の手という所にありましたが、そこいらは西洋人ばかり住んでいる町で、僕の学校も教師は西洋人ばかりでした。",
+    "そしてその学校の行きかえりにはいつでもホテルや西洋人の会社などがならんでいる海岸の通りを通るのでした。"
   ],
   "closing": [
     "それにしても僕の大好きなあのいい先生はどこに行かれたでしょう。",

@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000081/card473.html",
   "path": "library/000081/473_よだかの星",
   "stats": {
-    "characters": 5263,
+    "characters": 5262,
     "paragraphs": 66,
     "sentences": 207,
     "sentence_length_mean": 24.9,
@@ -19,7 +19,7 @@
     "dialogue_paragraph_ratio": 0.394,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.1469,
-    "hiragana_ratio": 0.7405,
+    "hiragana_ratio": 0.7406,
     "katakana_ratio": 0.0055,
     "comma_per_sentence": 0.95,
     "dash_per_1000": 0.0,
@@ -277,7 +277,6 @@
     "よろよろ": 3,
     "ぶるぶる": 2,
     "さもさも": 1,
-    "とうとう": 1,
     "とてもとても": 1
   },
   "opening": [

@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000081/card470.html",
   "path": "library/000081/470_セロ弾きのゴーシュ",
   "stats": {
-    "characters": 11901,
+    "characters": 11900,
     "paragraphs": 195,
     "sentences": 455,
     "sentence_length_mean": 25.6,
@@ -19,7 +19,7 @@
     "dialogue_paragraph_ratio": 0.626,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.1241,
-    "hiragana_ratio": 0.7322,
+    "hiragana_ratio": 0.7323,
     "katakana_ratio": 0.0562,
     "comma_per_sentence": 0.17,
     "dash_per_1000": 0.0,
@@ -491,7 +491,6 @@
     }
   ],
   "reduplications": {
-    "いていて": 1,
     "おいおい": 1,
     "ごうごう": 1,
     "ぞろぞろ": 1

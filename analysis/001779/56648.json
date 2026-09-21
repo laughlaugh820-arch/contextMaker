@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/001779/card56648.html",
   "path": "library/001779/56648_人間椅子",
   "stats": {
-    "characters": 15012,
+    "characters": 15008,
     "paragraphs": 89,
     "sentences": 293,
     "sentence_length_mean": 50.6,
@@ -18,8 +18,8 @@
     "quote_span_mean": 14.8,
     "dialogue_paragraph_ratio": 0.034,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.29,
-    "hiragana_ratio": 0.5827,
+    "kanji_ratio": 0.2901,
+    "hiragana_ratio": 0.5829,
     "katakana_ratio": 0.0174,
     "comma_per_sentence": 3.75,
     "dash_per_1000": 0.13,
@@ -196,7 +196,6 @@
     "わくわく": 1,
     "ムクムク": 1,
     "うとうと": 1,
-    "とうとう": 1,
     "ビクビク": 1,
     "うつらうつら": 1,
     "どうぞどうぞ": 1

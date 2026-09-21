@@ -6,73 +6,124 @@
   "card": "https://www.aozora.gr.jp/cards/000148/card799.html",
   "path": "library/000148/799_夢十夜",
   "stats": {
-    "characters": 16198,
-    "paragraphs": 187,
-    "sentences": 675,
-    "sentence_length_mean": 23.5,
+    "characters": 16138,
+    "paragraphs": 177,
+    "sentences": 665,
+    "sentence_length_mean": 23.8,
     "sentence_length_median": 20,
-    "sentence_length_stdev": 14.3,
+    "sentence_length_stdev": 14.2,
     "sentence_length_max": 110,
     "dialogue_ratio": 0.081,
     "quoted_narration_ratio": 0.0,
     "quote_span_mean": 20.2,
-    "dialogue_paragraph_ratio": 0.273,
+    "dialogue_paragraph_ratio": 0.288,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2991,
-    "hiragana_ratio": 0.602,
+    "kanji_ratio": 0.2984,
+    "hiragana_ratio": 0.6043,
     "katakana_ratio": 0.0022,
-    "comma_per_sentence": 0.67,
+    "comma_per_sentence": 0.68,
     "dash_per_1000": 0.37,
     "ellipsis_per_1000": 0.0,
     "exclaim_per_1000": 0.0,
     "question_per_1000": 0.0
   },
-  "headings": [],
+  "headings": [
+    {
+      "index": 0,
+      "label": "第一夜",
+      "characters": 1766
+    },
+    {
+      "index": 20,
+      "label": "第二夜",
+      "characters": 1579
+    },
+    {
+      "index": 36,
+      "label": "第三夜",
+      "characters": 1529
+    },
+    {
+      "index": 71,
+      "label": "第四夜",
+      "characters": 1546
+    },
+    {
+      "index": 96,
+      "label": "第五夜",
+      "characters": 1425
+    },
+    {
+      "index": 111,
+      "label": "第六夜",
+      "characters": 1615
+    },
+    {
+      "index": 131,
+      "label": "第七夜",
+      "characters": 1472
+    },
+    {
+      "index": 147,
+      "label": "第八夜",
+      "characters": 1690
+    },
+    {
+      "index": 163,
+      "label": "第九夜",
+      "characters": 1602
+    },
+    {
+      "index": 175,
+      "label": "第十夜",
+      "characters": 1738
+    }
+  ],
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 68,
-      "sentence_length_mean": 23.5,
+      "sentences": 67,
+      "sentence_length_mean": 23.8,
       "dialogue_ratio": 0.137,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 1.88
     },
     {
       "segment": 2,
-      "sentences": 78,
-      "sentence_length_mean": 20.3,
+      "sentences": 77,
+      "sentence_length_mean": 20.5,
       "dialogue_ratio": 0.009,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.63
     },
     {
       "segment": 3,
-      "sentences": 83,
-      "sentence_length_mean": 19.5,
+      "sentences": 82,
+      "sentence_length_mean": 19.7,
       "dialogue_ratio": 0.197,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.62
     },
     {
       "segment": 4,
-      "sentences": 71,
-      "sentence_length_mean": 21.9,
+      "sentences": 70,
+      "sentence_length_mean": 22.2,
       "dialogue_ratio": 0.126,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 5,
-      "sentences": 68,
-      "sentence_length_mean": 23.3,
+      "sentences": 66,
+      "sentence_length_mean": 23.9,
       "dialogue_ratio": 0.0,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 6,
-      "sentences": 62,
-      "sentence_length_mean": 26.0,
+      "sentences": 61,
+      "sentence_length_mean": 26.4,
       "dialogue_ratio": 0.22,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -80,23 +131,23 @@
     {
       "segment": 7,
       "sentences": 76,
-      "sentence_length_mean": 20.5,
+      "sentence_length_mean": 20.8,
       "dialogue_ratio": 0.056,
       "exclaim_question_per_1000": 0.0,
-      "dash_ellipsis_per_1000": 0.64
+      "dash_ellipsis_per_1000": 0.63
     },
     {
       "segment": 8,
-      "sentences": 63,
-      "sentence_length_mean": 25.4,
-      "dialogue_ratio": 0.031,
+      "sentences": 61,
+      "sentence_length_mean": 25.8,
+      "dialogue_ratio": 0.032,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 9,
-      "sentences": 51,
-      "sentence_length_mean": 31.1,
+      "sentences": 50,
+      "sentence_length_mean": 31.6,
       "dialogue_ratio": 0.042,
       "exclaim_question_per_1000": 0.0,
       "dash_ellipsis_per_1000": 0.0
@@ -143,7 +194,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.793,
+      "position": 0.792,
       "text": "焼け出された裸馬が、夜昼となく、屋敷の周囲を暴れ廻ると、それを夜昼となく足軽共が犇きながら追かけているような心持がする。"
     },
     {
@@ -178,14 +229,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.335,
+      "position": 0.334,
       "text": "すると爺さんが、また茶碗のような大きなもので熱い酒をぐいと飲んで前のような息をふうと吹いて、"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.114,
+      "position": 0.113,
       "text": "片膝を座蒲団の上に突いて、灯心を掻き立てたとき、花のような丁子がぱたりと朱塗の台に落ちた。"
     },
     {
@@ -220,7 +271,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.28,
+      "position": 0.279,
       "text": "ただ背中に小さい小僧がくっついていて、その小僧が自分の過去、現在、未来をことごとく照して、寸分の事実も洩らさない鏡のように光っている。"
     },
     {
@@ -263,7 +314,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.011,
+      "position": 0.01,
       "text": "そこで、そうかね、もう死ぬのかね、と上から覗き込むようにして聞いて見た。"
     },
     {
@@ -298,7 +349,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.707,
+      "position": 0.706,
       "text": "喇叭を口へあてがっているんで、頬ぺたが蜂に螫されたように膨れていた。"
     },
     {
@@ -312,7 +363,7 @@
       "markers": [
         "まるで"
       ],
-      "position": 0.658,
+      "position": 0.657,
       "text": "けれども二人は二人以外の事にはまるで頓着していない様子であった。"
     },
     {
@@ -383,7 +434,7 @@
       "markers": [
         "まるで"
       ],
-      "position": 0.216,
+      "position": 0.215,
       "text": "声は子供の声に相違ないが、言葉つきはまるで大人である。"
     },
     {
@@ -509,14 +560,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.352,
+      "position": 0.351,
       "text": "それを肝心綯のように細長く綯った。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.711,
+      "position": 0.71,
       "text": "生涯蜂に螫されているように思う。"
     },
     {
@@ -535,7 +586,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 4,
     "すうすう": 1,
     "つやつや": 1,
     "わいわい": 1,
@@ -544,9 +594,9 @@
     "ちゃきちゃき": 1
   },
   "opening": [
-    "第一夜",
     "こんな夢を見た。",
-    "腕組をして枕元に坐っていると、仰向に寝た女が、静かな声でもう死にますと云う。"
+    "腕組をして枕元に坐っていると、仰向に寝た女が、静かな声でもう死にますと云う。",
+    "女は長い髪を枕に敷いて、輪郭の柔らかな瓜実顔をその中に横たえている。"
   ],
   "closing": [
     "けれども健さんは庄太郎のパナマの帽子が貰いたいと云っていた。",

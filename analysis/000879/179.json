@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000879/card179.html",
   "path": "library/000879/179_藪の中",
   "stats": {
-    "characters": 8546,
+    "characters": 8532,
     "paragraphs": 46,
     "sentences": 287,
     "sentence_length_mean": 29.3,
@@ -18,11 +18,11 @@
     "quote_span_mean": 33.4,
     "dialogue_paragraph_ratio": 0.043,
     "orthography": "新字新仮名",
-    "kanji_ratio": 0.2415,
-    "hiragana_ratio": 0.647,
+    "kanji_ratio": 0.2419,
+    "hiragana_ratio": 0.648,
     "katakana_ratio": 0.0,
     "comma_per_sentence": 1.38,
-    "dash_per_1000": 5.15,
+    "dash_per_1000": 5.16,
     "ellipsis_per_1000": 0.23,
     "exclaim_per_1000": 0.0,
     "question_per_1000": 2.93
@@ -239,8 +239,6 @@
     }
   ],
   "reduplications": {
-    "とうとう": 2,
-    "そうそう": 1,
     "やれやれ": 1,
     "うんうん": 1,
     "ひしひし": 1
@@ -251,9 +249,9 @@
     "あの死骸を見つけたのは、わたしに違いございません。"
   ],
   "closing": [
+    "同時におれの口の中には、もう一度血潮が溢れて来る。",
     "おれはそれぎり永久に、中有の闇へ沈んでしまった。",
-    "………",
-    "（大正十年十二月）"
+    "………"
   ],
   "repetitions": [
     {

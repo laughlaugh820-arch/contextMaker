@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000129/card691.html",
   "path": "library/000129/691_高瀬舟",
   "stats": {
-    "characters": 8461,
+    "characters": 8454,
     "paragraphs": 40,
     "sentences": 215,
     "sentence_length_mean": 38.9,
@@ -18,8 +18,8 @@
     "quote_span_mean": 77.8,
     "dialogue_paragraph_ratio": 0.05,
     "orthography": "旧字旧仮名",
-    "kanji_ratio": 0.288,
-    "hiragana_ratio": 0.624,
+    "kanji_ratio": 0.2883,
+    "hiragana_ratio": 0.6246,
     "katakana_ratio": 0.0007,
     "comma_per_sentence": 1.45,
     "dash_per_1000": 2.84,
@@ -131,9 +131,9 @@
     "それから罪人は高瀬舟に載せられて、大阪へ廻されることであつた。"
   ],
   "closing": [
+    "庄兵衞はお奉行樣の判斷を、其儘自分の判斷にしようと思つたのである。",
     "さうは思つても、庄兵衞はまだどこやらに腑に落ちぬものが殘つてゐるので、なんだかお奉行樣に聞いて見たくてならなかつた。",
-    "次第に更けて行く朧夜に、沈默の人二人を載せた高瀬舟は、黒い水の面をすべつて行つた。",
-    "（大正五年一月「中央公論」第三十一年第一號）"
+    "次第に更けて行く朧夜に、沈默の人二人を載せた高瀬舟は、黒い水の面をすべつて行つた。"
   ],
   "repetitions": [],
   "vocabulary": {

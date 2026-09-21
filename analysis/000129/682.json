@@ -6,7 +6,7 @@
   "card": "https://www.aozora.gr.jp/cards/000129/card682.html",
   "path": "library/000129/682_舞姫",
   "stats": {
-    "characters": 15533,
+    "characters": 15532,
     "paragraphs": 75,
     "sentences": 356,
     "sentence_length_mean": 43.2,
@@ -18,8 +18,8 @@
     "quote_span_mean": 19.7,
     "dialogue_paragraph_ratio": 0.08,
     "orthography": "旧字旧仮名",
-    "kanji_ratio": 0.3308,
-    "hiragana_ratio": 0.5578,
+    "kanji_ratio": 0.3309,
+    "hiragana_ratio": 0.5579,
     "katakana_ratio": 0.0247,
     "comma_per_sentence": 1.98,
     "dash_per_1000": 0.0,
@@ -289,9 +289,9 @@
     "今宵は夜毎にこゝに集ひ來る骨牌仲間も「ホテル」に宿りて、舟に殘れるは余一人のみなれば。"
   ],
   "closing": [
+    "大臣に隨ひて歸東の途に上ぼりしときは、相澤と議りてエリスが母に微かなる生計を營むに足るほどの資本を與へ、あはれなる狂女の胎内に遺しゝ子の生れむをりの事をも頼みおきぬ。",
     "嗚呼、相澤謙吉が如き良友は世にまた得がたかるべし。",
-    "されど我腦裡に一點の彼を憎むこゝろ今日までも殘れりけり。",
-    "（明治二十三年一月「國民之友」第六卷六十九號附録）"
+    "されど我腦裡に一點の彼を憎むこゝろ今日までも殘れりけり。"
   ],
   "repetitions": [],
   "vocabulary": {

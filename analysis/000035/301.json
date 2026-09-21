@@ -6,28 +6,48 @@
   "card": "https://www.aozora.gr.jp/cards/000035/card301.html",
   "path": "library/000035/301_人間失格",
   "stats": {
-    "characters": 73850,
-    "paragraphs": 810,
-    "sentences": 1649,
-    "sentence_length_mean": 44.0,
-    "sentence_length_median": 23,
-    "sentence_length_stdev": 55.8,
+    "characters": 73791,
+    "paragraphs": 803,
+    "sentences": 1642,
+    "sentence_length_mean": 44.1,
+    "sentence_length_median": 23.5,
+    "sentence_length_stdev": 55.9,
     "sentence_length_max": 569,
     "dialogue_ratio": 0.122,
     "quoted_narration_ratio": 0.011,
     "quote_span_mean": 24.1,
-    "dialogue_paragraph_ratio": 0.365,
+    "dialogue_paragraph_ratio": 0.369,
     "orthography": "新字新仮名",
     "kanji_ratio": 0.2505,
-    "hiragana_ratio": 0.6073,
+    "hiragana_ratio": 0.6077,
     "katakana_ratio": 0.0261,
-    "comma_per_sentence": 2.94,
+    "comma_per_sentence": 2.95,
     "dash_per_1000": 0.0,
     "ellipsis_per_1000": 0.64,
     "exclaim_per_1000": 0.31,
     "question_per_1000": 1.22
   },
   "headings": [
+    {
+      "index": 0,
+      "label": "はしがき",
+      "characters": 1882
+    },
+    {
+      "index": 11,
+      "label": "第一の手記",
+      "characters": 8901
+    },
+    {
+      "index": 62,
+      "label": "第二の手記",
+      "characters": 27073
+    },
+    {
+      "index": 289,
+      "label": "第三の手記",
+      "characters": 0
+    },
     {
       "index": 290,
       "label": "一",
@@ -36,41 +56,46 @@
     {
       "index": 559,
       "label": "二",
-      "characters": 17597
+      "characters": 15557
+    },
+    {
+      "index": 783,
+      "label": "あとがき",
+      "characters": 2036
     }
   ],
   "tension_curve": [
     {
       "segment": 1,
-      "sentences": 144,
-      "sentence_length_mean": 50.4,
+      "sentences": 142,
+      "sentence_length_mean": 51.1,
       "dialogue_ratio": 0.023,
       "exclaim_question_per_1000": 0.83,
       "dash_ellipsis_per_1000": 0.41
     },
     {
       "segment": 2,
-      "sentences": 120,
-      "sentence_length_mean": 60.6,
+      "sentences": 119,
+      "sentence_length_mean": 61.1,
       "dialogue_ratio": 0.021,
       "exclaim_question_per_1000": 0.69,
       "dash_ellipsis_per_1000": 0.0
     },
     {
       "segment": 3,
-      "sentences": 137,
+      "sentences": 138,
       "sentence_length_mean": 52.7,
-      "dialogue_ratio": 0.09,
-      "exclaim_question_per_1000": 1.11,
+      "dialogue_ratio": 0.089,
+      "exclaim_question_per_1000": 1.1,
       "dash_ellipsis_per_1000": 0.28
     },
     {
       "segment": 4,
-      "sentences": 90,
-      "sentence_length_mean": 81.4,
+      "sentences": 89,
+      "sentence_length_mean": 81.8,
       "dialogue_ratio": 0.046,
       "exclaim_question_per_1000": 0.27,
-      "dash_ellipsis_per_1000": 0.95
+      "dash_ellipsis_per_1000": 0.96
     },
     {
       "segment": 5,
@@ -82,8 +107,8 @@
     },
     {
       "segment": 6,
-      "sentences": 129,
-      "sentence_length_mean": 56.3,
+      "sentences": 127,
+      "sentence_length_mean": 57.1,
       "dialogue_ratio": 0.133,
       "exclaim_question_per_1000": 1.38,
       "dash_ellipsis_per_1000": 0.55
@@ -98,8 +123,8 @@
     },
     {
       "segment": 8,
-      "sentences": 246,
-      "sentence_length_mean": 29.8,
+      "sentences": 245,
+      "sentence_length_mean": 29.9,
       "dialogue_ratio": 0.211,
       "exclaim_question_per_1000": 3.82,
       "dash_ellipsis_per_1000": 0.68
@@ -114,8 +139,8 @@
     },
     {
       "segment": 10,
-      "sentences": 185,
-      "sentence_length_mean": 38.8,
+      "sentences": 184,
+      "sentence_length_mean": 39.0,
       "dialogue_ratio": 0.204,
       "exclaim_question_per_1000": 0.98,
       "dash_ellipsis_per_1000": 0.56
@@ -225,7 +250,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.842,
+      "position": 0.843,
       "text": "どんなに自分が笑わせようとして、お道化を言っても、おろおろし、びくびくし、やたらに自分に敬語を遣うようになりました。"
     },
     {
@@ -239,14 +264,14 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.495,
+      "position": 0.494,
       "text": "いきなりそう言われて自分は、自分の顔の半面にべったり赤痣でもあるような、みにくい不具者のような、みじめな気がしました。"
     },
     {
       "markers": [
         "ようだ"
       ],
-      "position": 0.048,
+      "position": 0.047,
       "text": "その迷信は、（いまでも自分には、何だか迷信のように思われてならないのですが）しかし、いつも自分に不安と恐怖を与えました。"
     },
     {
@@ -288,7 +313,7 @@
       "markers": [
         "みたい"
       ],
-      "position": 0.263,
+      "position": 0.262,
       "text": "教室も寮も、ゆがめられた性慾の、はきだめみたいな気さえして、自分の完璧に近いお道化も、そこでは何の役にも立ちませんでした。"
     },
     {
@@ -323,7 +348,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.083,
+      "position": 0.082,
       "text": "姉の脚絆を両腕にはめて、浴衣の袖口から覗かせ、以てセエターを着ているように見せかけていたのです。"
     },
     {
@@ -435,7 +460,7 @@
       "markers": [
         "ようだ"
       ],
-      "position": 0.217,
+      "position": 0.216,
       "text": "また、或る秋の夜、自分が寝ながら本を読んでいると、アネサが鳥のように素早く部屋へはいって来て、いきなり自分の掛蒲団の上に倒れて泣き、"
     },
     {
@@ -550,13 +575,11 @@
     "にやにや": 2,
     "みるみる": 2,
     "へとへと": 2,
-    "わざわざ": 2,
     "ありあり": 2,
     "くらくら": 2,
     "ぐらぐら": 2,
     "コトコト": 2,
     "イライラ": 1,
-    "いていて": 1,
     "めいめい": 1,
     "おずおず": 1,
     "もじもじ": 1,
@@ -577,19 +600,20 @@
     "まだまだ": 1,
     "ふらふら": 1,
     "そろそろ": 1,
-    "とうとう": 1,
     "よれよれ": 1,
     "おいおい": 1,
     "びくびく": 1,
     "ぽろぽろ": 1,
     "もっともっと": 1,
     "ちょいちょい": 1,
-    "カチャカチャ": 1
+    "カチャカチャ": 1,
+    "ぽつりぽつり": 1,
+    "ぴょんぴょん": 1
   },
   "opening": [
-    "はしがき",
     "私は、その男の写真を三葉、見たことがある。",
-    "一葉は、その男の、幼年時代、とでも言うべきであろうか、十歳前後かと推定される頃の写真であって、その子供が大勢の女のひとに取りかこまれ、（それは、その子供の姉たち、妹たち、それから、従姉妹たちかと想像される）庭園の池のほとりに、荒い縞の袴をはいて立ち、首を三十度ほど左に傾け、醜く笑っている写真である。"
+    "一葉は、その男の、幼年時代、とでも言うべきであろうか、十歳前後かと推定される頃の写真であって、その子供が大勢の女のひとに取りかこまれ、（それは、その子供の姉たち、妹たち、それから、従姉妹たちかと想像される）庭園の池のほとりに、荒い縞の袴をはいて立ち、首を三十度ほど左に傾け、醜く笑っている写真である。",
+    "醜く？"
   ],
   "closing": [
     "「あのひとのお父さんが悪いのですよ」",
