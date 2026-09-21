@@ -1,0 +1,73 @@
+{
+  "theme": "雪の夜、終電を逃した男が駅員に頼み込む",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "反復",
+  "length_target": 3000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 3000,
+    "sentence_length_mean": 36.41,
+    "sentence_length_cv": 0.676,
+    "simile_per_1000": 1.126,
+    "dialogue_ratio": 0.119,
+    "source": "無作為 2,000 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 2380,
+        "sentence_length_mean": 18.9,
+        "sentence_length_cv": 0.53,
+        "simile_per_1000": 2.1,
+        "simile_count": 5,
+        "dialogue_ratio": 0.308
+      },
+      "violations": [
+        "字数を上げる",
+        "平均文長を上げる",
+        "直喩の密度（千字あたり）を下げる",
+        "会話率を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 2872,
+        "sentence_length_mean": 25.3,
+        "sentence_length_cv": 0.65,
+        "simile_per_1000": 1.39,
+        "simile_count": 4,
+        "dialogue_ratio": 0.234
+      },
+      "violations": [
+        "平均文長を上げる",
+        "会話率を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 2,
+      "metrics": {
+        "characters": 2883,
+        "sentence_length_mean": 32.0,
+        "sentence_length_cv": 0.58,
+        "simile_per_1000": 1.39,
+        "simile_count": 4,
+        "dialogue_ratio": 0.176
+      },
+      "violations": [],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 2,
+  "characters": 2889,
+  "generated_on": "2026-09-21"
+}
