@@ -25,7 +25,9 @@
     "dash_per_1000": 0.13,
     "ellipsis_per_1000": 0.13,
     "exclaim_per_1000": 0.13,
-    "question_per_1000": 0.07
+    "question_per_1000": 0.07,
+    "simile_count": 4,
+    "simile_per_1000": 0.27
   },
   "headings": [],
   "tension_curve": [

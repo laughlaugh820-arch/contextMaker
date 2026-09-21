@@ -22,8 +22,12 @@ import sys
 from datetime import date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import analyze as A  # noqa: E402  計測は抽出ツールと同じ関数で行う
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ANALYSIS = REPO_ROOT / "analysis"
+DISTRIBUTION = ANALYSIS / "corpus_distribution.json"
 GUIDE_DIR = REPO_ROOT / "context" / "guide"
 # 渡す順。文体の作法 → 展開の作法
 GUIDE_FILES = ["story_craft.md", "story_structure.md"]
@@ -193,6 +197,131 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
     return "\n".join(p for p in parts if p is not None)
 
 
+# --------------------------------------------------------------------------- 計測と書き直し
+
+# 生成後に測る指標と、目標に対して許す幅（下限比, 上限比）。
+# 会話率だけは比ではなく絶対差で見る（0.05 の 1.3 倍は意味が無いので）。
+CHECKS = [
+    ("characters", "字数", "字", (0.9, 1.2)),
+    ("sentence_length_mean", "平均文長", "字", (0.75, 1.3)),
+    ("sentence_length_cv", "文長の振れ幅", "", (0.7, 1.4)),
+    ("simile_per_1000", "直喩の密度（千字あたり）", "", (0.5, 1.6)),
+    ("dialogue_ratio", "会話率", "", None),
+]
+DIALOGUE_TOLERANCE = 0.10
+
+
+def measure_story(text: str) -> dict:
+    """生成物を抽出ツールと同じ基準で測る。1行目のタイトルは除く。"""
+    body = text.strip().split("\n", 1)[1].strip() if "\n" in text.strip() else text.strip()
+    paragraphs = A.split_paragraphs(body)
+    sentences = A.sentences_of(body)
+    stats = A.basic_stats(body, paragraphs, sentences)
+    similes = A.extract_similes(sentences, limit=10**6)
+    return {
+        "characters": len(body),
+        "sentence_length_mean": stats["sentence_length_mean"],
+        "sentence_length_cv": round(stats["sentence_length_stdev"] / stats["sentence_length_mean"], 2)
+        if stats["sentence_length_mean"] else 0.0,
+        "simile_per_1000": round(len(similes) / len(body) * 1000, 2) if body else 0.0,
+        "simile_count": len(similes),
+        "dialogue_ratio": stats["dialogue_ratio"],
+    }
+
+
+def targets_for(args: argparse.Namespace, works: list[dict]) -> dict:
+    """目標値。作家を指定していればその作家の平均、なければ無作為2,000作品の中央値。"""
+    targets = {"characters": args.length}
+    if args.author:
+        mine = [w for w in works if w["author"] == args.author]
+        targets.update({
+            "sentence_length_mean": statistics.fmean(w["stats"]["sentence_length_mean"] for w in mine),
+            "sentence_length_cv": statistics.fmean(
+                w["stats"]["sentence_length_stdev"] / w["stats"]["sentence_length_mean"] for w in mine),
+            "simile_per_1000": statistics.fmean(
+                w["stats"].get("simile_per_1000", len(w["similes"]) / w["stats"]["characters"] * 1000)
+                for w in mine),
+            "dialogue_ratio": statistics.fmean(w["stats"]["dialogue_ratio"] for w in mine),
+        })
+        targets["source"] = f"{args.author} の平均"
+    elif DISTRIBUTION.exists():
+        dist = json.loads(DISTRIBUTION.read_text(encoding="utf-8"))
+        targets.update({
+            "sentence_length_mean": dist["sentence_length_mean"]["median"],
+            "sentence_length_cv": dist["sentence_length_cv"]["median"],
+            "simile_per_1000": dist["simile_per_1000"]["median"],
+            "dialogue_ratio": dist["dialogue_ratio"]["median"],
+        })
+        targets["source"] = f"無作為 {dist['n']:,} 作品の中央値"
+    else:
+        targets["source"] = "字数のみ（corpus_distribution.json が無い）"
+    return targets
+
+
+def check_story(metrics: dict, targets: dict) -> list[dict]:
+    """目標から外れた指標を返す。"""
+    violations = []
+    for key, label, unit, band in CHECKS:
+        if key not in targets:
+            continue
+        current, target = metrics[key], targets[key]
+        if band is None:
+            low, high = max(0.0, target - DIALOGUE_TOLERANCE), target + DIALOGUE_TOLERANCE
+        else:
+            low, high = target * band[0], target * band[1]
+        if not (low <= current <= high):
+            violations.append({"key": key, "label": label, "unit": unit,
+                               "current": current, "target": target,
+                               "low": round(low, 2), "high": round(high, 2),
+                               "direction": "上げる" if current < low else "下げる"})
+    return violations
+
+
+# 指標ごとに、どう直せばそう動くかの具体的な指示
+REVISION_ADVICE = {
+    ("characters", "上げる"): "新しい出来事や人物は足さない。承の各単位の描写と会話を厚くして伸ばす。転の位置は本文の8割前後を保つ。",
+    ("characters", "下げる"): "筋は変えず、承の描写を削って縮める。転から結までは削らない。",
+    ("sentence_length_mean", "上げる"): "短い文を読点でつないで一文に二つの動作や観察を入れる。会話文はそのままでよい。",
+    ("sentence_length_mean", "下げる"): "長い文を二つに分ける。一文に一つの動作か観察にする。",
+    ("sentence_length_cv", "上げる"): "長い文と短い文を隣り合わせる。段落の最後を短い断定で落とす。",
+    ("sentence_length_cv", "下げる"): "極端に長い文を分け、極端に短い文を前後とつなぐ。",
+    ("simile_per_1000", "上げる"): "描写の要所に直喩を足す。喩える先は手で触れられる具体物にする。",
+    ("simile_per_1000", "下げる"): "直喩を減らす。残すのは喩える先が具体物で、その場面にしか使えないものだけ。",
+    ("dialogue_ratio", "上げる"): "地の文で説明している人物の意図を、会話に置き換える。",
+    ("dialogue_ratio", "下げる"): "会話の一部を地の文の要約か動作に置き換える。",
+}
+
+
+def revision_prompt(draft: str, violations: list[dict], targets: dict) -> str:
+    lines = ["# 書き直しの依頼", "",
+             "以下の原稿を計測したところ、目標から外れている指標がある。"
+             "指摘した指標だけを直し、題名・筋・人物・転の位置・結びの型は変えない。", "",
+             f"目標の出どころ: {targets['source']}", "",
+             "| 指標 | 現在 | 目標 | 許容範囲 | 方向 |", "| --- | --- | --- | --- | --- |"]
+    for v in violations:
+        fmt = (lambda x: f"{x:,.0f}") if v["key"] == "characters" else (lambda x: f"{x:.2f}")
+        lines.append(f"| {v['label']} | {fmt(v['current'])}{v['unit']} | {fmt(v['target'])}{v['unit']} "
+                     f"| {fmt(v['low'])}〜{fmt(v['high'])} | {v['direction']} |")
+    lines += ["", "## 直し方", ""]
+    for v in violations:
+        lines.append(f"- **{v['label']}を{v['direction']}**: {REVISION_ADVICE[(v['key'], v['direction'])]}")
+    lines += ["", "## 出力の形式", "",
+              "書き直した全文を出力する。1行目にタイトルのみ、空行を1つ置いて本文。",
+              "変更点の説明や前置きは書かない。", "",
+              "# 原稿", "", draft.strip(), ""]
+    return "\n".join(lines)
+
+
+def format_metrics(metrics: dict, violations: list[dict]) -> str:
+    bad = {v["key"] for v in violations}
+    parts = []
+    for key, label, unit, _ in CHECKS:
+        value = metrics[key]
+        shown = f"{value:,.0f}" if key == "characters" else f"{value:.2f}"
+        parts.append(f"{label} {shown}{unit}" + ("←" if key in bad else ""))
+    return " / ".join(parts)
+
+
 # --------------------------------------------------------------------------- 生成
 
 def resolve_backend(choice: str) -> str:
@@ -317,20 +446,44 @@ def cmd_compose(args: argparse.Namespace) -> int:
 
 def cmd_generate(args: argparse.Namespace) -> int:
     backend = resolve_backend(args.backend)
-    prompt = build_prompt(args, load_works())
+    works = load_works()
+    prompt = build_prompt(args, works)
+    targets = targets_for(args, works)
     label = MODEL if backend == "api" else args.cli_model
-    print(f"[{backend} / {label} / プロンプト {len(prompt):,}字]\n", file=sys.stderr)
+    print(f"[{backend} / {label} / プロンプト {len(prompt):,}字 / 目標: {targets['source']}]\n", file=sys.stderr)
 
-    if backend == "cli":
-        text, usage = call_claude_cli(prompt, args.cli_model, args.cli_timeout)
-    else:
-        text, usage = call_claude(prompt, args.effort, args.max_tokens)
-    title = text.strip().split("\n", 1)[0].strip() if text.strip() else "無題"
+    def call(text_prompt: str) -> tuple[str, dict]:
+        if backend == "cli":
+            return call_claude_cli(text_prompt, args.cli_model, args.cli_timeout)
+        return call_claude(text_prompt, args.effort, args.max_tokens)
+
+    # 1回目は通常の生成。以後は計測して外れた指標だけを直させる
+    rounds: list[dict] = []
+    text, usage = call(prompt)
+    for round_no in range(args.revise + 1):
+        metrics = measure_story(text)
+        violations = check_story(metrics, targets)
+        rounds.append({"round": round_no, "text": text, "metrics": metrics,
+                       "violations": violations, "usage": usage})
+        print(f"\n[第{round_no}稿] {format_metrics(metrics, violations)}", file=sys.stderr)
+        if not violations or round_no == args.revise:
+            break
+        print(f"[書き直し {round_no + 1}/{args.revise}: "
+              + "、".join(f"{v['label']}を{v['direction']}" for v in violations) + "]\n", file=sys.stderr)
+        text, usage = call(revision_prompt(text, violations, targets))
+
+    # 外れた指標が最も少ない稿を採用。同数なら新しいほう
+    best = min(rounds, key=lambda r: (len(r["violations"]), -r["round"]))
+    final = best["text"]
+    title = final.strip().split("\n", 1)[0].strip() if final.strip() else "無題"
 
     dest = STORIES / f"{date.today().isoformat()}_{slugify(title)}"
     dest.mkdir(parents=True, exist_ok=True)
-    (dest / "story.md").write_text(text.strip() + "\n", encoding="utf-8")
+    (dest / "story.md").write_text(final.strip() + "\n", encoding="utf-8")
     (dest / "prompt.md").write_text(prompt, encoding="utf-8")
+    for r in rounds:
+        if len(rounds) > 1:
+            (dest / f"draft_{r['round']}.md").write_text(r["text"].strip() + "\n", encoding="utf-8")
     (dest / "meta.json").write_text(json.dumps({
         "theme": args.theme,
         "author_reference": args.author,
@@ -340,12 +493,17 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "length_target": args.length,
         "effort": args.effort,
         "seed": args.seed,
-        "characters": len(text.strip()),
+        "targets": targets,
+        "rounds": [{"round": r["round"], "metrics": r["metrics"],
+                    "violations": [v["label"] + "を" + v["direction"] for v in r["violations"]],
+                    **r["usage"]} for r in rounds],
+        "adopted_round": best["round"],
+        "characters": len(final.strip()),
         "generated_on": date.today().isoformat(),
-        **usage,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
-    print(f"\n-> {dest.relative_to(REPO_ROOT)}", file=sys.stderr)
+    print(f"\n-> {dest.relative_to(REPO_ROOT)}（第{best['round']}稿を採用、"
+          f"外れた指標 {len(best['violations'])}）", file=sys.stderr)
     return 0
 
 
@@ -384,6 +542,8 @@ def main(argv: list[str] | None = None) -> int:
     p_gen.add_argument("--cli-model", default="opus", help="cli のときのモデル（既定 opus）")
     p_gen.add_argument("--cli-timeout", type=int, default=900,
                        help="cli の待ち時間（秒、既定 900）")
+    p_gen.add_argument("--revise", type=int, default=2,
+                       help="計測して外れた指標を直させる回数の上限（既定 2、0 で無効）")
     p_gen.set_defaults(func=cmd_generate)
 
     args = parser.parse_args(argv)

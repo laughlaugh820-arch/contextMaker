@@ -333,6 +333,12 @@ def analyze_work(work_dir: Path) -> dict:
     text = "\n".join(paragraphs)
     sentences = sentences_of(text)
 
+    similes_all = extract_similes(sentences, limit=10**6)
+    stats = basic_stats(text, paragraphs, sentences)
+    # 例は60件までしか保存しないので、密度は全件から別に出しておく
+    stats["simile_count"] = len(similes_all)
+    stats["simile_per_1000"] = round(len(similes_all) / len(text) * 1000, 2) if text else 0.0
+
     return {
         "work_id": meta["work_id"],
         "person_id": meta["person_id"],
@@ -340,7 +346,7 @@ def analyze_work(work_dir: Path) -> dict:
         "author": meta["author"],
         "card": meta.get("card", ""),
         "path": str(work_dir.relative_to(REPO_ROOT)),
-        "stats": basic_stats(text, paragraphs, sentences),
+        "stats": stats,
         "headings": headings,
         "tension_curve": tension_curve(sentences),
         "exclaim_peak_segment": peak_segment(tension_curve(sentences), "exclaim_question_per_1000"),
