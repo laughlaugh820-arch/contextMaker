@@ -1,0 +1,16 @@
+{
+  "theme": "古い時計店に持ち込まれた、動かない懐中時計",
+  "author_reference": "梶井基次郎",
+  "structure_reference": "127",
+  "avoid": [
+    "髪の毛",
+    "祖父の遺品"
+  ],
+  "length_target": 3000,
+  "effort": "high",
+  "seed": 0,
+  "characters": 2052,
+  "generated_on": "2026-09-21",
+  "backend": "claude-cli",
+  "model": "opus"
+}
