@@ -1,0 +1,14 @@
+{
+  "theme": "雪の夜、終電を逃した男が駅員に頼み込む",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "反復",
+  "length_target": 3000,
+  "effort": "high",
+  "seed": 0,
+  "characters": 2425,
+  "generated_on": "2026-09-21",
+  "backend": "claude-cli",
+  "model": "opus"
+}
