@@ -38,6 +38,7 @@ BANDS = {
     "turn_by_type": {"露見": (60, 80), "逆転": (70, 96), "事故": (70, 96)},
     # 19本の四分位は 89〜96 だが、目印の取り方で数%動くので幅を持たせる
     "climax": (85, 97),
+    "turn_cluster": 8,  # これ以内に並ぶ転の候補は一つの転とみなす
     "ending_max": 9,
 }
 
@@ -135,6 +136,8 @@ def cmd_prompt(args: argparse.Namespace) -> int:
         "告白（語りの中で過去が展開する）／心境（出来事がほとんど起きず感覚の推移で進む）",
         "- 転の類型: 逆転（願望や正義が反対になる）／露見（隠れていた事実が語られる）／"
         "事故（外から来るものが状況を壊す）／気づき（人物が状況の意味を理解する）／選択（人物が決める、または決められる）",
+        "- 転の候補が複数あるとき（告白の直後に決断が来る、など）は、迷わず**すべて** turns に挙げる。"
+        "近接した候補は一つの転として数えるので、選び分ける必要はない",
         "- 結の型: 事実（解決を書かず事実を一つ置く）／動作（感情を書かず動作で示す）／"
         "風景（視点を物や風景に預ける）／説明（意味や感情を説明して閉じる）",
         "- 知識差: 読者が人物より先に気づく／同時に知る／最後にひっくり返る／誰にも分からない／人物の内面まで全部知っている",
@@ -220,15 +223,23 @@ def check_layer2(body: str, structure: dict) -> tuple[dict, list[str]]:
 
     turns = structure.get("turns") or []
     pos["転"] = [(locate(body, t.get("quote")), t.get("type")) for t in turns]
-    if len(turns) != 1:
-        problems.append(f"転の回数 {len(turns)}（基準 1）")
-    for p, kind in pos["転"]:
-        if p is None:
-            problems.append("転の引用が本文に無い")
-            continue
+    located = sorted(p for p, _ in pos["転"] if p is not None)
+    if len(located) < len(pos["転"]):
+        problems.append("転の引用が本文に無い")
+    # 露見の直後に選択が来るような近接した候補は、一つの転の連なりとみなす（8%以内）
+    clusters = 1 if located else 0
+    for a, b in zip(located, located[1:]):
+        if b - a > BANDS["turn_cluster"]:
+            clusters += 1
+    if clusters != 1:
+        problems.append(f"転が {clusters} 箇所に分かれている（基準 1）" if clusters else "転が答えられていない")
+    if located:
+        first = located[0]
+        kind = next((k for p, k in pos["転"] if p == first), None)
         low, high = BANDS["turn_by_type"].get(kind, BANDS["turn"])
-        if not (low <= p <= high):
-            problems.append(f"転の位置 {p}%（{kind}: 基準 {low}〜{high}%）")
+        if not (low <= first <= high):
+            problems.append(f"転の位置 {first}%（{kind}: 基準 {low}〜{high}%）")
+        pos["転（先頭）"] = first
 
     pos["山"] = locate(body, (structure.get("climax") or {}).get("quote"))
     if pos["山"] is None:
