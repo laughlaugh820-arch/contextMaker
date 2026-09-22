@@ -33,9 +33,12 @@ CORPUS_NAMES = ["李徴", "袁傪", "メロス", "セリヌンティウス", "�
 
 # 層2の位置の基準（%）。docs/EVAL_RUBRIC.md と context/guide/story_structure.md に対応
 BANDS = {
-    "inciting_max": 10,
+    # 19本の実測は四分位0〜9%だが最大30%（舞姫）。『返事』では読者と判定者が独立に12%を指した
+    "inciting_max": 15,
+    "inciting_late": 20,
+    # 類型別の帯（露見60〜80など）は19本中3本の実測から作ったもので根拠が薄く、
+    # 『返事』では過剰検出を通し『最終の次』では正しい転を弾いた。一本化する。
     "turn": (70, 89),
-    "turn_by_type": {"露見": (60, 80), "逆転": (70, 96), "事故": (70, 96)},
     # 19本の四分位は 89〜96 だが、目印の取り方で数%動くので幅を持たせる
     "climax": (85, 97),
     "turn_cluster": 8,  # これ以内に並ぶ転の候補は一つの転とみなす
@@ -62,6 +65,9 @@ JUDGE_SCHEMA = """{
     "contradictions": [{"quote_a": "矛盾する文1", "quote_b": "矛盾する文2", "why": "何が矛盾か"}],
     "coincidences": [{"quote": "都合のよい展開の文", "why": "何が都合よいか"}],
     "telegraphed": [{"quote": "反転を予告してしまっている文", "why": "どう予告しているか"}],
+    "ending_exposition": [{"quote": "山のあとにある、状況を説明する地の文", "why": "何を説明しているか"}],
+    "misleading_imagery": [{"quote": "筋の情報と誤読されうる風景・物の描写", "why": "何と誤読されるか"}],
+    "continuity_breaks": [{"quote": "場所・時間・天候の連続が切れる文", "why": "何が前と繋がらないか"}],
     "borrowed": [{"quote": "流用と思う箇所", "source": "元の作品名"}]
   }
 }"""
@@ -149,7 +155,11 @@ def cmd_prompt(args: argparse.Namespace) -> int:
         "",
         "```json", JUDGE_SCHEMA, "```",
         "",
-        "`contradictions`・`coincidences`・`telegraphed`・`borrowed` は該当が無ければ空の配列にする。",
+        "`contradictions`・`coincidences`・`telegraphed`・`borrowed`・`ending_exposition`・"
+        "`misleading_imagery`・`continuity_breaks` は該当が無ければ空の配列にする。",
+        "`ending_exposition` は転換の帰結が出たあとの部分だけを見る。最終文に限らない。",
+        "`continuity_breaks` は、前の場面で置いた場所・時間・天候（雪が残っている、日が落ちかけている等）が"
+        "次の場面で断りなく変わっている箇所。",
         "`similes` は本文中の直喩をすべて挙げる。",
         "",
         "# 本文",
@@ -204,8 +214,10 @@ def check_layer2(body: str, structure: dict) -> tuple[dict, list[str]]:
     pos["発端"] = locate(body, inc.get("quote"))
     if pos["発端"] is None:
         problems.append("発端の引用が本文に無い")
-    elif pos["発端"] > BANDS["inciting_max"]:
+    elif pos["発端"] > BANDS["inciting_late"]:
         problems.append(f"発端が遅い: {pos['発端']}%（基準 {BANDS['inciting_max']}% 以内）")
+    elif pos["発端"] > BANDS["inciting_max"]:
+        problems.append(f"発端がやや遅い: {pos['発端']}%（基準 {BANDS['inciting_max']}% 以内。境界）")
     pos["期限"] = locate(body, inc.get("deadline_quote"))
 
     units = [locate(body, u.get("quote")) for u in structure.get("units") or []]
@@ -223,23 +235,30 @@ def check_layer2(body: str, structure: dict) -> tuple[dict, list[str]]:
 
     turns = structure.get("turns") or []
     pos["転"] = [(locate(body, t.get("quote")), t.get("type")) for t in turns]
-    located = sorted(p for p, _ in pos["転"] if p is not None)
+    located = sorted((p, k) for p, k in pos["転"] if p is not None)
     if len(located) < len(pos["転"]):
         problems.append("転の引用が本文に無い")
-    # 露見の直後に選択が来るような近接した候補は、一つの転の連なりとみなす（8%以内）
-    clusters = 1 if located else 0
-    for a, b in zip(located, located[1:]):
-        if b - a > BANDS["turn_cluster"]:
-            clusters += 1
-    if clusters != 1:
-        problems.append(f"転が {clusters} 箇所に分かれている（基準 1）" if clusters else "転が答えられていない")
-    if located:
-        first = located[0]
-        kind = next((k for p, k in pos["転"] if p == first), None)
-        low, high = BANDS["turn_by_type"].get(kind, BANDS["turn"])
-        if not (low <= first <= high):
-            problems.append(f"転の位置 {first}%（{kind}: 基準 {low}〜{high}%）")
-        pos["転（先頭）"] = first
+
+    if not located:
+        problems.append("転が答えられていない")
+    else:
+        # 8%以内に並ぶ候補は一つの転の連なりとみなし、クラスタに分ける
+        clusters: list[list[tuple[float, str]]] = [[located[0]]]
+        for item in located[1:]:
+            if item[0] - clusters[-1][-1][0] > BANDS["turn_cluster"]:
+                clusters.append([item])
+            else:
+                clusters[-1].append(item)
+        # 決定的な転換は最も後ろに来る。手前のクラスタは判定者の過剰検出であることが多い
+        # （『返事』: 判定者は60%と83.8%を挙げ、読者と作者は83.8%側を転とした）
+        last = clusters[-1]
+        first_pos, first_kind = last[0]
+        low, high = BANDS["turn"]
+        if not (low <= first_pos <= high):
+            problems.append(f"転の位置 {first_pos}%（{first_kind}: 基準 {low}〜{high}%）")
+        pos["転（採用）"] = first_pos
+        if len(clusters) > 1:
+            pos["転（手前の候補）"] = [c[0][0] for c in clusters[:-1]]
 
     pos["山"] = locate(body, (structure.get("climax") or {}).get("quote"))
     if pos["山"] is None:
@@ -304,6 +323,12 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
         take("3-7", "伏線が予告的", c.get("quote"), c.get("why", ""))
     for c in craft.get("borrowed") or []:
         take("3-8", "流用", c.get("quote"), c.get("source", ""))
+    for c in craft.get("ending_exposition") or []:
+        take("3-10", "結の説明的な地の文", c.get("quote"), c.get("why", ""))
+    for c in craft.get("misleading_imagery") or []:
+        take("3-11", "筋と誤読される描写", c.get("quote"), c.get("why", ""))
+    for c in craft.get("continuity_breaks") or []:
+        take("3-12", "場面の連続が切れる", c.get("quote"), c.get("why", ""))
     return kept, dropped
 
 

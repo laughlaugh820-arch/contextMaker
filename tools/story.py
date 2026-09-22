@@ -382,9 +382,13 @@ def check_story(metrics: dict, targets: dict) -> list[dict]:
         else:
             low, high = target * band[0], target * band[1]
         if not (low <= current <= high):
+            # 帯の端から5%以内の外れは「境界」。『返事』は平均文長 26.7 対 下限 27.31 で
+            # 外れ扱いになったが、読者は読んでいて気づかなかった
+            margin = (low - current) / low if current < low else (current - high) / high
             violations.append({"key": key, "label": label, "unit": unit,
                                "current": current, "target": target,
                                "low": round(low, 2), "high": round(high, 2),
+                               "marginal": margin <= 0.05,
                                "direction": "上げる" if current < low else "下げる"})
     return violations
 
