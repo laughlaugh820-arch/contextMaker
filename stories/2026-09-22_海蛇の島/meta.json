@@ -1,0 +1,88 @@
+{
+  "theme": "貸本屋の最後の日、返却されないままの一冊を待つ店主",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "露見",
+  "length_target": 8000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 8000,
+    "sentence_length_mean": 36.41,
+    "sentence_length_cv": 0.676,
+    "simile_per_1000": 1.126,
+    "dialogue_ratio": 0.119,
+    "source": "無作為 2,000 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 5481,
+        "sentence_length_mean": 21.6,
+        "sentence_length_cv": 0.59,
+        "simile_per_1000": 1.28,
+        "simile_count": 7,
+        "dialogue_ratio": 0.254
+      },
+      "violations": [
+        "字数を上げる",
+        "平均文長を上げる",
+        "会話率を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 6032,
+        "sentence_length_mean": 26.6,
+        "sentence_length_cv": 0.67,
+        "simile_per_1000": 1.16,
+        "simile_count": 7,
+        "dialogue_ratio": 0.213
+      },
+      "violations": [
+        "字数を上げる",
+        "平均文長を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 2,
+      "metrics": {
+        "characters": 6490,
+        "sentence_length_mean": 28.0,
+        "sentence_length_cv": 0.7,
+        "simile_per_1000": 1.23,
+        "simile_count": 8,
+        "dialogue_ratio": 0.21
+      },
+      "violations": [
+        "字数を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 3,
+      "metrics": {
+        "characters": 8147,
+        "sentence_length_mean": 27.6,
+        "sentence_length_cv": 0.67,
+        "simile_per_1000": 1.35,
+        "simile_count": 11,
+        "dialogue_ratio": 0.212
+      },
+      "violations": [],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 3,
+  "characters": 8153,
+  "generated_on": "2026-09-22"
+}
