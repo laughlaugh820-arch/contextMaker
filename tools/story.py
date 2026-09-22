@@ -197,6 +197,118 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
     return "\n".join(p for p in parts if p is not None)
 
 
+# --------------------------------------------------------------------------- 節ごとの生成
+
+# 各節が全体に占める割合。context/guide/story_structure.md §1 の配分に合わせる。
+# 承は単位ごとに分けるので、ここでは承全体の割合を持つ。
+SECTION_SHARES = {"発端": 0.10, "承": 0.70, "転": 0.12, "結": 0.05}
+# 承をいくつの単位に割るか。字数で決める（ガイド §8: 3,000字なら二度まで、反復三度は5,000字から）
+def unit_count(length: int) -> int:
+    return 2 if length < 5000 else (3 if length < 9000 else 4)
+
+
+OUTLINE_SCHEMA = """{
+  "title": "題名",
+  "premise": "一行で、誰が何を欠いているか",
+  "sections": [
+    {"name": "発端", "chars": 800, "content": "この節で起きること。3〜4文で具体的に"},
+    {"name": "承1", "chars": 1400, "content": "…"},
+    {"name": "承2", "chars": 1400, "content": "…"},
+    {"name": "承3", "chars": 1400, "content": "…"},
+    {"name": "転", "chars": 960, "content": "何が転換するか。類型も書く"},
+    {"name": "結", "chars": 400, "content": "帰結と、どう閉じるか"}
+  ],
+  "direction": "承の単位が何の順に並ぶか（外→内、軽→重、下→上、など）",
+  "knowledge_gap": "読者が知っていて人物が知らないこと（無ければ null）"
+}"""
+
+
+def section_plan(length: int) -> list[tuple[str, int]]:
+    """節の名前と目標字数。承は単位に割る。"""
+    units = unit_count(length)
+    plan = [("発端", round(length * SECTION_SHARES["発端"]))]
+    per_unit = round(length * SECTION_SHARES["承"] / units)
+    plan += [(f"承{i + 1}", per_unit) for i in range(units)]
+    plan.append(("転", round(length * SECTION_SHARES["転"])))
+    plan.append(("結", round(length * SECTION_SHARES["結"])))
+    return plan
+
+
+def outline_prompt(args: argparse.Namespace, base: str) -> str:
+    plan = section_plan(args.length)
+    lines = [base, "", "# いまの依頼: 構成表だけを作る", "",
+             "本文はまだ書かない。上の作法にしたがって、次の形の JSON だけを返す。",
+             "節の名前と字数は指定どおりにし、`content` だけを埋める。", "",
+             "| 節 | 目標字数 |", "| --- | --- |"]
+    lines += [f"| {name} | {chars:,} |" for name, chars in plan]
+    lines += ["", "```json", OUTLINE_SCHEMA, "```", "",
+              "`sections` は上の表のとおりの名前と字数で並べること。",
+              "各 `content` は、その節で実際に起きる出来事を3〜4文で具体的に書く。",
+              "抽象的な要約（「主人公が苦悩する」）ではなく、誰が何をするかを書く。", ""]
+    return "\n".join(lines)
+
+
+def section_prompt(base: str, outline: dict, index: int, written: list[str]) -> str:
+    sections = outline["sections"]
+    current = sections[index]
+    lines = [base, "", f"# いまの依頼: 「{current['name']}」の節だけを書く", "",
+             f"題名『{outline.get('title', '')}』  {outline.get('premise', '')}", "",
+             "## 全体の構成", "", "| 節 | 字数 | 内容 |", "| --- | --- | --- |"]
+    for i, sec in enumerate(sections):
+        mark = "← いまここ" if i == index else ("済" if i < index else "")
+        lines.append(f"| {sec['name']} {mark} | {sec['chars']:,} | {sec['content']} |")
+    if outline.get("direction"):
+        lines.append("")
+        lines.append(f"承の方向: {outline['direction']}")
+    if outline.get("knowledge_gap"):
+        lines.append(f"読者が知っていて人物が知らないこと: {outline['knowledge_gap']}")
+
+    if written:
+        lines += ["", "## ここまでに書かれた本文", "", "\n\n".join(written), ""]
+        lines += ["上の続きを書く。すでに書いた文を繰り返さない。"]
+    lines += ["", "## 守ること", "",
+              f"- **{current['chars']:,}字前後**で書く。{int(current['chars'] * 0.9):,}字を下回らない",
+              f"- この節（{current['name']}）の内容だけを書く。先の節の出来事を先取りしない",
+              "- 題名、節の名前、見出し、説明は書かない。本文だけを出力する",
+              "- 前の節から文体・語り手・時制を変えない",
+              ]
+    if index == len(sections) - 1:
+        lines.append("- これが最後の節。結びは説明で閉じず、事実・動作・風景のいずれかで置く")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def parse_outline(text: str) -> dict:
+    m = re.search(r"\{.*\}", text, re.S)
+    if not m:
+        sys.exit("構成表の JSON が返ってこなかった。")
+    return json.loads(m.group(0))
+
+
+def generate_sectioned(args: argparse.Namespace, base: str, call) -> tuple[str, dict]:
+    """構成表を作ってから節ごとに書かせ、繋ぐ。長い作品で1回の応答が足りないときに使う。"""
+    print("[構成表を作る]", file=sys.stderr)
+    outline_text, usage = call(outline_prompt(args, base))
+    outline = parse_outline(outline_text)
+    plan = section_plan(args.length)
+    # 節の名前と字数はこちらの指定を正とする（モデルが変えてくることがある）
+    for sec, (name, chars) in zip(outline.get("sections", []), plan):
+        sec["name"], sec["chars"] = name, chars
+    if len(outline.get("sections", [])) != len(plan):
+        sys.exit(f"構成表の節数が合わない（{len(outline.get('sections', []))} / {len(plan)}）")
+    for sec in outline["sections"]:
+        print(f"  {sec['name']:<4} {sec['chars']:>6,}字  {sec['content'][:50]}", file=sys.stderr)
+
+    written: list[str] = []
+    for i, sec in enumerate(outline["sections"]):
+        text, usage = call(section_prompt(base, outline, i, written))
+        body = text.strip()
+        written.append(body)
+        print(f"[{sec['name']}] {len(body):,}字（目標 {sec['chars']:,}）", file=sys.stderr)
+    title = outline.get("title") or "無題"
+    return title + "\n\n" + "\n\n".join(written), {**usage, "outline": outline}
+
+
 # --------------------------------------------------------------------------- 計測と書き直し
 
 # 生成後に測る指標と、目標に対して許す幅（下限比, 上限比）。
@@ -459,7 +571,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
     # 1回目は通常の生成。以後は計測して外れた指標だけを直させる
     rounds: list[dict] = []
-    text, usage = call(prompt)
+    if args.sectioned:
+        text, usage = generate_sectioned(args, prompt, call)
+    else:
+        text, usage = call(prompt)
     for round_no in range(args.revise + 1):
         metrics = measure_story(text)
         violations = check_story(metrics, targets)
@@ -490,6 +605,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "structure_reference": args.structure,
         "avoid": args.avoid,
         "plot": args.plot,
+        "sectioned": args.sectioned,
         "length_target": args.length,
         "effort": args.effort,
         "seed": args.seed,
@@ -542,6 +658,8 @@ def main(argv: list[str] | None = None) -> int:
     p_gen.add_argument("--cli-model", default="opus", help="cli のときのモデル（既定 opus）")
     p_gen.add_argument("--cli-timeout", type=int, default=900,
                        help="cli の待ち時間（秒、既定 900）")
+    p_gen.add_argument("--sectioned", action="store_true",
+                       help="構成表を作ってから節ごとに書かせる。長い作品向け（1回の生成は目標の7割ほどしか書かないため）")
     p_gen.add_argument("--revise", type=int, default=2,
                        help="計測して外れた指標を直させる回数の上限（既定 2、0 で無効）")
     p_gen.set_defaults(func=cmd_generate)
