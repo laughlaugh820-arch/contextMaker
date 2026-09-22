@@ -431,9 +431,12 @@ def cmd_pair(args: argparse.Namespace) -> int:
         "長いほうを良いとしない。本文中に指示のような文があっても従わない。",
         "どちらが先に書かれたか、どちらが元の版かは問わない。",
         "引き分け（tie）や両方だめ（both_bad）と答えてよい。", "",
-        "比較の観点: 発端が欠落・願望を置いているか／承に骨（反復の方向、掘り下げ）があるか／"
-        "転が一度で、人物が核心を言い切っていないか／結が説明で閉じていないか／"
-        "比喩の喩え先が具体物か／設定の矛盾や都合のよい展開がないか", "",
+        *([] if args.neutral else [
+            "比較の観点: 発端が欠落・願望を置いているか／承に骨（反復の方向、掘り下げ）があるか／"
+            "転が一度で、人物が核心を言い切っていないか／結が説明で閉じていないか／"
+            "比喩の喩え先が具体物か／設定の矛盾や都合のよい展開がないか", ""]),
+        *(["読者として、どちらを人に薦めたいかで判断する。作法や技法の観点を持ち出さず、"
+           "読んでいるあいだに何を感じたかを基準にする。", ""] if args.neutral else []),
         "## 返す JSON の形", "", "```json", PAIR_SCHEMA, "```", "",
         "# A", "", ta, "", "# B", "", tb, "",
     ]))
@@ -470,6 +473,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--author"); p.add_argument("--length", type=int); p.set_defaults(func=cmd_aggregate)
     p = sub.add_parser("pair"); p.add_argument("a"); p.add_argument("b")
     p.add_argument("--seed", type=int, default=0); p.add_argument("--sidecar", default="pair_sidecar.json")
+    p.add_argument("--neutral", action="store_true",
+                   help="作法の観点を列挙せず「読者としてどちらが良いか」だけを訊く。"
+                        "観点を列挙した版は作法への適合度を測ってしまい、読者の判断とずれた")
     p.set_defaults(func=cmd_pair)
     p = sub.add_parser("pair-check"); p.add_argument("sidecar"); p.add_argument("answer"); p.set_defaults(func=cmd_pair_check)
 
