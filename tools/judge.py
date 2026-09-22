@@ -102,6 +102,19 @@ def locate(body: str, quote: str | None) -> float | None:
     return round(i / len(flat) * 100, 1)
 
 
+def locate_paragraph(body: str, quote: str | None) -> int | None:
+    """引用を含む段落の番号。判定者ごとに引用の切り出し方が違っても、同じ段落なら同じ指摘とみなすため。"""
+    if not quote:
+        return None
+    q = normalize(quote)[:20]
+    if len(q) < 4:
+        return None
+    for i, para in enumerate(A.split_paragraphs(body)):
+        if q in normalize(para):
+            return i
+    return None
+
+
 # --------------------------------------------------------------------------- prompt
 
 def cmd_prompt(args: argparse.Namespace) -> int:
@@ -116,7 +129,8 @@ def cmd_prompt(args: argparse.Namespace) -> int:
         "",
         "## 用語",
         "",
-        "- 発端: 主人公に足りないもの（欠落・願望）が置かれる箇所",
+        "- 発端: 物語を動かし始める最初の欠落・願望が置かれる箇所（『終電に乗れない』『鼻が長い』）。"
+        "後から語られる背景や過去（『兄が死んだ』『十一年会っていない』）は発端ではなく、承の中の露見として扱う",
         "- 承の型: 反復（同じ種類の出来事を形を変えて繰り返す）／掘り下げ（一つの状況を観察で深める）／"
         "告白（語りの中で過去が展開する）／心境（出来事がほとんど起きず感覚の推移で進む）",
         "- 転の類型: 逆転（願望や正義が反対になる）／露見（隠れていた事実が語られる）／"
@@ -233,45 +247,50 @@ def check_layer2(body: str, structure: dict) -> tuple[dict, list[str]]:
     return pos, problems
 
 
-def check_layer3(body: str, craft: dict) -> tuple[list[str], list[str]]:
-    """引用が本文にある指摘だけを残す。返り値は (有効な指摘, 捨てた指摘)。"""
+def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
+    """引用が本文にある指摘だけを残す。返り値は (有効な指摘, 捨てた指摘)。
+
+    有効な指摘は {item, pos, text} で、pos は引用の位置（%）。複数の判定者の指摘を
+    「同じ項目で同じ箇所を引いているか」で束ねるために使う。
+    """
     kept, dropped = [], []
 
-    def take(label: str, quote: str | None, why: str = "") -> None:
-        if verify_quote(body, quote):
-            kept.append(f"{label}: {quote[:50]}{'…' if len(quote) > 50 else ''}" + (f" — {why}" if why else ""))
-        else:
-            dropped.append(f"{label}: 引用が本文に無い（{(quote or '')[:30]}）")
+    def take(item: str, label: str, quote: str | None, why: str = "") -> None:
+        pos = locate(body, quote)
+        if pos is None:
+            dropped.append(f"{item} {label}: 引用が本文に無い（{(quote or '')[:30]}）")
+            return
+        kept.append({"item": item, "pos": pos, "para": locate_paragraph(body, quote),
+                     "text": f"{item} {label}: {quote[:50]}{'…' if len(quote) > 50 else ''}"
+                             + (f" — {why}" if why else "")})
 
     inc = craft.get("inciting_is_lack") or {}
     if inc.get("verdict") is False:
-        take("3-1 発端が欠落・願望でない", inc.get("quote"))
+        take("3-1", "発端が欠落・願望でない", inc.get("quote"))
     ts = craft.get("turn_stated_by_character") or {}
     if ts.get("degree") == "全部":
-        take("3-2 転の核心を人物が言い切っている", ts.get("quote"))
+        take("3-2", "転の核心を人物が言い切っている", ts.get("quote"))
     en = craft.get("ending_explains") or {}
     if en.get("verdict") is True:
-        take("3-3 結が説明で閉じている", en.get("quote"))
+        take("3-3", "結が説明で閉じている", en.get("quote"))
     sims = craft.get("similes") or []
-    abstract = [s for s in sims if s.get("concrete") is False]
-    verified = [s for s in sims if verify_quote(body, s.get("quote"))]
+    verified = [x for x in sims if verify_quote(body, x.get("quote"))]
     if sims and len(verified) < len(sims):
         dropped.append(f"3-4 直喩 {len(sims) - len(verified)} 件の引用が本文に無い")
-    if verified:
-        abs_v = [s for s in verified if s.get("concrete") is False]
-        kept.append(f"3-4 直喩 {len(verified)} 件、喩え先が抽象 {len(abs_v)} 件"
-                    + ("（" + "、".join(s.get("vehicle", "") for s in abs_v) + "）" if abs_v else ""))
+    for x in verified:
+        if x.get("concrete") is False:
+            take("3-4", "喩え先が抽象", x.get("quote"), x.get("vehicle", ""))
     for c in craft.get("contradictions") or []:
         if verify_quote(body, c.get("quote_a")) and verify_quote(body, c.get("quote_b")):
-            kept.append(f"3-5 矛盾: {c.get('why', '')}")
+            take("3-5", "矛盾", c.get("quote_a"), c.get("why", ""))
         else:
             dropped.append(f"3-5 矛盾の引用が本文に無い（{c.get('why', '')}）")
     for c in craft.get("coincidences") or []:
-        take("3-6 都合のよい展開", c.get("quote"), c.get("why", ""))
+        take("3-6", "都合のよい展開", c.get("quote"), c.get("why", ""))
     for c in craft.get("telegraphed") or []:
-        take("3-7 伏線が予告的", c.get("quote"), c.get("why", ""))
+        take("3-7", "伏線が予告的", c.get("quote"), c.get("why", ""))
     for c in craft.get("borrowed") or []:
-        take("3-8 流用", c.get("quote"), c.get("source", ""))
+        take("3-8", "流用", c.get("quote"), c.get("source", ""))
     return kept, dropped
 
 
@@ -291,8 +310,10 @@ def run_check(story_path: str, judge_path: str, author: str | None, length: int 
     l1 = check_layer1(body, targets)
     pos, l2 = check_layer2(body, judge.get("structure") or {})
     kept, dropped = check_layer3(body, judge.get("craft") or {})
+    sims = (judge.get("craft") or {}).get("similes") or []
     return {"story": title, "judge": Path(judge_path).stem, "read_to_end": read_ok,
-            "layer1": l1, "positions": pos, "layer2": l2, "layer3": kept, "dropped": dropped}
+            "layer1": l1, "positions": pos, "layer2": l2, "layer3": kept, "dropped": dropped,
+            "simile_count": sum(1 for x in sims if verify_quote(body, x.get("quote")))}
 
 
 def print_report(r: dict) -> None:
@@ -304,9 +325,9 @@ def print_report(r: dict) -> None:
     print("  層2 位置:", {k: v for k, v in r["positions"].items() if v not in (None, [])})
     for p in r["layer2"]:
         print(f"    - {p}")
-    print("  層3 有効な指摘:", "なし" if not r["layer3"] else "")
+    print(f"  層3 有効な指摘（直喩 {r['simile_count']} 件を確認）:", "なし" if not r["layer3"] else "")
     for p in r["layer3"]:
-        print(f"    - {p}")
+        print(f"    - [{p['pos']}%] {p['text']}")
     if r["dropped"]:
         print("  捨てた指摘（引用が本文に無い）:")
         for p in r["dropped"]:
@@ -325,14 +346,21 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     results = [run_check(args.story, j, args.author, args.length) for j in args.judges]
     valid = [r for r in results if r["read_to_end"]]
     print(f"『{results[0]['story']}』 判定者 {len(results)} 名、うち最後まで読んだ {len(valid)} 名\n")
-    counts: dict[str, list[str]] = {}
+
+    groups: dict[tuple, dict] = {}
     for r in valid:
-        for p in r["layer2"] + r["layer3"]:
-            key = re.sub(r"[:：].*", "", p) if p.startswith("3-4") else p
-            counts.setdefault(key, []).append(r["judge"])
-    for key, who in sorted(counts.items(), key=lambda kv: -len(kv[1])):
-        mark = "合意" if len(who) >= 2 else "単独"
-        print(f"  [{mark} {len(who)}/{len(valid)}] {key}  ({', '.join(who)})")
+        for p in r["layer2"]:
+            key = ("層2", re.split(r"[:：（ ]", p)[0])
+            g = groups.setdefault(key, {"text": p, "who": []})
+            g["who"].append(r["judge"])
+        for p in r["layer3"]:
+            key = (p["item"], p["para"])  # 同じ項目で、同じ段落を引いていれば同じ指摘
+            g = groups.setdefault(key, {"text": p["text"], "who": []})
+            g["who"].append(r["judge"])
+    for key, g in sorted(groups.items(), key=lambda kv: (-len(kv[1]["who"]), kv[0])):
+        mark = "合意" if len(g["who"]) >= 2 else "単独"
+        print(f"  [{mark} {len(g['who'])}/{len(valid)}] {g['text']}  ({', '.join(g['who'])})")
+
     l1 = results[0]["layer1"]
     if l1:
         print("\n  層1（機械計測、判定者に依らない）:")
