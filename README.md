@@ -177,6 +177,29 @@ SDK がパラメータを受け付けて認証エラーまで到達すること�
 
 `stories/sample_prompt/` に compose の出力例がある。
 
+## 5. 評価 — `tools/judge.py`
+
+生成物の良し悪しを何で測るかは `docs/EVAL_RUBRIC.md` にある。点数は付けず、
+判定者（任意のモデル）には本文の引用で答えさせ、引用が本文に無い指摘は捨てる。
+
+```console
+# 判定プロンプトを作って任意のモデルに貼る
+$ python3 tools/judge.py prompt stories/2026-09-21_最終の次/story.md > prompt.md
+
+# 返ってきた JSON を本文と照合し、構造の位置と機械計測を出す
+$ python3 tools/judge.py check stories/2026-09-21_最終の次/story.md review/最終の次_judge/claude-opus.json --length 3000
+
+# 複数の判定者の指摘を、同じ引用ごとに数える（2者以上の一致を「合意」とする）
+$ python3 tools/judge.py aggregate stories/2026-09-21_最終の次/story.md review/最終の次_judge/*.json --length 3000
+
+# 2本の比較。A/B の順序は乱数で決まり、対応は sidecar に書かれる
+$ python3 tools/judge.py pair stories/A/story.md stories/B/story.md --sidecar pair.json > pair_prompt.md
+$ python3 tools/judge.py pair-check pair.json answer.json
+```
+
+判定者には最終文を一語一句引用させ、一致しなければその回答は全部捨てる
+（途中までしか読まずに評価した事故があった）。
+
 ---
 
 ## 権利について
