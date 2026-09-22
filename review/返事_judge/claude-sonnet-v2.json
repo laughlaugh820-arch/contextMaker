@@ -1,0 +1,45 @@
+```json
+{
+  "read_to_end": {"last_sentence": "道の雪は昼のあいだに緩んでいて、踏むたびに、砂糖の袋を掌で押したような音を立てた。"},
+  "structure": {
+    "inciting": {
+      "quote": "その路が今月で廃される。",
+      "lacking": "配達を続けられる残り時間",
+      "deadline_quote": "三月三十一日をもって竜あて郵便の取り扱いを停止する、とある。"
+    },
+    "development_type": "反復",
+    "units": [
+      {"quote": "一つ目は河原である。", "label": "河原での配達と老人"},
+      {"quote": "二つ目は沼である。", "label": "沼での配達と巣の発見"},
+      {"quote": "三つ目は山である。", "label": "山での配達と子供の手紙"}
+    ],
+    "direction": "河原・沼・山と、地形が低地から高地へ上がる順",
+    "turns": [
+      {"quote": "手で裂いたのではなく嘴で裂いたらしい縁をしていて、そのうちの一片に、見覚えのある字の一部が残っていた。", "type": "露見"},
+      {"quote": "同じ文面の紙が、私が八つの年の三月に、家の戸口の桟に挟んであった。", "type": "露見"},
+      {"quote": "手紙はたしかに届きました。", "type": "選択"}
+    ],
+    "climax": {"quote": "私は差入口に紙を落とした。"},
+    "ending": {"quote": "道の雪は昼のあいだに緩んでいて、踏むたびに、砂糖の袋を掌で押したような音を立てた。", "type": "風景"},
+    "knowledge_gap": "同時"
+  },
+  "craft": {
+    "inciting_is_lack": {"verdict": true, "quote": "その路が今月で廃される。"},
+    "turn_stated_by_character": {"degree": "言っていない", "quote": null},
+    "ending_explains": {"verdict": false, "quote": "道の雪は昼のあいだに緩んでいて、踏むたびに、砂糖の袋を掌で押したような音を立てた。"},
+    "similes": [
+      {"quote": "六十年のあいだ水に洗われたそれは白を通り越して飴のような色に変わり、太いところは大人が両手をまわしても指が届かない。", "vehicle": "飴", "concrete": true},
+      {"quote": "風のない日の水面は、油をひと匙こぼして広げたように動かず、岸の木がそのまま映っている。", "vehicle": "油", "concrete": true},
+      {"quote": "雪は日陰にだけ残っていて、篩からこぼしたように岩の裾へ細く続いていた。", "vehicle": "篩", "concrete": true},
+      {"quote": "道の雪は昼のあいだに緩んでいて、踏むたびに、砂糖の袋を掌で押したような音を立てた。", "vehicle": "砂糖の袋", "concrete": true}
+    ],
+    "contradictions": [],
+    "coincidences": [],
+    "telegraphed": [],
+    "ending_exposition": [],
+    "misleading_imagery": [],
+    "continuity_breaks": [],
+    "borrowed": []
+  }
+}
+```
