@@ -1,0 +1,1707 @@
+{
+  "work_id": "57716",
+  "person_id": "001869",
+  "title": "風流太平記",
+  "author": "山本周五郎",
+  "card": "https://www.aozora.gr.jp/cards/001869/card57716.html",
+  "path": "library/001869/57716_風流太平記",
+  "stats": {
+    "characters": 251209,
+    "paragraphs": 7024,
+    "sentences": 8540,
+    "sentence_length_mean": 28.2,
+    "sentence_length_median": 20.0,
+    "sentence_length_stdev": 23.1,
+    "sentence_length_max": 301,
+    "dialogue_ratio": 0.398,
+    "quoted_narration_ratio": 0.007,
+    "quote_span_mean": 29.2,
+    "dialogue_paragraph_ratio": 0.478,
+    "orthography": "新字新仮名",
+    "kanji_ratio": 0.2242,
+    "hiragana_ratio": 0.6369,
+    "katakana_ratio": 0.0005,
+    "comma_per_sentence": 1.15,
+    "dash_per_1000": 4.03,
+    "ellipsis_per_1000": 0.02,
+    "exclaim_per_1000": 0.02,
+    "question_per_1000": 0.0,
+    "simile_count": 247,
+    "simile_per_1000": 0.98
+  },
+  "headings": [
+    {
+      "index": 1,
+      "label": "一",
+      "characters": 1116
+    },
+    {
+      "index": 32,
+      "label": "二",
+      "characters": 1134
+    },
+    {
+      "index": 78,
+      "label": "三",
+      "characters": 1214
+    },
+    {
+      "index": 108,
+      "label": "四",
+      "characters": 1236
+    },
+    {
+      "index": 141,
+      "label": "五",
+      "characters": 1133
+    },
+    {
+      "index": 177,
+      "label": "六",
+      "characters": 1177
+    },
+    {
+      "index": 213,
+      "label": "一",
+      "characters": 1194
+    },
+    {
+      "index": 245,
+      "label": "二",
+      "characters": 1167
+    },
+    {
+      "index": 282,
+      "label": "三",
+      "characters": 1184
+    },
+    {
+      "index": 315,
+      "label": "四",
+      "characters": 1198
+    },
+    {
+      "index": 351,
+      "label": "五",
+      "characters": 1222
+    },
+    {
+      "index": 385,
+      "label": "一",
+      "characters": 1178
+    },
+    {
+      "index": 418,
+      "label": "二",
+      "characters": 1169
+    },
+    {
+      "index": 456,
+      "label": "三",
+      "characters": 1173
+    },
+    {
+      "index": 488,
+      "label": "四",
+      "characters": 1195
+    },
+    {
+      "index": 518,
+      "label": "五",
+      "characters": 1144
+    },
+    {
+      "index": 557,
+      "label": "一",
+      "characters": 1145
+    },
+    {
+      "index": 589,
+      "label": "二",
+      "characters": 1098
+    },
+    {
+      "index": 627,
+      "label": "三",
+      "characters": 1163
+    },
+    {
+      "index": 659,
+      "label": "四",
+      "characters": 1073
+    },
+    {
+      "index": 691,
+      "label": "五",
+      "characters": 1210
+    },
+    {
+      "index": 716,
+      "label": "六",
+      "characters": 1102
+    },
+    {
+      "index": 748,
+      "label": "七",
+      "characters": 1060
+    },
+    {
+      "index": 792,
+      "label": "一",
+      "characters": 1168
+    },
+    {
+      "index": 824,
+      "label": "二",
+      "characters": 1127
+    },
+    {
+      "index": 857,
+      "label": "三",
+      "characters": 1122
+    },
+    {
+      "index": 894,
+      "label": "四",
+      "characters": 1164
+    },
+    {
+      "index": 927,
+      "label": "五",
+      "characters": 1141
+    },
+    {
+      "index": 965,
+      "label": "六",
+      "characters": 1156
+    },
+    {
+      "index": 996,
+      "label": "一",
+      "characters": 1252
+    },
+    {
+      "index": 1024,
+      "label": "二",
+      "characters": 1137
+    },
+    {
+      "index": 1059,
+      "label": "三",
+      "characters": 1129
+    },
+    {
+      "index": 1096,
+      "label": "四",
+      "characters": 1169
+    },
+    {
+      "index": 1127,
+      "label": "五",
+      "characters": 1255
+    },
+    {
+      "index": 1160,
+      "label": "一",
+      "characters": 1123
+    },
+    {
+      "index": 1192,
+      "label": "二",
+      "characters": 1015
+    },
+    {
+      "index": 1233,
+      "label": "三",
+      "characters": 1164
+    },
+    {
+      "index": 1269,
+      "label": "四",
+      "characters": 1192
+    },
+    {
+      "index": 1302,
+      "label": "五",
+      "characters": 1164
+    },
+    {
+      "index": 1332,
+      "label": "六",
+      "characters": 1207
+    },
+    {
+      "index": 1364,
+      "label": "七",
+      "characters": 1157
+    },
+    {
+      "index": 1403,
+      "label": "一",
+      "characters": 1289
+    },
+    {
+      "index": 1424,
+      "label": "二",
+      "characters": 1122
+    },
+    {
+      "index": 1454,
+      "label": "三",
+      "characters": 1164
+    },
+    {
+      "index": 1482,
+      "label": "四",
+      "characters": 1071
+    },
+    {
+      "index": 1519,
+      "label": "五",
+      "characters": 1183
+    },
+    {
+      "index": 1545,
+      "label": "六",
+      "characters": 1131
+    },
+    {
+      "index": 1582,
+      "label": "七",
+      "characters": 1217
+    },
+    {
+      "index": 1617,
+      "label": "一",
+      "characters": 1226
+    },
+    {
+      "index": 1640,
+      "label": "二",
+      "characters": 1243
+    },
+    {
+      "index": 1663,
+      "label": "三",
+      "characters": 1135
+    },
+    {
+      "index": 1693,
+      "label": "四",
+      "characters": 1150
+    },
+    {
+      "index": 1730,
+      "label": "五",
+      "characters": 1135
+    },
+    {
+      "index": 1762,
+      "label": "六",
+      "characters": 1165
+    },
+    {
+      "index": 1794,
+      "label": "七",
+      "characters": 1146
+    },
+    {
+      "index": 1832,
+      "label": "一",
+      "characters": 1126
+    },
+    {
+      "index": 1860,
+      "label": "二",
+      "characters": 1177
+    },
+    {
+      "index": 1897,
+      "label": "三",
+      "characters": 1186
+    },
+    {
+      "index": 1922,
+      "label": "四",
+      "characters": 1143
+    },
+    {
+      "index": 1953,
+      "label": "五",
+      "characters": 1071
+    },
+    {
+      "index": 1988,
+      "label": "六",
+      "characters": 1113
+    },
+    {
+      "index": 2024,
+      "label": "七",
+      "characters": 1189
+    },
+    {
+      "index": 2055,
+      "label": "一",
+      "characters": 1230
+    },
+    {
+      "index": 2079,
+      "label": "二",
+      "characters": 1116
+    },
+    {
+      "index": 2115,
+      "label": "三",
+      "characters": 1121
+    },
+    {
+      "index": 2144,
+      "label": "四",
+      "characters": 1088
+    },
+    {
+      "index": 2178,
+      "label": "五",
+      "characters": 1153
+    },
+    {
+      "index": 2211,
+      "label": "六",
+      "characters": 1151
+    },
+    {
+      "index": 2240,
+      "label": "七",
+      "characters": 1306
+    },
+    {
+      "index": 2267,
+      "label": "一",
+      "characters": 1153
+    },
+    {
+      "index": 2299,
+      "label": "二",
+      "characters": 1180
+    },
+    {
+      "index": 2332,
+      "label": "三",
+      "characters": 1146
+    },
+    {
+      "index": 2365,
+      "label": "四",
+      "characters": 1149
+    },
+    {
+      "index": 2398,
+      "label": "五",
+      "characters": 1179
+    },
+    {
+      "index": 2424,
+      "label": "六",
+      "characters": 1114
+    },
+    {
+      "index": 2459,
+      "label": "七",
+      "characters": 1248
+    },
+    {
+      "index": 2489,
+      "label": "一",
+      "characters": 1222
+    },
+    {
+      "index": 2518,
+      "label": "二",
+      "characters": 1168
+    },
+    {
+      "index": 2547,
+      "label": "三",
+      "characters": 1139
+    },
+    {
+      "index": 2584,
+      "label": "四",
+      "characters": 1158
+    },
+    {
+      "index": 2616,
+      "label": "五",
+      "characters": 1191
+    },
+    {
+      "index": 2651,
+      "label": "六",
+      "characters": 1196
+    },
+    {
+      "index": 2684,
+      "label": "七",
+      "characters": 1285
+    },
+    {
+      "index": 2711,
+      "label": "八",
+      "characters": 1099
+    },
+    {
+      "index": 2747,
+      "label": "九",
+      "characters": 1150
+    },
+    {
+      "index": 2783,
+      "label": "一",
+      "characters": 1151
+    },
+    {
+      "index": 2818,
+      "label": "二",
+      "characters": 1138
+    },
+    {
+      "index": 2850,
+      "label": "三",
+      "characters": 1151
+    },
+    {
+      "index": 2891,
+      "label": "四",
+      "characters": 1130
+    },
+    {
+      "index": 2930,
+      "label": "五",
+      "characters": 1152
+    },
+    {
+      "index": 2966,
+      "label": "六",
+      "characters": 1211
+    },
+    {
+      "index": 3000,
+      "label": "一",
+      "characters": 1175
+    },
+    {
+      "index": 3034,
+      "label": "二",
+      "characters": 1120
+    },
+    {
+      "index": 3070,
+      "label": "三",
+      "characters": 1195
+    },
+    {
+      "index": 3105,
+      "label": "四",
+      "characters": 1163
+    },
+    {
+      "index": 3141,
+      "label": "五",
+      "characters": 1109
+    },
+    {
+      "index": 3178,
+      "label": "六",
+      "characters": 1268
+    },
+    {
+      "index": 3206,
+      "label": "七",
+      "characters": 1190
+    },
+    {
+      "index": 3246,
+      "label": "一",
+      "characters": 1167
+    },
+    {
+      "index": 3280,
+      "label": "二",
+      "characters": 1220
+    },
+    {
+      "index": 3308,
+      "label": "三",
+      "characters": 1155
+    },
+    {
+      "index": 3344,
+      "label": "四",
+      "characters": 1195
+    },
+    {
+      "index": 3372,
+      "label": "五",
+      "characters": 1200
+    },
+    {
+      "index": 3404,
+      "label": "一",
+      "characters": 1166
+    },
+    {
+      "index": 3438,
+      "label": "二",
+      "characters": 1089
+    },
+    {
+      "index": 3476,
+      "label": "三",
+      "characters": 1067
+    },
+    {
+      "index": 3519,
+      "label": "四",
+      "characters": 1061
+    },
+    {
+      "index": 3558,
+      "label": "五",
+      "characters": 1084
+    },
+    {
+      "index": 3591,
+      "label": "六",
+      "characters": 1100
+    },
+    {
+      "index": 3625,
+      "label": "七",
+      "characters": 1183
+    },
+    {
+      "index": 3665,
+      "label": "八",
+      "characters": 1175
+    },
+    {
+      "index": 3701,
+      "label": "九",
+      "characters": 1158
+    },
+    {
+      "index": 3741,
+      "label": "一",
+      "characters": 1174
+    },
+    {
+      "index": 3767,
+      "label": "二",
+      "characters": 1107
+    },
+    {
+      "index": 3805,
+      "label": "三",
+      "characters": 1085
+    },
+    {
+      "index": 3846,
+      "label": "四",
+      "characters": 1148
+    },
+    {
+      "index": 3876,
+      "label": "五",
+      "characters": 1124
+    },
+    {
+      "index": 3913,
+      "label": "六",
+      "characters": 1178
+    },
+    {
+      "index": 3949,
+      "label": "七",
+      "characters": 1124
+    },
+    {
+      "index": 3989,
+      "label": "八",
+      "characters": 1114
+    },
+    {
+      "index": 4024,
+      "label": "九",
+      "characters": 1106
+    },
+    {
+      "index": 4064,
+      "label": "十",
+      "characters": 1313
+    },
+    {
+      "index": 4104,
+      "label": "十一",
+      "characters": 1155
+    },
+    {
+      "index": 4145,
+      "label": "一",
+      "characters": 1050
+    },
+    {
+      "index": 4181,
+      "label": "二",
+      "characters": 1107
+    },
+    {
+      "index": 4214,
+      "label": "三",
+      "characters": 1049
+    },
+    {
+      "index": 4256,
+      "label": "四",
+      "characters": 1070
+    },
+    {
+      "index": 4302,
+      "label": "五",
+      "characters": 1043
+    },
+    {
+      "index": 4340,
+      "label": "六",
+      "characters": 1165
+    },
+    {
+      "index": 4376,
+      "label": "七",
+      "characters": 1230
+    },
+    {
+      "index": 4414,
+      "label": "八",
+      "characters": 1139
+    },
+    {
+      "index": 4450,
+      "label": "九",
+      "characters": 1114
+    },
+    {
+      "index": 4488,
+      "label": "十",
+      "characters": 1098
+    },
+    {
+      "index": 4526,
+      "label": "十一",
+      "characters": 1160
+    },
+    {
+      "index": 4572,
+      "label": "十二",
+      "characters": 1257
+    },
+    {
+      "index": 4601,
+      "label": "一",
+      "characters": 1161
+    },
+    {
+      "index": 4635,
+      "label": "二",
+      "characters": 1213
+    },
+    {
+      "index": 4661,
+      "label": "三",
+      "characters": 1165
+    },
+    {
+      "index": 4696,
+      "label": "四",
+      "characters": 1159
+    },
+    {
+      "index": 4728,
+      "label": "五",
+      "characters": 1126
+    },
+    {
+      "index": 4760,
+      "label": "一",
+      "characters": 1172
+    },
+    {
+      "index": 4790,
+      "label": "二",
+      "characters": 1185
+    },
+    {
+      "index": 4818,
+      "label": "三",
+      "characters": 1089
+    },
+    {
+      "index": 4856,
+      "label": "四",
+      "characters": 1097
+    },
+    {
+      "index": 4892,
+      "label": "五",
+      "characters": 1102
+    },
+    {
+      "index": 4930,
+      "label": "六",
+      "characters": 1164
+    },
+    {
+      "index": 4968,
+      "label": "一",
+      "characters": 1169
+    },
+    {
+      "index": 5001,
+      "label": "二",
+      "characters": 1088
+    },
+    {
+      "index": 5038,
+      "label": "三",
+      "characters": 1127
+    },
+    {
+      "index": 5082,
+      "label": "四",
+      "characters": 1247
+    },
+    {
+      "index": 5101,
+      "label": "五",
+      "characters": 1095
+    },
+    {
+      "index": 5136,
+      "label": "六",
+      "characters": 1186
+    },
+    {
+      "index": 5169,
+      "label": "一",
+      "characters": 1182
+    },
+    {
+      "index": 5202,
+      "label": "二",
+      "characters": 1098
+    },
+    {
+      "index": 5239,
+      "label": "三",
+      "characters": 1150
+    },
+    {
+      "index": 5280,
+      "label": "四",
+      "characters": 1190
+    },
+    {
+      "index": 5312,
+      "label": "五",
+      "characters": 1137
+    },
+    {
+      "index": 5344,
+      "label": "六",
+      "characters": 1064
+    },
+    {
+      "index": 5379,
+      "label": "七",
+      "characters": 1103
+    },
+    {
+      "index": 5419,
+      "label": "一",
+      "characters": 1184
+    },
+    {
+      "index": 5450,
+      "label": "二",
+      "characters": 1146
+    },
+    {
+      "index": 5487,
+      "label": "三",
+      "characters": 1148
+    },
+    {
+      "index": 5519,
+      "label": "四",
+      "characters": 1178
+    },
+    {
+      "index": 5551,
+      "label": "五",
+      "characters": 1164
+    },
+    {
+      "index": 5584,
+      "label": "一",
+      "characters": 1131
+    },
+    {
+      "index": 5622,
+      "label": "二",
+      "characters": 1054
+    },
+    {
+      "index": 5657,
+      "label": "三",
+      "characters": 1153
+    },
+    {
+      "index": 5693,
+      "label": "四",
+      "characters": 1125
+    },
+    {
+      "index": 5720,
+      "label": "五",
+      "characters": 1132
+    },
+    {
+      "index": 5754,
+      "label": "六",
+      "characters": 1129
+    },
+    {
+      "index": 5789,
+      "label": "七",
+      "characters": 1107
+    },
+    {
+      "index": 5820,
+      "label": "八",
+      "characters": 1108
+    },
+    {
+      "index": 5861,
+      "label": "一",
+      "characters": 1221
+    },
+    {
+      "index": 5890,
+      "label": "二",
+      "characters": 1150
+    },
+    {
+      "index": 5920,
+      "label": "三",
+      "characters": 1002
+    },
+    {
+      "index": 5960,
+      "label": "四",
+      "characters": 1074
+    },
+    {
+      "index": 5995,
+      "label": "五",
+      "characters": 1040
+    },
+    {
+      "index": 6037,
+      "label": "六",
+      "characters": 1105
+    },
+    {
+      "index": 6074,
+      "label": "一",
+      "characters": 1108
+    },
+    {
+      "index": 6101,
+      "label": "二",
+      "characters": 1168
+    },
+    {
+      "index": 6141,
+      "label": "三",
+      "characters": 1153
+    },
+    {
+      "index": 6172,
+      "label": "四",
+      "characters": 1178
+    },
+    {
+      "index": 6204,
+      "label": "五",
+      "characters": 1094
+    },
+    {
+      "index": 6242,
+      "label": "六",
+      "characters": 1068
+    },
+    {
+      "index": 6285,
+      "label": "一",
+      "characters": 1156
+    },
+    {
+      "index": 6318,
+      "label": "二",
+      "characters": 1201
+    },
+    {
+      "index": 6346,
+      "label": "三",
+      "characters": 1133
+    },
+    {
+      "index": 6374,
+      "label": "四",
+      "characters": 1140
+    },
+    {
+      "index": 6405,
+      "label": "五",
+      "characters": 1188
+    },
+    {
+      "index": 6435,
+      "label": "一",
+      "characters": 1112
+    },
+    {
+      "index": 6479,
+      "label": "二",
+      "characters": 1077
+    },
+    {
+      "index": 6520,
+      "label": "三",
+      "characters": 1100
+    },
+    {
+      "index": 6560,
+      "label": "四",
+      "characters": 1205
+    },
+    {
+      "index": 6595,
+      "label": "五",
+      "characters": 1057
+    },
+    {
+      "index": 6630,
+      "label": "六",
+      "characters": 1101
+    },
+    {
+      "index": 6667,
+      "label": "七",
+      "characters": 1067
+    },
+    {
+      "index": 6710,
+      "label": "一",
+      "characters": 1110
+    },
+    {
+      "index": 6746,
+      "label": "二",
+      "characters": 1150
+    },
+    {
+      "index": 6775,
+      "label": "三",
+      "characters": 1168
+    },
+    {
+      "index": 6814,
+      "label": "四",
+      "characters": 1237
+    },
+    {
+      "index": 6851,
+      "label": "五",
+      "characters": 1253
+    },
+    {
+      "index": 6874,
+      "label": "六",
+      "characters": 1112
+    },
+    {
+      "index": 6908,
+      "label": "七",
+      "characters": 1150
+    },
+    {
+      "index": 6939,
+      "label": "八",
+      "characters": 1151
+    },
+    {
+      "index": 6971,
+      "label": "九",
+      "characters": 1141
+    },
+    {
+      "index": 7008,
+      "label": "十",
+      "characters": 1144
+    },
+    {
+      "index": 7048,
+      "label": "一",
+      "characters": 1316
+    },
+    {
+      "index": 7068,
+      "label": "二",
+      "characters": 1160
+    },
+    {
+      "index": 7099,
+      "label": "三",
+      "characters": 1222
+    },
+    {
+      "index": 7131,
+      "label": "四",
+      "characters": 1218
+    },
+    {
+      "index": 7164,
+      "label": "五",
+      "characters": 1172
+    },
+    {
+      "index": 7203,
+      "label": "六",
+      "characters": 1220
+    }
+  ],
+  "tension_curve": [
+    {
+      "segment": 1,
+      "sentences": 861,
+      "sentence_length_mean": 28.1,
+      "dialogue_ratio": 0.456,
+      "exclaim_question_per_1000": 0.04,
+      "dash_ellipsis_per_1000": 3.14
+    },
+    {
+      "segment": 2,
+      "sentences": 872,
+      "sentence_length_mean": 27.4,
+      "dialogue_ratio": 0.365,
+      "exclaim_question_per_1000": 0.04,
+      "dash_ellipsis_per_1000": 3.47
+    },
+    {
+      "segment": 3,
+      "sentences": 830,
+      "sentence_length_mean": 29.0,
+      "dialogue_ratio": 0.328,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 3.24
+    },
+    {
+      "segment": 4,
+      "sentences": 829,
+      "sentence_length_mean": 29.0,
+      "dialogue_ratio": 0.352,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.11
+    },
+    {
+      "segment": 5,
+      "sentences": 870,
+      "sentence_length_mean": 27.6,
+      "dialogue_ratio": 0.414,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 3.2
+    },
+    {
+      "segment": 6,
+      "sentences": 932,
+      "sentence_length_mean": 25.8,
+      "dialogue_ratio": 0.467,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 3.41
+    },
+    {
+      "segment": 7,
+      "sentences": 861,
+      "sentence_length_mean": 28.0,
+      "dialogue_ratio": 0.432,
+      "exclaim_question_per_1000": 0.04,
+      "dash_ellipsis_per_1000": 5.15
+    },
+    {
+      "segment": 8,
+      "sentences": 826,
+      "sentence_length_mean": 29.1,
+      "dialogue_ratio": 0.461,
+      "exclaim_question_per_1000": 0.0,
+      "dash_ellipsis_per_1000": 4.91
+    },
+    {
+      "segment": 9,
+      "sentences": 833,
+      "sentence_length_mean": 28.9,
+      "dialogue_ratio": 0.526,
+      "exclaim_question_per_1000": 0.04,
+      "dash_ellipsis_per_1000": 5.56
+    },
+    {
+      "segment": 10,
+      "sentences": 826,
+      "sentence_length_mean": 29.1,
+      "dialogue_ratio": 0.356,
+      "exclaim_question_per_1000": 0.04,
+      "dash_ellipsis_per_1000": 6.16
+    }
+  ],
+  "exclaim_peak_segment": 1,
+  "dialogue_peak_segment": 9,
+  "similes": [
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.032,
+      "text": "少しまえから気温が高くなり、むしむしすると思っていたが、まるで夕立のように、大粒の雨がさあっと降りだしてきた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.13,
+      "text": "まして、伴れが拾い屋である、乞食のような恰好に頬冠りをし、袋を肩にひっ掛け、手には長い竹の割り箸を持っている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.278,
+      "text": "六十四五になる枯木のように痩せた、躯の小さな老人で、かぶった耄碌頭巾の間から、霜柱のように白い無精髭が見えた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.34,
+      "text": "慌てて足をふん張ったが、勢いがついているので、二人はみごとにもんどりを打ち、そのまま毬のように転げ落ちて来た。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.359,
+      "text": "この世のものとは思えないぶきみな声で、同じことを三度も繰り返して云い、そのまますっと煙のように消えてしまった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.688,
+      "text": "つなはまったく石のように硬ばった顔で、しかし眼にはらんらんと怒りの焔をこめて、刺しとおすように万三郎を睨んだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.762,
+      "text": "濃い眉が歪み、眼は鷲のようにするどい光りを放った、僅かに開いた唇の間から、白い歯が見え、頬がぐっと落ち窪んだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.919,
+      "text": "待っていたように、道の左側から鉄砲組が走り出て来て、すでに火繩のかかっている銃口を、一斉に行列のほうへ向けた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.593,
+      "text": "躰勢もよかったし、満身の怒りをこめた力で、注文したように当て身がきまり、蔵人はうっといって前のめりに倒れた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.92,
+      "text": "塗笠を冠ったもう一人の馬上の武士も、行列の者たちも虚を衝かれたようすで、その場に釘付けになったようにみえた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.931,
+      "text": "魯鈍で無表情な助の顔が、兇猛な野獣のように、ひきつったとみると、息杖を持ち直して侍のうしろから撲りかかった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.122,
+      "text": "「きさまらのようなけだものには理屈を云ったって始まらねえ、これから弱い者を泣かせねえように性をつけてやる」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.489,
+      "text": "といったふうな、かた言の鳴き方であるが、静かな谷にこだまして、いかにも春のおとずれのように、冴えて聞えた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.669,
+      "text": "東麿などと、名前だけは公卿のようにみやびやかであるが、当人は年も六十三になり、白髪頭で腰が曲りかけている。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.737,
+      "text": "彼の通されたのは、炉の切ってある部屋で、無風流な彼にはわからないが、火のない炉に、古ぼけたような茶釜が掛っていた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.743,
+      "text": "刀を見る作法などは知らぬかのように、ごくむぞうさに見て、元のようにおさめると、それを下に置きながら云った。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.833,
+      "text": "腹を貫くような掛け声と、倒れる敵の悲鳴とが、まるでその腕の冴えを証明するかのように、あたりを圧して響いた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.924,
+      "text": "どちらも人相のよくない男である、三十がらみの人足は髭だらけの頬に大きな傷痕があり、そこだけ髭を剃ったようにみえる。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.241,
+      "text": "印象はかなり鮮やかなのだが、思いだそうとするとぼやけてしまい、ぜんたいの顔はまるでとらえようがなかった。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.67,
+      "text": "――とうまるでは囚人を護送するとうまる駕籠を連想するから、これはいやがらせと思うのもむりはないであろう。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.02,
+      "text": "「若いお嬢さまのような方でございます、頭巾をしていらっしゃるのでよくはわかりませんけれど、ごようすでみるとそのような」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.19,
+      "text": "「ねえ万三郎さま、もういちどさっきのように抱いて下さいましな、ぎゅうっと、息の止るくらいきつく、ねえ」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.499,
+      "text": "が、万三郎が脇へ躱すと、休之助はつぶてのように、弟の横を走りぬけて、向うの松林の中へとび込んでいった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.7,
+      "text": "しかし、休之助が低い声で云った次の言葉を聞くと、頭から水を浴びたように、はっと立停って、眼をみはった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.942,
+      "text": "小さな爆発が起こるたびに、その赤い焔を稲妻のような閃光が貫き、眩しいほどきらきら光る火の粉が、渦を巻いて噴きあがった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.124,
+      "text": "右四つに組んだ巨躰は千斤の鉄塊のように重く、じりじりと引く双腕の膂力はまんりきのように強靱であった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.273,
+      "text": "人の好さそうな老人の、心からの親切に、少なからず良心は咎めたが、注文したような条件なので、そのすすめに従ったのであった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.336,
+      "text": "捉まった枝が折れて、転げ落ちそうになることもあったが、やがて斜面を登りつめて、台地のような処へ出た。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.443,
+      "text": "かれらのうしろから、黒い人影がついて来て、砂屋の納屋のほうへ、つぶてのように消えたが、かれらはむろん気づきもしなかった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.592,
+      "text": "彼は怒りのために嚇となり、つぶてのように駆けつけると、かよの上にのしかかっている蔵人の衿を掴み、力まかせにひき起こした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.904,
+      "text": "東の空がやや白みを帯びた程度で、あたりはまだ暗く、濃い霧が幕を引いたように猿橋の宿を深く包んでいた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.043,
+      "text": "ひどい方だと、女が万三郎を睨んだとき、わざとのように足音をさせて、――それがこういう家の習慣らしい――女中があがって来た。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.201,
+      "text": "こっちが乞食のような恰好をして、あてもなしにうろうろ歩きまわっているとき、彼女は娘の身で、敢然と敵の荷駄を追っていたのだ。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.355,
+      "text": "訴えるように、悲しげに、びょうびょうと長く尾をひいて、地の底でなにものかが慟哭するかのように、陰々と聞えて来るのであった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.523,
+      "text": "もちろん眠るどころではあるまい、恐怖と寒さとでがたがた震えながら、充血した眼で、放心したように闇のどこかを見まもっていた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.71,
+      "text": "「渡辺の口ぶりでは、その男は枢要な位置にいる人間のようだ、おそらく、その料亭へ来るときには、蔭に護衛者が付いているだろう」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.804,
+      "text": "とつなは口ごもったが、すぐ思いきったように、かよが万三郎を取返すために提案した二つの条件を語った。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.361,
+      "text": "月の光りの下で、それは幻のようにおぼろであったが、山霊の哭く声は、正にそのあたりから聞えて来た。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.536,
+      "text": "こんなうまい話はないし、金五両という、夢のような大金を貰ったので、若者たちはみなのぼせあがった。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.625,
+      "text": "そうでなくとも凄気のある相貌が、いまはまるで幽鬼のように見え、万三郎はぞっと背中から寒くなった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.721,
+      "text": "そして、遠い風の音のように、自分たちがよくうたった、毬唄の文句が記憶のなかからよみがえってきた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.732,
+      "text": "「紀州から手紙が来て、半次はうまく中谷という者に出合ったそうだ、もう用事も終ったようだから、まもなく帰って来るだろうと思う」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.754,
+      "text": "「ちづか」というのが自分の名と似ているのがいいし、おかみさんも親切、お民も妹のように可愛かった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.999,
+      "text": "かよは良人により添って、はれぼったい眼を細めて、かれらの飛び去るのを、放心したように眺めていた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.115,
+      "text": "三島というのが権あにいの次とみえ、これは相撲くずれかなんぞのような、ずぬけて巨きな躯であった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.306,
+      "text": "「どうもまずいことになりました、貴方がたの此処にいらっしゃることが感づかれたようなぐあいです」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.337,
+      "text": "休之助の目測は誤っていたらしい、登ってくるかれらのほうへ、こっちから近寄ったようなものである。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.398,
+      "text": "本当の娘のようなつもりでお世話をしていました、どうか御無事に、――お二人とも、どうか御無事に」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.739,
+      "text": "あさましいはなしではあるが、いちど空腹感に気づくと、それを待ってでもいたように腹が鳴りだした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.741,
+      "text": "その動作の一つ一つが、尺で計るかのようにきっぱりとして、半歩の迷いもなく、床を背にして坐った。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.127,
+      "text": "信州も屁十もいなくなり、権あにいもずっと向う（二十間もあろう）に立って、片方の腕を抱えたまま、怯えたような眼でこっちを見ていた。"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.32,
+      "text": "「これで初めて、敵の一人がうかび上ったわけです、これまではまるで雲を掴むようだったが、ともかく尻尾だけは押えることができますよ」"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.462,
+      "text": "おちづはそう云って、告白の恥ずかしさを隠そうとするかのように、とつぜん、半次に頬ずりをした。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.723,
+      "text": "しかし蚊の脛のように細くて、乾からびた貧弱な腕だから、腕捲りをしても勇ましくはみえなかった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.771,
+      "text": "それも升屋の自慢の一つだそうで、どこかの遠い島から持って来た、軽石のようなもので造ってある。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.899,
+      "text": "わらびと聞いて、万三郎はくしゃんと顔を歪め、恐ろしい物をでも見たように、慌てて椀へ蓋をした。"
+    },
+    {
+      "markers": [
+        "ようだ",
+        "まるで"
+      ],
+      "position": 0.954,
+      "text": "そうして、右手に刀を提げ、まっ赤な焔に照らし出されている姿は、まるで悪鬼のように凄くみえた。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.985,
+      "text": "「そうなるとおれのような旗本の四男坊には高峰の花だから、いまのうちに酌をしてもらうとしよう」"
+    },
+    {
+      "markers": [
+        "まるで"
+      ],
+      "position": 0.208,
+      "text": "黄昏の色が濃くなっているので、よく見分けはつかないが、三人ともまるで知らない人間であった。"
+    },
+    {
+      "markers": [
+        "ようだ"
+      ],
+      "position": 0.339,
+      "text": "高さは三十尺ばかり、断崖というほどではなく、下は枯木林で、向うに寺院のような建物が見えた。"
+    }
+  ],
+  "reduplications": {
+    "ばらばら": 6,
+    "ぜんぜん": 5,
+    "そろそろ": 4,
+    "びょうびょう": 4,
+    "おいおい": 3,
+    "んだんだ": 3,
+    "いちいち": 3,
+    "やれやれ": 3,
+    "みるみる": 3,
+    "じりじり": 2,
+    "ぐいぐい": 2,
+    "つぎつぎ": 2,
+    "ちらちら": 2,
+    "がりがり": 2,
+    "うろうろ": 2,
+    "それはそれは": 2,
+    "むしむし": 1,
+    "なまなま": 1,
+    "ぴいぴい": 1,
+    "おろおろ": 1,
+    "ばたばた": 1,
+    "わっわっ": 1,
+    "ぶらぶら": 1,
+    "ほほほほ": 1,
+    "へらへら": 1,
+    "ぎしぎし": 1,
+    "ぐんぐん": 1,
+    "さくさく": 1,
+    "はっはっ": 1,
+    "がちがち": 1,
+    "いやいや": 1,
+    "どかどか": 1,
+    "よせよせ": 1,
+    "ばかばか": 1,
+    "ざらざら": 1,
+    "ぶるぶる": 1,
+    "ゆらゆら": 1,
+    "そもそも": 1,
+    "きらきら": 1,
+    "しゅしゅ": 1
+  },
+  "opening": [
+    "変事",
+    "九月中旬のある晴れた日の午後。",
+    "芝新網にある紀州家の浜屋敷の門前へ、一人の旅装の若者が来て立った。"
+  ],
+  "closing": [
+    "「いいえ」",
+    "とかよが良人を見あげながら云った。",
+    "「わたくしたちの日が始まるんですわ」"
+  ],
+  "repetitions": [
+    {
+      "head": "――この",
+      "count": 3,
+      "sample": [
+        "――この木はなんだと思います。",
+        "――この花の名を云ってごらんなさい。"
+      ]
+    }
+  ],
+  "vocabulary": {
+    "万三郎": 975,
+    "休之助": 396,
+    "自分": 205,
+    "二人": 202,
+    "徹之助": 163,
+    "半次": 157,
+    "一人": 91,
+    "相手": 87,
+    "人間": 83,
+    "江戸": 78,
+    "本当": 68,
+    "半兵衛": 68,
+    "伝次": 68,
+    "彼女": 63,
+    "此処": 63,
+    "兵馬": 63,
+    "貴女": 62,
+    "三人": 61,
+    "又平": 58,
+    "三郎": 57,
+    "屋敷": 54,
+    "花田": 53,
+    "荷駄": 51,
+    "虎造": 49,
+    "手紙": 48,
+    "甲野": 46,
+    "斧田": 46,
+    "小屋": 46,
+    "三島": 44,
+    "結城": 41,
+    "五人": 40,
+    "少年": 39,
+    "事実": 38,
+    "振返": 37,
+    "老人": 36,
+    "浜屋敷": 34,
+    "同時": 34,
+    "言葉": 34,
+    "八重": 34,
+    "権兵衛": 34
+  }
+}

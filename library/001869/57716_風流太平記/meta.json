@@ -1,0 +1,16 @@
+{
+  "work_id": "57716",
+  "person_id": "001869",
+  "title": "風流太平記",
+  "subtitle": "",
+  "author": "山本周五郎",
+  "path": "cards/001869/files/57716_ruby_72421/57716_ruby_72421.txt",
+  "source": "https://raw.githubusercontent.com/aozorahack/aozorabunko_text/HEAD/cards/001869/files/57716_ruby_72421/57716_ruby_72421.txt",
+  "card": "https://www.aozora.gr.jp/cards/001869/card57716.html",
+  "mirror": "https://github.com/aozorahack/aozorabunko_text",
+  "encoding_original": "Shift_JIS (cp932)",
+  "ruby": "除去",
+  "colophon": "底本：「山本周五郎全集第六巻　風流太平記」新潮社\n　　　1983（昭和58）年5月25日発行\n初出：「四国新聞」\n　　　1952（昭和27）年12月12日～1953（昭和28）年7月13日\n※底本は、物を数える際や地名などに用いる「ヶ」（区点番号5-86）を、大振りにつくっています。\n※「贔負」と「贔屓」の混在は底本通りです。\n※大見出し「ながれる雲」の中見出し「一」の中で「休之助、万三郎の兄弟と、中谷兵馬、太田嘉助らの四人が、甲府へ向って立っていった。」の記述と、その後にある「そして、五人が出立するとすぐ、おちづと半次を前に坐らせて、将来どうするつもりかと訊いた。」の記述における人数が異なっているのは、底本通りです。\n入力：特定非営利活動法人はるかぜ\n校正：北川松生\n2020年12月27日作成\n青空文庫作成ファイル：\nこのファイルは、インターネットの図書館、青空文庫（https://www.aozora.gr.jp/）で作られました。入力、校正、制作にあたったのは、ボランティアの皆さんです。",
+  "characters": 252097,
+  "fetched_on": "2026-09-23"
+}

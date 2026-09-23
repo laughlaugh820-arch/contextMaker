@@ -28,6 +28,9 @@ import analyze as A  # noqa: E402  計測は抽出ツールと同じ関数で行
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ANALYSIS = REPO_ROOT / "analysis"
 DISTRIBUTION = ANALYSIS / "corpus_distribution.json"
+MODERN = ANALYSIS / "author_片岡義男.json"
+# 片岡義男の作品のうち、小説でないもの（エッセイ）。文体の目標値から外す
+NONFICTION = {"56823"}
 GUIDE_DIR = REPO_ROOT / "context" / "guide"
 # 渡す順。文体の作法 → 展開の作法
 GUIDE_FILES = ["story_craft.md", "story_structure.md"]
@@ -342,21 +345,23 @@ def measure_story(text: str) -> dict:
 
 
 def targets_for(args: argparse.Namespace, works: list[dict]) -> dict:
-    """目標値。作家を指定していればその作家の平均、なければ無作為2,000作品の中央値。"""
+    """目標値。--author があればその作家、なければ --baseline で選んだ群の中央値。
+
+    fiction（既定）: library/ の小説（名作コーパス＋戦後の長編）
+    modern:         片岡義男の小説（1970〜90年代、数値のみ保存）
+    all:            ミラーの無作為2,000作品。随筆・評論を含むので文が長めに出る
+
+    初版は all を既定にしていたが、ずれの主因が時代ではなくジャンル（随筆・評論の混入）だと
+    分かったので、小説だけの群を既定にした（docs/ERA_STYLE.md）。
+    """
     targets = {"characters": args.length}
+    baseline = getattr(args, "baseline", None) or "fiction"
     if args.author:
-        mine = [w for w in works if w["author"] == args.author]
-        targets.update({
-            "sentence_length_mean": statistics.fmean(w["stats"]["sentence_length_mean"] for w in mine),
-            "sentence_length_cv": statistics.fmean(
-                w["stats"]["sentence_length_stdev"] / w["stats"]["sentence_length_mean"] for w in mine),
-            "simile_per_1000": statistics.fmean(
-                w["stats"].get("simile_per_1000", len(w["similes"]) / w["stats"]["characters"] * 1000)
-                for w in mine),
-            "dialogue_ratio": statistics.fmean(w["stats"]["dialogue_ratio"] for w in mine),
-        })
-        targets["source"] = f"{args.author} の平均"
-    elif DISTRIBUTION.exists():
+        mine = [w["stats"] for w in works if w["author"] == args.author]
+        source = f"{args.author} の平均"
+        rows = mine
+        agg = statistics.fmean
+    elif baseline == "all" and DISTRIBUTION.exists():
         dist = json.loads(DISTRIBUTION.read_text(encoding="utf-8"))
         targets.update({
             "sentence_length_mean": dist["sentence_length_mean"]["median"],
@@ -364,9 +369,31 @@ def targets_for(args: argparse.Namespace, works: list[dict]) -> dict:
             "simile_per_1000": dist["simile_per_1000"]["median"],
             "dialogue_ratio": dist["dialogue_ratio"]["median"],
         })
-        targets["source"] = f"無作為 {dist['n']:,} 作品の中央値"
+        targets["source"] = f"無作為 {dist['n']:,} 作品の中央値（随筆・評論を含む）"
+        return targets
+    elif baseline == "modern" and MODERN.exists():
+        rows = [w for w in json.loads(MODERN.read_text(encoding="utf-8"))["works"]
+                if w["work_id"] not in NONFICTION]
+        # author_*.json は作品ごとに sentence_length_cv を持つ
+        source = f"片岡義男の小説 {len(rows)} 作品の中央値"
+        agg = statistics.median
     else:
-        targets["source"] = "字数のみ（corpus_distribution.json が無い）"
+        rows = [w["stats"] for w in works]
+        source = f"小説 {len(rows)} 作品の中央値"
+        agg = statistics.median
+
+    def cv(row: dict) -> float:
+        if "sentence_length_cv" in row:
+            return row["sentence_length_cv"]
+        return row["sentence_length_stdev"] / row["sentence_length_mean"]
+
+    targets.update({
+        "sentence_length_mean": agg(r["sentence_length_mean"] for r in rows),
+        "sentence_length_cv": agg(cv(r) for r in rows),
+        "simile_per_1000": agg(r.get("simile_per_1000", 0) for r in rows),
+        "dialogue_ratio": agg(r["dialogue_ratio"] for r in rows),
+    })
+    targets["source"] = source
     return targets
 
 
@@ -636,6 +663,9 @@ def add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--seed", type=int, default=0, help="実例を選ぶ乱数の種")
     parser.add_argument("--plot", choices=sorted(PLOT_TYPES),
                         help="展開の型（一撃／反復／露見／枠／心境）。context/guide/story_structure.md 参照")
+    parser.add_argument("--baseline", choices=["fiction", "modern", "all"], default="fiction",
+                        help="文体の目標値をどの群から取るか。fiction=小説（既定）／modern=片岡義男の小説／"
+                             "all=無作為2,000作品（随筆・評論を含む）")
     parser.add_argument("--avoid", nargs="*", default=[],
                         help="使わせない題材・仕掛け（例: --avoid 髪の毛 祖父の遺品）")
 

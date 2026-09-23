@@ -13,7 +13,9 @@ context/guide/story_craft.md の数値の出どころ。名作コーパス（lib
 from __future__ import annotations
 
 import argparse
+import csv
 import json
+import re
 import random
 import statistics
 import sys
@@ -25,7 +27,20 @@ import analyze as A  # noqa: E402
 import aozora as Z  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-OUTPUT = REPO_ROOT / "analysis" / "corpus_distribution.json"
+ANALYSIS_DIR = REPO_ROOT / "analysis"
+OUTPUT = ANALYSIS_DIR / "corpus_distribution.json"
+OUTPUT_BY_ERA = REPO_ROOT / "analysis" / "corpus_distribution_by_era.json"
+
+# 奥付の「初出」の年で時代を分ける。初出の記載が無い作品は数えない
+ERAS = [("明治", 1868, 1911), ("大正", 1912, 1925), ("戦前昭和", 1926, 1944), ("戦後", 1945, 2100)]
+FIRST_PUBLISHED = re.compile(r"初出[：:].*?(18[6-9]\d|19\d\d|20\d\d)", re.S)
+LICENSE = re.compile(r"クリエイティブ・コモンズ「([^」]+)」")
+
+
+def era_of(year: int | None) -> str | None:
+    if year is None:
+        return None
+    return next((name for name, lo, hi in ERAS if lo <= year <= hi), None)
 
 # 標本に入れる条件。韻文・文語・断片を除く
 MIN_CHARS, MAX_CHARS = 3000, 300000
@@ -135,19 +150,98 @@ def summarize(rows: list[dict]) -> dict:
     }
 
 
+def per_work_numbers(row: dict) -> dict:
+    """保存用に、数値だけを残す（引用や本文の断片は含めない）。"""
+    return {k: (round(v, 3) if isinstance(v, float) else v)
+            for k, v in row.items() if k != "simile_markers"}
+
+
+def run_by_era(cards: Path, output: Path) -> int:
+    """ミラー全体を初出年で時代に分け、時代ごとの分布を出す。"""
+    buckets: dict[str, list[dict]] = {name: [] for name, _, _ in ERAS}
+    scanned = no_year = 0
+    for path in sorted(cards.glob("*/files/*/*.txt")):
+        scanned += 1
+        try:
+            plain, meta = Z.to_plain_text(Z.decode(path.read_bytes()))
+        except Exception:
+            continue
+        m = FIRST_PUBLISHED.search(meta.get("colophon", ""))
+        era = era_of(int(m.group(1)) if m else None)
+        if era is None:
+            no_year += 1
+            continue
+        row = measure(plain)
+        if row:
+            buckets[era].append(row)
+    result = {"scanned": scanned, "no_first_published_year": no_year,
+              "eras": {name: summarize(rows) for name, rows in buckets.items() if len(rows) >= 30}}
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"{scanned:,} 作品を走査（初出年なし {no_year:,}）-> {output.relative_to(REPO_ROOT)}")
+    for name, summary in result["eras"].items():
+        print(f"  {name:<6} n={summary['n']:>5}  平均文長 中央{summary['sentence_length_mean']['median']:>5}  "
+              f"直喩 中央{summary['simile_per_1000']['median']:>5}  会話率 中央{summary['dialogue_ratio']['median']:>5}")
+    return 0
+
+
+def run_author(cards: Path, author: str, output: Path) -> int:
+    """作家を指定して、作品ごとの数値と全体の要約を出す。本文も引用も保存しない。"""
+    catalog = REPO_ROOT / "index" / "catalog.tsv"
+    rows = [r for r in csv.DictReader(catalog.open(encoding="utf-8"), delimiter="\t")
+            if r.get("path") and author in (r.get("author") or "")]
+    works, measured = [], []
+    for r in rows:
+        path = cards.parent / r["path"]
+        if not path.exists():
+            continue
+        plain, meta = Z.to_plain_text(Z.decode(path.read_bytes()))
+        row = measure(plain)
+        if not row:
+            continue
+        colophon = meta.get("colophon", "")
+        lic = LICENSE.search(colophon)
+        year = FIRST_PUBLISHED.search(colophon)
+        measured.append(row)
+        works.append({"work_id": r["work_id"], "title": r["title"], "author": r["author"],
+                      "first_published": int(year.group(1)) if year else None,
+                      "license": f"CC {lic.group(1)}" if lic else "著作権切れ",
+                      "card": f"https://www.aozora.gr.jp/cards/{r['person_id']}/card{r['work_id']}.html",
+                      **per_work_numbers(row)})
+    result = {"author": author,
+              "note": "数値のみ。本文・引用は保存していない。各作品の利用条件は card の図書カードを参照",
+              "works": works, "summary": summarize(measured) if len(measured) >= 3 else None}
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"{author}: {len(works)} 作品 -> {output.relative_to(REPO_ROOT)}")
+    for w in works:
+        print(f"  {w['work_id']:>6} {w['title'][:14]:<14} {w['first_published']}  平均文長 {w['sentence_length_mean']:>5}  "
+              f"直喩 {w['simile_per_1000']:>5}  会話率 {w['dialogue_ratio']:>5}  {w['license']}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--mirror", required=True, help="aozorabunko_text のクローン先")
     parser.add_argument("--n", type=int, default=2000, help="標本の作品数（既定 2000）")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--output", default=str(OUTPUT))
+    parser.add_argument("--output", default=None)
+    parser.add_argument("--by-era", action="store_true",
+                        help="ミラー全体を初出年で時代に分け、時代ごとの分布を出す")
+    parser.add_argument("--author", help="作家を指定し、作品ごとの数値を出す（本文・引用は保存しない）")
     args = parser.parse_args(argv)
 
     cards = Path(args.mirror).resolve() / "cards"
     files = sorted(cards.glob("*/files/*/*.txt"))
     if not files:
         sys.exit(f"ミラーの cards ディレクトリにテキストが無い: {cards}")
+    if args.by_era:
+        return run_by_era(cards, Path(args.output or OUTPUT_BY_ERA).resolve())
+    if args.author:
+        default = ANALYSIS_DIR / f"author_{args.author}.json"
+        return run_author(cards, args.author, Path(args.output or default).resolve())
+    args.output = args.output or str(OUTPUT)
     random.Random(args.seed).shuffle(files)
 
     rows, scanned = [], 0

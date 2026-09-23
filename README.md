@@ -107,7 +107,18 @@ $ python3 tools/build_context.py
 ```console
 $ python3 tools/corpus_stats.py --mirror /tmp/azmirror --n 2000
 # -> analysis/corpus_distribution.json
+
+# 初出年で時代に分けた分布
+$ python3 tools/corpus_stats.py --mirror /tmp/azmirror --by-era
+# -> analysis/corpus_distribution_by_era.json
+
+# 作家を指定して作品ごとの数値を出す（本文・引用は保存しない。許諾公開の作品向け）
+$ python3 tools/corpus_stats.py --mirror /tmp/azmirror --author 片岡義男
+# -> analysis/author_片岡義男.json
 ```
+
+片岡義男の作品は存命作家の許諾公開で、CC 表示-非営利-改変禁止 2.1 日本。
+取得ツールの `plain.txt` は注記や奥付を削る改変版になるので、本文は保存せず数値だけを残している。
 
 ## 4. 物語の生成 — `tools/story.py`
 
@@ -145,6 +156,7 @@ APIキーをリポジトリや環境に置かずに済むので、通常は `cli
 | `--similes` | 渡す比喩の実例数（既定 20） |
 | `--plot` | 展開の型。`一撃`／`反復`／`露見`／`枠`／`心境`。`context/guide/story_structure.md` の型に対応 |
 | `--avoid` | 使わせない題材・仕掛け。同じテーマでモデルが最初に思いつく定型を外すため（例: `--avoid 髪の毛 祖父の遺品`） |
+| `--baseline` | 文体の目標値をどの群から取るか。`fiction`（小説54本、既定）／`modern`（片岡義男の小説）／`all`（無作為2,000作品、随筆・評論を含む）。`docs/ERA_STYLE.md` |
 | `--revise` | 生成後に計測し、外れた指標を指定して書き直させる回数の上限（既定 2、`0` で無効） |
 | `--effort` | 思考の深さ `low`〜`max`（既定 `high`、api 経路のみ） |
 

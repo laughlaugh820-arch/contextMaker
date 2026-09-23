@@ -1,0 +1,530 @@
+{
+  "scanned": 17436,
+  "no_first_published_year": 7628,
+  "eras": {
+    "明治": {
+      "n": 282,
+      "sentence_length_mean": {
+        "p10": 27.556,
+        "p25": 32.609,
+        "median": 39.499,
+        "p75": 53.562,
+        "p90": 75.138
+      },
+      "sentence_length_max": {
+        "p10": 115,
+        "p25": 147,
+        "median": 191,
+        "p75": 255,
+        "p90": 337
+      },
+      "sentence_length_cv": {
+        "p10": 0.53,
+        "p25": 0.603,
+        "median": 0.675,
+        "p75": 0.794,
+        "p90": 0.883
+      },
+      "comma_per_sentence": {
+        "p10": 0.68,
+        "p25": 0.99,
+        "median": 1.48,
+        "p75": 2.38,
+        "p90": 3.04
+      },
+      "first_sentence_length": {
+        "p10": 7,
+        "p25": 13,
+        "median": 31,
+        "p75": 51,
+        "p90": 89
+      },
+      "first_sentence_percentile_mean": 0.426,
+      "last_sentence_length": {
+        "p10": 14,
+        "p25": 20,
+        "median": 34,
+        "p75": 62,
+        "p90": 97
+      },
+      "last_sentence_percentile_mean": 0.501,
+      "paragraph_length_mean": {
+        "p10": 73.166,
+        "p25": 104.761,
+        "median": 181.149,
+        "p75": 326.27,
+        "p90": 545.231
+      },
+      "dialogue_ratio": {
+        "p10": 0.001,
+        "p25": 0.007,
+        "median": 0.026,
+        "p75": 0.15,
+        "p90": 0.248
+      },
+      "dialogue_later_half_share_when_present": 0.516,
+      "exclaim_question_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0,
+        "p75": 0.47,
+        "p90": 1.17
+      },
+      "exclaim_question_zero_share": 0.585,
+      "exclaim_peak_segment_share": {
+        "1": 0.051,
+        "2": 0.137,
+        "3": 0.077,
+        "4": 0.094,
+        "5": 0.077,
+        "6": 0.103,
+        "7": 0.068,
+        "8": 0.085,
+        "9": 0.103,
+        "10": 0.205
+      },
+      "dash_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0,
+        "p75": 0.37,
+        "p90": 1.16
+      },
+      "dash_zero_share": 0.567,
+      "ellipsis_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.0,
+        "p75": 0.57,
+        "p90": 1.49
+      },
+      "ellipsis_zero_share": 0.557,
+      "dash_and_ellipsis_heavy_share": 0.043,
+      "dash_and_ellipsis_heavy_expected_if_independent": 0.019,
+      "kanji_ratio": {
+        "p10": 0.262,
+        "p25": 0.296,
+        "median": 0.33,
+        "p75": 0.372,
+        "p90": 0.412
+      },
+      "simile_per_1000": {
+        "p10": 0.54,
+        "p25": 0.946,
+        "median": 1.387,
+        "p75": 1.865,
+        "p90": 2.379
+      },
+      "simile_marker_share": {
+        "ようだ": 0.453,
+        "ごとし": 0.414,
+        "あたかも": 0.05,
+        "まるで": 0.046,
+        "似る": 0.028,
+        "さながら": 0.006,
+        "みたい": 0.002,
+        "見紛う": 0.001
+      },
+      "reduplication_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.273,
+        "p75": 0.574,
+        "p90": 1.056
+      }
+    },
+    "大正": {
+      "n": 708,
+      "sentence_length_mean": {
+        "p10": 25.712,
+        "p25": 29.908,
+        "median": 35.677,
+        "p75": 46.597,
+        "p90": 57.694
+      },
+      "sentence_length_max": {
+        "p10": 98,
+        "p25": 118,
+        "median": 152,
+        "p75": 203,
+        "p90": 273
+      },
+      "sentence_length_cv": {
+        "p10": 0.521,
+        "p25": 0.57,
+        "median": 0.639,
+        "p75": 0.724,
+        "p90": 0.817
+      },
+      "comma_per_sentence": {
+        "p10": 0.59,
+        "p25": 0.99,
+        "median": 1.44,
+        "p75": 1.99,
+        "p90": 2.43
+      },
+      "first_sentence_length": {
+        "p10": 7,
+        "p25": 16,
+        "median": 29,
+        "p75": 49,
+        "p90": 79
+      },
+      "first_sentence_percentile_mean": 0.462,
+      "last_sentence_length": {
+        "p10": 10,
+        "p25": 19,
+        "median": 36,
+        "p75": 55,
+        "p90": 86
+      },
+      "last_sentence_percentile_mean": 0.521,
+      "paragraph_length_mean": {
+        "p10": 63.124,
+        "p25": 84.474,
+        "median": 130.187,
+        "p75": 220.5,
+        "p90": 327.091
+      },
+      "dialogue_ratio": {
+        "p10": 0.006,
+        "p25": 0.026,
+        "median": 0.104,
+        "p75": 0.213,
+        "p90": 0.295
+      },
+      "dialogue_later_half_share_when_present": 0.536,
+      "exclaim_question_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.09,
+        "p75": 0.97,
+        "p90": 2.68
+      },
+      "exclaim_question_zero_share": 0.438,
+      "exclaim_peak_segment_share": {
+        "1": 0.068,
+        "2": 0.095,
+        "3": 0.093,
+        "4": 0.103,
+        "5": 0.088,
+        "6": 0.103,
+        "7": 0.088,
+        "8": 0.088,
+        "9": 0.126,
+        "10": 0.148
+      },
+      "dash_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.23,
+        "p75": 0.84,
+        "p90": 1.88
+      },
+      "dash_zero_share": 0.387,
+      "ellipsis_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.2,
+        "p75": 0.91,
+        "p90": 2.16
+      },
+      "ellipsis_zero_share": 0.412,
+      "dash_and_ellipsis_heavy_share": 0.086,
+      "dash_and_ellipsis_heavy_expected_if_independent": 0.05,
+      "kanji_ratio": {
+        "p10": 0.176,
+        "p25": 0.252,
+        "median": 0.3,
+        "p75": 0.351,
+        "p90": 0.395
+      },
+      "simile_per_1000": {
+        "p10": 0.42,
+        "p25": 0.756,
+        "median": 1.156,
+        "p75": 1.665,
+        "p90": 2.332
+      },
+      "simile_marker_share": {
+        "ようだ": 0.653,
+        "ごとし": 0.213,
+        "まるで": 0.063,
+        "似る": 0.029,
+        "あたかも": 0.025,
+        "みたい": 0.011,
+        "さながら": 0.006,
+        "見紛う": 0.0
+      },
+      "reduplication_per_1000": {
+        "p10": 0.0,
+        "p25": 0.105,
+        "median": 0.28,
+        "p75": 0.618,
+        "p90": 1.115
+      }
+    },
+    "戦前昭和": {
+      "n": 1836,
+      "sentence_length_mean": {
+        "p10": 25.042,
+        "p25": 28.828,
+        "median": 35.321,
+        "p75": 47.591,
+        "p90": 61.434
+      },
+      "sentence_length_max": {
+        "p10": 107,
+        "p25": 130,
+        "median": 163,
+        "p75": 207,
+        "p90": 273
+      },
+      "sentence_length_cv": {
+        "p10": 0.538,
+        "p25": 0.606,
+        "median": 0.692,
+        "p75": 0.775,
+        "p90": 0.858
+      },
+      "comma_per_sentence": {
+        "p10": 0.81,
+        "p25": 1.09,
+        "median": 1.46,
+        "p75": 1.91,
+        "p90": 2.39
+      },
+      "first_sentence_length": {
+        "p10": 5,
+        "p25": 12,
+        "median": 26,
+        "p75": 48,
+        "p90": 74
+      },
+      "first_sentence_percentile_mean": 0.411,
+      "last_sentence_length": {
+        "p10": 9,
+        "p25": 16,
+        "median": 34,
+        "p75": 53,
+        "p90": 78
+      },
+      "last_sentence_percentile_mean": 0.513,
+      "paragraph_length_mean": {
+        "p10": 48.71,
+        "p25": 62.857,
+        "median": 100.476,
+        "p75": 195.486,
+        "p90": 302.875
+      },
+      "dialogue_ratio": {
+        "p10": 0.007,
+        "p25": 0.034,
+        "median": 0.157,
+        "p75": 0.288,
+        "p90": 0.443
+      },
+      "dialogue_later_half_share_when_present": 0.578,
+      "exclaim_question_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.54,
+        "p75": 1.52,
+        "p90": 3.41
+      },
+      "exclaim_question_zero_share": 0.259,
+      "exclaim_peak_segment_share": {
+        "1": 0.053,
+        "2": 0.091,
+        "3": 0.103,
+        "4": 0.097,
+        "5": 0.102,
+        "6": 0.119,
+        "7": 0.107,
+        "8": 0.117,
+        "9": 0.097,
+        "10": 0.114
+      },
+      "dash_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.52,
+        "p75": 2.17,
+        "p90": 4.6
+      },
+      "dash_zero_share": 0.264,
+      "ellipsis_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.53,
+        "p75": 1.63,
+        "p90": 3.22
+      },
+      "ellipsis_zero_share": 0.31,
+      "dash_and_ellipsis_heavy_share": 0.213,
+      "dash_and_ellipsis_heavy_expected_if_independent": 0.144,
+      "kanji_ratio": {
+        "p10": 0.215,
+        "p25": 0.26,
+        "median": 0.292,
+        "p75": 0.321,
+        "p90": 0.357
+      },
+      "simile_per_1000": {
+        "p10": 0.502,
+        "p25": 0.78,
+        "median": 1.142,
+        "p75": 1.566,
+        "p90": 2.05
+      },
+      "simile_marker_share": {
+        "ようだ": 0.721,
+        "ごとし": 0.093,
+        "まるで": 0.087,
+        "みたい": 0.048,
+        "似る": 0.026,
+        "あたかも": 0.016,
+        "さながら": 0.008,
+        "見紛う": 0.0
+      },
+      "reduplication_per_1000": {
+        "p10": 0.0,
+        "p25": 0.133,
+        "median": 0.366,
+        "p75": 0.702,
+        "p90": 1.095
+      }
+    },
+    "戦後": {
+      "n": 1160,
+      "sentence_length_mean": {
+        "p10": 25.501,
+        "p25": 30.672,
+        "median": 39.249,
+        "p75": 48.75,
+        "p90": 58.267
+      },
+      "sentence_length_max": {
+        "p10": 105,
+        "p25": 127,
+        "median": 163,
+        "p75": 215,
+        "p90": 295
+      },
+      "sentence_length_cv": {
+        "p10": 0.502,
+        "p25": 0.595,
+        "median": 0.67,
+        "p75": 0.762,
+        "p90": 0.848
+      },
+      "comma_per_sentence": {
+        "p10": 0.9,
+        "p25": 1.21,
+        "median": 1.68,
+        "p75": 2.17,
+        "p90": 2.58
+      },
+      "first_sentence_length": {
+        "p10": 5,
+        "p25": 11,
+        "median": 26,
+        "p75": 47,
+        "p90": 68
+      },
+      "first_sentence_percentile_mean": 0.39,
+      "last_sentence_length": {
+        "p10": 9,
+        "p25": 18,
+        "median": 32,
+        "p75": 50,
+        "p90": 73
+      },
+      "last_sentence_percentile_mean": 0.483,
+      "paragraph_length_mean": {
+        "p10": 59.212,
+        "p25": 79.767,
+        "median": 119.814,
+        "p75": 196.941,
+        "p90": 292.944
+      },
+      "dialogue_ratio": {
+        "p10": 0.007,
+        "p25": 0.027,
+        "median": 0.111,
+        "p75": 0.259,
+        "p90": 0.379
+      },
+      "dialogue_later_half_share_when_present": 0.628,
+      "exclaim_question_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.13,
+        "p75": 0.64,
+        "p90": 1.66
+      },
+      "exclaim_question_zero_share": 0.423,
+      "exclaim_peak_segment_share": {
+        "1": 0.064,
+        "2": 0.109,
+        "3": 0.112,
+        "4": 0.099,
+        "5": 0.107,
+        "6": 0.091,
+        "7": 0.112,
+        "8": 0.099,
+        "9": 0.094,
+        "10": 0.113
+      },
+      "dash_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.15,
+        "p75": 0.97,
+        "p90": 2.85
+      },
+      "dash_zero_share": 0.391,
+      "ellipsis_per_1000": {
+        "p10": 0.0,
+        "p25": 0.0,
+        "median": 0.05,
+        "p75": 0.69,
+        "p90": 1.97
+      },
+      "ellipsis_zero_share": 0.475,
+      "dash_and_ellipsis_heavy_share": 0.078,
+      "dash_and_ellipsis_heavy_expected_if_independent": 0.049,
+      "kanji_ratio": {
+        "p10": 0.2,
+        "p25": 0.236,
+        "median": 0.274,
+        "p75": 0.308,
+        "p90": 0.344
+      },
+      "simile_per_1000": {
+        "p10": 0.559,
+        "p25": 0.807,
+        "median": 1.084,
+        "p75": 1.421,
+        "p90": 1.865
+      },
+      "simile_marker_share": {
+        "ようだ": 0.737,
+        "まるで": 0.094,
+        "みたい": 0.073,
+        "ごとし": 0.059,
+        "似る": 0.028,
+        "あたかも": 0.005,
+        "さながら": 0.004,
+        "見紛う": 0.0
+      },
+      "reduplication_per_1000": {
+        "p10": 0.0,
+        "p25": 0.168,
+        "median": 0.333,
+        "p75": 0.603,
+        "p90": 0.943
+      }
+    }
+  }
+}

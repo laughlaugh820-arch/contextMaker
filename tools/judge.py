@@ -331,7 +331,8 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
     return kept, dropped
 
 
-def run_check(story_path: str, judge_path: str, author: str | None, length: int | None) -> dict:
+def run_check(story_path: str, judge_path: str, author: str | None, length: int | None,
+              baseline: str = "fiction") -> dict:
     text, title, body = load_story(story_path)
     judge = load_json(judge_path)
 
@@ -342,7 +343,7 @@ def run_check(story_path: str, judge_path: str, author: str | None, length: int 
 
     targets = None
     if length:
-        ns = argparse.Namespace(author=author, length=length)
+        ns = argparse.Namespace(author=author, length=length, baseline=baseline)
         targets = S.targets_for(ns, S.load_works())
     l1 = check_layer1(body, targets)
     pos, l2 = check_layer2(body, judge.get("structure") or {})
@@ -376,7 +377,7 @@ def print_report(r: dict) -> None:
 
 
 def cmd_check(args: argparse.Namespace) -> int:
-    r = run_check(args.story, args.judge, args.author, args.length)
+    r = run_check(args.story, args.judge, args.author, args.length, args.baseline)
     print_report(r)
     if args.json:
         Path(args.json).write_text(json.dumps(r, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -384,7 +385,7 @@ def cmd_check(args: argparse.Namespace) -> int:
 
 
 def cmd_aggregate(args: argparse.Namespace) -> int:
-    results = [run_check(args.story, j, args.author, args.length) for j in args.judges]
+    results = [run_check(args.story, j, args.author, args.length, args.baseline) for j in args.judges]
     valid = [r for r in results if r["read_to_end"]]
     print(f"『{results[0]['story']}』 判定者 {len(results)} 名、うち最後まで読んだ {len(valid)} 名\n")
 
@@ -471,9 +472,12 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("prompt"); p.add_argument("story"); p.set_defaults(func=cmd_prompt)
     p = sub.add_parser("check"); p.add_argument("story"); p.add_argument("judge")
     p.add_argument("--author"); p.add_argument("--length", type=int); p.add_argument("--json")
+    p.add_argument("--baseline", choices=["fiction", "modern", "all"], default="fiction")
     p.set_defaults(func=cmd_check)
     p = sub.add_parser("aggregate"); p.add_argument("story"); p.add_argument("judges", nargs="+")
-    p.add_argument("--author"); p.add_argument("--length", type=int); p.set_defaults(func=cmd_aggregate)
+    p.add_argument("--author"); p.add_argument("--length", type=int)
+    p.add_argument("--baseline", choices=["fiction", "modern", "all"], default="fiction")
+    p.set_defaults(func=cmd_aggregate)
     p = sub.add_parser("pair"); p.add_argument("a"); p.add_argument("b")
     p.add_argument("--seed", type=int, default=0); p.add_argument("--sidecar", default="pair_sidecar.json")
     p.add_argument("--criteria", action="store_true",
