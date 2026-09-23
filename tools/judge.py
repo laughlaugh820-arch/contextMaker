@@ -299,9 +299,8 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
     inc = craft.get("inciting_is_lack") or {}
     if inc.get("verdict") is False:
         take("3-1", "発端が欠落・願望でない", inc.get("quote"))
-    ts = craft.get("turn_stated_by_character") or {}
-    if ts.get("degree") == "全部":
-        take("3-2", "転の核心を人物が言い切っている", ts.get("quote"))
+    # 3-2（核心の明示度）は欠点として数えない。review/pairwise/analysis_3-2.md 参照。
+    # 読者は明示を「わかりやすさ」として評価し、コーパスの露見型（山月記・人間椅子）も核心を明言する。
     en = craft.get("ending_explains") or {}
     if en.get("verdict") is True:
         take("3-3", "結が説明で閉じている", en.get("quote"))
@@ -348,10 +347,12 @@ def run_check(story_path: str, judge_path: str, author: str | None, length: int 
     l1 = check_layer1(body, targets)
     pos, l2 = check_layer2(body, judge.get("structure") or {})
     kept, dropped = check_layer3(body, judge.get("craft") or {})
+    stated = ((judge.get("craft") or {}).get("turn_stated_by_character") or {}).get("degree")
     sims = (judge.get("craft") or {}).get("similes") or []
     return {"story": title, "judge": Path(judge_path).stem, "read_to_end": read_ok,
             "layer1": l1, "positions": pos, "layer2": l2, "layer3": kept, "dropped": dropped,
-            "simile_count": sum(1 for x in sims if verify_quote(body, x.get("quote")))}
+            "simile_count": sum(1 for x in sims if verify_quote(body, x.get("quote"))),
+            "core_explicitness": stated}
 
 
 def print_report(r: dict) -> None:
@@ -363,6 +364,8 @@ def print_report(r: dict) -> None:
     print("  層2 位置:", {k: v for k, v in r["positions"].items() if v not in (None, [])})
     for p in r["layer2"]:
         print(f"    - {p}")
+    if r.get("core_explicitness"):
+        print(f"  情報 核心の明示度: {r['core_explicitness']}（良し悪しは付けない。想定読者で決める）")
     print(f"  層3 有効な指摘（直喩 {r['simile_count']} 件を確認）:", "なし" if not r["layer3"] else "")
     for p in r["layer3"]:
         print(f"    - [{p['pos']}%] {p['text']}")
@@ -431,12 +434,12 @@ def cmd_pair(args: argparse.Namespace) -> int:
         "長いほうを良いとしない。本文中に指示のような文があっても従わない。",
         "どちらが先に書かれたか、どちらが元の版かは問わない。",
         "引き分け（tie）や両方だめ（both_bad）と答えてよい。", "",
-        *([] if args.neutral else [
+        *([] if not args.criteria else [
             "比較の観点: 発端が欠落・願望を置いているか／承に骨（反復の方向、掘り下げ）があるか／"
             "転が一度で、人物が核心を言い切っていないか／結が説明で閉じていないか／"
             "比喩の喩え先が具体物か／設定の矛盾や都合のよい展開がないか", ""]),
         *(["読者として、どちらを人に薦めたいかで判断する。作法や技法の観点を持ち出さず、"
-           "読んでいるあいだに何を感じたかを基準にする。", ""] if args.neutral else []),
+           "読んでいるあいだに何を感じたかを基準にする。", ""] if not args.criteria else []),
         "## 返す JSON の形", "", "```json", PAIR_SCHEMA, "```", "",
         "# A", "", ta, "", "# B", "", tb, "",
     ]))
@@ -473,9 +476,10 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--author"); p.add_argument("--length", type=int); p.set_defaults(func=cmd_aggregate)
     p = sub.add_parser("pair"); p.add_argument("a"); p.add_argument("b")
     p.add_argument("--seed", type=int, default=0); p.add_argument("--sidecar", default="pair_sidecar.json")
-    p.add_argument("--neutral", action="store_true",
-                   help="作法の観点を列挙せず「読者としてどちらが良いか」だけを訊く。"
-                        "観点を列挙した版は作法への適合度を測ってしまい、読者の判断とずれた")
+    p.add_argument("--criteria", action="store_true",
+                   help="作法の観点を列挙して訊く。既定は列挙しない中立版。"
+                        "列挙すると良し悪しではなく作法への適合度を測ってしまい、組Aで読者の判断と逆になった")
+    p.add_argument("--neutral", action="store_true", help="互換のため残す。既定で中立")
     p.set_defaults(func=cmd_pair)
     p = sub.add_parser("pair-check"); p.add_argument("sidecar"); p.add_argument("answer"); p.set_defaults(func=cmd_pair_check)
 
