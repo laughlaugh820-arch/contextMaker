@@ -1,0 +1,55 @@
+{
+  "theme": "引っ越しの見積もりに来た業者が、この部屋に以前住んでいたと言う",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "露見",
+  "sectioned": false,
+  "novel": false,
+  "length_target": 5000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 5000,
+    "sentence_length_mean": 24.656,
+    "sentence_length_cv": 0.681,
+    "simile_per_1000": 1.134,
+    "dialogue_ratio": 0.231,
+    "source": "片岡義男の小説 11 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 4226,
+        "sentence_length_mean": 22.7,
+        "sentence_length_cv": 0.53,
+        "simile_per_1000": 0.95,
+        "simile_count": 4,
+        "dialogue_ratio": 0.243
+      },
+      "violations": [
+        "字数を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 5481,
+        "sentence_length_mean": 22.5,
+        "sentence_length_cv": 0.56,
+        "simile_per_1000": 0.91,
+        "simile_count": 5,
+        "dialogue_ratio": 0.275
+      },
+      "violations": [],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 1,
+  "characters": 5485,
+  "generated_on": "2026-09-24"
+}
