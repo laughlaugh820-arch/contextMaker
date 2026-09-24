@@ -1,0 +1,77 @@
+{
+  "theme": "台風が過ぎた翌朝、ベランダの鉢植えを片づけるだけの一日",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "心境",
+  "sectioned": false,
+  "novel": false,
+  "length_target": 3000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 3000,
+    "sentence_length_mean": 24.656,
+    "sentence_length_cv": 0.681,
+    "simile_per_1000": 1.134,
+    "dialogue_ratio": 0.231,
+    "source": "片岡義男の小説 11 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 2236,
+        "sentence_length_mean": 26.8,
+        "sentence_length_cv": 0.44,
+        "simile_per_1000": 2.68,
+        "simile_count": 6,
+        "dialogue_ratio": 0.021
+      },
+      "violations": [
+        "字数を上げる",
+        "文長の振れ幅を上げる",
+        "直喩の密度（千字あたり）を下げる",
+        "会話率を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 2621,
+        "sentence_length_mean": 22.2,
+        "sentence_length_cv": 0.55,
+        "simile_per_1000": 1.91,
+        "simile_count": 5,
+        "dialogue_ratio": 0.14
+      },
+      "violations": [
+        "字数を上げる",
+        "直喩の密度（千字あたり）を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 2,
+      "metrics": {
+        "characters": 3244,
+        "sentence_length_mean": 22.7,
+        "sentence_length_cv": 0.51,
+        "simile_per_1000": 2.16,
+        "simile_count": 7,
+        "dialogue_ratio": 0.132
+      },
+      "violations": [
+        "直喩の密度（千字あたり）を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 2,
+  "characters": 3249,
+  "generated_on": "2026-09-24"
+}
