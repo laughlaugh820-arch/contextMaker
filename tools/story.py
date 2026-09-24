@@ -391,11 +391,19 @@ def novel_chapter_prompt(base: str, outline: dict, index: int, written: list[str
         lines.append(f"| {kanji_number(i + 1)}{mark} | {c['chars']:,} | {c.get('dialogue', '')} "
                      f"| {c.get('ending', '')} | {c.get('content', '')} |")
     if written:
-        tail = "\n\n".join(written)
-        if len(tail) > 12000:
-            tail = "（前略）\n\n" + tail[-12000:]
-        lines += ["", "## ここまでに書かれた本文（直近の部分）", "", tail, "",
-                  "上の続きを書く。すでに書いた文を繰り返さない。"]
+        # 初版は直近12,000字だけを渡していて、『七番の席』で第一章の設定（父が辞めたのは秋）を
+        # 第六章が知らずに「辞めた春」と書く矛盾が出た。40,000字までは全文を渡し、それを超える
+        # 長さでは、設定の多くが決まる第一章の全文と直近20,000字を渡す。
+        full = "\n\n".join(written)
+        if len(full) <= 40000:
+            context, label = full, "ここまでに書かれた本文"
+        else:
+            tail = full[-20000:]
+            context = written[0] + "\n\n（中略）\n\n" + tail
+            label = "ここまでに書かれた本文（第一章と直近の部分）"
+        lines += ["", f"## {label}", "", context, "",
+                  "上の続きを書く。すでに書いた文を繰り返さない。"
+                  "人物の経歴、時期、場所など、すでに書いた事実と食い違わないようにする。"]
     lines += ["", "## 守ること", "",
               f"- **{current['chars']:,}字前後**で書く。{int(current['chars'] * 0.9):,}字を下回らない",
               f"- この章の内容だけを書く。先の章の出来事を先取りしない",
