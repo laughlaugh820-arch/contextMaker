@@ -1,0 +1,56 @@
+{
+  "theme": "閉店間際のパン屋に、毎晩同じ時刻にひとつだけ買いに来る客",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "反復",
+  "sectioned": false,
+  "novel": false,
+  "length_target": 5000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 5000,
+    "sentence_length_mean": 24.656,
+    "sentence_length_cv": 0.681,
+    "simile_per_1000": 1.134,
+    "dialogue_ratio": 0.231,
+    "source": "片岡義男の小説 11 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 3944,
+        "sentence_length_mean": 22.2,
+        "sentence_length_cv": 0.54,
+        "simile_per_1000": 2.03,
+        "simile_count": 8,
+        "dialogue_ratio": 0.171
+      },
+      "violations": [
+        "字数を上げる",
+        "直喩の密度（千字あたり）を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 5020,
+        "sentence_length_mean": 22.8,
+        "sentence_length_cv": 0.5,
+        "simile_per_1000": 1.2,
+        "simile_count": 6,
+        "dialogue_ratio": 0.161
+      },
+      "violations": [],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 1,
+  "characters": 5030,
+  "generated_on": "2026-09-24"
+}
