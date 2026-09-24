@@ -124,8 +124,8 @@ def locate_paragraph(body: str, quote: str | None) -> int | None:
 
 # --------------------------------------------------------------------------- prompt
 
-def cmd_prompt(args: argparse.Namespace) -> int:
-    text, title, body = load_story(args.story)
+def build_judge_prompt(story_path: str) -> str:
+    text, title, body = load_story(story_path)
     lines = [
         "# 短編小説の判定",
         "",
@@ -167,7 +167,43 @@ def cmd_prompt(args: argparse.Namespace) -> int:
         text,
         "",
     ]
-    print("\n".join(lines))
+    return "\n".join(lines)
+
+
+def cmd_prompt(args: argparse.Namespace) -> int:
+    print(build_judge_prompt(args.story))
+    return 0
+
+
+JUDGE_SYSTEM = "あなたは小説の判定者。指定された JSON だけを返す。ファイルの作成や編集はしない。"
+
+
+def cmd_run(args: argparse.Namespace) -> int:
+    """判定者（Claude Code CLI）を呼んで回答を保存し、そのまま照合する。"""
+    import subprocess
+    import time
+    prompt = build_judge_prompt(args.story)
+    story_dir = Path(args.story).resolve().parent
+    out_dir = REPO_ROOT / "review" / f"{story_dir.name}_judge"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / f"claude-{args.model}.json"
+    answer = ""
+    for attempt in range(4):
+        done = subprocess.run(["claude", "-p", "--model", args.model, "--system-prompt", JUDGE_SYSTEM],
+                              input=prompt, capture_output=True, text=True, timeout=900)
+        if done.returncode == 0 and '"structure"' in done.stdout:
+            answer = done.stdout
+            break
+        wait = 30 * (attempt + 1)
+        print(f"[判定者の呼び出しに失敗: {(done.stdout or done.stderr).strip()[:80]} / {wait}秒後に再試行]",
+              file=sys.stderr)
+        time.sleep(wait)
+    if not answer:
+        sys.exit("判定者の呼び出しが4回とも失敗した")
+    out.write_text(answer, encoding="utf-8")
+    print(f"[判定を {out.relative_to(REPO_ROOT)} に保存]")
+    r = run_check(args.story, str(out), args.author, args.length, args.baseline)
+    print_report(r)
     return 0
 
 
@@ -470,6 +506,11 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
 
     p = sub.add_parser("prompt"); p.add_argument("story"); p.set_defaults(func=cmd_prompt)
+    p = sub.add_parser("run", help="判定者を呼んで回答を保存し、照合まで行う")
+    p.add_argument("story"); p.add_argument("--model", default="sonnet")
+    p.add_argument("--author"); p.add_argument("--length", type=int)
+    p.add_argument("--baseline", choices=["fiction", "modern", "all"], default="fiction")
+    p.set_defaults(func=cmd_run)
     p = sub.add_parser("check"); p.add_argument("story"); p.add_argument("judge")
     p.add_argument("--author"); p.add_argument("--length", type=int); p.add_argument("--json")
     p.add_argument("--baseline", choices=["fiction", "modern", "all"], default="fiction")
