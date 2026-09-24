@@ -1,0 +1,60 @@
+{
+  "theme": "深夜のコインランドリーで、乾燥機の中から自分宛ての手紙が出てくる",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [
+    "亡くなった家族",
+    "遺品"
+  ],
+  "plot": "一撃",
+  "sectioned": false,
+  "novel": false,
+  "length_target": 3000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 3000,
+    "sentence_length_mean": 24.656,
+    "sentence_length_cv": 0.681,
+    "simile_per_1000": 1.134,
+    "dialogue_ratio": 0.231,
+    "source": "片岡義男の小説 11 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 2399,
+        "sentence_length_mean": 25.7,
+        "sentence_length_cv": 0.47,
+        "simile_per_1000": 0.83,
+        "simile_count": 2,
+        "dialogue_ratio": 0.018
+      },
+      "violations": [
+        "字数を上げる",
+        "文長の振れ幅を上げる",
+        "会話率を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 2965,
+        "sentence_length_mean": 23.9,
+        "sentence_length_cv": 0.57,
+        "simile_per_1000": 1.01,
+        "simile_count": 3,
+        "dialogue_ratio": 0.146
+      },
+      "violations": [],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 1,
+  "characters": 2975,
+  "generated_on": "2026-09-24"
+}

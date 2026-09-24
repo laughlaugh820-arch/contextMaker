@@ -709,7 +709,7 @@ def call_claude(prompt: str, effort: str, max_tokens: int) -> tuple[str, dict]:
 
 
 def slugify(text: str, limit: int = 24) -> str:
-    cleaned = "".join(ch for ch in text if ch not in '\\/:*?"<>|\n\t ')
+    cleaned = "".join(ch for ch in text if ch not in '\\/:*?"<>|#＃\n\t ')
     return cleaned[:limit] or "story"
 
 
@@ -764,8 +764,13 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
     # 外れた指標が最も少ない稿を採用。同数なら新しいほう
     best = min(rounds, key=lambda r: (len(r["violations"]), -r["round"]))
-    final = best["text"]
-    title = final.strip().split("\n", 1)[0].strip() if final.strip() else "無題"
+    final = best["text"].strip()
+    # モデルが題名を見出し記法（「# 題名」）で返すことがあるので、記号を落として1行目を揃える
+    if final:
+        first, _, rest = final.partition("\n")
+        first = first.lstrip("#＃ 　").strip()
+        final = first + ("\n" + rest if rest else "")
+    title = final.split("\n", 1)[0].strip() if final else "無題"
 
     dest = STORIES / f"{date.today().isoformat()}_{slugify(title)}"
     dest.mkdir(parents=True, exist_ok=True)
