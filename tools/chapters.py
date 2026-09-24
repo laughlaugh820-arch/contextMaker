@@ -183,14 +183,9 @@ def spearman(xs: list[float], ys: list[float]) -> float | None:
     return round(1 - 6 * d2 / (n * (n * n - 1)), 3)
 
 
-def analyze_novel(work_dir: Path) -> dict | None:
-    meta = json.loads((work_dir / "meta.json").read_text(encoding="utf-8"))
-    original = (work_dir / "original.txt").read_text(encoding="utf-8")
-    units, unit_level = split_units(original)
-    chapters = group_chapters(units, unit_level)
-    total = sum(len(c["text"]) for c in chapters)
-    if total < MIN_CHARS:
-        return None
+def chapter_report(chapters: list[dict], unit_level: str | None = None) -> tuple[list[dict], dict]:
+    """章の一覧から、章ごとの数値と作品全体の要約を作る。"""
+    total = sum(len(c["text"]) for c in chapters) or 1
 
     rows, offset = [], 0
     for i, c in enumerate(chapters):
@@ -217,15 +212,52 @@ def analyze_novel(work_dir: Path) -> dict | None:
         "ending_share": {k: round(endings.count(k) / n, 2) for k in ("会話", "問い", "短文", "地の文")} if n else {},
         "opens_with_dialogue_share": round(sum(r["opens_with_dialogue"] for r in rows) / n, 2) if n else 0.0,
     }
+    return rows, summary
+
+
+def analyze_novel(work_dir: Path) -> dict | None:
+    meta = json.loads((work_dir / "meta.json").read_text(encoding="utf-8"))
+    original = (work_dir / "original.txt").read_text(encoding="utf-8")
+    units, unit_level = split_units(original)
+    chapters = group_chapters(units, unit_level)
+    total = sum(len(c["text"]) for c in chapters)
+    if total < MIN_CHARS:
+        return None
+    rows, summary = chapter_report(chapters, unit_level)
     return {"work_id": meta["work_id"], "title": meta["title"], "author": meta["author"],
             "characters": total, "summary": summary, "chapters": rows}
+
+
+def analyze_text(path: Path) -> dict:
+    """story.py --novel が書いた長編（1行目が題名、章見出しは漢数字だけの行）を章に区切って測る。"""
+    lines = path.read_text(encoding="utf-8").strip().split("\n")
+    title, chapters, current = lines[0].strip(), [], None
+    for line in lines[1:]:
+        if re.match(r"^[一二三四五六七八九十]{1,3}$", line.strip()):
+            current = {"label": line.strip(), "part": None, "sections": 1, "lines": []}
+            chapters.append(current)
+            continue
+        if current is None:
+            current = {"label": "（序）", "part": None, "sections": 1, "lines": []}
+            chapters.append(current)
+        current["lines"].append(line)
+    for c in chapters:
+        c["text"] = "\n".join(c.pop("lines")).strip("\n")
+    chapters = [c for c in chapters if len(c["text"].strip()) >= 30]
+    rows, summary = chapter_report(chapters, "漢数字")
+    return {"title": title, "characters": sum(len(c["text"]) for c in chapters),
+            "summary": summary, "chapters": rows}
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--work", help="作品IDを指定する")
     parser.add_argument("--out", default=str(OUTPUT))
+    parser.add_argument("--text", help="生成した長編のファイルを直接測る（結果は標準出力に JSON で出す）")
     args = parser.parse_args(argv)
+    if args.text:
+        print(json.dumps(analyze_text(Path(args.text)), ensure_ascii=False, indent=2))
+        return 0
     out = Path(args.out).resolve()
     out.mkdir(parents=True, exist_ok=True)
 

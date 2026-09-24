@@ -13,10 +13,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import os
 import random
 import shutil
 import subprocess
+import time
 import statistics
 import sys
 from datetime import date
@@ -143,6 +145,8 @@ SYSTEM_PROMPT = """あなたは日本語で短編小説を書く。
 def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
     rng = random.Random(args.seed)
     guides = [(GUIDE_DIR / name) for name in GUIDE_FILES]
+    if getattr(args, "novel", False):
+        guides.append(LONG_GUIDE)
     guide = "\n\n---\n\n".join(g.read_text(encoding="utf-8") for g in guides if g.exists())
 
     parts = [
@@ -176,6 +180,8 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         "既存作品の筋をなぞらない。借りるのは文の長さの設計、比喩の作り方、"
         "視点の移し方、会話の配分という抽象的な層だけ。",
         "**表記は新字新仮名**。歴史的仮名遣いや旧字体は使わない。",
+        *(["**現代の口語で書く**。語彙も現代のものを使い、文語的な言い回し（である調の多用、古風な漢語）を避ける。"]
+          if getattr(args, "baseline", None) == "modern" else []),
         f"**長さを守る**。{args.length:,}字前後で、{int(args.length * 0.9):,}字を下回らない。",
         "**書き出しの型を決める**。断定・情景・関係宣言のいずれかで入り、世界設定の説明から始めない。",
         "**結びは説明で閉じない**。事実を一つ置く、動作で示す、物や風景に視点を預ける、のいずれか。",
@@ -312,6 +318,130 @@ def generate_sectioned(args: argparse.Namespace, base: str, call) -> tuple[str, 
     return title + "\n\n" + "\n\n".join(written), {**usage, "outline": outline}
 
 
+# --------------------------------------------------------------------------- 長編モード
+
+CHAPTER_NUMERAL = re.compile(r"^[一二三四五六七八九十]{1,3}$")
+LONG_GUIDE = GUIDE_DIR / "long_structure.md"
+
+
+def kanji_number(n: int) -> str:
+    digits = "〇一二三四五六七八九"
+    if n < 10:
+        return digits[n]
+    tens, ones = divmod(n, 10)
+    return ("" if tens == 1 else digits[tens]) + "十" + (digits[ones] if ones else "")
+
+
+def novel_chapter_count(length: int) -> int:
+    """章の数。1章3,500字前後を目安にする（長編ガイドの章立ての作品は中央で1章9,380字だが、
+    生成の1回の応答に収まる長さに抑える）。"""
+    return min(20, max(6, round(length / 3500)))
+
+
+NOVEL_OUTLINE_SCHEMA = """{
+  "title": "題名",
+  "premise": "一行で、誰が何を欠いているか",
+  "chapters": [
+    {"chars": 3300, "content": "この章で起きること。3〜4文で具体的に", "dialogue": "多い | 普通 | 少ない", "ending": "地の文 | 短文 | 会話"}
+  ],
+  "confrontation_chapter": 5,
+  "turn_chapter": 7
+}"""
+
+
+def novel_outline_prompt(args: argparse.Namespace, base: str) -> str:
+    n = novel_chapter_count(args.length)
+    per = round(args.length / n)
+    lines = [base, "", "# いまの依頼: 長編の章立て表だけを作る", "",
+             "本文はまだ書かない。長編の組み立て（long_structure.md）にしたがって、次の形の JSON だけを返す。", "",
+             f"- 章は **{n}章**。全体で {args.length:,}字前後",
+             f"- 1章の長さは {per:,}字を中心に、{round(per * 0.65):,}〜{round(per * 1.35):,}字の範囲でばらつかせる。すべて同じ長さにしない",
+             f"- 人物同士がぶつかる章（会話が最も多くなる章）を、全体の6割前後（{round(n * 0.6)}章目あたり）に置く。"
+             "その章番号を confrontation_chapter に書く",
+             f"- 決定的な転換が起きる章を、全体の8割前後（{round(n * 0.8)}章目あたり）に置く。その章番号を turn_chapter に書く",
+             "- 最後の章は会話を減らし、語りで静かに閉じる（dialogue を「少ない」にする）",
+             "- 章の終わり方（ending）は地の文と短文を中心にし、会話で切る章は多くても3割にする",
+             "- 各章の content は、その章で実際に起きる出来事を、誰が何をするかで具体的に書く", "",
+             "```json", NOVEL_OUTLINE_SCHEMA, "```", ""]
+    return "\n".join(lines)
+
+
+def normalize_chapter_lengths(chapters: list[dict], length: int) -> None:
+    """章の字数を、合計が目標になるように整え、極端な長さを抑える。"""
+    n = len(chapters)
+    per = length / n
+    raw = [min(max(int(c.get("chars") or per), per * 0.65), per * 1.35) for c in chapters]
+    scale = length / sum(raw)
+    for c, r in zip(chapters, raw):
+        c["chars"] = int(round(r * scale / 10) * 10)
+
+
+def novel_chapter_prompt(base: str, outline: dict, index: int, written: list[str]) -> str:
+    chapters = outline["chapters"]
+    current = chapters[index]
+    lines = [base, "", f"# いまの依頼: 第{kanji_number(index + 1)}章だけを書く", "",
+             f"題名『{outline.get('title', '')}』  {outline.get('premise', '')}", "",
+             "## 章立て", "", "| 章 | 字数 | 会話 | 章の終わり | 内容 |", "| --- | --- | --- | --- | --- |"]
+    for i, c in enumerate(chapters):
+        mark = " ← いまここ" if i == index else (" 済" if i < index else "")
+        lines.append(f"| {kanji_number(i + 1)}{mark} | {c['chars']:,} | {c.get('dialogue', '')} "
+                     f"| {c.get('ending', '')} | {c.get('content', '')} |")
+    if written:
+        tail = "\n\n".join(written)
+        if len(tail) > 12000:
+            tail = "（前略）\n\n" + tail[-12000:]
+        lines += ["", "## ここまでに書かれた本文（直近の部分）", "", tail, "",
+                  "上の続きを書く。すでに書いた文を繰り返さない。"]
+    lines += ["", "## 守ること", "",
+              f"- **{current['chars']:,}字前後**で書く。{int(current['chars'] * 0.9):,}字を下回らない",
+              f"- この章の内容だけを書く。先の章の出来事を先取りしない",
+              f"- 会話の量は「{current.get('dialogue', '普通')}」、章の終わり方は「{current.get('ending', '地の文')}」にする",
+              "- 章の番号、題名、見出し、説明は書かない。本文だけを出力する",
+              "- 前の章から文体・語り手・時制を変えない"]
+    if index == len(chapters) - 1:
+        lines.append("- これが最後の章。会話を減らし、説明で閉じず、事実・動作・風景のいずれかで静かに終える")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def extend_prompt(base: str, chapter_text: str, target: int) -> str:
+    return "\n".join([base, "", "# いまの依頼: 章を書き直して長さを整える", "",
+                       f"次の章は目標 {target:,}字に対して {len(chapter_text):,}字しかない。"
+                       f"筋・出来事・人物・章の終わり方は変えずに、描写と会話を厚くして {target:,}字前後に書き直す。",
+                       "書き直した章の本文だけを出力する。", "", "## 章の本文", "", chapter_text, ""])
+
+
+def generate_novel(args: argparse.Namespace, base: str, call) -> tuple[str, dict]:
+    """章立て表を作ってから章ごとに書く。短い章は一度だけ書き直して長さを整える。"""
+    print("[長編の章立て表を作る]", file=sys.stderr)
+    outline_text, usage = call(novel_outline_prompt(args, base))
+    outline = parse_outline(outline_text)
+    chapters = outline.get("chapters") or []
+    if len(chapters) < 3:
+        sys.exit(f"章立て表の章が少なすぎる（{len(chapters)}章）")
+    normalize_chapter_lengths(chapters, args.length)
+    for i, c in enumerate(chapters):
+        print(f"  {kanji_number(i + 1):>3} {c['chars']:>6,}字 会話{c.get('dialogue', '?')} 終{c.get('ending', '?')}  "
+              f"{(c.get('content') or '')[:40]}", file=sys.stderr)
+
+    written: list[str] = []
+    for i, c in enumerate(chapters):
+        text, usage = call(novel_chapter_prompt(base, outline, i, written))
+        body = text.strip()
+        if len(body) < c["chars"] * 0.8:
+            longer, usage = call(extend_prompt(base, body, c["chars"]))
+            if len(longer.strip()) > len(body):
+                body = longer.strip()
+        written.append(body)
+        print(f"[第{kanji_number(i + 1)}章] {len(body):,}字（目標 {c['chars']:,}）", file=sys.stderr)
+
+    title = outline.get("title") or "無題"
+    parts = [title, ""]
+    for i, body in enumerate(written):
+        parts += [kanji_number(i + 1), "", body, ""]
+    return "\n".join(parts).strip() + "\n", {**usage, "outline": outline}
+
+
 # --------------------------------------------------------------------------- 計測と書き直し
 
 # 生成後に測る指標と、目標に対して許す幅（下限比, 上限比）。
@@ -329,6 +459,8 @@ DIALOGUE_TOLERANCE = 0.10
 def measure_story(text: str) -> dict:
     """生成物を抽出ツールと同じ基準で測る。1行目のタイトルは除く。"""
     body = text.strip().split("\n", 1)[1].strip() if "\n" in text.strip() else text.strip()
+    # 長編モードの章見出し（「一」「十二」のような漢数字だけの行）は文として数えない
+    body = "\n".join(l for l in body.split("\n") if not CHAPTER_NUMERAL.match(l.strip()))
     paragraphs = A.split_paragraphs(body)
     sentences = A.sentences_of(body)
     stats = A.basic_stats(body, paragraphs, sentences)
@@ -499,17 +631,25 @@ def call_claude_cli(prompt: str, model: str, timeout: int) -> tuple[str, dict]:
     """Claude Code の CLI に投げる。APIキーを持たない環境向けの経路。"""
     command = ["claude", "-p", "--model", model,
                "--system-prompt", SYSTEM_PROMPT + CLI_SYSTEM_SUFFIX]
-    try:
-        done = subprocess.run(command, input=prompt, capture_output=True,
-                              text=True, timeout=timeout)
-    except subprocess.TimeoutExpired:
-        sys.exit(f"claude コマンドが {timeout} 秒で終わらなかった。")
-    if done.returncode != 0:
-        sys.exit(f"claude コマンドが失敗した（終了コード {done.returncode}）:\n"
-                 f"{done.stderr.strip()[:500]}")
-    text = done.stdout.strip()
+    # API の過負荷（529）などの一時的な失敗は、間を置いて再試行する
+    text, last_error = "", ""
+    for attempt in range(4):
+        try:
+            done = subprocess.run(command, input=prompt, capture_output=True,
+                                  text=True, timeout=timeout)
+        except subprocess.TimeoutExpired:
+            last_error = f"{timeout} 秒で終わらなかった"
+        else:
+            out = done.stdout.strip()
+            if done.returncode == 0 and out and not out.startswith("API Error"):
+                text = out
+                break
+            last_error = (out or done.stderr.strip())[:300]
+        wait = 30 * (attempt + 1)
+        print(f"[claude コマンドが失敗: {last_error[:80]} / {wait}秒後に再試行]", file=sys.stderr)
+        time.sleep(wait)
     if not text:
-        sys.exit("claude コマンドが何も返さなかった。")
+        sys.exit(f"claude コマンドが4回とも失敗した: {last_error}")
     print(text)
     return text, {"backend": "claude-cli", "model": model}
 
@@ -602,7 +742,11 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
     # 1回目は通常の生成。以後は計測して外れた指標だけを直させる
     rounds: list[dict] = []
-    if args.sectioned:
+    if args.novel:
+        text, usage = generate_novel(args, prompt, call)
+        # 長編は全文を書き直させると出力が途切れるので、章ごとの長さ調整だけにして計測のみ行う
+        args.revise = 0
+    elif args.sectioned:
         text, usage = generate_sectioned(args, prompt, call)
     else:
         text, usage = call(prompt)
@@ -637,6 +781,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "avoid": args.avoid,
         "plot": args.plot,
         "sectioned": args.sectioned,
+        "novel": args.novel,
         "length_target": args.length,
         "effort": args.effort,
         "seed": args.seed,
@@ -692,6 +837,8 @@ def main(argv: list[str] | None = None) -> int:
     p_gen.add_argument("--cli-model", default="opus", help="cli のときのモデル（既定 opus）")
     p_gen.add_argument("--cli-timeout", type=int, default=900,
                        help="cli の待ち時間（秒、既定 900）")
+    p_gen.add_argument("--novel", action="store_true",
+                       help="長編モード。章立て表を作ってから章ごとに書く（context/guide/long_structure.md）")
     p_gen.add_argument("--sectioned", action="store_true",
                        help="構成表を作ってから節ごとに書かせる。長い作品向け（1回の生成は目標の7割ほどしか書かないため）")
     p_gen.add_argument("--revise", type=int, default=2,
