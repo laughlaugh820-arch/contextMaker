@@ -95,6 +95,8 @@ $ python3 tools/build_context.py
 - `context/techniques/` — 比喩・書き出し・結び・畳語・構成のカタログ
 - `context/guide/story_craft.md` — **文体の作法**。手で書いたもの
 - `context/guide/story_structure.md` — **展開の作法**（発端・承・転・結の置き方）。手で書いたもの
+- `context/guide/long_structure.md` — **長編の組み立て**（章の単位・長さ・会話の配置・章の終わり方）。
+  `tools/chapters.py` で長編18本を原本の見出し注記から章に区切って測ったもの
 
 生成されるのは上3つで、`guide/` はスクリプトが触らない。
 展開の作法は、コーパスの短編19本を読んで構造を注釈し、転換点の位置を本文のオフセットから

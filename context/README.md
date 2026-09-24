@@ -6,10 +6,11 @@
 ## 読む順
 
 1. [guide/story_craft.md](guide/story_craft.md) — 文体の作法。手で書いたもの
-2. [guide/story_structure.md](guide/story_structure.md) — 展開の作法。手で書いたもの
-3. [techniques/](techniques/) — 技法ごとの用例集
-4. [authors/](authors/) — 作家ごとの文体プロファイル
-5. [works/](works/) — 作品ごとのカード
+2. [guide/story_structure.md](guide/story_structure.md) — 展開の作法（短編）。手で書いたもの
+3. [guide/long_structure.md](guide/long_structure.md) — 長編の組み立て（章の単位）。手で書いたもの
+4. [techniques/](techniques/) — 技法ごとの用例集
+5. [authors/](authors/) — 作家ごとの文体プロファイル
+6. [works/](works/) — 作品ごとのカード
 
 ## 技法カタログ
 

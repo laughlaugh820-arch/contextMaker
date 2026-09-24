@@ -63,7 +63,7 @@ CLI_SYSTEM_SUFFIX = ("\n\nファイルの作成や編集は一切せず、"
 
 
 def load_works() -> list[dict]:
-    works = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(ANALYSIS.glob("*/*.json"))]
+    works = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(p for p in ANALYSIS.glob("*/*.json") if p.parent.name.isdigit())]
     if not works:
         sys.exit("analysis/ が空。先に tools/analyze.py を実行すること。")
     return works
