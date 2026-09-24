@@ -1,0 +1,74 @@
+{
+  "theme": "定年の日、駅の遺失物係が、最後に受け付けた落とし物について語る",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": "枠",
+  "sectioned": false,
+  "novel": false,
+  "length_target": 4000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 4000,
+    "sentence_length_mean": 24.656,
+    "sentence_length_cv": 0.681,
+    "simile_per_1000": 1.134,
+    "dialogue_ratio": 0.231,
+    "source": "片岡義男の小説 11 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 2677,
+        "sentence_length_mean": 22.6,
+        "sentence_length_cv": 0.49,
+        "simile_per_1000": 1.49,
+        "simile_count": 4,
+        "dialogue_ratio": 0.44
+      },
+      "violations": [
+        "字数を上げる",
+        "会話率を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 3310,
+        "sentence_length_mean": 24.6,
+        "sentence_length_cv": 0.48,
+        "simile_per_1000": 1.21,
+        "simile_count": 4,
+        "dialogue_ratio": 0.192
+      },
+      "violations": [
+        "字数を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 2,
+      "metrics": {
+        "characters": 3975,
+        "sentence_length_mean": 24.0,
+        "sentence_length_cv": 0.47,
+        "simile_per_1000": 1.26,
+        "simile_count": 5,
+        "dialogue_ratio": 0.223
+      },
+      "violations": [
+        "文長の振れ幅を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 2,
+  "characters": 3982,
+  "generated_on": "2026-09-24"
+}
