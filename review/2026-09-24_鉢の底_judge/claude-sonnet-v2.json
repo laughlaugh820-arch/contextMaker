@@ -1,0 +1,45 @@
+```json
+{
+  "read_to_end": {"last_sentence": "日に当たって乾き、朝より少し色が薄くなって、そこに載ったままだった。"},
+  "structure": {
+    "inciting": {
+      "quote": "鉢は七つあって、そのうち五つが倒れ、二つが割れていた。",
+      "lacking": "無事だった鉢の状態、整った日常",
+      "deadline_quote": null
+    },
+    "development_type": "反復",
+    "units": [
+      {"quote": "まず割れていない鉢から起こした。", "label": "無事だった鉢を起こす"},
+      {"quote": "割れた鉢は新聞紙に包むことにした。", "label": "割れたローズマリーの鉢を片づける"},
+      {"quote": "ゼラニウムは排水口から引っぱり出すと、太い茎が一本、根もと近くで折れていた。", "label": "ゼラニウムの折れた茎を見つける"},
+      {"quote": "午後になって、隣との仕切り板の向こうから声がした。", "label": "隣人と被害を確かめ合う"},
+      {"quote": "三時を過ぎると、日がベランダの奥まで差しこんできた。", "label": "折れたゼラニウムを植え直す"}
+    ],
+    "direction": "早朝から夕方まで、時間の経過順",
+    "turns": [
+      {"quote": "それから、包みかけていた新聞紙を開いて、縁の欠けた素焼きの鉢を取り出した。", "type": "選択"},
+      {"quote": "「ローズマリーは強いから、大丈夫だと思いますよ。うちの実家のなんて、ほったらかしで何年も生きてますから。塀みたいになってます」", "type": "気づき"}
+    ],
+    "climax": {"quote": "花は三つとも、まだ赤かった。"},
+    "ending": {"quote": "日に当たって乾き、朝より少し色が薄くなって、そこに載ったままだった。", "type": "風景"},
+    "knowledge_gap": "同時"
+  },
+  "craft": {
+    "inciting_is_lack": {"verdict": true, "quote": "鉢は七つあって、そのうち五つが倒れ、二つが割れていた。"},
+    "turn_stated_by_character": {"degree": "半分", "quote": "「つくかどうか、わからないけど」"},
+    "ending_explains": {"verdict": false, "quote": "日に当たって乾き、朝より少し色が薄くなって、そこに載ったままだった。"},
+    "similes": [
+      {"quote": "残った茎が割り箸を束ねたように突っ立っている。", "vehicle": "割り箸を束ねたもの", "concrete": true},
+      {"quote": "花びらの端が、焦がした紙の縁みたいに縮れはじめている。", "vehicle": "焦がした紙の縁", "concrete": true},
+      {"quote": "株は片側が大きくえぐれたような形になって、どちらから見ても、なにかが足りなかった。", "vehicle": "えぐれた形", "concrete": false}
+    ],
+    "contradictions": [],
+    "coincidences": [],
+    "telegraphed": [],
+    "ending_exposition": [],
+    "misleading_imagery": [],
+    "continuity_breaks": [],
+    "borrowed": []
+  }
+}
+```
