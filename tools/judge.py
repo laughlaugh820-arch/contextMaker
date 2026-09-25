@@ -337,6 +337,12 @@ def check_layer2(body: str, structure: dict, plot: str | None = None) -> tuple[d
     return pos, problems
 
 
+# 欠点に数えず、情報として出すだけの項目。モデルの指摘が出どころで、読者の照合で裏付けられなかったもの。
+# 3-7: 『宛所』で判定者が挙げた2回の指摘（冒頭の下駄箱、62%の名前の一致）は、どちらも読者が
+# 読んでいる間は気づかなかった（review/batch_2026-09-24 §9）。読者が先に真相を確定した例が出るまで情報扱い。
+INFO_ITEMS = {"3-7"}
+
+
 def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
     """引用が本文にある指摘だけを残す。返り値は (有効な指摘, 捨てた指摘)。
 
@@ -407,10 +413,12 @@ def run_check(story_path: str, judge_path: str, author: str | None, length: int 
     l1 = check_layer1(body, targets, plot)
     pos, l2 = check_layer2(body, judge.get("structure") or {}, plot)
     kept, dropped = check_layer3(body, judge.get("craft") or {})
+    info = [p for p in kept if p["item"] in INFO_ITEMS]
+    kept = [p for p in kept if p["item"] not in INFO_ITEMS]
     stated = ((judge.get("craft") or {}).get("turn_stated_by_character") or {}).get("degree")
     sims = (judge.get("craft") or {}).get("similes") or []
     return {"story": title, "judge": Path(judge_path).stem, "read_to_end": read_ok,
-            "layer1": l1, "positions": pos, "layer2": l2, "layer3": kept, "dropped": dropped,
+            "layer1": l1, "positions": pos, "layer2": l2, "layer3": kept, "info": info, "dropped": dropped,
             "simile_count": sum(1 for x in sims if verify_quote(body, x.get("quote"))),
             "core_explicitness": stated}
 
@@ -429,6 +437,10 @@ def print_report(r: dict) -> None:
     print(f"  層3 有効な指摘（直喩 {r['simile_count']} 件を確認）:", "なし" if not r["layer3"] else "")
     for p in r["layer3"]:
         print(f"    - [{p['pos']}%] {p['text']}")
+    if r.get("info"):
+        print("  情報（欠点に数えない。読者の照合で裏付けがない項目）:")
+        for p in r["info"]:
+            print(f"    - [{p['pos']}%] {p['text']}")
     if r["dropped"]:
         print("  捨てた指摘（引用が本文に無い）:")
         for p in r["dropped"]:
