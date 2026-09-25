@@ -491,13 +491,31 @@ PAIR_SCHEMA = """{
 }"""
 
 
+def repo_path(path: str) -> str:
+    """リポジトリ内のファイルなら、リポジトリからの相対パスにする。外なら絶対パス。"""
+    p = Path(path).resolve()
+    try:
+        return str(p.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(p)
+
+
+def from_repo(path: str) -> str:
+    """sidecar のパスを実際のパスに戻す。古い sidecar の相対パスはそのまま試す。"""
+    p = Path(path)
+    if not p.is_absolute() and (REPO_ROOT / p).exists():
+        return str(REPO_ROOT / p)
+    return path
+
+
 def cmd_pair(args: argparse.Namespace) -> int:
     rng = random.Random(args.seed)
     a_first = rng.random() < 0.5
     first, second = (args.a, args.b) if a_first else (args.b, args.a)
     ta, _, ba = load_story(first)
     tb, _, bb = load_story(second)
-    sidecar = {"A": first, "B": second, "seed": args.seed}
+    # どこから実行しても照合できるよう、リポジトリからの相対パスで記録する
+    sidecar = {"A": repo_path(first), "B": repo_path(second), "seed": args.seed}
     Path(args.sidecar).write_text(json.dumps(sidecar, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("\n".join([
         "# 2本の短編の比較", "",
@@ -522,8 +540,8 @@ def cmd_pair(args: argparse.Namespace) -> int:
 def cmd_pair_check(args: argparse.Namespace) -> int:
     side = load_json(args.sidecar)
     ans = load_json(args.answer)
-    _, _, ba = load_story(side["A"])
-    _, _, bb = load_story(side["B"])
+    _, _, ba = load_story(from_repo(side["A"]))
+    _, _, bb = load_story(from_repo(side["B"]))
     winner = ans.get("winner")
     who = {"A": side["A"], "B": side["B"]}.get(winner, winner)
     print(f"勝ち: {who}")
