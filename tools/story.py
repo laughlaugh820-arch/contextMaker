@@ -34,8 +34,9 @@ MODERN = ANALYSIS / "author_片岡義男.json"
 # 片岡義男の作品のうち、小説でないもの（エッセイ）。文体の目標値から外す
 NONFICTION = {"56823"}
 GUIDE_DIR = REPO_ROOT / "context" / "guide"
-# 書き手の人間性（ペルソナ）。--persona で名前かパスを渡したときだけプロンプトに入る。
-# 登場人物の設定ではなく「誰が書くか」。反映しない生成と一対比較で比べる（context/persona/README.md）
+# 書き手の矜持と理念（ペルソナ）。--persona で名前かパスを渡したときだけプロンプトに入る。
+# 経歴や登場人物の設定ではなく「どういう考え方で書くか」。反映しない生成と一対比較で比べる
+# （context/persona/README.md）
 PERSONA_DIR = REPO_ROOT / "context" / "persona"
 # 渡す順。文体の作法 → 展開の作法
 GUIDE_FILES = ["story_craft.md", "story_structure.md"]
@@ -162,22 +163,23 @@ def resolve_persona(spec: str | None) -> tuple[str, str] | None:
 
 
 def persona_section(persona: tuple[str, str]) -> str:
-    """書き手の人間性を渡す節。資料の見出し（1行目の # 行）は名前と重なるので落とす。"""
+    """書き手の矜持と理念を渡す節。資料の見出し（1行目の # 行）は名前と重なるので落とす。"""
     name, text = persona
     body = "\n".join(l for l in text.split("\n") if not l.startswith("# ")).strip()
     return "\n".join([
         "# 書き手",
         "",
-        f"この作品は次の人間が書く（{name}）。登場人物の設定ではない。",
+        f"この作品は、次の矜持と理念を持つ書き手が書く（{name}）。"
+        "経歴や登場人物の設定ではなく、考え方の指定。",
         "",
         body,
         "",
-        "書き手の人間性は、説明ではなく選択に出す。",
+        "矜持と理念は、説明ではなく選択に出す。",
         "",
         "- 書き手は本文に出てこない。「私はこう思う」と語らず、人物のどれかに代弁もさせない",
-        "- 何を描き何を省くか、誰に寄るか、どこで終えるか、何を可笑しいと扱うかに出す",
-        "- 「書かないこと」は守る。テーマがそれを求めても別の道を探す",
-        "- 教訓や主張を書かない。人の見方は判断に出て、文には出ない",
+        "- 何を描き何を省くか、誰に寄るか、何を美しいと扱うか、どこで終えるかに出す",
+        "- 「書かないこと」と「恥と思うこと」は守る。テーマがそれを求めても別の道を探す",
+        "- 教訓や主張を書かない。理念は判断に出て、文には出ない",
         "",
     ])
 
@@ -246,9 +248,9 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         "使うなら密度を決めて一貫させる。",
     ]
     if persona:
-        rules.append("**書き手として書く**。上の書き手の見方と「書かないこと」を、"
-                     "何を描くか・誰に寄るか・どこで終えるかの選択に出す。"
-                     "書き手が本文に顔を出したり、人物に意見を代弁させたりしない。")
+        rules.append("**書き手の矜持と理念で書く**。上の一線と「書かないこと」を、"
+                     "何を描くか・誰に寄るか・何を美しいと扱うか・どこで終えるかの選択に出す。"
+                     "書き手が本文に顔を出したり、人物に理念を代弁させたりしない。")
     if args.avoid:
         rules.append("**次の題材・仕掛けは使わない**: " + "、".join(args.avoid) + "。"
                      "これらは同じテーマでモデルが最初に思いつく定型なので、別の核を探すこと。")
@@ -907,7 +909,7 @@ def add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--avoid", nargs="*", default=[],
                         help="使わせない題材・仕掛け（例: --avoid 髪の毛 祖父の遺品）")
     parser.add_argument("--persona",
-                        help="書き手の人間性を反映させる。context/persona/ の名前か Markdown のパス。"
+                        help="書き手の矜持と理念を反映させる。context/persona/ の名前か Markdown のパス。"
                              "指定しなければ作法だけで書かせる（従来どおり）")
 
 
