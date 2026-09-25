@@ -178,6 +178,10 @@ def persona_section(persona: tuple[str, str]) -> str:
         "",
         "- 項目をすべて使う必要はない。このテーマに関わる一線や見方だけが選択に出ればよく、"
         "無理に全部を出そうとしない",
+        "- 舞台・時代・土地・職業は依頼と筋から決め、書き手の理念から導かない。"
+        "「美しいと思うもの」は舞台を選ぶ根拠ではなく、その舞台の中で何に目が止まるかに使う",
+        "- この書き手から実在の作家を思い浮かべても、その作家の作品世界・舞台・題材を借りない。"
+        "借りるのは考え方だけ",
         "- 書き手は本文に出てこない。「私はこう思う」と語らず、人物のどれかに代弁もさせない",
         "- 何を描き何を省くか、誰に寄るか、何を美しいと扱うか、どこで終えるかに出す",
         "- 「書かないこと」と「恥と思うこと」は守る。テーマがそれを求めても別の道を探す",
@@ -211,7 +215,9 @@ def theme_lines(theme: str) -> list[str]:
             "箇条書きを説明に書き写さず、出来事として書く。"]
 
 
-def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
+def build_prompt(args: argparse.Namespace, works: list[dict], with_persona: bool = True) -> str:
+    """プロンプトを組み立てる。with_persona=False なら --persona があっても書き手の節を入れない
+    （--persona-stage write で、舞台と人物を決める段階に使う）。"""
     rng = random.Random(args.seed)
     guides = [(GUIDE_DIR / name) for name in GUIDE_FILES]
     if getattr(args, "novel", False):
@@ -227,7 +233,7 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         f"**目標の長さ**: {args.length:,}字前後",
         "",
     ]
-    persona = resolve_persona(getattr(args, "persona", None))
+    persona = resolve_persona(getattr(args, "persona", None)) if with_persona else None
     if persona:
         parts.append(persona_section(persona))
     parts += [
@@ -284,6 +290,51 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         "",
     ]
     return "\n".join(p for p in parts if p is not None)
+
+
+# --------------------------------------------------------------------------- 舞台と人物を先に決める
+
+# --persona-stage write のとき、ペルソナを渡す前に決めておくもの。
+# ペルソナの「美しいと思うもの」が舞台に翻訳されるのを防ぐ（『鉄紺』は筋が現代のAIなのに、
+# 書き手の伝統美の項目から金沢の茶屋が選ばれた。review/pairwise/AIに自分を訊く_persona）。
+WORLD_SCHEMA = """{
+  "setting": "時代と土地。現代なら「現代」と書き、都市か地方か、どんな町か",
+  "viewpoint": "視点人物。年齢、仕事、暮らし、いま欠けているもの",
+  "others": ["他の人物。視点人物との関係と、一言"],
+  "places": ["主な場面が起きる場所"]
+}"""
+
+
+def world_prompt(base: str) -> str:
+    return "\n".join([base, "", "# いまの依頼: 舞台と人物だけを決める", "",
+                       "本文はまだ書かない。テーマ（筋）と作法だけから、次の形の JSON だけを返す。",
+                       "舞台は、依頼の筋が最も自然に起きる場所と時代にする。筋に現代の道具（AI、電話など）が"
+                       "出るなら現代にする。珍しさや情緒で舞台を選ばない。", "",
+                       "```json", WORLD_SCHEMA, "```", ""])
+
+
+def format_world(world: dict) -> list[str]:
+    lines = ["# 舞台と人物（決定済み）", "",
+             f"- **舞台**: {world.get('setting', '')}",
+             f"- **視点人物**: {world.get('viewpoint', '')}"]
+    lines += [f"- **人物**: {o}" for o in world.get("others") or []]
+    lines += [f"- **場所**: {p}" for p in world.get("places") or []]
+    lines += ["", "上の舞台と人物は変えない。書き手の理念は、この舞台の中で何を描き何を省くか、"
+              "誰に寄るか、どこで終えるかにだけ使う。", ""]
+    return lines
+
+
+def body_prompt(base: str, world: dict) -> str:
+    return "\n".join([base, ""] + format_world(world) + ["上の舞台と人物で、依頼の本文を書く。", ""])
+
+
+def decide_world(base_plain: str, call) -> tuple[dict, dict]:
+    print("[舞台と人物を決める（ペルソナなし）]", file=sys.stderr)
+    text, usage = call(world_prompt(base_plain))
+    world = parse_outline(text)
+    print(f"  舞台: {world.get('setting', '')[:60]}", file=sys.stderr)
+    print(f"  視点人物: {world.get('viewpoint', '')[:60]}", file=sys.stderr)
+    return world, usage
 
 
 # --------------------------------------------------------------------------- 節ごとの生成
@@ -374,10 +425,11 @@ def parse_outline(text: str) -> dict:
     return json.loads(m.group(0))
 
 
-def generate_sectioned(args: argparse.Namespace, base: str, call) -> tuple[str, dict]:
-    """構成表を作ってから節ごとに書かせ、繋ぐ。長い作品で1回の応答が足りないときに使う。"""
-    print("[構成表を作る]", file=sys.stderr)
-    outline_text, usage = call(outline_prompt(args, base))
+def generate_sectioned(args: argparse.Namespace, base: str, call, outline_base: str | None = None) -> tuple[str, dict]:
+    """構成表を作ってから節ごとに書かせ、繋ぐ。長い作品で1回の応答が足りないときに使う。
+    outline_base があれば構成表はそれで作る（--persona-stage write: 舞台と人物はペルソナなしで決める）。"""
+    print("[構成表を作る]" + ("（ペルソナなし）" if outline_base else ""), file=sys.stderr)
+    outline_text, usage = call(outline_prompt(args, outline_base or base))
     outline = parse_outline(outline_text)
     plan = section_plan(args.length)
     # 節の名前と字数はこちらの指定を正とする（モデルが変えてくることがある）
@@ -503,10 +555,11 @@ def extend_prompt(base: str, chapter_text: str, target: int) -> str:
                        "書き直した章の本文だけを出力する。", "", "## 章の本文", "", chapter_text, ""])
 
 
-def generate_novel(args: argparse.Namespace, base: str, call) -> tuple[str, dict]:
-    """章立て表を作ってから章ごとに書く。短い章は一度だけ書き直して長さを整える。"""
-    print("[長編の章立て表を作る]", file=sys.stderr)
-    outline_text, usage = call(novel_outline_prompt(args, base))
+def generate_novel(args: argparse.Namespace, base: str, call, outline_base: str | None = None) -> tuple[str, dict]:
+    """章立て表を作ってから章ごとに書く。短い章は一度だけ書き直して長さを整える。
+    outline_base があれば章立て表はそれで作る（--persona-stage write）。"""
+    print("[長編の章立て表を作る]" + ("（ペルソナなし）" if outline_base else ""), file=sys.stderr)
+    outline_text, usage = call(novel_outline_prompt(args, outline_base or base))
     outline = parse_outline(outline_text)
     chapters = outline.get("chapters") or []
     if len(chapters) < 3:
@@ -837,6 +890,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
     args.theme = load_theme(args.theme)
     works = load_works()
     prompt = build_prompt(args, works)
+    persona = resolve_persona(args.persona)
+    # write: 舞台と人物（構成表）はペルソナなしで決め、本文だけペルソナで書く。all: 最初から渡す
+    stage = args.persona_stage if persona else None
+    plain = build_prompt(args, works, with_persona=False) if stage == "write" else None
     targets = targets_for(args, works)
     label = MODEL if backend == "api" else args.cli_model
     print(f"[{backend} / {label} / プロンプト {len(prompt):,}字 / 目標: {targets['source']}]\n", file=sys.stderr)
@@ -848,12 +905,16 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
     # 1回目は通常の生成。以後は計測して外れた指標だけを直させる
     rounds: list[dict] = []
+    world: dict | None = None
     if args.novel:
-        text, usage = generate_novel(args, prompt, call)
+        text, usage = generate_novel(args, prompt, call, outline_base=plain)
         # 長編は全文を書き直させると出力が途切れるので、章ごとの長さ調整だけにして計測のみ行う
         args.revise = 0
     elif args.sectioned:
-        text, usage = generate_sectioned(args, prompt, call)
+        text, usage = generate_sectioned(args, prompt, call, outline_base=plain)
+    elif plain:
+        world, _ = decide_world(plain, call)
+        text, usage = call(body_prompt(prompt, world))
     else:
         text, usage = call(prompt)
     for round_no in range(args.revise + 1):
@@ -888,9 +949,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
     (dest / "story.md").write_text(final.strip() + "\n", encoding="utf-8")
     (dest / "prompt.md").write_text(prompt, encoding="utf-8")
     # 渡したペルソナの写し。資料を後で直しても、この生成に何を渡したかが残る
-    persona = resolve_persona(args.persona)
     if persona:
         (dest / "persona.md").write_text(persona[1] + "\n", encoding="utf-8")
+    if world:
+        (dest / "world.json").write_text(json.dumps(world, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     for r in rounds:
         if len(rounds) > 1:
             (dest / f"draft_{r['round']}.md").write_text(r["text"].strip() + "\n", encoding="utf-8")
@@ -901,6 +963,8 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "avoid": args.avoid,
         "plot": args.plot,
         "persona": persona[0] if persona else None,
+        "persona_stage": stage,
+        "world": world,
         "sectioned": args.sectioned,
         "novel": args.novel,
         "length_target": args.length,
@@ -965,6 +1029,9 @@ def main(argv: list[str] | None = None) -> int:
                        help="長編モード。章立て表を作ってから章ごとに書く（context/guide/long_structure.md）")
     p_gen.add_argument("--sectioned", action="store_true",
                        help="構成表を作ってから節ごとに書かせる。長い作品向け（1回の生成は目標の7割ほどしか書かないため）")
+    p_gen.add_argument("--persona-stage", choices=["write", "all"], default="write",
+                       help="ペルソナをどの段階から渡すか。write=舞台と人物（構成表）はペルソナなしで決め、"
+                            "本文だけペルソナで書く（既定）／all=最初から渡す（『鉄紺』の形）")
     p_gen.add_argument("--revise", type=int, default=2,
                        help="計測して外れた指標を直させる回数の上限（既定 2、0 で無効）")
     p_gen.set_defaults(func=cmd_generate)
