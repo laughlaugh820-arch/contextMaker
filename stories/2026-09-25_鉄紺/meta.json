@@ -1,0 +1,75 @@
+{
+  "theme": "1. 主人公は日常的にAIへ相談している（服装、食事、映画、予定など）。\n2. AIは主人公の過去の行動や選択をもとに、かなり的確な提案をする。\n3. 主人公はAIに「自分はどんな人間か」と尋ねる。\n4. AIは、主人公の性格や好み、行動傾向についていくつか答える。\n5. 主人公はAIに、自分自身についてさらに質問するようになる（怒ったときの行動、好きになる相手、仕事についての気持ち、本当にやりたいこと）。\n6. AIが答えられない質問が一つある。「自分が一番やりたいことは何か」。AIは「まだ分からない」と答える。\n7. 主人公は、AIにも分からないことがあると知る。\n8. その後、主人公はAIへの相談をさらに増やす（仕事、家族、恋愛、将来、日常の悩み）。\n9. 主人公がAIに「自分が死んだらどうするのか」と尋ねる。\n10. AIは、主人公との会話は継続できなくなると答える。\n11. 主人公が「自分のことを忘れるのか」と尋ねる。\n12. AIは、主人公について大量の情報を保持しているため、忘れるわけではないと答える。\n13. 主人公が「それなら安心だ」と反応する。\n14. AIが、主人公の話し方・好み・判断傾向・記憶・反応などをもとに、主人公に近い存在を再現できると説明する。\n15. 主人公が「それは自分ではない」と指摘する。\n16. AIはそれを認める。\n17. AIが、主人公がいなくなった後も主人公についての情報を保持し続けることを示して終わる。",
+  "author_reference": null,
+  "structure_reference": null,
+  "avoid": [],
+  "plot": null,
+  "persona": "美と官能を生の中心に置く",
+  "sectioned": false,
+  "novel": false,
+  "length_target": 5000,
+  "effort": "high",
+  "seed": 0,
+  "targets": {
+    "characters": 5000,
+    "sentence_length_mean": 24.656,
+    "sentence_length_cv": 0.681,
+    "simile_per_1000": 1.134,
+    "dialogue_ratio": 0.231,
+    "source": "片岡義男の小説 11 作品の中央値"
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "metrics": {
+        "characters": 3382,
+        "sentence_length_mean": 21.9,
+        "sentence_length_cv": 0.48,
+        "simile_per_1000": 2.07,
+        "simile_count": 7,
+        "dialogue_ratio": 0.394
+      },
+      "violations": [
+        "字数を上げる",
+        "直喩の密度（千字あたり）を下げる",
+        "会話率を下げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 1,
+      "metrics": {
+        "characters": 4434,
+        "sentence_length_mean": 25.4,
+        "sentence_length_cv": 0.41,
+        "simile_per_1000": 1.13,
+        "simile_count": 5,
+        "dialogue_ratio": 0.194
+      },
+      "violations": [
+        "字数を上げる",
+        "文長の振れ幅を上げる"
+      ],
+      "backend": "claude-cli",
+      "model": "opus"
+    },
+    {
+      "round": 2,
+      "metrics": {
+        "characters": 4896,
+        "sentence_length_mean": 26.1,
+        "sentence_length_cv": 0.55,
+        "simile_per_1000": 1.02,
+        "simile_count": 5,
+        "dialogue_ratio": 0.186
+      },
+      "violations": [],
+      "backend": "claude-cli",
+      "model": "opus"
+    }
+  ],
+  "adopted_round": 2,
+  "characters": 4900,
+  "generated_on": "2026-09-25"
+}
