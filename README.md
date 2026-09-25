@@ -197,6 +197,9 @@ SDK がパラメータを受け付けて認証エラーまで到達すること�
 判定者（任意のモデル）には本文の引用で答えさせ、引用が本文に無い指摘は捨てる。
 
 ```console
+# Claude Code で判定者を呼び、保存と照合まで行う
+$ python3 tools/judge.py run stories/2026-09-24_宛所/story.md --model sonnet --length 5000 --baseline modern
+
 # 判定プロンプトを作って任意のモデルに貼る
 $ python3 tools/judge.py prompt stories/2026-09-21_最終の次/story.md > prompt.md
 
@@ -213,6 +216,12 @@ $ python3 tools/judge.py pair-check pair.json answer.json
 
 判定者には最終文を一語一句引用させ、一致しなければその回答は全部捨てる
 （途中までしか読まずに評価した事故があった）。
+
+`run` は判定者（Claude Code 経由）を呼んで `review/<作品>_judge/claude-<model>.json` に保存し、そのまま照合する。
+基準を変えて判定し直すときは `--tag v2` などを付けると前の回答を上書きしない。
+
+生成時の `meta.json` に展開の型（`plot`）があれば、照合はそれを使う。
+反復の単位数は反復型にだけ検査し、心境型では会話率の下限を外して直喩の上限を広げる（`docs/EVAL_RUBRIC.md`）。
 
 ---
 

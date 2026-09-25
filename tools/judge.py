@@ -48,7 +48,7 @@ BANDS = {
 JUDGE_SCHEMA = """{
   "read_to_end": {"last_sentence": "本文の最終文を一語一句そのまま"},
   "structure": {
-    "inciting": {"quote": "主人公の欠落か願望が置かれる文", "lacking": "何が足りないか一言", "deadline_quote": "期限を示す文（無ければ null）"},
+    "inciting": {"quote": "主人公の欠落・願望、または状況を動かす出来事が置かれる文", "lacking": "何が足りないか一言", "deadline_quote": "期限を示す文（無ければ null）"},
     "development_type": "反復 | 掘り下げ | 告白 | 心境",
     "units": [{"quote": "承の各単位の最初の文", "label": "単位の内容を一言"}],
     "direction": "単位が何の順に並んでいるか一言（無ければ null）",
@@ -64,7 +64,7 @@ JUDGE_SCHEMA = """{
     "similes": [{"quote": "直喩を含む文", "vehicle": "喩える先", "concrete": true}],
     "contradictions": [{"quote_a": "矛盾する文1", "quote_b": "矛盾する文2", "why": "何が矛盾か"}],
     "coincidences": [{"quote": "都合のよい展開の文", "why": "何が都合よいか"}],
-    "telegraphed": [{"quote": "反転を予告してしまっている文", "why": "どう予告しているか"}],
+    "telegraphed": [{"quote": "転の前に読者が真相を確定できてしまう文", "why": "何が確定してしまうか"}],
     "ending_exposition": [{"quote": "山のあとにある、状況を説明する地の文", "why": "何を説明しているか"}],
     "misleading_imagery": [{"quote": "筋の情報と誤読されうる風景・物の描写", "why": "何と誤読されるか"}],
     "continuity_breaks": [{"quote": "場所・時間・天候の連続が切れる文", "why": "何が前と繋がらないか"}],
@@ -86,6 +86,17 @@ def load_story(path: str) -> tuple[str, str, str]:
     text = Path(path).read_text(encoding="utf-8").strip()
     title, body = (text.split("\n", 1) + [""])[:2]
     return text, title.strip(), body.strip()
+
+
+def load_plot(story_path: str) -> str | None:
+    """生成時に依頼した展開の型（meta.json の plot）。手書きの作品などで無ければ None。"""
+    meta = Path(story_path).parent / "meta.json"
+    if not meta.exists():
+        return None
+    try:
+        return json.loads(meta.read_text(encoding="utf-8")).get("plot")
+    except json.JSONDecodeError:
+        return None
 
 
 def normalize(s: str) -> str:
@@ -136,8 +147,9 @@ def build_judge_prompt(story_path: str) -> str:
         "",
         "## 用語",
         "",
-        "- 発端: 物語を動かし始める最初の欠落・願望が置かれる箇所（『終電に乗れない』『鼻が長い』）。"
-        "後から語られる背景や過去（『兄が死んだ』『十一年会っていない』）は発端ではなく、承の中の露見として扱う",
+        "- 発端: 物語を動かし始める最初の欠落・願望（『終電に乗れない』『鼻が長い』）、"
+        "または状況を動かす出来事（『山奥に西洋料理店が現れる』『地獄に蜘蛛の糸が下りてくる』）"
+        "が置かれる箇所。後から語られる背景や過去（『兄が死んだ』『十一年会っていない』）は発端ではなく、承の中の露見として扱う",
         "- 承の型: 反復（同じ種類の出来事を形を変えて繰り返す）／掘り下げ（一つの状況を観察で深める）／"
         "告白（語りの中で過去が展開する）／心境（出来事がほとんど起きず感覚の推移で進む）",
         "- 転の類型: 逆転（願望や正義が反対になる）／露見（隠れていた事実が語られる）／"
@@ -158,6 +170,10 @@ def build_judge_prompt(story_path: str) -> str:
         "`contradictions`・`coincidences`・`telegraphed`・`borrowed`・`ending_exposition`・"
         "`misleading_imagery`・`continuity_breaks` は該当が無ければ空の配列にする。",
         "`ending_exposition` は転換の帰結が出たあとの部分だけを見る。最終文に限らない。",
+        "`telegraphed` は、転の前の時点で読者が真相を**確定できてしまう**記述だけ。"
+        "真相を示唆するが他の読み方も残る手がかり（露見の前に置く、後から読み返すと意味が変わる描写）は"
+        "公平な手がかりなので挙げない。",
+        "`inciting_is_lack` は、発端が欠落・願望・状況を動かす出来事のいずれかなら true。",
         "`continuity_breaks` は、前の場面で置いた場所・時間・天候（雪が残っている、日が落ちかけている等）が"
         "次の場面で断りなく変わっている箇所。",
         "`similes` は本文中の直喩をすべて挙げる。",
@@ -186,7 +202,7 @@ def cmd_run(args: argparse.Namespace) -> int:
     story_dir = Path(args.story).resolve().parent
     out_dir = REPO_ROOT / "review" / f"{story_dir.name}_judge"
     out_dir.mkdir(parents=True, exist_ok=True)
-    out = out_dir / f"claude-{args.model}.json"
+    out = out_dir / f"claude-{args.model}{'-' + args.tag if args.tag else ''}.json"
     answer = ""
     for attempt in range(4):
         done = subprocess.run(["claude", "-p", "--model", args.model, "--system-prompt", JUDGE_SYSTEM],
@@ -213,13 +229,13 @@ def verify_quote(body: str, quote: str | None) -> bool:
     return locate(body, quote) is not None
 
 
-def check_layer1(body: str, targets: dict | None) -> list[str]:
+def check_layer1(body: str, targets: dict | None, plot: str | None = None) -> list[str]:
     """機械計測。返り値は問題点の一覧。"""
     problems = []
     sentences = A.sentences_of(body)
     metrics = S.measure_story("t\n" + body)
     if targets:
-        for v in S.check_story(metrics, targets):
+        for v in S.check_story(metrics, targets, plot):
             problems.append(f"{v['label']} {v['current']} → 許容 {v['low']}〜{v['high']}")
     # 直喩の分布: 前半と後半の密度比
     total = sum(len(s) for s in sentences) or 1
@@ -243,8 +259,13 @@ def check_layer1(body: str, targets: dict | None) -> list[str]:
     return problems
 
 
-def check_layer2(body: str, structure: dict) -> tuple[dict, list[str]]:
-    """判定者の引用を位置に変換し、基準と照らす。"""
+def check_layer2(body: str, structure: dict, plot: str | None = None) -> tuple[dict, list[str]]:
+    """判定者の引用を位置に変換し、基準と照らす。
+
+    plot は依頼した展開の型。反復の単位数は、反復型を依頼した作品（型が不明なら判定者が
+    「反復」と答えた作品）にだけ検査する。一撃型・心境型の『三番の乾燥機』『鉢の底』で、
+    判定者が承を「反復」と答えたために単位数の指摘が出ていた（review/batch_2026-09-24）。
+    """
     pos, problems = {}, []
     inc = structure.get("inciting") or {}
     pos["発端"] = locate(body, inc.get("quote"))
@@ -262,7 +283,8 @@ def check_layer2(body: str, structure: dict) -> tuple[dict, list[str]]:
         problems.append(f"承の単位のうち {len(units) - len(pos['承の単位'])} 件の引用が本文に無い")
     n = len(body)
     expected = "2〜3" if n < 5000 else "3〜4"
-    if structure.get("development_type") == "反復":
+    repetition = plot == "反復" if plot else structure.get("development_type") == "反復"
+    if repetition:
         k = len(pos["承の単位"])
         if not ((2 <= k <= 3) if n < 5000 else (3 <= k <= 4)):
             problems.append(f"反復の単位数 {k}（{n:,}字なら {expected}）")
@@ -334,7 +356,7 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
 
     inc = craft.get("inciting_is_lack") or {}
     if inc.get("verdict") is False:
-        take("3-1", "発端が欠落・願望でない", inc.get("quote"))
+        take("3-1", "発端が欠落・願望・出来事でない", inc.get("quote"))
     # 3-2（核心の明示度）は欠点として数えない。review/pairwise/analysis_3-2.md 参照。
     # 読者は明示を「わかりやすさ」として評価し、コーパスの露見型（山月記・人間椅子）も核心を明言する。
     en = craft.get("ending_explains") or {}
@@ -355,7 +377,7 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
     for c in craft.get("coincidences") or []:
         take("3-6", "都合のよい展開", c.get("quote"), c.get("why", ""))
     for c in craft.get("telegraphed") or []:
-        take("3-7", "伏線が予告的", c.get("quote"), c.get("why", ""))
+        take("3-7", "真相が先に確定する", c.get("quote"), c.get("why", ""))
     for c in craft.get("borrowed") or []:
         take("3-8", "流用", c.get("quote"), c.get("source", ""))
     for c in craft.get("ending_exposition") or []:
@@ -381,8 +403,9 @@ def run_check(story_path: str, judge_path: str, author: str | None, length: int 
     if length:
         ns = argparse.Namespace(author=author, length=length, baseline=baseline)
         targets = S.targets_for(ns, S.load_works())
-    l1 = check_layer1(body, targets)
-    pos, l2 = check_layer2(body, judge.get("structure") or {})
+    plot = load_plot(story_path)
+    l1 = check_layer1(body, targets, plot)
+    pos, l2 = check_layer2(body, judge.get("structure") or {}, plot)
     kept, dropped = check_layer3(body, judge.get("craft") or {})
     stated = ((judge.get("craft") or {}).get("turn_stated_by_character") or {}).get("degree")
     sims = (judge.get("craft") or {}).get("similes") or []
@@ -472,7 +495,7 @@ def cmd_pair(args: argparse.Namespace) -> int:
         "どちらが先に書かれたか、どちらが元の版かは問わない。",
         "引き分け（tie）や両方だめ（both_bad）と答えてよい。", "",
         *([] if not args.criteria else [
-            "比較の観点: 発端が欠落・願望を置いているか／承に骨（反復の方向、掘り下げ）があるか／"
+            "比較の観点: 発端が欠落・願望・出来事を置いているか／承に骨（反復の方向、掘り下げ）があるか／"
             "転が一度で、人物が核心を言い切っていないか／結が説明で閉じていないか／"
             "比喩の喩え先が具体物か／設定の矛盾や都合のよい展開がないか", ""]),
         *(["読者として、どちらを人に薦めたいかで判断する。作法や技法の観点を持ち出さず、"
@@ -508,6 +531,7 @@ def main(argv: list[str] | None = None) -> int:
     p = sub.add_parser("prompt"); p.add_argument("story"); p.set_defaults(func=cmd_prompt)
     p = sub.add_parser("run", help="判定者を呼んで回答を保存し、照合まで行う")
     p.add_argument("story"); p.add_argument("--model", default="sonnet")
+    p.add_argument("--tag", help="保存名に付ける印（基準を変えて判定し直すとき、前の回答を上書きしない）")
     p.add_argument("--author"); p.add_argument("--length", type=int)
     p.add_argument("--baseline", choices=["fiction", "modern", "all"], default="fiction")
     p.set_defaults(func=cmd_run)

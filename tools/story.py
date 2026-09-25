@@ -185,6 +185,8 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         f"**長さを守る**。{args.length:,}字前後で、{int(args.length * 0.9):,}字を下回らない。",
         "**書き出しの型を決める**。断定・情景・関係宣言のいずれかで入り、世界設定の説明から始めない。",
         "**結びは説明で閉じない**。事実を一つ置く、動作で示す、物や風景に視点を預ける、のいずれか。",
+        "**結びは短く**。転換の帰結が出たあと、末尾までは本文の1割以内（5,000字なら数文〜2段落）。"
+        "帰結のあとで状況や気持ちを振り返り直さない。",
         "**比喩は形式ではなく喩える先で決める**。「〜のように」で構わない。"
         "喩える先は手で触れられる具体物にし、密度は千字に1〜2つ、多くても3つまで。",
         "**緊張は記号ではなく出来事で作る**。感嘆符・疑問符・ダッシュ・三点リーダは使わなくてよい。"
@@ -467,6 +469,14 @@ CHECKS = [
 ]
 DIALOGUE_TOLERANCE = 0.10
 
+# 展開の型ごとに帯を差し替える。心境型は会話がほぼ無く、感覚描写（直喩）が濃い。
+# 『檸檬』は会話率0.02・直喩1.8、『桜の樹の下には』は0.00・6.8。
+# 現代の小説一般の目標値を当てると、『鉢の底』は会話率0.02を上げろ、直喩2.16を下げろと
+# 書き直しを求められた（review/batch_2026-09-24）。会話は下限なし、直喩は上限を3倍まで広げる。
+PLOT_BANDS = {
+    "心境": {"dialogue_ratio": "no_floor", "simile_per_1000": (0.5, 3.0)},
+}
+
 
 def measure_story(text: str) -> dict:
     """生成物を抽出ツールと同じ基準で測る。1行目のタイトルは除く。"""
@@ -541,14 +551,18 @@ def targets_for(args: argparse.Namespace, works: list[dict]) -> dict:
     return targets
 
 
-def check_story(metrics: dict, targets: dict) -> list[dict]:
-    """目標から外れた指標を返す。"""
+def check_story(metrics: dict, targets: dict, plot: str | None = None) -> list[dict]:
+    """目標から外れた指標を返す。plot（展開の型）があれば PLOT_BANDS で帯を差し替える。"""
     violations = []
+    overrides = PLOT_BANDS.get(plot or "", {})
     for key, label, unit, band in CHECKS:
         if key not in targets:
             continue
         current, target = metrics[key], targets[key]
-        if band is None:
+        band = overrides.get(key, band)
+        if band == "no_floor":
+            low, high = 0.0, target + DIALOGUE_TOLERANCE
+        elif band is None:
             low, high = max(0.0, target - DIALOGUE_TOLERANCE), target + DIALOGUE_TOLERANCE
         else:
             low, high = target * band[0], target * band[1]
@@ -764,7 +778,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         text, usage = call(prompt)
     for round_no in range(args.revise + 1):
         metrics = measure_story(text)
-        violations = check_story(metrics, targets)
+        violations = check_story(metrics, targets, args.plot)
         rounds.append({"round": round_no, "text": text, "metrics": metrics,
                        "violations": violations, "usage": usage})
         print(f"\n[第{round_no}稿] {format_metrics(metrics, violations)}", file=sys.stderr)
