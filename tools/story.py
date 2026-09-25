@@ -329,7 +329,7 @@ def body_prompt(base: str, world: dict) -> str:
 
 
 def decide_world(base_plain: str, call) -> tuple[dict, dict]:
-    print("[舞台と人物を決める（ペルソナなし）]", file=sys.stderr)
+    print("[舞台と人物を決める]", file=sys.stderr)
     text, usage = call(world_prompt(base_plain))
     world = parse_outline(text)
     print(f"  舞台: {world.get('setting', '')[:60]}", file=sys.stderr)
@@ -893,7 +893,13 @@ def cmd_generate(args: argparse.Namespace) -> int:
     persona = resolve_persona(args.persona)
     # write: 舞台と人物（構成表）はペルソナなしで決め、本文だけペルソナで書く。all: 最初から渡す
     stage = args.persona_stage if persona else None
-    plain = build_prompt(args, works, with_persona=False) if stage == "write" else None
+    if stage == "write":
+        plain = build_prompt(args, works, with_persona=False)
+    elif args.world_stage and not (args.novel or args.sectioned):
+        # ペルソナが無くても設計表を通す。構成表を作る sectioned/novel では二重になるので通さない
+        plain = prompt
+    else:
+        plain = None
     targets = targets_for(args, works)
     label = MODEL if backend == "api" else args.cli_model
     print(f"[{backend} / {label} / プロンプト {len(prompt):,}字 / 目標: {targets['source']}]\n", file=sys.stderr)
@@ -907,11 +913,11 @@ def cmd_generate(args: argparse.Namespace) -> int:
     rounds: list[dict] = []
     world: dict | None = None
     if args.novel:
-        text, usage = generate_novel(args, prompt, call, outline_base=plain)
+        text, usage = generate_novel(args, prompt, call, outline_base=plain if persona else None)
         # 長編は全文を書き直させると出力が途切れるので、章ごとの長さ調整だけにして計測のみ行う
         args.revise = 0
     elif args.sectioned:
-        text, usage = generate_sectioned(args, prompt, call, outline_base=plain)
+        text, usage = generate_sectioned(args, prompt, call, outline_base=plain if persona else None)
     elif plain:
         world, _ = decide_world(plain, call)
         text, usage = call(body_prompt(prompt, world))
@@ -964,6 +970,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "plot": args.plot,
         "persona": persona[0] if persona else None,
         "persona_stage": stage,
+        "world_stage": world is not None,
         "world": world,
         "sectioned": args.sectioned,
         "novel": args.novel,
@@ -1032,6 +1039,9 @@ def main(argv: list[str] | None = None) -> int:
     p_gen.add_argument("--persona-stage", choices=["write", "all"], default="write",
                        help="ペルソナをどの段階から渡すか。write=舞台と人物（構成表）はペルソナなしで決め、"
                             "本文だけペルソナで書く（既定）／all=最初から渡す（『鉄紺』の形）")
+    p_gen.add_argument("--world-stage", action="store_true",
+                       help="ペルソナが無くても、舞台と人物の設計表を先に作ってから本文を書く"
+                            "（設計表の効果をペルソナと切り分けるため。--persona --persona-stage write では常に作る）")
     p_gen.add_argument("--revise", type=int, default=2,
                        help="計測して外れた指標を直させる回数の上限（既定 2、0 で無効）")
     p_gen.set_defaults(func=cmd_generate)
