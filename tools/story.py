@@ -176,6 +176,8 @@ def persona_section(persona: tuple[str, str]) -> str:
         "",
         "矜持と理念は、説明ではなく選択に出す。",
         "",
+        "- 項目をすべて使う必要はない。このテーマに関わる一線や見方だけが選択に出ればよく、"
+        "無理に全部を出そうとしない",
         "- 書き手は本文に出てこない。「私はこう思う」と語らず、人物のどれかに代弁もさせない",
         "- 何を描き何を省くか、誰に寄るか、何を美しいと扱うか、どこで終えるかに出す",
         "- 「書かないこと」と「恥と思うこと」は守る。テーマがそれを求めても別の道を探す",
@@ -192,6 +194,23 @@ SYSTEM_PROMPT = """あなたは日本語で短編小説を書く。
 作法はそのための手段として使う。"""
 
 
+def load_theme(theme: str) -> str:
+    """テーマ。既存のファイルのパスならその中身を使う（箇条書きの筋など長いものを渡すため）。"""
+    path = Path(theme).expanduser()
+    if len(theme) < 200 and "\n" not in theme and path.is_file():
+        return path.read_text(encoding="utf-8").strip()
+    return theme.strip()
+
+
+def theme_lines(theme: str) -> list[str]:
+    """一行のテーマはそのまま。複数行（箇条書きの筋）は塊で渡し、順番を守らせる。"""
+    if "\n" not in theme:
+        return [f"**テーマ**: {theme}"]
+    return ["**テーマ（筋の指定）**:", "", theme, "",
+            "上の筋の出来事と順番は守る。人物の名前、場面、細部、台詞は補う。"
+            "箇条書きを説明に書き写さず、出来事として書く。"]
+
+
 def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
     rng = random.Random(args.seed)
     guides = [(GUIDE_DIR / name) for name in GUIDE_FILES]
@@ -204,7 +223,7 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         "",
         f"次のテーマで短編小説を書いてほしい。",
         "",
-        f"**テーマ**: {args.theme}",
+        *theme_lines(args.theme),
         f"**目標の長さ**: {args.length:,}字前後",
         "",
     ]
@@ -801,6 +820,7 @@ def slugify(text: str, limit: int = 24) -> str:
 # --------------------------------------------------------------------------- 実行
 
 def cmd_compose(args: argparse.Namespace) -> int:
+    args.theme = load_theme(args.theme)
     prompt = build_prompt(args, load_works())
     if args.out:
         out = Path(args.out).resolve()
@@ -814,6 +834,7 @@ def cmd_compose(args: argparse.Namespace) -> int:
 
 def cmd_generate(args: argparse.Namespace) -> int:
     backend = resolve_backend(args.backend)
+    args.theme = load_theme(args.theme)
     works = load_works()
     prompt = build_prompt(args, works)
     targets = targets_for(args, works)
@@ -858,6 +879,11 @@ def cmd_generate(args: argparse.Namespace) -> int:
     title = final.split("\n", 1)[0].strip() if final else "無題"
 
     dest = STORIES / f"{date.today().isoformat()}_{slugify(title)}"
+    # 同じ日に同じ題名が出たとき（ペルソナあり／なしの組など）は上書きせず番号を付ける
+    n = 2
+    while dest.exists():
+        dest = STORIES / f"{date.today().isoformat()}_{slugify(title)}_{n}"
+        n += 1
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "story.md").write_text(final.strip() + "\n", encoding="utf-8")
     (dest / "prompt.md").write_text(prompt, encoding="utf-8")
@@ -895,7 +921,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
 
 
 def add_common(parser: argparse.ArgumentParser) -> None:
-    parser.add_argument("theme", help="書かせたいテーマ")
+    parser.add_argument("theme", help="書かせたいテーマ。ファイルのパスならその中身（箇条書きの筋など）")
     parser.add_argument("--author", help="文体の参照先にする作家名（コーパス収録のもの）")
     parser.add_argument("--structure", help="緊張の配置を借りる作品ID")
     parser.add_argument("--length", type=int, default=4000, help="目標の長さ（字、既定 4000）")
