@@ -34,6 +34,9 @@ MODERN = ANALYSIS / "author_片岡義男.json"
 # 片岡義男の作品のうち、小説でないもの（エッセイ）。文体の目標値から外す
 NONFICTION = {"56823"}
 GUIDE_DIR = REPO_ROOT / "context" / "guide"
+# 書き手の人間性（ペルソナ）。--persona で名前かパスを渡したときだけプロンプトに入る。
+# 登場人物の設定ではなく「誰が書くか」。反映しない生成と一対比較で比べる（context/persona/README.md）
+PERSONA_DIR = REPO_ROOT / "context" / "persona"
 # 渡す順。文体の作法 → 展開の作法
 GUIDE_FILES = ["story_craft.md", "story_structure.md"]
 
@@ -134,6 +137,51 @@ def structure_reference(works: list[dict], work_id: str | None) -> str:
     ])
 
 
+def list_personas() -> list[str]:
+    """context/persona/ にある人物の名前。説明（README）と雛形（_ で始まるもの）は除く。"""
+    return sorted(p.stem for p in PERSONA_DIR.glob("*.md")
+                  if p.stem != "README" and not p.stem.startswith("_"))
+
+
+def resolve_persona(spec: str | None) -> tuple[str, str] | None:
+    """--persona の指定を (名前, 本文) に解決する。名前なら context/persona/<名前>.md、
+    そうでなければファイルのパスとして読む。無ければ、ある名前を挙げて止まる。"""
+    if not spec:
+        return None
+    candidates = [PERSONA_DIR / f"{spec}.md", Path(spec).expanduser()]
+    path = next((c for c in candidates if c.is_file()), None)
+    if path is None:
+        names = "、".join(list_personas()) or "（なし）"
+        sys.exit(f"ペルソナ「{spec}」が見つからない。\n"
+                 f"context/persona/ にある名前: {names}\n"
+                 f"自分で書いたものは Markdown のパスで渡す（雛形は context/persona/_template.md）。")
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        sys.exit(f"ペルソナ {path} が空。")
+    return path.stem, text
+
+
+def persona_section(persona: tuple[str, str]) -> str:
+    """書き手の人間性を渡す節。資料の見出し（1行目の # 行）は名前と重なるので落とす。"""
+    name, text = persona
+    body = "\n".join(l for l in text.split("\n") if not l.startswith("# ")).strip()
+    return "\n".join([
+        "# 書き手",
+        "",
+        f"この作品は次の人間が書く（{name}）。登場人物の設定ではない。",
+        "",
+        body,
+        "",
+        "書き手の人間性は、説明ではなく選択に出す。",
+        "",
+        "- 書き手は本文に出てこない。「私はこう思う」と語らず、人物のどれかに代弁もさせない",
+        "- 何を描き何を省くか、誰に寄るか、どこで終えるか、何を可笑しいと扱うかに出す",
+        "- 「書かないこと」は守る。テーマがそれを求めても別の道を探す",
+        "- 教訓や主張を書かない。人の見方は判断に出て、文には出ない",
+        "",
+    ])
+
+
 SYSTEM_PROMPT = """あなたは日本語で短編小説を書く。
 
 読者に読ませるための作品を書くのであって、技法の解説や制作意図の説明はしない。
@@ -157,6 +205,11 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         f"**テーマ**: {args.theme}",
         f"**目標の長さ**: {args.length:,}字前後",
         "",
+    ]
+    persona = resolve_persona(getattr(args, "persona", None))
+    if persona:
+        parts.append(persona_section(persona))
+    parts += [
         "# 参照資料",
         "",
         "以下は近代日本文学 18作家43作品から抽出した作法と実例。",
@@ -192,6 +245,10 @@ def build_prompt(args: argparse.Namespace, works: list[dict]) -> str:
         "**緊張は記号ではなく出来事で作る**。感嘆符・疑問符・ダッシュ・三点リーダは使わなくてよい。"
         "使うなら密度を決めて一貫させる。",
     ]
+    if persona:
+        rules.append("**書き手として書く**。上の書き手の見方と「書かないこと」を、"
+                     "何を描くか・誰に寄るか・どこで終えるかの選択に出す。"
+                     "書き手が本文に顔を出したり、人物に意見を代弁させたりしない。")
     if args.avoid:
         rules.append("**次の題材・仕掛けは使わない**: " + "、".join(args.avoid) + "。"
                      "これらは同じテーマでモデルが最初に思いつく定型なので、別の核を探すこと。")
@@ -802,6 +859,10 @@ def cmd_generate(args: argparse.Namespace) -> int:
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "story.md").write_text(final.strip() + "\n", encoding="utf-8")
     (dest / "prompt.md").write_text(prompt, encoding="utf-8")
+    # 渡したペルソナの写し。資料を後で直しても、この生成に何を渡したかが残る
+    persona = resolve_persona(args.persona)
+    if persona:
+        (dest / "persona.md").write_text(persona[1] + "\n", encoding="utf-8")
     for r in rounds:
         if len(rounds) > 1:
             (dest / f"draft_{r['round']}.md").write_text(r["text"].strip() + "\n", encoding="utf-8")
@@ -811,6 +872,7 @@ def cmd_generate(args: argparse.Namespace) -> int:
         "structure_reference": args.structure,
         "avoid": args.avoid,
         "plot": args.plot,
+        "persona": persona[0] if persona else None,
         "sectioned": args.sectioned,
         "novel": args.novel,
         "length_target": args.length,
@@ -844,6 +906,9 @@ def add_common(parser: argparse.ArgumentParser) -> None:
                              "all=無作為2,000作品（随筆・評論を含む）")
     parser.add_argument("--avoid", nargs="*", default=[],
                         help="使わせない題材・仕掛け（例: --avoid 髪の毛 祖父の遺品）")
+    parser.add_argument("--persona",
+                        help="書き手の人間性を反映させる。context/persona/ の名前か Markdown のパス。"
+                             "指定しなければ作法だけで書かせる（従来どおり）")
 
 
 def main(argv: list[str] | None = None) -> int:
