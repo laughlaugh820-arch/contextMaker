@@ -64,10 +64,11 @@ JUDGE_SCHEMA = """{
     "similes": [{"quote": "直喩を含む文", "vehicle": "喩える先", "concrete": true}],
     "contradictions": [{"quote_a": "矛盾する文1", "quote_b": "矛盾する文2", "why": "何が矛盾か"}],
     "coincidences": [{"quote": "都合のよい展開の文", "why": "何が都合よいか"}],
-    "telegraphed": [{"quote": "反転を予告してしまっている文", "why": "どう予告しているか"}],
+    "telegraphed": [{"quote": "転の真相を読者に先に確定させてしまう文", "why": "何を確定させるか"}],
     "ending_exposition": [{"quote": "山のあとにある、状況を説明する地の文", "why": "何を説明しているか"}],
     "misleading_imagery": [{"quote": "筋の情報と誤読されうる風景・物の描写", "why": "何と誤読されるか"}],
     "continuity_breaks": [{"quote": "場所・時間・天候の連続が切れる文", "why": "何が前と繋がらないか"}],
+    "opaque_actions": [{"quote": "何をしているのか、物がどう動くのかが思い浮かばない動作・仕組みの描写", "why": "何が分からないか"}],
     "borrowed": [{"quote": "流用と思う箇所", "source": "元の作品名"}]
   }
 }"""
@@ -156,10 +157,15 @@ def build_judge_prompt(story_path: str) -> str:
         "```json", JUDGE_SCHEMA, "```",
         "",
         "`contradictions`・`coincidences`・`telegraphed`・`borrowed`・`ending_exposition`・"
-        "`misleading_imagery`・`continuity_breaks` は該当が無ければ空の配列にする。",
+        "`misleading_imagery`・`continuity_breaks`・`opaque_actions` は該当が無ければ空の配列にする。",
+        "`telegraphed` は、語り手の後知恵（「そのときは〜だと思った」）や、転で明かされる事実を"
+        "それだけで確定させてしまう記述だけを挙げる。真相を知ってから読み返すと意味が分かる"
+        "人物の仕草・知識・名前などの手がかりは、露見の前に置くのが普通なので挙げない。",
         "`ending_exposition` は転換の帰結が出たあとの部分だけを見る。最終文に限らない。",
         "`continuity_breaks` は、前の場面で置いた場所・時間・天候（雪が残っている、日が落ちかけている等）が"
         "次の場面で断りなく変わっている箇所。",
+        "`opaque_actions` は、初めて読む読者がその場で形を思い浮かべられない動作や物の仕組みの描写。"
+        "後の文で説明されていても、説明より先に動作だけが置かれて像が結ばないなら挙げる。",
         "`similes` は本文中の直喩をすべて挙げる。",
         "",
         "# 本文",
@@ -355,7 +361,7 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
     for c in craft.get("coincidences") or []:
         take("3-6", "都合のよい展開", c.get("quote"), c.get("why", ""))
     for c in craft.get("telegraphed") or []:
-        take("3-7", "伏線が予告的", c.get("quote"), c.get("why", ""))
+        take("3-7", "伏線が真相を先に確定させる", c.get("quote"), c.get("why", ""))
     for c in craft.get("borrowed") or []:
         take("3-8", "流用", c.get("quote"), c.get("source", ""))
     for c in craft.get("ending_exposition") or []:
@@ -364,6 +370,8 @@ def check_layer3(body: str, craft: dict) -> tuple[list[dict], list[str]]:
         take("3-11", "筋と誤読される描写", c.get("quote"), c.get("why", ""))
     for c in craft.get("continuity_breaks") or []:
         take("3-12", "場面の連続が切れる", c.get("quote"), c.get("why", ""))
+    for c in craft.get("opaque_actions") or []:
+        take("3-13", "動作が像を結ばない", c.get("quote"), c.get("why", ""))
     return kept, dropped
 
 
